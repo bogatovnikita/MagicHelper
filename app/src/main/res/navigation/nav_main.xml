@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashFragment">
+
+    <action
+        android:id="@+id/global_action_result"
+        app:destination="@id/resultFragment"
+        app:popUpTo="@id/menuFragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/global_action_cpu"
+        app:destination="@id/cpuFragment"
+        app:popUpTo="@id/menuFragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/global_action_boost"
+        app:destination="@id/boostFragment"
+        app:popUpTo="@id/menuFragment"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/global_action_junk"
+        app:destination="@id/junkFragment"
+        app:popUpTo="@id/menuFragment"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/global_action_battery"
+        app:destination="@id/batteryFragment"
+        app:popUpTo="@id/menuFragment"
+        app:popUpToInclusive="false" />
+
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.menu.MenuFragment"
+        android:label="MenuFragment" />
+    <fragment
+        android:id="@+id/boostFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.boost.BoostFragment"
+        android:label="BoostFragment" >
+        <action
+            android:id="@+id/action_boostFragment_to_boostProgressFragment"
+            app:destination="@id/boostProgressFragment"
+            app:popUpTo="@id/boostFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cpuFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.cpu.CpuFragment"
+        android:label="CpuFragment" >
+        <action
+            android:id="@+id/action_cpuFragment_to_cpuProgressFragment"
+            app:destination="@id/cpuProgressFragment"
+            app:popUpTo="@id/cpuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/junkFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.junk.JunkFragment"
+        android:label="JunkFragment" >
+        <action
+            android:id="@+id/action_junkFragment_to_junkProgressFragment"
+            app:destination="@id/junkProgressFragment"
+            app:popUpTo="@id/junkFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/batteryFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.battery.BatteryFragment"
+        android:label="BatteryFragment" >
+        <action
+            android:id="@+id/action_batteryFragment_to_batteryProgressFragment"
+            app:destination="@id/batteryProgressFragment"
+            app:popUpTo="@id/batteryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.ronmobgroup.ronclenaer.result.ResultFragment"
+        android:label="ResultFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_firstScanningFragment"
+            app:destination="@id/firstScanningFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstScanningFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.first_scanning.FirstScanningFragment"
+        android:label="FirstScanningFragment" >
+        <action
+            android:id="@+id/action_firstScanningFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/junkProgressFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.junk.JunkProgressFragment"
+        android:label="JunkProgressFragment" />
+    <fragment
+        android:id="@+id/batteryProgressFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.battery.BatteryProgressFragment"
+        android:label="BatteryProgressFragment" />
+    <fragment
+        android:id="@+id/boostProgressFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.boost.BoostProgressFragment"
+        android:label="BoostProgressFragment" />
+    <fragment
+        android:id="@+id/cpuProgressFragment"
+        android:name="com.ronmobgroup.ronclenaer.ui.cpu.CpuProgressFragment"
+        android:label="CpuProgressFragment" />
+</navigation>

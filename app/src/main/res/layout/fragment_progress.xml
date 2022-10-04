@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_gradient">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bcforscan" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/lav_back"
+        app:layout_constraintEnd_toEndOf="@+id/lav_back"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/lav_back"
+        app:layout_constraintTop_toTopOf="@+id/lav_back"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_actions"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_optimization" />
+
+    <TextView
+        android:id="@+id/tv_optimization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed_action"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_23sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/tv_percents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20%"
+        android:textColor="#ffffff"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/lav_back"
+        app:layout_constraintEnd_toEndOf="@+id/lav_back"
+        app:layout_constraintStart_toStartOf="@+id/lav_back"
+        app:layout_constraintTop_toTopOf="@+id/lav_back"
+        app:layout_constraintVertical_bias="0.33999997" />
+
+    <ImageView
+        android:id="@+id/iv_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_percents"
+        app:layout_constraintEnd_toEndOf="@+id/tv_percents"
+        app:layout_constraintStart_toStartOf="@+id/tv_percents"
+        app:layout_constraintTop_toTopOf="@+id/tv_percents"
+        app:srcCompat="@drawable/ic_done" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
