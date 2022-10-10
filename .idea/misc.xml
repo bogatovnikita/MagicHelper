@@ -3,8 +3,43 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable-v24/card_corners.xml" value="0.121" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/arrow_boost.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_button.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_button_danger.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_button_not_danger.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_gradient.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_item_menu.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_layout.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/background_radio_group.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/button.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/button_checked.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/button_radio_selector.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/button_unchecked.xml" value="0.192" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners_comet.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners_white.xml" value="0.18" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners_white_min_corners.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/progress_bar_gradient.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/font/w.xml" value="0.2953125" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_battery.xml" value="0.125" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_boost.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_cleaning.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_cooling.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_loading.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_menu.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_progress.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_result.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/item_action.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/item_clean.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/item_menu.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/item_menu_horizontal.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/item_optimization_action.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

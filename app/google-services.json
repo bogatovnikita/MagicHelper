@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "727975652959",
+    "project_id": "ron-cleaning-2",
+    "storage_bucket": "ron-cleaning-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727975652959:android:51fb2eb71789841e7e75ea",
+        "android_client_info": {
+          "package_name": "ar.cleaner.first.pf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727975652959-89ehf4cjpnnabrakg9gelcrk7h5vei8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDADBbfoRpMRVlXyH4d__riJqfZmwdlkq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727975652959-89ehf4cjpnnabrakg9gelcrk7h5vei8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

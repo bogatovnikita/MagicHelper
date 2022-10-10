@@ -79,10 +79,8 @@ jboolean checkTimeExpired(JNIEnv *env, jobject context, jstring field) {
     return (currentTime - doneTime) > 1000 * 60 * 60 * 2;
 }
 
-
-extern "C"
-JNIEXPORT jobjectArray JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getFolders(JNIEnv *env,
+extern "C" JNIEXPORT jobjectArray JNICALL
+Java_ar_cleaner_first_pf_utils_NativeProvider_getFolders(JNIEnv *env,
                                                          jclass clazz) {
     jobjectArray ret;
     int i;
@@ -150,7 +148,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getFolders(JNIEnv *env,
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getOverheatedApps(
+Java_ar_cleaner_first_pf_utils_NativeProvider_getOverheatedApps(
         JNIEnv *env, jclass clazz, jobject context) {
     if (!checkTimeExpired(env, context, CPU(env))) {
         return 0;
@@ -161,7 +159,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getOverheatedApps(
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getGarbageSize(
+Java_ar_cleaner_first_pf_utils_NativeProvider_getGarbageSize(
         JNIEnv *env, jclass clazz, jobject context) {
     if (!checkTimeExpired(env, context, JUNK(env))) {
         return 0;
@@ -173,7 +171,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getGarbageSize(
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_calculateWorkingMinutes(
+Java_ar_cleaner_first_pf_utils_NativeProvider_calculateWorkingMinutes(
         JNIEnv *env, jclass clazz, jobject context, jint percent) {
     if (!checkTimeExpired(env, context, POWER_HIGH(env))) {
         return percent * 16 + ((jint) (rand() % 30));
@@ -189,7 +187,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_calculateWorkingMinutes(
 
 void putLongToPreferences(JNIEnv *env, jobject context, jstring fieldName, jlong value) {
     jclass providerClass = env->FindClass(
-            "com/hedgehog/ar154/utils/NativeProvider");
+            "ar/cleaner/first/pf/utils/NativeProvider");
     jmethodID putStringMethodId = env->GetStaticMethodID(providerClass, "saveToPreferences",
                                                          "(Ljava/lang/String;J)V");
     env->CallStaticVoidMethod(providerClass, putStringMethodId, fieldName, value);
@@ -198,7 +196,7 @@ void putLongToPreferences(JNIEnv *env, jobject context, jstring fieldName, jlong
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_boost(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_boost(JNIEnv *env,
                                                     jclass clazz,
                                                     jobject context) {
     putLongToPreferences(env, context, BOOST(env), getCurrentTime(env));
@@ -206,14 +204,14 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_boost(JNIEnv *env,
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_junk(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_junk(JNIEnv *env,
                                                    jclass clazz,
                                                    jobject context) {
     putLongToPreferences(env, context, JUNK(env), getCurrentTime(env));
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_cpu(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_cpu(JNIEnv *env,
                                                   jclass clazz,
                                                   jobject context) {
     putLongToPreferences(env, context, CPU(env), getCurrentTime(env));
@@ -222,7 +220,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_cpu(JNIEnv *env,
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getRamUsage(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_getRamUsage(JNIEnv *env,
                                                           jclass clazz,
                                                           jobject context,
                                                           jlong ram_total,
@@ -239,16 +237,16 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getRamUsage(JNIEnv *env,
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_checkRamOverload(
+Java_ar_cleaner_first_pf_utils_NativeProvider_checkRamOverload(
         JNIEnv *env, jclass clazz, jobject instance) {
     return checkTimeExpired(env, instance, BOOST(env));
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_calculateTemperature(
+Java_ar_cleaner_first_pf_utils_NativeProvider_calculateTemperature(
         JNIEnv *env, jclass clazz, jobject arg0, jint temp) {
     if (checkTimeExpired(env, arg0, CPU(env))) {
-        if(temperature == 0){
+        if (temperature == 0) {
             temperature = ((rand() % 3) + 3);
         }
         return temp / 10 + temperature;
@@ -258,7 +256,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_calculateTemperature(
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_powerLow(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_powerLow(JNIEnv *env,
                                                        jclass clazz,
                                                        jobject context) {
     putLongToPreferences(env, context, POWER_LOW(env), getCurrentTime(env));
@@ -266,21 +264,21 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_powerLow(JNIEnv *env,
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_powerMedium(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_powerMedium(JNIEnv *env,
                                                           jclass clazz,
                                                           jobject context) {
     putLongToPreferences(env, context, POWER_MEDIUM(env), getCurrentTime(env));
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_powerHigh(JNIEnv *env,
+Java_ar_cleaner_first_pf_utils_NativeProvider_powerHigh(JNIEnv *env,
                                                         jclass clazz,
                                                         jobject context) {
     putLongToPreferences(env, context, POWER_HIGH(env), getCurrentTime(env));
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_checkBatteryDecrease(
+Java_ar_cleaner_first_pf_utils_NativeProvider_checkBatteryDecrease(
         JNIEnv *env, jclass clazz, jobject context) {
     return checkTimeExpired(env, context, POWER_LOW(env))
            || checkTimeExpired(env, context, POWER_MEDIUM(env))
@@ -289,7 +287,8 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_checkBatteryDecrease(
 }
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getOverloadedPercents(JNIEnv *env, jclass clazz,
+Java_ar_cleaner_first_pf_utils_NativeProvider_getOverloadedPercents(JNIEnv *env,
+                                                                    jclass clazz,
                                                                     jobject context) {
     overloadedPercens = (rand() % 10) + 2;
     return overloadedPercens;
@@ -321,7 +320,7 @@ jintArray createJunkFilesArray(JNIEnv *env) {
 
 extern "C"
 JNIEXPORT jintArray JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getGarbageFilesCount(JNIEnv *env, jclass clazz,
+Java_ar_cleaner_first_pf_utils_NativeProvider_getGarbageFilesCount(JNIEnv *env, jclass clazz,
                                                                    jobject context) {
     if (!checkTimeExpired(env, context, JUNK(env))) {
         files_junk_one = 0;
@@ -343,7 +342,7 @@ Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getGarbageFilesCount(JNIEnv
 
 extern "C"
 JNIEXPORT jintArray JNICALL
-Java_com_ronmobgroup_ronclenaer_utils_NativeProvider_getGarbageSizeArray(JNIEnv *env, jclass clazz,
+Java_ar_cleaner_first_pf_utils_NativeProvider_getGarbageSizeArray(JNIEnv *env, jclass clazz,
                                                                   jobject context) {
     if (!checkTimeExpired(env, context, JUNK(env))) {
         junk_one = 0;

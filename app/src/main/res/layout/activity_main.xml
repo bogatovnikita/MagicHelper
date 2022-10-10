@@ -7,17 +7,6 @@
     android:fitsSystemWindows="false"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -30,15 +19,14 @@
         app:layout_constraintTop_toBottomOf="@id/adView"
         app:navGraph="@navigation/nav_main" />
 
-    <com.google.android.gms.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
-        ads:adUnitId="@string/ADMOB_BANNER"
-        ads:adSize="BANNER"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ads:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_32sdp"/>
-
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ADMOB_BANNER"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

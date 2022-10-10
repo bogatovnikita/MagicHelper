@@ -8,16 +8,14 @@
     android:translationZ="1dp"
     android:elevation="1dp"
     android:layout_margin="8dp"
-    android:background="@drawable/background_item_menu">
-
+>
     <ImageView
         android:id="@+id/iv_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_boost" />
-
+/>
     <ImageView
         android:id="@+id/iv_arrow"
         android:layout_width="wrap_content"
@@ -27,13 +25,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
         android:alpha="0.5"
-        app:srcCompat="@drawable/arrow_cooling" />
-
+/>
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/speed_action"
         android:textColor="@color/text_color"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"

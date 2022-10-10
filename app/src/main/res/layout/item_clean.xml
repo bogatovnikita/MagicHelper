@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="@dimen/_12sdp"
-            android:text="@string/d_elements"
             android:textAlignment="viewEnd"
             android:textColor="#7f31486C" />
 
@@ -42,8 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableEnd="@drawable/ic_done_small"
-            android:text="@string/cleaned"
             android:visibility="gone"
             android:drawablePadding="8dp"
             android:textAlignment="viewEnd"
