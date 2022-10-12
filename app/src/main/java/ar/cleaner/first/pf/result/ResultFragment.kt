@@ -10,7 +10,6 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.data.RamUsageModel
 import ar.cleaner.first.pf.databinding.FragmentResultBinding
 import ar.cleaner.first.pf.utils.*
-import ar.cleaner.first.pf.utils.NativeProvider.boost
 import com.google.gson.Gson
 
 class ResultFragment(
@@ -37,37 +36,54 @@ class ResultFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        menuItems = MenuItems.valueOf(arguments?.getString(MENU_ITEM_NAME) ?: MenuItems.boost.name)
-//        binding.ivMenu.setImageResource(menuItems.headerIcon)
-        binding.ivBack.setOnClickListener { onBack() }
-        binding.tvTitle.text = getString(menuItems.title)
-        binding.rvOptimization.apply {
-//            adapter = HorizontalMenuAdapter(
-//                MenuItems.values().toMutableList().apply {
-//                    this.remove(menuItems)
-//                },
-//                requireContext()
-//            )
-            {
-//                when (it) {
-//                    MenuItems.boost -> onBoost()
-//                    MenuItems.power -> onBattery()
-//                    MenuItems.cooling -> onCpu()
-//                    MenuItems.cleaning -> onJunk()
-//                }
+        menuItems = MenuItems.valueOf(arguments?.getString(MENU_ITEM_NAME) ?: MenuItems.Boost.name)
+        with(binding) {
+            arrowBackIv.setOnClickListener { onBack() }
+            titleTv.text = getString(menuItems.title)
+            recyclerView.apply {
+                adapter = HorizontalMenuAdapter(MenuItems.values().toMutableList().apply {
+                    this.remove(menuItems)
+                }) {
+                    when (it) {
+                        MenuItems.Boost -> onBoost()
+                        MenuItems.BatteryPower -> onBattery()
+                        MenuItems.CoolingCpu -> onCpu()
+                        MenuItems.CleaningJunk -> onJunk()
+                    }
+                }
+                layoutManager = LinearLayoutManager(requireContext())
             }
-            layoutManager = LinearLayoutManager(requireContext())
         }
-
-//        when (menuItems) {
-//            MenuItems.boost -> boostResult()
-//            MenuItems.power -> powerResult()
-//            MenuItems.cooling -> cpuResult()
-//            MenuItems.cleaning -> junkResult()
-//        }
+        when (menuItems) {
+            MenuItems.Boost -> boostResult()
+            MenuItems.BatteryPower -> batteryPowerResult()
+            MenuItems.CoolingCpu -> coolingCpuResult()
+            MenuItems.CleaningJunk -> cleaningJunkResult()
+        }
     }
 
-    private fun powerResult() {
+    private fun boostResult() {
+        val data = gson.fromJson(arguments?.getString(DATA_OBJECT), RamUsageModel::class.java)
+        val currentInfo = OptimizationProvider.getRamUsageInfo()
+        val nowFreeGb: Double = currentInfo.availableGb - data.availableGb
+        val percentsFree = data.percent - currentInfo.percent
+
+        with(binding) {
+            firstDescriptionTv.text = getString(R.string.released_2f_gb, nowFreeGb)
+
+            secondDescriptionTv.text =
+                getString(R.string.now_the_device_is_accelerated_by_d, percentsFree)
+
+            thirdDescriptionTv.text =
+                getString(
+                    R.string.available_memory_2f_gb_2f_gb,
+                    currentInfo.availableGb,
+                    currentInfo.totalGb
+                )
+        }
+    }
+
+    private fun batteryPowerResult() {
         val minutesOld = requireArguments().getString(DATA_SIMPLE)!!.toInt()
         val minutesNow = NativeProvider.calculateWorkingMinutes(
             requireContext(),
@@ -79,42 +95,48 @@ class ResultFragment(
 
         val hours = minutesNow / 60
         val minutes = minutesNow % 60
-//        binding.apply {
-//            tvFirst.text = getString(R.string.power_result, hoursOptimized, minutesOptimized)
-//            tvSecond.text = getString(
-//                R.string.time_to_work,
-//                ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
-//            )
-//            tvThird.text = getString(R.string.working_time, hours, minutes)
-//        }
+
+        with(binding) {
+            firstDescriptionTv.text =
+                getString(R.string.battery_power_optimized, hoursOptimized, minutesOptimized)
+
+            secondDescriptionTv.text = getString(
+                R.string.working_time_increased_by_d,
+                ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
+            )
+
+            thirdDescriptionTv.text =
+                getString(R.string.remaining_charging_time_d_h_d_min, hours, minutes)
+        }
     }
 
-    private fun boostResult() {
-        val data = gson.fromJson(arguments?.getString(DATA_OBJECT), RamUsageModel::class.java)
-//        val currentInfo = OptimizationProvider.getRamUsageInfo()
+    private fun cleaningJunkResult() {
+        val junk = arguments?.getString(DATA_SIMPLE)!!.toInt()
+        val infoStorage = OptimizationProvider.getMemoryStorage()
 
-//        val nowFreeGb = currentInfo.availableGb - data.availableGb
-//        val percentsFree = data.percent - currentInfo.percent
-//        binding.tvFirst.text = getString(R.string.boost_result_first, nowFreeGb)
-//        binding.tvSecond.text = getString(R.string.boost_result_second, data.percentsToFree)
-//        binding.tvThird.text =
-//            getString(R.string.available_ram_d_d, currentInfo.availableGb, currentInfo.totalGb)
+        with(binding) {
+            firstDescriptionTv.text = getString(R.string.released_2f_gb, junk)
+
+            secondDescriptionTv.text =
+                getString(R.string.now_the_devices_memory_is_d_free, infoStorage.percent)
+
+            thirdDescriptionTv.text = getString(
+                R.string.available_memory_2f_gb_2f_gb, infoStorage.occupiedStorageMemory,
+                infoStorage.totalStorageMemory
+            )
+        }
     }
 
-    private fun cpuResult() {
+    private fun coolingCpuResult() {
         val oldTemperature = arguments?.getString(DATA_SIMPLE)!!.toInt()
         val currentTemp = BatInfoReceiver.getBatteryInfo().value ?: 0
         val cooled = oldTemperature - currentTemp
-//        binding.tvFirst.text = getString(R.string.cooled_by, cooled)
-//        binding.tvSecond.text = getString(R.string.temperature_now_d, currentTemp)
-//        binding.tvThird.text = getString(R.string.normal_cpu)
-    }
-
-    private fun junkResult() {
-        val junk = arguments?.getString(DATA_SIMPLE)!!.toInt()
-//        binding.tvFirst.text = getString(R.string.cleaned_mb, junk)
-        binding.tvSecond.visibility = View.GONE
-        binding.tvThird.visibility = View.GONE
+        with(binding) {
+            firstDescriptionTv.text = getString(R.string.cooled_d, cooled)
+            secondDescriptionTv.text =
+                getString(R.string.the_normal_temperature_of_the_processor_is_25_30)
+            thirdDescriptionTv.text = getString(R.string.processor_temperature_d, currentTemp)
+        }
     }
 
     override fun onDestroy() {

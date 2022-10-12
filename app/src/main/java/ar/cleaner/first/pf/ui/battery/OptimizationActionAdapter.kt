@@ -30,12 +30,13 @@ class OptimizationActionAdapter() :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(items[position])
     }
+
     override fun getItemCount() = items.size
 
     class ViewHolder(private val binding: ItemOptimizationActionBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(s: String) {
-            binding.tvAction.text = s
+            binding.titleTv.text = s
         }
     }
 }

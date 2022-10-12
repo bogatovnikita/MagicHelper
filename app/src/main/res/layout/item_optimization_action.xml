@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/tv_action"
-    android:drawablePadding="8dp"
-    android:text="Test">
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:orientation="horizontal">
 
-</TextView>
+    <ImageView
+        android:layout_width="@dimen/_4sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_dot" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/heraclito_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        tools:text="sdfsdfsdf" />
+
+</LinearLayout>

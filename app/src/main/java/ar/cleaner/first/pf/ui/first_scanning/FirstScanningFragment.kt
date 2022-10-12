@@ -7,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.databinding.FragmentProgressBinding
+import ar.cleaner.first.pf.databinding.FragmentFirstScanningBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -19,9 +18,9 @@ import kotlinx.coroutines.withContext
 
 class FirstScanningFragment(
     private val onComplete: Fragment.() -> Unit
-) : Fragment(R.layout.fragment_progress) {
+) : Fragment(R.layout.fragment_first_scanning) {
 
-    private var _binding: FragmentProgressBinding? = null
+    private var _binding: FragmentFirstScanningBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,7 +28,7 @@ class FirstScanningFragment(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProgressBinding.inflate(inflater, container, false)
+        _binding = FragmentFirstScanningBinding.inflate(inflater, container, false)
         return binding.root
     }
 

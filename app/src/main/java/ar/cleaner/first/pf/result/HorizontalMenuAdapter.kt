@@ -1,6 +1,5 @@
 package ar.cleaner.first.pf.result
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,11 +8,9 @@ import ar.cleaner.first.pf.utils.MenuItems
 
 class HorizontalMenuAdapter(
     private val menuItems: List<MenuItems>,
-    private val context: Context,
     private val onItemSelected: (MenuItems) -> Unit
 ) :
     RecyclerView.Adapter<HorizontalMenuAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -29,19 +26,16 @@ class HorizontalMenuAdapter(
         holder.onBind(menuItems[position])
     }
 
-    override fun getItemCount(): Int {
-        return menuItems.size
-    }
+    override fun getItemCount() = menuItems.size
 
     inner class ViewHolder(private val binding: ItemMenuHorizontalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(menuItems: MenuItems) {
             binding.apply {
-//                ivIcon.setImageResource(menuItems.headerIcon)
-                tvTitle.text = context.getString(menuItems.title)
-//                ivArrow.setImageResource(menuItems.arrow)
-//                tvDescription.text = context.getString(menuItems.descriptionResult)
+                iconIv.setImageResource(menuItems.icon)
+                titleTv.text = binding.root.context.getString(menuItems.title)
+                descriptionTv.text = binding.root.context.getString(menuItems.description_item_menu)
                 root.setOnClickListener {
                     onItemSelected(menuItems)
                 }

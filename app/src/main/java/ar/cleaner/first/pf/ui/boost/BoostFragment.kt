@@ -20,7 +20,6 @@ class BoostFragment(
 
     private val ramUsageInfo = OptimizationProvider.getRamUsageInfo()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +38,7 @@ class BoostFragment(
     }
 
     private fun checkState() {
+        binding.boostButton.setOnClickListener { onOptimizeClick() }
         if (OptimizationProvider.checkIsOptimized(MenuItems.Boost)) {
             isOptimized()
         } else {
@@ -52,7 +52,6 @@ class BoostFragment(
             progressBar.progress = ramUsageInfo.percent
             occupiedTotalTv.text =
                 getString(R.string._2f_gb_2f_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
-            boostButton.setOnClickListener { onOptimizeClick }
             dangerButton.apply {
                 background =
                     ContextCompat.getDrawable(requireContext(), R.drawable.background_button_danger)
@@ -66,9 +65,9 @@ class BoostFragment(
         with(binding) {
             groupOptimizeIsDone.visibility = View.VISIBLE
             groupIsNotOptimize.visibility = View.GONE
+            progressBar.progress = ramUsageInfo.percent
             occupiedTotalTv.text =
                 getString(R.string._2f_gb_2f_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
-            boostButton.setOnClickListener { onOptimizeClick }
             dangerButton.apply {
                 background =
                     ContextCompat.getDrawable(

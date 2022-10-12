@@ -16,6 +16,8 @@
     <string name="cooling_cpu">Охлаждение</string>
     <string name="clear_junk">Очистка</string>
     <string name="battery_power_description">Осталось %d ч %d мин</string>
+    <string name="battery_power_only_time">%d ч %d мин</string>
+    <string name="battery_power_optimized">Оптимизировано %d ч %d мин</string>
     <string name="boost_description">Ускорено</string>
     <string name="boost_description_not_optimized">Ускорьте на %s %%</string>
     <string name="cooling_cpu_description">Охлаждение выполнено</string>
@@ -29,6 +31,32 @@
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Снижайте нагрузку на оперативную память и ускоряйте работу вашего телефона</string>
     <string name="memory_is_overloaded_optimization_is_required">Память перегружена! Требуется оптимизация!</string>
     <string name="the_phone_does_need_any_acceleration_at_the_moment">Телефон не нуждается в ускорении на данный момент!</string>
-
+    <string name="extend_the_operation_of_your_phone">Продлите работу вашего телефона</string>
+    <string name="remove_the_trash">Удалите мусор</string>
+    <string name="cool_down_your_phone">Охладите ваш телефон</string>
+    <string name="speed_up_the_work_of_your_phone">Ускорьте работу вашего телефона</string>
+    <string name="released_2f_gb">Освобождено %.1f ГБ</string>
+    <string name="now_the_device_is_accelerated_by_d">Теперь устройство ускорено на %d%%</string>
+    <string name="available_memory_2f_gb_2f_gb">Доступная память: %.1f ГБ/%.1f ГБ</string>
+    <string name="working_time_increased_by_d">Время работы увеличено на %d%%</string>
+    <string name="remaining_charging_time_d_h_d_min">Оставшееся время зарядки %d ч %d мин</string>
+    <string name="remaining_charging_time">Оставшееся время зарядки</string>
+    <string name="cooled_d">Охлаждено %d℃</string>
+    <string name="the_normal_temperature_of_the_processor_is_25_30">Нормальная температура процессора 25–30℃</string>
+    <string name="processor_temperature_d">Температура процессора %d℃</string>
+    <string name="now_the_devices_memory_is_d_free">Теперь память устройства свободна на %d%%</string>
+    <string name="modes_of_increasing_the_working_time">Режимы увеличения времени работы</string>
+    <string name="normal_mode">Нормальный</string>
+    <string name="ultra_mode">Ультра</string>
+    <string name="extra_mode">Экстра</string>
+    <string name="normal_mode_10">+10\nНормальный</string>
+    <string name="ultra_mode_30">+30\nУльтра</string>
+    <string name="extra_mode_60">+60\nЭкстра</string>
+    <string name="you_need_to_increase_the_working_time_of_the_phone">Требуется увеличить время работы телефона!</string>
+    <string name="optimize">Оптимизация</string>
+    <string name="the_phone_does_not_need_optimization_at_the_moment">Телефон не нуждается в оптимизации на данный момент!</string>
+    <string name="normal_mode_activates_restrictions">Нормальный режим активирует ограничения:</string>
+    <string name="ultra_mode_activates_restrictions">Ультра режим активирует ограничения:</string>
+    <string name="extra_mode_activates_restrictions">Экстра режим активирует ограничения:</string>
 
 </resources>

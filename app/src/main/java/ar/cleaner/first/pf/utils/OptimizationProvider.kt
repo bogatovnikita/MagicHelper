@@ -1,6 +1,7 @@
 package ar.cleaner.first.pf.utils
 
 import ar.cleaner.first.pf.AppClass
+import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.data.CacheInfo
 import ar.cleaner.first.pf.data.RamUsageModel
 import ar.cleaner.first.pf.data.StorageMemoryModel
