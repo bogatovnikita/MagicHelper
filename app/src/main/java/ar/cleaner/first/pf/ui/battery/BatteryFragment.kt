@@ -37,6 +37,9 @@ class BatteryFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().window.statusBarColor =
+            ContextCompat.getColor(requireActivity(), R.color.dark_blue)
+
         initClickListener()
         initAdapter()
         checkState()

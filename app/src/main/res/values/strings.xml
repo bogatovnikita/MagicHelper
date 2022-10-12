@@ -44,6 +44,8 @@
     <string name="cooled_d">Охлаждено %d℃</string>
     <string name="the_normal_temperature_of_the_processor_is_25_30">Нормальная температура процессора 25–30℃</string>
     <string name="processor_temperature_d">Температура процессора %d℃</string>
+    <string name="temperature_d">%d℃</string>
+    <string name="processor_temperature">Температура процессора</string>
     <string name="now_the_devices_memory_is_d_free">Теперь память устройства свободна на %d%%</string>
     <string name="modes_of_increasing_the_working_time">Режимы увеличения времени работы</string>
     <string name="normal_mode">Нормальный</string>
@@ -55,8 +57,11 @@
     <string name="you_need_to_increase_the_working_time_of_the_phone">Требуется увеличить время работы телефона!</string>
     <string name="optimize">Оптимизация</string>
     <string name="the_phone_does_not_need_optimization_at_the_moment">Телефон не нуждается в оптимизации на данный момент!</string>
+    <string name="the_phone_does_not_need_cooling_at_the_moment">Телефон не нуждается в охлаждении на данный момент!</string>
     <string name="normal_mode_activates_restrictions">Нормальный режим активирует ограничения:</string>
     <string name="ultra_mode_activates_restrictions">Ультра режим активирует ограничения:</string>
     <string name="extra_mode_activates_restrictions">Экстра режим активирует ограничения:</string>
-
+    <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Прямо сейчас фоновые процессы и приложения перегревают процессор вашего телефона</string>
+    <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Регулярно охлаждайте телефон, чтобы снизить нагрузку на процессор, продлить срок его службы и ускорить работу вашего устройства</string>
+    <string name="the_processor_overheated_cooling_is_required">Процессор перегрелся! Требуется охлаждение!</string>
 </resources>

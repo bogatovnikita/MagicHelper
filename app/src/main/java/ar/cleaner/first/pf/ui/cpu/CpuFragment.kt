@@ -1,13 +1,10 @@
 package ar.cleaner.first.pf.ui.cpu
 
 import android.os.Bundle
-import android.text.Html
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentCoolingBinding
@@ -33,49 +30,57 @@ class CpuFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.ivBack.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        initView()
+        initClickListener()
+        checkOptimized()
+    }
 
-        BatInfoReceiver.getBatteryInfo().observe(viewLifecycleOwner) {
-//            binding.tvTemp.text = getString(R.string.d_temperature, it)
-        }
+    private fun checkOptimized() {
+        if (OptimizationProvider.checkIsOptimized(MenuItems.CoolingCpu)) isOptimized() else isNotOptimized()
+    }
 
-//        checkState()
-
-        binding.btnOptimize.setOnClickListener {
-            onOptimizeClick()
+    private fun isNotOptimized() {
+        with(binding) {
+            dangerButton.apply {
+                background =
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.background_button_danger
+                    )
+                text = getString(R.string.the_processor_overheated_cooling_is_required)
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+            }
         }
     }
 
-//    private fun checkState() {
-//        if (OptimizationProvider.checkIsOptimized(MenuItems.cooling)) {
-//            binding.apply {
-//                ivState.setImageResource(R.drawable.ic_state_done_medium)
-//                tvState.visibility = View.GONE
-//            }
-//            val string = getString(
-//                R.string.apps_overloaded_d,
-//                *OptimizationProvider.getVarArgs(MenuItems.cooling)
-//            )
-//            val spannableText = Html.fromHtml(string)
-//            binding.tvActions.text = spannableText
-//        } else {
-//            val string = getString(
-//                R.string.apps_overloaded_d,
-//                *OptimizationProvider.getVarArgs(MenuItems.cooling)
-//            )
-//            val spannableText = Html.fromHtml(string)
-//            val coloredSpannable = SpannableString(spannableText)
-//            coloredSpannable.setSpan(
-//                ForegroundColorSpan(resources.getColor(R.color.color_red)),
-//                spannableText.length - 2,
-//                spannableText.length,
-//                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-//            )
-//            binding.tvActions.text = coloredSpannable
-//        }
-//    }
+    private fun isOptimized() {
+        with(binding) {
+            groupOptimizeIsDone.visibility = View.VISIBLE
+            groupIsNotOptimize.visibility = View.GONE
+            dangerButton.apply {
+                background =
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.background_button_not_danger
+                    )
+                text = getString(R.string.the_phone_does_not_need_cooling_at_the_moment)
+                setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            }
+        }
+    }
+
+
+    private fun initView() {
+        BatInfoReceiver.getBatteryInfo().observe(viewLifecycleOwner) {
+            binding.percentTv.text = getString(R.string.temperature_d, it)
+        }
+    }
+
+    private fun initClickListener() {
+        binding.arrowBackIv.setOnClickListener { requireActivity().onBackPressed() }
+        binding.boostButton.setOnClickListener { onOptimizeClick() }
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
