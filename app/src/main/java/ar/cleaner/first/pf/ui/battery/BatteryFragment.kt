@@ -1,5 +1,6 @@
 package ar.cleaner.first.pf.ui.battery
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -130,6 +131,7 @@ class BatteryFragment(
         }
     }
 
+    @SuppressLint("StringFormatMatches")
     private fun initBatteryInfo() {
         BatteryChargeReceiver.getInfo().observe(viewLifecycleOwner) {
             binding.percentTv.text = getString(R.string.percent_d, it)

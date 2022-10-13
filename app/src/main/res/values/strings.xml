@@ -15,6 +15,7 @@
     <string name="acceleration_completed">Ускорение выполнено</string>
     <string name="cooling_cpu">Охлаждение</string>
     <string name="clear_junk">Очистка</string>
+    <string name="cleared_junk">Очистить</string>
     <string name="battery_power_description">Осталось %d ч %d мин</string>
     <string name="battery_power_only_time">%d ч %d мин</string>
     <string name="battery_power_optimized">Оптимизировано %d ч %d мин</string>
@@ -23,7 +24,9 @@
     <string name="cooling_cpu_description">Охлаждение выполнено</string>
     <string name="cooling_cpu_description_not_optimized">Охладите процессор</string>
     <string name="clean_junk_description">Очистка выполнена</string>
+    <string name="clean_junk_done">Выполнено</string>
     <string name="clean_junk_description_not_optimized">Освободите %d МБ</string>
+    <string name="mb">%d мб</string>
     <string name="occupied_total">Занято/Всего:</string>
     <string name="_2f_gb_2f_gb">%.1f ГБ/%.1f ГБ</string>
     <string name="usage_ram">Использовано оперативной памяти</string>
@@ -36,6 +39,7 @@
     <string name="cool_down_your_phone">Охладите ваш телефон</string>
     <string name="speed_up_the_work_of_your_phone">Ускорьте работу вашего телефона</string>
     <string name="released_2f_gb">Освобождено %.1f ГБ</string>
+    <string name="released_d_gb">Освобождено %d ГБ</string>
     <string name="now_the_device_is_accelerated_by_d">Теперь устройство ускорено на %d%%</string>
     <string name="available_memory_2f_gb_2f_gb">Доступная память: %.1f ГБ/%.1f ГБ</string>
     <string name="working_time_increased_by_d">Время работы увеличено на %d%%</string>
@@ -64,4 +68,13 @@
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Прямо сейчас фоновые процессы и приложения перегревают процессор вашего телефона</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Регулярно охлаждайте телефон, чтобы снизить нагрузку на процессор, продлить срок его службы и ускорить работу вашего устройства</string>
     <string name="the_processor_overheated_cooling_is_required">Процессор перегрелся! Требуется охлаждение!</string>
+    <string name="garbage_detected">Обнаружен мусор</string>
+    <string name="deleting_unwanted_files_is_safe">Удаление нежелательных файлов безопасно</string>
+    <string name="cache">Кэш</string>
+    <string name="temp_files">Временные файлы</string>
+    <string name="residual_files">Остаточные файлы</string>
+    <string name="system_garbage">Системный мусор</string>
+    <string name="the_phone_is_cleared_of_excess_garbage">Телефон очищен от лишнего мусора!</string>
+    <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Телефон нуждается в очистке от лишнего мусора!</string>
+
 </resources>

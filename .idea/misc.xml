@@ -23,13 +23,14 @@
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners_white.xml" value="0.18" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/card_corners_white_min_corners.xml" value="0.121" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/ic_dot.xml" value="0.121" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/ic_icon_ok.xml" value="0.18" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/ic_thermometr.xml" value="0.18" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/drawable/progress_bar_gradient.xml" value="0.121" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/font/w.xml" value="0.2953125" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_battery.xml" value="0.264" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_boost.xml" value="0.26614583333333336" />
-        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_cleaning.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_cleaning.xml" value="0.264" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_cooling.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_first_scanning.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/bogat/AndroidStudioProjects/AR154/app/src/main/res/layout/fragment_loading.xml" value="0.22826086956521738" />

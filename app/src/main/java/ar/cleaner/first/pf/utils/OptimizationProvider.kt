@@ -41,16 +41,15 @@ object OptimizationProvider {
     }
 
     fun getJunkItems(): List<CacheInfo> {
-
         val list = arrayListOf<CacheInfo>()
-//        val rows = AppClass.instance.resources.getStringArray(R.array.junk_items)
+        val rows = AppClass.instance.resources.getStringArray(R.array.junk_items)
         val items =
             NativeProvider.getGarbageFilesCount(AppClass.instance)
         val sizes =
             NativeProvider.getGarbageSizeArray(AppClass.instance)
-//        for (i in 0 until rows.size) {
-//            list.add(CacheInfo(rows[i], sizes[i], items[i]))
-//        }
+        for (i in 0 until rows.size) {
+            list.add(CacheInfo(rows[i], sizes[i], items[i]))
+        }
         return list
     }
 

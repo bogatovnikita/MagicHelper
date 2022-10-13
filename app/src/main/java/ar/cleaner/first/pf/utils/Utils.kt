@@ -41,10 +41,11 @@ object Utils {
     fun getMemoryStorage(): StorageMemoryModel {
         val path = Environment.getExternalStorageDirectory()
         val stat = StatFs(path.path)
+        val fakeOccupied: Double = (OptimizationProvider.getGarbageSize()).toDouble() / 1024.0
         val totalStorageMemory =
             (stat.blockSizeLong * stat.blockCountLong).toDouble() / (1024.0 * 1024.0 * 1024.0)
         val occupiedStorageMemory =
-            totalStorageMemory - ((stat.blockSizeLong * stat.availableBlocksLong).toDouble() / (1024.0 * 1024.0 * 1024.0))
+            (totalStorageMemory + fakeOccupied) - ((stat.blockSizeLong * stat.availableBlocksLong).toDouble() / (1024.0 * 1024.0 * 1024.0))
         val percent = ((occupiedStorageMemory / totalStorageMemory) * 100).toInt()
         return StorageMemoryModel(occupiedStorageMemory, totalStorageMemory, percent)
     }

@@ -115,7 +115,7 @@ class ResultFragment(
         val infoStorage = OptimizationProvider.getMemoryStorage()
 
         with(binding) {
-            firstDescriptionTv.text = getString(R.string.released_2f_gb, junk)
+            firstDescriptionTv.text = getString(R.string.released_d_gb, junk)
 
             secondDescriptionTv.text =
                 getString(R.string.now_the_devices_memory_is_d_free, infoStorage.percent)

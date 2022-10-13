@@ -9,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
-import ar.cleaner.first.pf.ui.ads.showAds
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.utils.MenuItems
 import ar.cleaner.first.pf.utils.NativeProvider
@@ -41,62 +40,54 @@ class JunkProgressFragment(
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        binding.tvOptimization.text = getString(MenuItems.cleaning.title)
-        cleaning()
+        super.onViewCreated(view, savedInstanceState)
+        cleared()
     }
 
-    private fun cleaning() {
-        val items = NativeProvider.getFolders().toList().shuffled().subList(0, 20)
-        stringActions(items)
+    private fun cleared() {
+        val items = NativeProvider.getFolders().toList().shuffled().subList(0, 15)
+        stringAction(items.toList())
+
     }
 
-    private fun stringActions(items: List<String>) {
-        val adapter = ActionsAdapter(items.toList())
-//        binding.rvActions.apply {
-//            layoutManager = LinearLayoutManager(requireContext())
-//            this.adapter = adapter
-//        }
+    private fun stringAction(list: List<String>) {
+        val adapter = ActionsAdapter(list)
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            this.adapter = adapter
+        }
 
-        val repeat = items.size
-        startPercents()
+        val repeat = list.size
         lifecycleScope.launch(Dispatchers.Default) {
-            repeat(items.size) {
+            repeat(list.size) {
                 delay(TimeUnit.SECONDS.toMillis(8) / repeat)
                 withContext(Dispatchers.Main) {
                     adapter.removeFirst()
                 }
             }
             withContext(Dispatchers.Main) {
+                delay(500)
+                binding.recyclerView.visibility = View.GONE
+                binding.isDoneTv.visibility = View.VISIBLE
+                delay(1000)
                 binding.apply {
-                    showAds(){
-                        goNext()
-                    }
+//                    showAds() {
+                    goNext()
+//                    }
                 }
             }
         }
     }
 
-    private fun startPercents() {
-        lifecycleScope.launch(Dispatchers.Default) {
-            val step = 7000 / 100
-            for (i in 0 .. 100) {
-                withContext(Dispatchers.Main) {
-//                    binding.tvPercents.text = getString(R.string.d_percents, i)
-                }
-                delay(step.toLong())
-            }
-        }
+    private fun goNext() {
+        onComplete(MenuItems.CleaningJunk, null, garbage())
     }
 
-    private fun goNext(){
-//        onComplete(MenuItems.cleaning, null, garbage())
+    private fun garbage(): String {
+        val simpleData1 = OptimizationProvider.getGarbageSize().toString()
+        NativeProvider.junk(requireContext())
+        return simpleData1
     }
-
-//    private fun garbage(): String {
-//        val simpleData1 = OptimizationProvider.getGarbageSize().toString()
-//        NativeProvider.junk(requireContext())
-//        return simpleData1
-//    }
 
     override fun onDestroy() {
         super.onDestroy()

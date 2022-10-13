@@ -17,4 +17,11 @@
         <item>Отключить вибрацию</item>
     </array>
 
+    <array name="junk_items">
+        <item>Кэш</item>
+        <item>Временные файлы</item>
+        <item>Остаточные файлы</item>
+        <item>Системный мусор</item>
+    </array>
+
 </resources>
