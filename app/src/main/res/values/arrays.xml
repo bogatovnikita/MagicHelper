@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="boost_and_cooling_items">
-        <item>Удаление фоновых процессов...</item>
-        <item>Очистка системных путей...</item>
-        <item>Настройка системных ключей...</item>
-        <item>Проверка неиспользуемых компонентов...</item>
-        <item>Отключитесь от ненужных вышек GPS...</item>
+        <item>Removing background processes...</item>
+        <item>Clearing system paths...</item>
+        <item>Customizing system keys...</item>
+        <item>Checking unused components...</item>
+        <item>Disable unnecessary GPS towers...</item>
     </array>
 
     <array name="battery_items">
-        <item>Уменьшить яркость</item>
-        <item>Отключить автояркость</item>
-        <item>Отключить Wi-Fi</item>
-        <item>Заморозка фоновых приложений</item>
-        <item>Отключить Bluetooth</item>
-        <item>Отключить вибрацию</item>
+        <item>Decrease brightness</item>
+        <item>Disable Auto Brightness</item>
+        <item>Disable Wi-Fi</item>
+        <item>Freeze background applications</item>
+        <item>Disable Bluetooth</item>
+        <item>Disable Vibration</item>
     </array>
 
     <array name="junk_items">
-        <item>Кэш</item>
-        <item>Временные файлы</item>
-        <item>Остаточные файлы</item>
-        <item>Системный мусор</item>
+        <item>Cache</item>
+        <item>Temporary files</item>
+        <item>Residual files</item>
+        <item>System garbage</item>
     </array>
 
 </resources>

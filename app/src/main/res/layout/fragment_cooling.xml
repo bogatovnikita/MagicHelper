@@ -5,37 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_top_second_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_for_bottom_second_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
     <ImageView
         android:id="@+id/root_background_iv"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_330sdp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/background"
+        app:layout_constraintBottom_toTopOf="@id/guideline_for_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/arrow_back_iv"
-        android:layout_width="@dimen/_32sdp"
-        android:layout_height="@dimen/_32sdp"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginStart="@dimen/_8sdp"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintEnd_toStartOf="@id/title_tv"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guideline_for_arrow_back"
+        app:layout_constraintVertical_bias="0" />
 
     <TextView
         android:id="@+id/title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/cooling_cpu"
         android:textColor="@color/white"
-        android:textSize="@dimen/_18ssp"
+        android:textSize="@dimen/_16ssp"
         app:layout_constraintBottom_toBottomOf="@id/arrow_back_iv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrow_back_iv"
@@ -51,11 +80,12 @@
     <View
         android:id="@+id/optimize_is_done_background"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/card_corners_comet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arrow_back_iv" />
 
@@ -66,6 +96,7 @@
         android:layout_marginStart="@dimen/_16sdp"
         android:src="@drawable/ic_is_done"
         app:layout_constraintBottom_toBottomOf="@id/optimize_is_done_background"
+        app:layout_constraintDimensionRatio="H,1"
         app:layout_constraintStart_toStartOf="@id/optimize_is_done_background"
         app:layout_constraintTop_toTopOf="@id/optimize_is_done_background" />
 
@@ -77,7 +108,7 @@
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/cooling_cpu_description"
         android:textColor="@color/white"
-        android:textSize="@dimen/_14ssp"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/optimize_is_done_background"
         app:layout_constraintEnd_toEndOf="@id/optimize_is_done_background"
         app:layout_constraintStart_toEndOf="@id/icon_done_iv"
@@ -85,29 +116,31 @@
 
     <View
         android:id="@+id/first_view_for_background"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/card_corners_comet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/optimize_is_done_background" />
+        app:layout_constraintTop_toBottomOf="@id/optimize_is_done_background"
+        app:layout_goneMarginTop="@dimen/_24sdp" />
 
     <TextView
         android:id="@+id/description_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/processor_temperature"
         android:textColor="@color/white"
         android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/normal_temperature_tv"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toTopOf="@id/first_view_for_background"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <TextView
         android:id="@+id/normal_temperature_tv"
@@ -117,18 +150,25 @@
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/the_normal_temperature_of_the_processor_is_25_30"
         android:textColor="@color/white"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@id/icon_thermometer"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/description_tv" />
 
     <ImageView
         android:id="@+id/icon_thermometer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:src="@drawable/ic_thermometer"
         app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
+        app:layout_constraintDimensionRatio="W,1"
+        app:layout_constraintEnd_toStartOf="@id/percent_tv"
+        app:layout_constraintHeight_percent="0.035"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/normal_temperature_tv" />
 
@@ -139,13 +179,12 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
-        android:textSize="@dimen/_16ssp"
-        app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
-        app:layout_constraintHorizontal_bias="0"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="@id/icon_thermometer"
         app:layout_constraintStart_toEndOf="@id/icon_thermometer"
-        app:layout_constraintTop_toBottomOf="@id/normal_temperature_tv"
-        tools:text="@string/temperature_d" />
+        app:layout_constraintTop_toTopOf="@id/icon_thermometer"
+        tools:text="@string/temperature_D" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_is_not_optimize"
@@ -156,21 +195,19 @@
 
     <View
         android:id="@+id/second_view_for_background"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_120sdp"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
         android:background="@drawable/card_corners_white_min_corners"
-        app:layout_constraintBottom_toBottomOf="@id/root_background_iv"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_for_bottom_second_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_view_for_background"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintTop_toTopOf="@id/guideline_for_top_second_description" />
 
     <ImageView
         android:id="@+id/rocket_boost_iv"
-        android:layout_width="@dimen/_34sdp"
-        android:layout_height="@dimen/_34sdp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:src="@drawable/ic_thermometer_red"
@@ -182,9 +219,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:fontFamily="@font/heraclito_bold"
+        android:fontFamily="@font/heraclito_medium"
         android:text="@string/right_now_background_processes_and_apps_are_overheating_your_phones_processor"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
@@ -198,7 +235,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:fontFamily="@font/heraclito_bold"
+        android:fontFamily="@font/heraclito_medium"
         android:text="@string/cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device"
         android:textColor="@color/black"
         android:textSize="@dimen/_10ssp"
@@ -211,14 +248,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/danger_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:clickable="false"
         android:fontFamily="@font/heraclito_medium"
+        android:textAllCaps="false"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toTopOf="@id/boost_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/root_background_iv"
         app:layout_constraintVertical_bias="1"
@@ -229,16 +268,17 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boost_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:background="@drawable/background_button"
-        android:fontFamily="@font/heraclito_bold"
-        android:text="@string/speed_up"
+        android:fontFamily="@font/heraclito_medium"
+        android:text="@string/cooling_cpu"
         android:textAllCaps="false"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

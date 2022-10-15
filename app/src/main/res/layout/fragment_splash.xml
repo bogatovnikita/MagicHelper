@@ -6,20 +6,22 @@
 
     <ImageView
         android:id="@+id/icon_iv"
-        android:layout_width="@dimen/_180sdp"
-        android:layout_height="@dimen/_180sdp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
         android:src="@drawable/aso_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/name_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/name_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_8sdp"
-        android:fontFamily="@font/heraclito_regular"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/heraclito_medium"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -27,7 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon_iv"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@id/icon_iv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

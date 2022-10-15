@@ -38,9 +38,6 @@ class BatteryFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().window.statusBarColor =
-            ContextCompat.getColor(requireActivity(), R.color.dark_blue)
-
         initClickListener()
         initAdapter()
         checkState()
@@ -134,9 +131,9 @@ class BatteryFragment(
     @SuppressLint("StringFormatMatches")
     private fun initBatteryInfo() {
         BatteryChargeReceiver.getInfo().observe(viewLifecycleOwner) {
-            binding.percentTv.text = getString(R.string.percent_d, it)
+            binding.percentTv.text = getString(R.string.percent_D, it)
             binding.occupiedTotalTv.text = getString(
-                R.string.battery_power_only_time,
+                R.string.battery_power_only_time_D_D,
                 *OptimizationProvider.getVarArgs(MenuItems.BatteryPower)
             )
             binding.progressBar.progress = it

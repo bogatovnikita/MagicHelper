@@ -37,7 +37,7 @@ class JunkFragment(
     @SuppressLint("StringFormatMatches")
     private fun checkJunk() {
         binding.percentTv.text =
-            getString(R.string.mb, *OptimizationProvider.getVarArgs(MenuItems.CleaningJunk))
+            getString(R.string.mb_D, *OptimizationProvider.getVarArgs(MenuItems.CleaningJunk))
         if (OptimizationProvider.checkIsOptimized(MenuItems.CleaningJunk)) isOptimized() else isNotOptimized()
     }
 
@@ -58,10 +58,10 @@ class JunkFragment(
     private fun isNotOptimized() {
         val listItems = OptimizationProvider.getJunkItems()
         with(binding) {
-            cacheCountTv.text = getString(R.string.mb, listItems[0].size)
-            tempFilesCountTv.text = getString(R.string.mb, listItems[1].size)
-            residualFilesCountTv.text = getString(R.string.mb, listItems[2].size)
-            systemGarbageCountTv.text = getString(R.string.mb, listItems[3].size)
+            cacheCountTv.text = getString(R.string.mb_D, listItems[0].size)
+            tempFilesCountTv.text = getString(R.string.mb_D, listItems[1].size)
+            residualFilesCountTv.text = getString(R.string.mb_D, listItems[2].size)
+            systemGarbageCountTv.text = getString(R.string.mb_D, listItems[3].size)
         }
         binding.dangerButton.apply {
             background =

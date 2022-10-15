@@ -84,14 +84,14 @@ class CustomProgressBar(
         progressPaint.style = Paint.Style.STROKE
         progressPaint.strokeCap = Paint.Cap.ROUND
         progressPaint.strokeWidth =
-            TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20f, resources.displayMetrics)
+            TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15f, resources.displayMetrics)
 
         indicatorPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         indicatorPaint.color = indicatorColor
         indicatorPaint.style = Paint.Style.STROKE
         indicatorPaint.strokeCap = Paint.Cap.ROUND
         indicatorPaint.strokeWidth =
-            TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20f, resources.displayMetrics)
+            TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15f, resources.displayMetrics)
 
         shadowPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         shadowPaint.color = shadowColor

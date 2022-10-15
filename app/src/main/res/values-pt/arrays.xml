@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="boost_and_cooling_items">
+        <item>Removendo processos em segundo plano...</item>
+        <item>Caminhos do sistema de compensação...</item>
+        <item>Personalização das chaves do sistema...</item>
+        <item>Verificação de componentes não utilizados...</item>
+        <item>Desativar torres de GPS desnecessárias...</item>
+    </array>
+
+    <array name="battery_items">
+        <item>Diminuir o brilho</item>
+        <item>Desactivar O Brilho Automático</item>
+        <item>Desativar Wi-Fi</item>
+        <item>Congelar aplicações em segundo plano</item>
+        <item>Desativar Bluetooth</item>
+        <item>Desativar Vibração</item>
+    </array>
+
+    <array name="junk_items">
+        <item>Cache</item>
+        <item>Ficheiros temporários</item>
+        <item>Ficheiros residuais</item>
+        <item>Lixo do sistema</item>
+    </array>
+</resources>

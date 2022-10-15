@@ -31,8 +31,6 @@ class BoostFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().window.statusBarColor =
-            ContextCompat.getColor(requireActivity(), R.color.dark_blue)
         binding.arrowBackIv.setOnClickListener { requireActivity().onBackPressed() }
         checkState()
     }
@@ -48,10 +46,10 @@ class BoostFragment(
 
     private fun isNotOptimized() {
         with(binding) {
-            percentTv.text = getString(R.string.percent_d, ramUsageInfo.percent)
+            percentTv.text = getString(R.string.percent_D, ramUsageInfo.percent)
             progressBar.progress = ramUsageInfo.percent
             occupiedTotalTv.text =
-                getString(R.string._2f_gb_2f_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
+                getString(R.string._F_gb_F_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
             dangerButton.apply {
                 background =
                     ContextCompat.getDrawable(requireContext(), R.drawable.background_button_danger)
@@ -67,7 +65,7 @@ class BoostFragment(
             groupIsNotOptimize.visibility = View.GONE
             progressBar.progress = ramUsageInfo.percent
             occupiedTotalTv.text =
-                getString(R.string._2f_gb_2f_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
+                getString(R.string._F_gb_F_gb, ramUsageInfo.usageGb, ramUsageInfo.totalGb)
             dangerButton.apply {
                 background =
                     ContextCompat.getDrawable(

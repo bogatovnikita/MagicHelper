@@ -69,14 +69,14 @@ class ResultFragment(
         val percentsFree = data.percent - currentInfo.percent
 
         with(binding) {
-            firstDescriptionTv.text = getString(R.string.released_2f_gb, nowFreeGb)
+            firstDescriptionTv.text = getString(R.string.released_F_gb, nowFreeGb)
 
             secondDescriptionTv.text =
-                getString(R.string.now_the_device_is_accelerated_by_d, percentsFree)
+                getString(R.string.now_the_device_is_accelerated_by_D, percentsFree)
 
             thirdDescriptionTv.text =
                 getString(
-                    R.string.available_memory_2f_gb_2f_gb,
+                    R.string.available_memory_F_gb_F_gb,
                     currentInfo.availableGb,
                     currentInfo.totalGb
                 )
@@ -98,15 +98,15 @@ class ResultFragment(
 
         with(binding) {
             firstDescriptionTv.text =
-                getString(R.string.battery_power_optimized, hoursOptimized, minutesOptimized)
+                getString(R.string.battery_power_optimized_D_D, hoursOptimized, minutesOptimized)
 
             secondDescriptionTv.text = getString(
-                R.string.working_time_increased_by_d,
+                R.string.working_time_increased_by_D,
                 ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
             )
 
             thirdDescriptionTv.text =
-                getString(R.string.remaining_charging_time_d_h_d_min, hours, minutes)
+                getString(R.string.remaining_charging_time_D_h_D_min, hours, minutes)
         }
     }
 
@@ -115,13 +115,13 @@ class ResultFragment(
         val infoStorage = OptimizationProvider.getMemoryStorage()
 
         with(binding) {
-            firstDescriptionTv.text = getString(R.string.released_d_gb, junk)
+            firstDescriptionTv.text = getString(R.string.released_D_gb, junk)
 
             secondDescriptionTv.text =
-                getString(R.string.now_the_devices_memory_is_d_free, infoStorage.percent)
+                getString(R.string.now_the_devices_memory_is_D_free, infoStorage.percent)
 
             thirdDescriptionTv.text = getString(
-                R.string.available_memory_2f_gb_2f_gb, infoStorage.occupiedStorageMemory,
+                R.string.available_memory_F_gb_F_gb, infoStorage.occupiedStorageMemory,
                 infoStorage.totalStorageMemory
             )
         }
@@ -132,10 +132,10 @@ class ResultFragment(
         val currentTemp = BatInfoReceiver.getBatteryInfo().value ?: 0
         val cooled = oldTemperature - currentTemp
         with(binding) {
-            firstDescriptionTv.text = getString(R.string.cooled_d, cooled)
+            firstDescriptionTv.text = getString(R.string.cooled_D, cooled)
             secondDescriptionTv.text =
                 getString(R.string.the_normal_temperature_of_the_processor_is_25_30)
-            thirdDescriptionTv.text = getString(R.string.processor_temperature_d, currentTemp)
+            thirdDescriptionTv.text = getString(R.string.processor_temperature_D, currentTemp)
         }
     }
 

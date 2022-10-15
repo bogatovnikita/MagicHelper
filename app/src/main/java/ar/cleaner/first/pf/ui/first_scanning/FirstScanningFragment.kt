@@ -59,7 +59,7 @@ class FirstScanningFragment(
                             binding.titleTv.text = getString(R.string.done)
                         }
                     }
-                    binding.percentProgressBarTv.text = getString(R.string.percent_d, i)
+                    binding.percentProgressBarTv.text = getString(R.string.percent_D, i)
                     binding.progressBar.progress = i.toFloat()
                     animationProgressBar(i)
                     delay(70)

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="boost_and_cooling_items">
+        <item>Hintergrundprozesse entfernen...</item>
+        <item>Systempfade löschen...</item>
+        <item>Anpassen von Systemschlüsseln...</item>
+        <item>Überprüfung nicht verwendeter Komponenten...</item>
+        <item>Deaktivieren Sie unnötige GPS-Türme...</item>
+    </array>
+
+    <array name="battery_items">
+        <item>Helligkeit verringern</item>
+        <item>Automatische Helligkeit deaktivieren</item>
+        <item>WLAN deaktivieren</item>
+        <item>Hintergrundanwendungen einfrieren</item>
+        <item>Bluetooth deaktivieren</item>
+        <item>Vibration deaktivieren</item>
+    </array>
+
+    <array name="junk_items">
+        <item>Cache</item>
+        <item>Temporäre Dateien</item>
+        <item>Restdateien</item>
+        <item>Systemmüll</item>
+    </array>
+</resources>

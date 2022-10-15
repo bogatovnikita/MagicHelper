@@ -35,6 +35,7 @@ class MenuFragment(
         super.onViewCreated(view, savedInstanceState)
         requireActivity().window.statusBarColor =
             ContextCompat.getColor(requireActivity(), R.color.dark_blue)
+        requireActivity().window.decorView.systemUiVisibility = 0
 
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = MenuAdapter(OptimizationProvider) {
@@ -49,14 +50,14 @@ class MenuFragment(
         val infoStorage = OptimizationProvider.getMemoryStorage()
         with(binding) {
             ramProgressBar.progressPercent = infoRam.percent.toFloat()
-            ramPercentTv.text = getString(R.string.percent_d, infoRam.percent)
+            ramPercentTv.text = getString(R.string.percent_D, infoRam.percent)
             descriptionRamTv.text =
-                getString(R.string._2f_gb_2f_gb, infoRam.usageGb, infoRam.totalGb)
+                getString(R.string._F_gb_F_gb, infoRam.usageGb, infoRam.totalGb)
 
             storageProgressBar.progressPercent = infoStorage.percent.toFloat()
-            storagePercentTv.text = getString(R.string.percent_d, infoStorage.percent)
+            storagePercentTv.text = getString(R.string.percent_D, infoStorage.percent)
             descriptionStorageTv.text = getString(
-                R.string._2f_gb_2f_gb,
+                R.string._F_gb_F_gb,
                 infoStorage.occupiedStorageMemory,
                 infoStorage.totalStorageMemory
             )

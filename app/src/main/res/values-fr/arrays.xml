@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="boost_and_cooling_items">
+        <item>Suppression des processus d`arrière-plan...</item>
+        <item>Effacer les chemins du système...</item>
+        <item>Personnalisation des clés système...</item>
+        <item>Vérification des composants inutilisés...</item>
+        <item>Désactivez les tours GPS inutiles...</item>
+    </array>
+
+    <array name="battery_items">
+        <item>Diminuer la luminosité</item>
+        <item>Désactiver la Luminosité Automatique</item>
+        <item>Désactiver le Wi-Fi</item>
+        <item>Geler les applications en arrière-plan</item>
+        <item>Désactiver le Bluetooth</item>
+        <item>Désactiver les Vibrations</item>
+    </array>
+
+    <array name="junk_items">
+        <item>Cache</item>
+        <item>Fichiers temporaires</item>
+        <item>Fichiers résiduels</item>
+        <item>Ordures du système</item>
+    </array>
+</resources>

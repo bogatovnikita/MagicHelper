@@ -17,8 +17,10 @@
             <shape>
                 <corners android:radius="@dimen/_10sdp" />
                 <gradient
+                    android:useLevel="true"
                     android:endColor="@color/dark_blue"
-                    android:startColor="@color/green" />
+                    android:centerColor="@color/green"
+                    android:startColor="@color/dark_green" />
             </shape>
         </clip>
     </item>
