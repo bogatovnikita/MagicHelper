@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_4sdp"
+    android:layout_height="@dimen/_160sdp"
+    android:layout_margin="@dimen/_8sdp"
     android:background="@drawable/card_corners_white_min_corners"
     android:elevation="@dimen/_8sdp">
 
     <TextView
         android:id="@+id/title_tv"
         android:layout_width="0dp"
+        android:maxLines="1"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_12sdp"
@@ -31,12 +32,13 @@
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_medium"
+        android:maxLines="2"
         android:textColor="@color/black"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toTopOf="@id/icon_iv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv"
         tools:text="@string/battery_power_description_D_D" />
 
     <ImageView
@@ -45,7 +47,7 @@
         android:layout_height="@dimen/_75sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_12sdp"
-        android:src="@drawable/ic_battery"
+        tools:src="@drawable/ic_battery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="facebook_key" translatable="false">629971811966975</string>
-    <string name="app_name" translatable="false">Cleaner - clean the memory, cache, phone</string>
+    <string name="app_name">Cleaner - clean the memory, cache, phone</string>
     <string name="boost_description_not_optimized_S">Speed up %s%%</string>
     <string name="temp_files">Temporary files</string>
     <string name="storage_location">Storage space</string>
@@ -22,8 +22,8 @@
     <string name="modes_of_increasing_the_working_time">Modes to boost uptime</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Cool your phone regularly to reduce processor strain, extend its life, and make your device run faster</string>
     <string name="ram">RAM</string>
-    <string name="normal_mode_10">Normal</string>
-    <string name="battery_power">Power</string>
+    <string name="normal_mode_10">+10\nNormal</string>
+    <string name="battery_power">Charging</string>
     <string name="extra_mode_activates_restrictions">Extra mode activates restrictions:</string>
     <string name="garbage_detected">Debris detected</string>
     <string name="cache">Cache</string>
@@ -35,7 +35,7 @@
     <string name="cooling_cpu_description">Cooling done</string>
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="done">Done!</string>
-    <string name="ultra_mode_30">Ultra</string>
+    <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
     <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Cleaning</string>
@@ -53,7 +53,7 @@
     <string name="processor_temperature">Processor temperature</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Runtime increased by %d%%</string>
-    <string name="extra_mode_60">Extra</string>
+    <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
     <string name="normal_mode_activates_restrictions">Normal mode activates restrictions:</string>
     <string name="battery_power_description_D_D">%d h %d min left</string>

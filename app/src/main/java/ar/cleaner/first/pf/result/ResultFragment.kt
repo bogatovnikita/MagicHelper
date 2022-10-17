@@ -65,9 +65,11 @@ class ResultFragment(
     private fun boostResult() {
         val data = gson.fromJson(arguments?.getString(DATA_OBJECT), RamUsageModel::class.java)
         val currentInfo = OptimizationProvider.getRamUsageInfo()
-        val nowFreeGb: Double = currentInfo.availableGb - data.availableGb
+        var nowFreeGb: Double = currentInfo.availableGb - data.availableGb
         val percentsFree = data.percent - currentInfo.percent
-
+        if (nowFreeGb < 0.0) {
+            nowFreeGb = 0.0
+        }
         with(binding) {
             firstDescriptionTv.text = getString(R.string.released_F_gb, nowFreeGb)
 
@@ -91,7 +93,12 @@ class ResultFragment(
         )
         val optimizedMinutes = minutesNow - minutesOld
         val hoursOptimized = optimizedMinutes / 60
-        val minutesOptimized = optimizedMinutes % 60
+        var minutesOptimized = optimizedMinutes % 60
+        var allTimes = ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
+        if (minutesOptimized < 0) {
+            minutesOptimized = 0
+            allTimes = 0
+        }
 
         val hours = minutesNow / 60
         val minutes = minutesNow % 60
@@ -102,7 +109,7 @@ class ResultFragment(
 
             secondDescriptionTv.text = getString(
                 R.string.working_time_increased_by_D,
-                ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
+                allTimes
             )
 
             thirdDescriptionTv.text =

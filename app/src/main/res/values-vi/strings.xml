@@ -10,7 +10,7 @@
     <string name="theres_not_much_left">Không còn nhiều…</string>
     <string name="remaining_charging_time_D_h_D_min">Thời gian sạc còn lại %d h %d min</string>
     <string name="cooling_cpu">Làm mát</string>
-    <string name="available_memory_F_gb_F_gb">Bộ nhớ có sẵn: %.1f GB/ %.1F GB</string>
+    <string name="available_memory_F_gb_F_gb">Bộ nhớ có sẵn: %.1f GB/ %.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Xóa các tệp không mong muốn một cách an toàn</string>
     <string name="now_the_device_is_accelerated_by_D">Thiết bị của bạn hiện nhanh hơn %d%%</string>
     <string name="optimize">Tối ưu hóa</string>
@@ -20,7 +20,7 @@
     <string name="modes_of_increasing_the_working_time">Các chế độ để tăng thời gian hoạt động</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Làm mát điện thoại của bạn thường xuyên để giảm căng thẳng bộ xử lý, kéo dài tuổi thọ và làm cho thiết bị của bạn chạy nhanh hơn</string>
     <string name="ram">ĐẬP</string>
-    <string name="normal_mode_10">Bình thường</string>
+    <string name="normal_mode_10">+10\nBình thường</string>
     <string name="battery_power">Quyền lực</string>
     <string name="extra_mode_activates_restrictions">Chế độ bổ sung kích hoạt các hạn chế:</string>
     <string name="garbage_detected">Các mảnh vụn được phát hiện</string>
@@ -33,7 +33,7 @@
     <string name="cooling_cpu_description">Làm mát được thực hiện</string>
     <string name="extend_the_operation_of_your_phone">Kéo dài cuộc sống của điện thoại của bạn</string>
     <string name="done">Xong!</string>
-    <string name="ultra_mode_30">Cực kỳ</string>
+    <string name="ultra_mode_30">+30\nCực kỳ</string>
     <string name="battery_power_optimized_D_D">Tối ưu hóa %d H %d min</string>
     <string name="battery_power_only_time_D_D">%d h %d phút</string>
     <string name="clear_junk">Làm sạch</string>
@@ -51,7 +51,7 @@
     <string name="processor_temperature">Nhiệt độ bộ xử lý</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Thời gian chạy tăng %d%%</string>
-    <string name="extra_mode_60">Thêm</string>
+    <string name="extra_mode_60">+60\nThêm</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Điện thoại được xóa rác không cần thiết!</string>
     <string name="normal_mode_activates_restrictions">Chế độ bình thường kích hoạt các hạn chế:</string>
     <string name="battery_power_description_D_D">%d h %d phút còn lại</string>
@@ -75,4 +75,5 @@
     <string name="memory_is_overloaded_optimization_is_required">Bộ nhớ bị quá tải! Yêu cầu tối ưu hóa!</string>
     <string name="cooled_D">Hạ nhiệt %d℃</string>
     <string name="optimization_is_done">Tối ưu hóa được thực hiện</string>
+    <string name="app_name">Cleaner-làm sạch bộ nhớ, bộ nhớ cache, điện thoại</string>
 </resources>

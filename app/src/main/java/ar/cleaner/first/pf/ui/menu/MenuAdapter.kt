@@ -1,6 +1,6 @@
 package ar.cleaner.first.pf.ui.menu
 
-import android.util.Log
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -12,6 +12,7 @@ import ar.cleaner.first.pf.utils.OptimizationProvider
 
 class MenuAdapter(
     private val optimizationProvider: OptimizationProvider,
+    private val context: Context,
     private val onItemSelected: (MenuItems) -> Unit,
 ) :
     RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
@@ -38,26 +39,26 @@ class MenuAdapter(
         fun onBind(menuItems: MenuItems) {
             binding.apply {
                 iconIv.setImageResource(menuItems.icon)
-                titleTv.text = binding.root.context.getString(menuItems.title)
+                titleTv.text = context.getString(menuItems.title)
             }
             if (optimizationProvider.checkIsOptimized(menuItems)) {
                 val text = when (menuItems) {
-                    MenuItems.BatteryPower -> binding.root.context.getString(
+                    MenuItems.BatteryPower -> context.getString(
                         menuItems.description,
                         *OptimizationProvider.getVarArgs(menuItems)
                     )
-                    else -> binding.root.context.getString(
+                    else -> context.getString(
                         menuItems.description
                     )
                 }
                 binding.descriptionTv.text = text
             } else {
                 binding.apply {
-                    descriptionTv.text = binding.root.context.getString(
+                    descriptionTv.text = context.getString(
                         menuItems.description_not_optimized,
                         *OptimizationProvider.getVarArgs(menuItems)
                     )
-                    val redColorText = ContextCompat.getColor(binding.root.context, R.color.red)
+                    val redColorText = ContextCompat.getColor(context, R.color.red)
                     descriptionTv.setTextColor(redColorText)
                 }
             }

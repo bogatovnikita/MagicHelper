@@ -27,11 +27,11 @@ import ar.cleaner.first.pf.ui.splash.SplashFragment
 
 class NavigationFragmentFactory : FragmentFactory() {
 
-    private var scenario: Scenario = Scenario1
-
-    init {
-        Actions.onBack = {scenario = Scenario2 }
-    }
+    private var scenario: Scenario = Scenario2
+//
+//    init {
+//        Actions.onBack = {scenario = Scenario2 }
+//    }
 
     override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
         return when(className){

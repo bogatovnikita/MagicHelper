@@ -61,6 +61,7 @@ class BoostFragment(
 
     private fun isOptimized() {
         with(binding) {
+            percentTv.text = getString(R.string.percent_D, ramUsageInfo.percent)
             groupOptimizeIsDone.visibility = View.VISIBLE
             groupIsNotOptimize.visibility = View.GONE
             progressBar.progress = ramUsageInfo.percent

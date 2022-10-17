@@ -21,7 +21,7 @@ interface Scenario {
 object Scenario1 : Scenario {
     override val firstScanning: Fragment.() -> Unit = {
         goToMenu()
-//        goToBoost()
+        goToBoost()
     }
     override val boostingProgress: Fragment.(MenuItems, Any?, String?) -> Unit ={ _, _, _->
         goToJunk()

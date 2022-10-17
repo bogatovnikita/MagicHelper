@@ -3,14 +3,14 @@
     <string name="boost_description_not_optimized_S">%s%% hızla</string>
     <string name="temp_files">Geçici dosyalar</string>
     <string name="storage_location">Depolama alanı</string>
-    <string name="released_F_gb">%.1F GB çıktı</string>
+    <string name="released_F_gb">%.1f GB çıktı</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Telefonun şu anda soğutulmasına gerek yok!</string>
     <string name="clean_junk_description">Temizlemek!</string>
     <string name="released_D_gb">Ücretsiz %dGB</string>
     <string name="theres_not_much_left">Çok fazla kalmadı …</string>
     <string name="remaining_charging_time_D_h_D_min">Kalan şarj süresi %d h %d dakika</string>
     <string name="cooling_cpu">Soğutma</string>
-    <string name="available_memory_F_gb_F_gb">Mevcut Bellek: %.1f GB/ %.1F GB</string>
+    <string name="available_memory_F_gb_F_gb">Mevcut Bellek: %.1f GB/ %.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">İstenmeyen dosyaları güvenli bir şekilde silin</string>
     <string name="now_the_device_is_accelerated_by_D">Cihazınız artık %d%%</string>
     <string name="optimize">Optimize etmek</string>
@@ -20,7 +20,7 @@
     <string name="modes_of_increasing_the_working_time">Çalışma süresini artırmak için modlar</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">İşlemci gerilimini azaltmak, ömrünü uzatmak ve cihazınızın daha hızlı çalışmasını sağlamak için telefonunuzu düzenli olarak soğutun</string>
     <string name="ram">Veri deposu</string>
-    <string name="normal_mode_10">Normal</string>
+    <string name="normal_mode_10">+10\nNormal</string>
     <string name="battery_power">Güç</string>
     <string name="extra_mode_activates_restrictions">Ekstra mod kısıtlamaları etkinleştirir:</string>
     <string name="garbage_detected">Enkaz tespit edildi</string>
@@ -33,7 +33,7 @@
     <string name="cooling_cpu_description">Soğutma Yapıldı</string>
     <string name="extend_the_operation_of_your_phone">Telefonunuzun hayatını uzatın</string>
     <string name="done">Tamamlandı!</string>
-    <string name="ultra_mode_30">Ultra</string>
+    <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Optimize edilmiş %d saat %d dakika</string>
     <string name="battery_power_only_time_D_D">%d h %d dk</string>
     <string name="clear_junk">Temizlik</string>
@@ -51,7 +51,7 @@
     <string name="processor_temperature">İşlemci sıcaklığı</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Çalışma zamanı %d %%arttı</string>
-    <string name="extra_mode_60">Ekstra</string>
+    <string name="extra_mode_60">+60\nEkstra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Telefon gereksiz çöplerden temizlendi!</string>
     <string name="normal_mode_activates_restrictions">Normal mod kısıtlamaları etkinleştirir:</string>
     <string name="battery_power_description_D_D">%d h %d dk sol</string>
@@ -75,4 +75,5 @@
     <string name="memory_is_overloaded_optimization_is_required">Hafıza aşırı yüklenir! Optimizasyon gerekli!</string>
     <string name="cooled_D">Soğutulmuş%d℃</string>
     <string name="optimization_is_done">Optimizasyon tamamlandı</string>
+    <string name="app_name">Temizleyici - hafızayı, önbelleği, telefonu temizleyin</string>
 </resources>

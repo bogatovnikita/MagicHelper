@@ -38,7 +38,7 @@ class MenuFragment(
         requireActivity().window.decorView.systemUiVisibility = 0
 
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.recyclerView.adapter = MenuAdapter(OptimizationProvider) {
+        binding.recyclerView.adapter = MenuAdapter(OptimizationProvider,requireContext()) {
             when (it) {
                 MenuItems.Boost -> onBoost()
                 MenuItems.BatteryPower -> onBattery()

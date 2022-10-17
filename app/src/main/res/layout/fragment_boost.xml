@@ -220,15 +220,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/right_now_background_processes_and_applications_are_overloading_ram"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/reduce_ram_tv"
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintStart_toEndOf="@id/rocket_boost_iv"
-        app:layout_constraintTop_toTopOf="@id/second_view_for_background" />
+        app:layout_constraintTop_toTopOf="@id/second_view_for_background"
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/reduce_ram_tv"
@@ -244,7 +245,7 @@
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintStart_toStartOf="@id/second_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/overloading_ram_tv"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/danger_button"
@@ -253,7 +254,10 @@
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:clickable="false"
+        android:ellipsize="end"
         android:fontFamily="@font/heraclito_medium"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/_4sdp"
         android:textAllCaps="false"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toTopOf="@id/boost_button"

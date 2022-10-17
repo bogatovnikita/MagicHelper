@@ -20,7 +20,7 @@
     <string name="modes_of_increasing_the_working_time">Modos para aumentar o tempo de atividade</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Esfriar seu telefone regularmente para reduzir a tensão do processador, prolongar sua vida útil e fazer seu dispositivo funcionar mais rápido</string>
     <string name="ram">BATER</string>
-    <string name="normal_mode_10">Normal</string>
+    <string name="normal_mode_10">+10\nNormal</string>
     <string name="battery_power">Poder</string>
     <string name="extra_mode_activates_restrictions">O modo extra ativa restrições:</string>
     <string name="garbage_detected">Detritos detectados.</string>
@@ -33,7 +33,7 @@
     <string name="cooling_cpu_description">Resfriamento feito</string>
     <string name="extend_the_operation_of_your_phone">Estender a vida do seu telefone</string>
     <string name="done">Feito!</string>
-    <string name="ultra_mode_30">Ultra</string>
+    <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Otimizado %d h %d min</string>
     <string name="battery_power_only_time_D_D">%d H %d min</string>
     <string name="clear_junk">Limpeza</string>
@@ -51,7 +51,7 @@
     <string name="processor_temperature">Temperatura do processador</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">O tempo de execução aumentou %d%%</string>
-    <string name="extra_mode_60">Extra</string>
+    <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">O telefone é liberado de lixo desnecessário!</string>
     <string name="normal_mode_activates_restrictions">O modo normal ativa as restrições:</string>
     <string name="battery_power_description_D_D">%d H %d min restantes</string>
@@ -75,4 +75,5 @@
     <string name="memory_is_overloaded_optimization_is_required">A memória fica sobrecarregada! Otimização necessária!</string>
     <string name="cooled_D">Resfriado %d℃</string>
     <string name="optimization_is_done">Otimização realizada</string>
+    <string name="app_name">Limpador-limpe a memória, cache, telefone</string>
 </resources>

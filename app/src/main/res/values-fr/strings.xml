@@ -9,7 +9,7 @@
     <string name="released_D_gb">GRATUIT %d Go</string>
     <string name="theres_not_much_left">Il ne reste pas beaucoup…</string>
     <string name="remaining_charging_time_D_h_D_min">Temps de charge restant %d h %d min</string>
-    <string name="cooling_cpu">Refroidissement</string>
+    <string name="cooling_cpu">Cooling</string>
     <string name="available_memory_F_gb_F_gb">Mémoire disponible: %.1f gb /%.1f gb</string>
     <string name="deleting_unwanted_files_is_safe">Supprimer les fichiers indésirables en toute sécurité</string>
     <string name="now_the_device_is_accelerated_by_D">Votre appareil est maintenant plus rapide de %d%%</string>
@@ -20,7 +20,7 @@
     <string name="modes_of_increasing_the_working_time">Modes pour augmenter la disponibilité</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Refroidissez votre téléphone régulièrement pour réduire la tension du processeur, prolonger sa durée de vie et rendre votre appareil plus rapidement</string>
     <string name="ram">RAM</string>
-    <string name="normal_mode_10">Normal</string>
+    <string name="normal_mode_10">+10\nNormal</string>
     <string name="battery_power">Du pouvoir</string>
     <string name="extra_mode_activates_restrictions">Le mode supplémentaire active les restrictions:</string>
     <string name="garbage_detected">Débris détectés</string>
@@ -33,7 +33,7 @@
     <string name="cooling_cpu_description">Refroidissement fait</string>
     <string name="extend_the_operation_of_your_phone">Prolonger la vie de votre téléphone</string>
     <string name="done">Fait!</string>
-    <string name="ultra_mode_30">Ultra</string>
+    <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Optimisé %d H %d min</string>
     <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Nettoyage</string>
@@ -51,7 +51,7 @@
     <string name="processor_temperature">Température du processeur</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Le temps d`exécution a augmenté de %d%%</string>
-    <string name="extra_mode_60">En plus</string>
+    <string name="extra_mode_60">+60\nEn plus</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Le téléphone est effacé des ordures inutiles!</string>
     <string name="normal_mode_activates_restrictions">Le mode normal active les restrictions:</string>
     <string name="battery_power_description_D_D">%d h %d min à gauche</string>
@@ -75,4 +75,5 @@
     <string name="memory_is_overloaded_optimization_is_required">La mémoire est surchargée! Optimisation requise!</string>
     <string name="cooled_D">Refroidi %d℃</string>
     <string name="optimization_is_done">Optimisation effectuée</string>
+    <string name="app_name">Cleaner-nettoyer la mémoire, le cache, le téléphone</string>
 </resources>

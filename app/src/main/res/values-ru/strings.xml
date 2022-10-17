@@ -76,5 +76,6 @@
     <string name="system_garbage">Системный мусор</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Телефон очищен от лишнего мусора!</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Телефон нуждается в очистке от лишнего мусора!</string>
+    <string name="app_name">Очиститель - очистите память, кэш, телефон</string>
 
 </resources>
