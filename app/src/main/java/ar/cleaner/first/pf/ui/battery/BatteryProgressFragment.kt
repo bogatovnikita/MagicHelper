@@ -32,6 +32,13 @@ class BatteryProgressFragment(
 
     private lateinit var type: OptimizationTypes
 
+    private var scanIsDone = false
+
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) scanIsDone()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,7 +57,6 @@ class BatteryProgressFragment(
         type = OptimizationTypes.valueOf(
             requireArguments().getString(OPTIMIZATION_TYPE)!!
         )
-        Utils.setScreenBrightness(5)
         val strings = resources.getStringArray(R.array.battery_items).toList()
         val items = when (type) {
             OptimizationTypes.BatteryLow -> {
@@ -70,6 +76,8 @@ class BatteryProgressFragment(
             layoutManager = LinearLayoutManager(requireContext())
             this.adapter = adapter
         }
+        Utils.turnOffBluetooth()
+        WifiSwitch(requireContext()).disable()
         val repeat = items.size
         lifecycleScope.launch(Dispatchers.Default) {
             repeat(items.size) {
@@ -78,6 +86,13 @@ class BatteryProgressFragment(
                     adapter.removeFirst()
                 }
             }
+            scanIsDone = true
+            if (scanIsDone) scanIsDone()
+        }
+    }
+
+    private fun scanIsDone() {
+        lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
                 delay(500)
                 binding.recyclerView.visibility = View.GONE

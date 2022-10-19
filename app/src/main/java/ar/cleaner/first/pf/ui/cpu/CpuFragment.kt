@@ -69,7 +69,6 @@ class CpuFragment(
         }
     }
 
-
     private fun initView() {
         BatInfoReceiver.getBatteryInfo().observe(viewLifecycleOwner) {
             binding.percentTv.text = getString(R.string.temperature_D, it)

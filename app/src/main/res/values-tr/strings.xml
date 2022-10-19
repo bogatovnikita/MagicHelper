@@ -3,10 +3,10 @@
     <string name="boost_description_not_optimized_S">%s%% hızla</string>
     <string name="temp_files">Geçici dosyalar</string>
     <string name="storage_location">Depolama alanı</string>
-    <string name="released_F_gb">%.1f GB çıktı</string>
+    <string name="released_F_gb">%.1f Mb çıktı</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Telefonun şu anda soğutulmasına gerek yok!</string>
     <string name="clean_junk_description">Temizlemek!</string>
-    <string name="released_D_gb">Ücretsiz %dGB</string>
+    <string name="released_D_gb">Ücretsiz %d Mb</string>
     <string name="theres_not_much_left">Çok fazla kalmadı …</string>
     <string name="remaining_charging_time_D_h_D_min">Kalan şarj süresi %d h %d dakika</string>
     <string name="cooling_cpu">Soğutma</string>
@@ -14,7 +14,7 @@
     <string name="deleting_unwanted_files_is_safe">İstenmeyen dosyaları güvenli bir şekilde silin</string>
     <string name="now_the_device_is_accelerated_by_D">Cihazınız artık %d%%</string>
     <string name="optimize">Optimize etmek</string>
-    <string name="mb_D">%d MB</string>
+    <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
     <string name="residual_files">Kalan dosyalar</string>
     <string name="modes_of_increasing_the_working_time">Çalışma süresini artırmak için modlar</string>

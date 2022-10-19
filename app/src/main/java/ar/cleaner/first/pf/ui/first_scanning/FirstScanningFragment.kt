@@ -3,6 +3,7 @@ package ar.cleaner.first.pf.ui.first_scanning
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,7 @@ class FirstScanningFragment(
 
     private var _binding: FragmentFirstScanningBinding? = null
     private val binding get() = _binding!!
+    private var scanIsDone = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,6 +67,13 @@ class FirstScanningFragment(
                     delay(70)
                 }
             }
+            scanIsDone = true
+            if (scanIsDone) goNext()
+        }
+    }
+
+    private fun goNext() {
+        lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
                 binding.apply {
 //                    showAds() {
@@ -73,6 +82,11 @@ class FirstScanningFragment(
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) goNext()
     }
 
     override fun onDestroy() {

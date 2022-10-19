@@ -26,7 +26,7 @@
     <string name="optimization_is_done">Оптимизация выполнена</string>
     <string name="clean_junk_done">Выполнено</string>
     <string name="clean_junk_description_not_optimized_D">Освободите %d МБ</string>
-    <string name="mb_D">%d мб</string>
+    <string name="mb_D">%d Мб</string>
     <string name="occupied_total">Занято/Всего:</string>
     <string name="_F_gb_F_gb">%.1f ГБ/%.1f ГБ</string>
     <string name="usage_ram">Использовано оперативной памяти</string>
@@ -38,8 +38,8 @@
     <string name="remove_the_trash">Удалите мусор</string>
     <string name="cool_down_your_phone">Охладите ваш телефон</string>
     <string name="speed_up_the_work_of_your_phone">Ускорьте работу вашего телефона</string>
-    <string name="released_F_gb">Освобождено %.1f ГБ</string>
-    <string name="released_D_gb">Освобождено %d ГБ</string>
+    <string name="released_F_gb">Освобождено %.1f Мб</string>
+    <string name="released_D_gb">Освобождено %d Мб</string>
     <string name="now_the_device_is_accelerated_by_D">Теперь устройство ускорено на %d%%</string>
     <string name="available_memory_F_gb_F_gb">Доступная память: %.1f ГБ/%.1f ГБ</string>
     <string name="working_time_increased_by_D">Время работы увеличено на %d%%</string>

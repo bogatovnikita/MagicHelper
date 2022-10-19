@@ -1,12 +1,13 @@
 package ar.cleaner.first.pf.utils
 
+import android.annotation.SuppressLint
 import android.app.ActivityManager
+import android.bluetooth.BluetoothAdapter
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Environment
 import android.os.StatFs
-import android.provider.Settings
 import ar.cleaner.first.pf.AppClass
 import ar.cleaner.first.pf.data.RamUsageModel
 import ar.cleaner.first.pf.data.StorageMemoryModel
@@ -50,14 +51,11 @@ object Utils {
         return StorageMemoryModel(occupiedStorageMemory, totalStorageMemory, percent)
     }
 
-    fun setScreenBrightness(value: Int) {
-        try {
-            Settings.System.putInt(
-                AppClass.instance.contentResolver,
-                Settings.System.SCREEN_BRIGHTNESS,
-                value
-            )
-        } catch (e: Exception) {
+    @SuppressLint("MissingPermission")
+    fun turnOffBluetooth() {
+        val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter() ?: return
+        if (bluetoothAdapter.isEnabled) {
+            bluetoothAdapter.disable()
         }
     }
 

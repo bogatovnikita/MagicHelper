@@ -99,7 +99,7 @@
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/garbage_detected"
         android:textColor="@color/white"
-        android:textSize="@dimen/_14ssp"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toTopOf="@id/second_description_tv"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintHorizontal_bias="0"
@@ -114,13 +114,12 @@
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/deleting_unwanted_files_is_safe"
         android:textColor="@color/white"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/first_description_tv" />
-
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_not_optimized"

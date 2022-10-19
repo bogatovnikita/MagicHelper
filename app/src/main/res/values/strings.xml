@@ -8,7 +8,7 @@
     <string name="released_F_gb">Released %.1f GB</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Phone does not need to be cooled at this time!</string>
     <string name="clean_junk_description">Clean Up!</string>
-    <string name="released_D_gb">Free %d GB</string>
+    <string name="released_D_gb">Free %d Mb</string>
     <string name="theres_not_much_left">Not much left…</string>
     <string name="remaining_charging_time_D_h_D_min">Remaining charging time %d h %d min</string>
     <string name="cooling_cpu">Cooling</string>
@@ -16,7 +16,7 @@
     <string name="deleting_unwanted_files_is_safe">Delete unwanted files safely</string>
     <string name="now_the_device_is_accelerated_by_D">Your device is now faster by %d%%</string>
     <string name="optimize">Optimize</string>
-    <string name="mb_D">%d mb</string>
+    <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
     <string name="residual_files">Residual files</string>
     <string name="modes_of_increasing_the_working_time">Modes to boost uptime</string>

@@ -3,10 +3,10 @@
     <string name="boost_description_not_optimized_S">Beschleunigen %s%%</string>
     <string name="temp_files">Temporäre Dateien</string>
     <string name="storage_location">Lagerraum</string>
-    <string name="released_F_gb">Ig %.1f gb freigegeben</string>
+    <string name="released_F_gb">Ig %.1f Mb freigegeben</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Das Telefon muss zu diesem Zeitpunkt nicht abgekühlt werden!</string>
     <string name="clean_junk_description">Aufräumen!</string>
-    <string name="released_D_gb">Kostenlos %d GB</string>
+    <string name="released_D_gb">Kostenlos %d Mb</string>
     <string name="theres_not_much_left">Nicht viel übrig …</string>
     <string name="remaining_charging_time_D_h_D_min">Verbleibende Ladezeit %d h %d min</string>
     <string name="cooling_cpu">Kühlung</string>
@@ -14,7 +14,7 @@
     <string name="deleting_unwanted_files_is_safe">Löschen Sie unerwünschte Dateien sicher</string>
     <string name="now_the_device_is_accelerated_by_D">Ihr Gerät ist jetzt um %d%% schneller</string>
     <string name="optimize">Optimieren</string>
-    <string name="mb_D">%d mb</string>
+    <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
     <string name="residual_files">Übrig gebliebene Dateien</string>
     <string name="modes_of_increasing_the_working_time">Modi, um die Verfügbarkeit zu steigern</string>
@@ -75,5 +75,5 @@
     <string name="memory_is_overloaded_optimization_is_required">Speicher wird überladen! Optimierung erforderlich!</string>
     <string name="cooled_D">Abkühlt %d℃</string>
     <string name="optimization_is_done">Optimierung durchgeführt</string>
-    <string name="app_name">Cleaner - Bereinigen Sie Speicher, Cache und Telefon</string>
+    <string name="app_name">Cleaner - bereinigen sie speicher, cache und telefon</string>
 </resources>

@@ -82,7 +82,7 @@
         android:id="@+id/first_description_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/_16ssp"
@@ -90,13 +90,13 @@
         app:layout_constraintEnd_toEndOf="@id/view_for_background"
         app:layout_constraintStart_toEndOf="@id/icon_is_done"
         app:layout_constraintTop_toTopOf="@id/icon_is_done"
-        tools:text="@string/released_F_gb" />
+        tools:text="@string/released_D_gb" />
 
     <TextView
         android:id="@+id/second_description_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/_10ssp"

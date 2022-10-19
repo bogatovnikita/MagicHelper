@@ -3,10 +3,10 @@
     <string name="boost_description_not_optimized_S">Tăng tốc %s%%</string>
     <string name="temp_files">Hồ sơ tạm thời</string>
     <string name="storage_location">Không gian lưu trữ</string>
-    <string name="released_F_gb">Đã phát hành %.1f GB</string>
+    <string name="released_F_gb">Đã phát hành %.1f Mb</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Điện thoại không cần phải được làm mát vào lúc này!</string>
     <string name="clean_junk_description">Dọn dẹp!</string>
-    <string name="released_D_gb">MIỄN PHÍ %d GB</string>
+    <string name="released_D_gb">MIỄN PHÍ %d Mb</string>
     <string name="theres_not_much_left">Không còn nhiều…</string>
     <string name="remaining_charging_time_D_h_D_min">Thời gian sạc còn lại %d h %d min</string>
     <string name="cooling_cpu">Làm mát</string>
@@ -14,7 +14,7 @@
     <string name="deleting_unwanted_files_is_safe">Xóa các tệp không mong muốn một cách an toàn</string>
     <string name="now_the_device_is_accelerated_by_D">Thiết bị của bạn hiện nhanh hơn %d%%</string>
     <string name="optimize">Tối ưu hóa</string>
-    <string name="mb_D">%d mb</string>
+    <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Bình thường</string>
     <string name="residual_files">Các tập tin còn sót lại</string>
     <string name="modes_of_increasing_the_working_time">Các chế độ để tăng thời gian hoạt động</string>

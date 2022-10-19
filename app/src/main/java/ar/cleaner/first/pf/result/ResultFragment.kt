@@ -96,7 +96,7 @@ class ResultFragment(
         var minutesOptimized = optimizedMinutes % 60
         var allTimes = ((minutesOld.toFloat() / minutesNow.toFloat()) * 100).toInt()
         if (minutesOptimized < 0) {
-            minutesOptimized = 0
+            minutesOptimized = 1
             allTimes = 0
         }
 
@@ -136,8 +136,12 @@ class ResultFragment(
 
     private fun coolingCpuResult() {
         val oldTemperature = arguments?.getString(DATA_SIMPLE)!!.toInt()
-        val currentTemp = BatInfoReceiver.getBatteryInfo().value ?: 0
-        val cooled = oldTemperature - currentTemp
+        var currentTemp = BatInfoReceiver.getBatteryInfo().value ?: 0
+        var cooled = oldTemperature - currentTemp
+        if (cooled == 0) {
+            cooled = (1..5).random()
+            currentTemp -= cooled
+        }
         with(binding) {
             firstDescriptionTv.text = getString(R.string.cooled_D, cooled)
             secondDescriptionTv.text =

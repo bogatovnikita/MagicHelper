@@ -3,10 +3,10 @@
     <string name="boost_description_not_optimized_S">เร่งความเร็วขึ้น %s%%</string>
     <string name="temp_files">ไฟล์ชั่วคราว</string>
     <string name="storage_location">พื้นที่เก็บข้อมูล</string>
-    <string name="released_F_gb">ปล่อย %.1f gb</string>
+    <string name="released_F_gb">ปล่อย %.1f Mb</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">โทรศัพท์ไม่จำเป็นต้องระบายความร้อนในเวลานี้!</string>
     <string name="clean_junk_description">ทำความสะอาด!</string>
-    <string name="released_D_gb">ฟรี% d GB</string>
+    <string name="released_D_gb">ฟรี %d Mb</string>
     <string name="theres_not_much_left">เหลือไม่มาก…</string>
     <string name="remaining_charging_time_D_h_D_min">เวลาชาร์จที่เหลืออยู่ %d H %d นาที</string>
     <string name="cooling_cpu">การทำให้เย็นลง</string>
@@ -14,7 +14,7 @@
     <string name="deleting_unwanted_files_is_safe">ลบไฟล์ที่ไม่ต้องการอย่างปลอดภัย</string>
     <string name="now_the_device_is_accelerated_by_D">อุปกรณ์ของคุณเร็วขึ้น %d%%</string>
     <string name="optimize">ปรับให้เหมาะสม</string>
-    <string name="mb_D">%d MB</string>
+    <string name="mb_D">%d Mb</string>
     <string name="normal_mode">ปกติ</string>
     <string name="residual_files">ไฟล์ที่เหลืออยู่</string>
     <string name="modes_of_increasing_the_working_time">โหมดเพื่อเพิ่มเวลาในการทำงาน</string>

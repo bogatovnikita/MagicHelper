@@ -30,6 +30,13 @@ class JunkProgressFragment(
     private var _binding: FragmentProgressBinding? = null
     private val binding get() = _binding!!
 
+    private var scanIsDone = false
+
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) scanIsDone()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -65,6 +72,13 @@ class JunkProgressFragment(
                     adapter.removeFirst()
                 }
             }
+            scanIsDone = true
+            if (scanIsDone) scanIsDone()
+        }
+    }
+
+    private fun scanIsDone() {
+        lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
                 delay(500)
                 binding.recyclerView.visibility = View.GONE
