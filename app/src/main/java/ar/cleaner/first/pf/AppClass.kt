@@ -24,6 +24,9 @@ class AppClass : Application() {
 //        AdsManager.setOnAdsError { type, key, error ->
 //            YandexMetrica.reportEvent(type)
 //        }
+//        SubscriptionProvider.getInstance(this).init(this)
+//        AdsManager.init(this, BuildConfig.DEBUG)
+//        AdsManager.initBanner(binding.adView)
     }
 
 }

@@ -1,120 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
     app:startDestination="@id/splashFragment">
 
-    <action
-        android:id="@+id/global_action_result"
-        app:destination="@id/resultFragment"
-        app:popUpTo="@id/menuFragment"
-        app:popUpToInclusive="false" />
-
-    <action
-        android:id="@+id/global_action_cpu"
-        app:destination="@id/cpuFragment"
-        app:popUpTo="@id/menuFragment"
-        app:popUpToInclusive="false" />
-
-    <action
-        android:id="@+id/global_action_boost"
-        app:destination="@id/boostFragment"
-        app:popUpTo="@id/menuFragment"
-        app:popUpToInclusive="false" />
-    <action
-        android:id="@+id/global_action_junk"
-        app:destination="@id/junkFragment"
-        app:popUpTo="@id/menuFragment"
-        app:popUpToInclusive="false" />
-    <action
-        android:id="@+id/global_action_battery"
-        app:destination="@id/batteryFragment"
-        app:popUpTo="@id/menuFragment"
-        app:popUpToInclusive="false" />
-
-
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="ar.cleaner.first.pf.ui.menu.MenuFragment"
-        android:label="MenuFragment" />
-    <fragment
-        android:id="@+id/boostFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.BoostFragment"
-        android:label="BoostFragment" >
-        <action
-            android:id="@+id/action_boostFragment_to_boostProgressFragment"
-            app:destination="@id/boostProgressFragment"
-            app:popUpTo="@id/boostFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/cpuFragment"
-        android:name="ar.cleaner.first.pf.ui.cpu.CpuFragment"
-        android:label="CpuFragment" >
-        <action
-            android:id="@+id/action_cpuFragment_to_cpuProgressFragment"
-            app:destination="@id/cpuProgressFragment"
-            app:popUpTo="@id/cpuFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/junkFragment"
-        android:name="ar.cleaner.first.pf.ui.junk.JunkFragment"
-        android:label="JunkFragment" >
-        <action
-            android:id="@+id/action_junkFragment_to_junkProgressFragment"
-            app:destination="@id/junkProgressFragment"
-            app:popUpTo="@id/junkFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/batteryFragment"
-        android:name="ar.cleaner.first.pf.ui.battery.BatteryFragment"
-        android:label="BatteryFragment" >
-        <action
-            android:id="@+id/action_batteryFragment_to_batteryProgressFragment"
-            app:destination="@id/batteryProgressFragment"
-            app:popUpTo="@id/batteryFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/resultFragment"
-        android:name="ar.cleaner.first.pf.result.ResultFragment"
-        android:label="ResultFragment" />
     <fragment
         android:id="@+id/splashFragment"
         android:name="ar.cleaner.first.pf.ui.splash.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_firstScanningFragment"
-            app:destination="@id/firstScanningFragment"
-            app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/firstScanningFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstScanningFragment"
         android:name="ar.cleaner.first.pf.ui.first_scanning.FirstScanningFragment"
-        android:label="FirstScanningFragment" >
+        android:label="FirstScanningFragment"
+        tools:layout="@layout/fragment_first_scanning">
         <action
             android:id="@+id/action_firstScanningFragment_to_menuFragment"
-            app:destination="@id/menuFragment"
-            app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
-        android:id="@+id/junkProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.junk.JunkProgressFragment"
-        android:label="JunkProgressFragment" />
+        android:id="@+id/menuFragment"
+        android:name="ar.cleaner.first.pf.ui.menu.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_boostFragment"
+            app:destination="@id/boostFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_batteryFragment"
+            app:destination="@id/batteryFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_coolingFragment"
+            app:destination="@id/coolingFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_junkFragment"
+            app:destination="@id/junkFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/batteryProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.battery.BatteryProgressFragment"
-        android:label="BatteryProgressFragment" />
+        android:id="@+id/boostFragment"
+        android:name="ar.cleaner.first.pf.ui.boost.BoostFragment"
+        android:label="BoostFragment"
+        tools:layout="@layout/fragment_boost">
+        <action
+            android:id="@+id/action_boostFragment_to_boostProgressFragment"
+            app:destination="@id/boostProgressFragment" />
+    </fragment>
     <fragment
         android:id="@+id/boostProgressFragment"
         android:name="ar.cleaner.first.pf.ui.boost.BoostProgressFragment"
-        android:label="BoostProgressFragment" />
+        android:label="BoostProgressFragment"
+        tools:layout="@layout/fragment_progress">
+        <action
+            android:id="@+id/action_boostProgressFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/cpuProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.cpu.CpuProgressFragment"
-        android:label="CpuProgressFragment" />
+        android:id="@+id/batteryFragment"
+        android:name="ar.cleaner.first.pf.ui.battery.BatteryFragment"
+        android:label="BatteryFragment"
+        tools:layout="@layout/fragment_battery">
+        <action
+            android:id="@+id/action_batteryFragment_to_batteryProgressFragment"
+            app:destination="@id/batteryProgressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/batteryProgressFragment"
+        android:name="ar.cleaner.first.pf.ui.battery.BatteryProgressFragment"
+        android:label="BatteryProgressFragment"
+        tools:layout="@layout/fragment_progress">
+        <action
+            android:id="@+id/action_batteryProgressFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coolingFragment"
+        android:name="ar.cleaner.first.pf.ui.cooling.CoolingFragment"
+        android:label="CoolingFragment"
+        tools:layout="@layout/fragment_cooling">
+        <action
+            android:id="@+id/action_coolingFragment_to_coolingProgressFragment"
+            app:destination="@id/coolingProgressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coolingProgressFragment"
+        android:name="ar.cleaner.first.pf.ui.cooling.CoolingProgressFragment"
+        android:label="CoolingProgressFragment"
+        tools:layout="@layout/fragment_progress">
+        <action
+            android:id="@+id/action_coolingProgressFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/junkFragment"
+        android:name="ar.cleaner.first.pf.ui.junk.JunkFragment"
+        android:label="JunkFragment"
+        tools:layout="@layout/fragment_cleaning">
+        <action
+            android:id="@+id/action_junkFragment_to_junkProgressFragment"
+            app:destination="@id/junkProgressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/junkProgressFragment"
+        tools:layout="@layout/fragment_progress"
+        android:name="ar.cleaner.first.pf.ui.junk.JunkProgressFragment"
+        android:label="JunkProgressFragment">
+        <action
+            android:id="@+id/action_junkProgressFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        tools:layout="@layout/fragment_result"
+        android:name="ar.cleaner.first.pf.ui.result.ResultFragment"
+        android:label="ResultFragment">
+        <action
+            android:id="@+id/action_resultFragment_to_junkFragment"
+            app:destination="@id/junkFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_coolingFragment"
+            app:destination="@id/coolingFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_batteryFragment"
+            app:destination="@id/batteryFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_boostFragment"
+            app:destination="@id/boostFragment" />
+    </fragment>
 </navigation>

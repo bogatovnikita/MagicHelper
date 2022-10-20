@@ -5,37 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
-import ar.cleaner.first.pf.ui.progress.ActionsAdapter
-import ar.cleaner.first.pf.utils.MenuItems
-import ar.cleaner.first.pf.utils.NativeProvider
-import ar.cleaner.first.pf.utils.OptimizationProvider
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.util.concurrent.TimeUnit
 
-class JunkProgressFragment(
-    private val onComplete: Fragment.(
-        menuItem: MenuItems,
-        data: Any?,
-        simpleData: String?
-    ) -> Unit
-) : Fragment(R.layout.fragment_progress) {
+class JunkProgressFragment() : Fragment(R.layout.fragment_progress) {
 
     private var _binding: FragmentProgressBinding? = null
     private val binding get() = _binding!!
-
-    private var scanIsDone = false
-
-    override fun onResume() {
-        super.onResume()
-        if (scanIsDone) scanIsDone()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,59 +24,6 @@ class JunkProgressFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        cleared()
-    }
-
-    private fun cleared() {
-        val items = NativeProvider.getFolders().toList().shuffled().subList(0, 15)
-        stringAction(items.toList())
-
-    }
-
-    private fun stringAction(list: List<String>) {
-        val adapter = ActionsAdapter(list)
-        binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            this.adapter = adapter
-        }
-
-        val repeat = list.size
-        lifecycleScope.launch(Dispatchers.Default) {
-            repeat(list.size) {
-                delay(TimeUnit.SECONDS.toMillis(8) / repeat)
-                withContext(Dispatchers.Main) {
-                    adapter.removeFirst()
-                }
-            }
-            scanIsDone = true
-            if (scanIsDone) scanIsDone()
-        }
-    }
-
-    private fun scanIsDone() {
-        lifecycleScope.launch(Dispatchers.Default) {
-            withContext(Dispatchers.Main) {
-                delay(500)
-                binding.recyclerView.visibility = View.GONE
-                binding.isDoneTv.visibility = View.VISIBLE
-                delay(1000)
-                binding.apply {
-//                    showAds() {
-                    goNext()
-//                    }
-                }
-            }
-        }
-    }
-
-    private fun goNext() {
-        onComplete(MenuItems.CleaningJunk, null, garbage())
-    }
-
-    private fun garbage(): String {
-        val simpleData1 = OptimizationProvider.getGarbageSize().toString()
-        NativeProvider.junk(requireContext())
-        return simpleData1
     }
 
     override fun onDestroy() {

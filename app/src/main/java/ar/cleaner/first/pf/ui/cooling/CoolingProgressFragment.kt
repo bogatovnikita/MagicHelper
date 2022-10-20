@@ -1,13 +1,14 @@
-package ar.cleaner.first.pf.ui.boost
+package ar.cleaner.first.pf.ui.cooling
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 
-class BoostProgressFragment() : Fragment() {
+class CoolingProgressFragment() : Fragment(R.layout.fragment_progress) {
 
     private var _binding: FragmentProgressBinding? = null
     private val binding get() = _binding!!

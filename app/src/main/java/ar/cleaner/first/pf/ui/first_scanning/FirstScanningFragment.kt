@@ -3,7 +3,6 @@ package ar.cleaner.first.pf.ui.first_scanning
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +16,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FirstScanningFragment(
-    private val onComplete: Fragment.() -> Unit
-) : Fragment(R.layout.fragment_first_scanning) {
+class FirstScanningFragment() : Fragment() {
 
     private var _binding: FragmentFirstScanningBinding? = null
     private val binding get() = _binding!!
@@ -76,9 +73,7 @@ class FirstScanningFragment(
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
                 binding.apply {
-//                    showAds() {
-                    onComplete()
-//                    }
+                    //TODO переход на главный экран
                 }
             }
         }

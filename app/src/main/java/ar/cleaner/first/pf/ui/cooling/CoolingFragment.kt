@@ -1,15 +1,15 @@
-package ar.cleaner.first.pf.ui.boost
+package ar.cleaner.first.pf.ui.cooling
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ar.cleaner.first.pf.databinding.FragmentProgressBinding
+import ar.cleaner.first.pf.databinding.FragmentCoolingBinding
 
-class BoostProgressFragment() : Fragment() {
+class CoolingFragment() : Fragment() {
 
-    private var _binding: FragmentProgressBinding? = null
+    private var _binding: FragmentCoolingBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class BoostProgressFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProgressBinding.inflate(inflater, container, false)
+        _binding = FragmentCoolingBinding.inflate(inflater, container, false)
         return binding.root
     }
 

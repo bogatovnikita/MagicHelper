@@ -13,7 +13,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SplashFragment(
-    private val onComplete: Fragment.() -> Unit
 ) : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
@@ -34,7 +33,7 @@ class SplashFragment(
         lifecycleScope.launch(Dispatchers.Default) {
             delay(2000)
             withContext(Dispatchers.Main) {
-                onComplete()
+//TODO переход на сканирование
             }
         }
     }

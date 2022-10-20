@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.ads
+package ar.cleaner.first.pf.ads
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
