@@ -41,7 +41,7 @@
     <string name="clear_junk">Cleaning</string>
     <string name="cleared_junk">Clean up</string>
     <string name="right_now_background_processes_and_applications_are_overloading_ram">Right now background processes and applications load RAM</string>
-    <string name="boost">Accelerate</string>
+    <string name="boost">Boost</string>
     <string name="scanning_system">Scanning system…</string>
     <string name="clean_junk_done">Done</string>
     <string name="now_the_devices_memory_is_D_free">Device memory is now %d%%</string>

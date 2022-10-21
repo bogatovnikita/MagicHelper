@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentFirstScanningBinding
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FirstScanningFragment() : Fragment() {
+class FirstScanningFragment : Fragment() {
 
     private var _binding: FragmentFirstScanningBinding? = null
     private val binding get() = _binding!!
@@ -72,9 +73,9 @@ class FirstScanningFragment() : Fragment() {
     private fun goNext() {
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-                binding.apply {
-                    //TODO переход на главный экран
-                }
+//                showAds {
+                findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
+//                }
             }
         }
     }

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -68,7 +69,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-bom:31.0.0'
 
     //ktx
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha02"
     implementation 'androidx.fragment:fragment-ktx:1.5.3'
 
     //progress bar

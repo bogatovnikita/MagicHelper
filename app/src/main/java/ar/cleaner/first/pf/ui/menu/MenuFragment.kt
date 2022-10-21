@@ -28,7 +28,6 @@ class MenuFragment() : Fragment() {
         requireActivity().window.statusBarColor =
             ContextCompat.getColor(requireActivity(), R.color.dark_blue)
         requireActivity().window.decorView.systemUiVisibility = 0
-
     }
 
     override fun onDestroy() {

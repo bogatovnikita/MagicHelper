@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.databinding.FragmentSplashBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SplashFragment(
-) : Fragment() {
+class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
@@ -33,7 +33,7 @@ class SplashFragment(
         lifecycleScope.launch(Dispatchers.Default) {
             delay(2000)
             withContext(Dispatchers.Main) {
-//TODO переход на сканирование
+                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToFirstScanningFragment())
             }
         }
     }
