@@ -16,8 +16,9 @@ import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetCleanerDetailsUseCase(
+class GetCleanerDetailsUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<CleanerDetails, Exception> {

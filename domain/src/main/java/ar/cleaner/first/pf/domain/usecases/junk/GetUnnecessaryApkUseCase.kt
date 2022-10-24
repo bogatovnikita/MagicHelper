@@ -7,8 +7,9 @@ import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetUnnecessaryApkUseCase(
+class GetUnnecessaryApkUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<UnnecessaryApk, Exception> {

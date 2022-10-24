@@ -28,4 +28,5 @@ interface JunkUseCasRepository : BaseRepository {
     fun getDataFolderUri(): Flow<String>
 
     fun startOptimization(files: List<Junk>): Flow<Int>
+
 }

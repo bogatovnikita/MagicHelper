@@ -10,12 +10,13 @@ import ar.cleaner.first.pf.domain.utils.percents
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetRamDetailsUseCase(
+class GetRamDetailsUseCase @Inject constructor(
     private val boostingUseCaseRepository: BoostingUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<RamDetails, Exception> {
-    override fun invoke(): Flow<CaseResult<RamDetails, Exception>> = flow {
+    override fun invoke(): Flow<CaseResult<RamDetails, Exception>> =
         boostingUseCaseRepository.getAvailableRam().map { ram ->
             val time = boostingUseCaseRepository.lastOptimizationMillis.first()
             val isOptimized = !isTimePassed(time)
@@ -36,5 +37,4 @@ class GetRamDetailsUseCase(
         }.catch { throwable ->
             throwable.printStackTrace()
         }.cancellable().flowOn(dispatcher)
-    }
 }

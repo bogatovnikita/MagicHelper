@@ -6,12 +6,13 @@ import ar.cleaner.first.pf.domain.utils.getCurrentTime
 import ar.cleaner.first.pf.domain.utils.isWorking
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class BatteryOptimizationUseCase(
+class BatteryOptimizationUseCase @Inject constructor(
     private val batteryUseCaseRepository: BatteryUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
-) : (Boolean, BatteryMode) -> Flow<Int> {
-    override fun invoke(result: Boolean, mode: BatteryMode): Flow<Int> {
+) : (BatteryMode) -> Flow<Int> {
+    override fun invoke(mode: BatteryMode): Flow<Int> {
         val flow = batteryUseCaseRepository.startOptimization(mode)
         return flow.catch { e -> e.printStackTrace() }
             .onCompletion {

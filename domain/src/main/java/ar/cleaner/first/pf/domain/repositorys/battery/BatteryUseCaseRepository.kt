@@ -10,4 +10,5 @@ interface BatteryUseCaseRepository : BaseRepository {
     fun startOptimization(mode: BatteryMode): Flow<Int>
     fun getRemainingTime(): Flow<Double>
     fun getBatteryMode(): Flow<String>
+    fun emulateOptimization(mode: BatteryMode): Flow<Int>
 }

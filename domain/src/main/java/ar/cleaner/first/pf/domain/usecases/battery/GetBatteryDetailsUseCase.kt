@@ -10,8 +10,9 @@ import ar.cleaner.first.pf.domain.utils.isTimePassed
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetBatteryDetailsUseCase(
+class GetBatteryDetailsUseCase @Inject constructor(
     private val batteryUseCaseRepository: BatteryUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<BatteryDetails, Exception> {

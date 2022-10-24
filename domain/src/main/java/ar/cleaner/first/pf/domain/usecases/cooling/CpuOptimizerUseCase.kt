@@ -5,8 +5,9 @@ import ar.cleaner.first.pf.domain.utils.getCurrentTime
 import ar.cleaner.first.pf.domain.utils.isWorking
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class CpuOptimizerUseCase(
+class CpuOptimizerUseCase @Inject constructor(
     private val coolingUseCaseRepository: CoolingUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
 ) : () -> Flow<Int> {

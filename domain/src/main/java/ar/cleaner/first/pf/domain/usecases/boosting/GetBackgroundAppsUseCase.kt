@@ -6,8 +6,9 @@ import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetBackgroundAppsUseCase(
+class GetBackgroundAppsUseCase @Inject constructor(
     private val boostingUseCaseRepository: BoostingUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<List<BackgroundApp>, Exception> {
@@ -18,6 +19,7 @@ class GetBackgroundAppsUseCase(
         if (!backgroundApp.isNullOrEmpty())
             CaseResult.Success(backgroundApp)
         else CaseResult.Failure(NullPointerException())
-    }.catch { e -> e.printStackTrace() }
+    }.catch { e ->
+        e.printStackTrace() }
         .cancellable().flowOn(dispatcher)
 }

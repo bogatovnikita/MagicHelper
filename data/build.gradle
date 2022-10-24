@@ -1,13 +1,15 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
     compileSdk 32
 
     defaultConfig {
-        minSdk 21
+        minSdk 23
         targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -32,11 +34,23 @@ android {
 dependencies {
     implementation project(':domain')
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
-
     //Ads lib
     implementation fileTree(dir: 'libs', include: ['*.aar'])
 
+    //datastore
+    implementation "androidx.datastore:datastore-preferences-core:1.0.0"
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.1'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+
+    //inject
+    implementation 'javax.inject:javax.inject:1'
+
+    //hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt "com.google.dagger:hilt-compiler:2.44"
 }

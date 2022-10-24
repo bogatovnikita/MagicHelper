@@ -9,8 +9,9 @@ import ar.cleaner.first.pf.domain.utils.isTimePassed
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetCpuDetailsUseCase(
+class GetCpuDetailsUseCase @Inject constructor(
     private val coolingUseCaseRepository: CoolingUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<CpuDetails, Exception> {

@@ -5,4 +5,4 @@ import kotlinx.coroutines.flow.Flow
 
 typealias DefaultUseCase<T, E> = () -> Flow<CaseResult<T, E>>
 
-typealias OptimizeUseCase<T> = (Boolean) -> Flow<T>
+typealias OptimizeUseCase<T> = () -> Flow<T>

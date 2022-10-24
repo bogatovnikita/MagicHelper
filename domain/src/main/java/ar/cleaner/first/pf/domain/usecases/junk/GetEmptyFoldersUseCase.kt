@@ -7,8 +7,9 @@ import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import ar.cleaner.first.pf.domain.extencion.isValuesCompatible
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GetEmptyFoldersUseCase(
+class GetEmptyFoldersUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<EmptyFolders, Exception> {

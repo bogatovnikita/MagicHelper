@@ -1,11 +1,16 @@
 package ar.cleaner.first.pf.ui.menu
 
-import android.view.MenuItem
+import ar.cleaner.first.pf.domain.models.CleanerDetails
+import ar.cleaner.first.pf.domain.models.details.BatteryDetails
+import ar.cleaner.first.pf.domain.models.details.CpuDetails
+import ar.cleaner.first.pf.domain.models.details.RamDetails
+import ar.cleaner.first.pf.models.MenuItems
+
 
 data class MenuState(
-    val menuItemList: List<MenuItem> = mutableListOf(),
-    val batteryIsOptimize: Boolean = false,
-    val boostIsOptimize: Boolean = false,
-    val coolingIsOptimize: Boolean = false,
-    val junkIsOptimize: Boolean = false
+    val menuItemList: List<MenuItems> = mutableListOf(),
+    val ramDetails: RamDetails? = null,
+    val batteryDetails: BatteryDetails? = null,
+    val cpuDetails: CpuDetails? = null,
+    val cleanerDetails: CleanerDetails? = null
 )

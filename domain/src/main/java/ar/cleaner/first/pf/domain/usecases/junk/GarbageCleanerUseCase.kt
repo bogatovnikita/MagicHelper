@@ -6,12 +6,13 @@ import ar.cleaner.first.pf.domain.utils.getCurrentTime
 import ar.cleaner.first.pf.domain.utils.isWorking
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class GarbageCleanerUseCase(
+class GarbageCleanerUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
 ) : OptimizeUseCase<Int> {
-    override fun invoke(p1: Boolean): Flow<Int> {
+    override fun invoke(): Flow<Int> {
         val flow = junkUseCasRepository.fastOptimization()
         return flow.cancellable().catch { e -> e.printStackTrace() }.flowOn(dispatcher)
             .onCompletion {

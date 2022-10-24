@@ -6,8 +6,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.transform
+import javax.inject.Inject
 
-class CheckDataFolderSavedUseCase(
+class CheckDataFolderSavedUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
 ) : () -> Flow<Boolean> {

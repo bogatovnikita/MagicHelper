@@ -1,8 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "ar.cleaner.first.pf"
-        minSdk 21
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -53,7 +54,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
     //gson
     implementation 'com.google.code.gson:gson:2.9.0'
@@ -93,5 +93,9 @@ dependencies {
 
     //hilt
     implementation 'com.google.dagger:hilt-android:2.44'
-    annotationProcessor 'com.google.dagger:hilt-compiler:2.44'
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    //data store
+    implementation "androidx.datastore:datastore-preferences-core:1.0.0"
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 }
