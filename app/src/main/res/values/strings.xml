@@ -2,7 +2,6 @@
 <resources>
     <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="app_name">Cleaner - clean the memory, cache, phone</string>
-    <string name="boost_description_not_optimized_S">Speed up %s%%</string>
     <string name="temp_files">Temporary files</string>
     <string name="storage_location">Storage space</string>
     <string name="released_F_gb">Released %.1f GB</string>
@@ -56,7 +55,7 @@
     <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
     <string name="normal_mode_activates_restrictions">Normal mode activates restrictions:</string>
-    <string name="battery_power_description_D_D">%d h %d min left</string>
+    <string name="battery_power_description_D_D">Left %d h %d min</string>
     <string name="remaining_charging_time">Remaining charging time</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">Requires more phone time!</string>
     <string name="occupied_total">Busy/Total:</string>
@@ -69,9 +68,10 @@
     <string name="percent_D">%d%%</string>
     <string name="speed_up">Accelerate</string>
     <string name="boost_description">Accelerated</string>
+    <string name="boost_description_not_optimize">Speed up the work of your phone</string>
     <string name="collect_data">Collecting data…</string>
     <string name="cool_down_your_phone">Cool your phone</string>
-    <string name="clean_junk_description_not_optimized_D">Free up %d mb</string>
+    <string name="clean_junk_description_not_optimized_D">Free up %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Reduce memory strain and speed up your phone</string>
     <string name="cooling_cpu_description_not_optimized">Cool your processor</string>
     <string name="memory_is_overloaded_optimization_is_required">Memory gets overloaded! Optimization required!</string>

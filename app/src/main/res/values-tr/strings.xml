@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="boost_description_not_optimized_S">%s%% hızla</string>
     <string name="temp_files">Geçici dosyalar</string>
     <string name="storage_location">Depolama alanı</string>
     <string name="released_F_gb">%.1f Mb çıktı</string>
@@ -69,7 +68,7 @@
     <string name="boost_description">Hızlandırılmış</string>
     <string name="collect_data">Veri Toplama…</string>
     <string name="cool_down_your_phone">Telefonunuzu Soğutun</string>
-    <string name="clean_junk_description_not_optimized_D">Ücretsiz%d MB</string>
+    <string name="clean_junk_description_not_optimized_D">Ücretsiz %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Bellek suşunu azaltın ve telefonunuzu hızlandırın</string>
     <string name="cooling_cpu_description_not_optimized">İşlemcinizi Soğutun</string>
     <string name="memory_is_overloaded_optimization_is_required">Hafıza aşırı yüklenir! Optimizasyon gerekli!</string>

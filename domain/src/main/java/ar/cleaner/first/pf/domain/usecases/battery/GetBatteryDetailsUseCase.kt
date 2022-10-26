@@ -42,7 +42,7 @@ class GetBatteryDetailsUseCase @Inject constructor(
                 isOptimized = isOptimized
             )
         }.map {
-            if (it.batteryCharge == 0 || it.batteryRemainingTime.isBlank())
+            if (it.batteryCharge == 0)
                 CaseResult.Failure(NonValidValuesException())
             else CaseResult.Success(it)
         }.catch { exception ->

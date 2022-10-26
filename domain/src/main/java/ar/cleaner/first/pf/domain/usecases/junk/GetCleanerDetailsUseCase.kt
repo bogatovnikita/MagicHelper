@@ -42,7 +42,7 @@ class GetCleanerDetailsUseCase @Inject constructor(
                 val usedMemorySize = totalSize - junkUseCasRepository.getAvailableMemory() - trashMb
 
                 val details = CleanerDetails(
-                    trashSize = garbageSize,
+                    trashSize = garbageSize / 1024,
                     usedMemorySize = usedMemorySize,
                     totalSize = totalSize,
                     trashPercents = trashMb.asTrashPercents(totalSize),

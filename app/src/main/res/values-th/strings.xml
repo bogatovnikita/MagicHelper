@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="boost_description_not_optimized_S">เร่งความเร็วขึ้น %s%%</string>
     <string name="temp_files">ไฟล์ชั่วคราว</string>
     <string name="storage_location">พื้นที่เก็บข้อมูล</string>
     <string name="released_F_gb">ปล่อย %.1f Mb</string>
@@ -69,7 +68,7 @@
     <string name="boost_description">เร่งความเร็ว</string>
     <string name="collect_data">รวบรวมข้อมูล…</string>
     <string name="cool_down_your_phone">ทำให้โทรศัพท์ของคุณเย็นลง</string>
-    <string name="clean_junk_description_not_optimized_D">ฟรี %d MB</string>
+    <string name="clean_junk_description_not_optimized_D">ฟรี %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">ลดความเครียดหน่วยความจำและเร่งโทรศัพท์ของคุณ</string>
     <string name="cooling_cpu_description_not_optimized">ทำให้โปรเซสเซอร์ของคุณเย็นลง</string>
     <string name="memory_is_overloaded_optimization_is_required">หน่วยความจำมากเกินไป! ต้องการการเพิ่มประสิทธิภาพ!</string>

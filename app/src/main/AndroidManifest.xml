@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
     <application
-        android:name=".AppClass"
+        android:name=".app.AppClass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AR154">
         <activity
-            android:name=".MainActivity"
+            android:name=".host.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="boost_description_not_optimized_S">Acelerar %s%%</string>
     <string name="temp_files">Arquivos temporários</string>
     <string name="storage_location">Espaço de armazenamento</string>
     <string name="released_F_gb">Liberado %.1f Mb</string>
@@ -69,7 +68,7 @@
     <string name="boost_description">Acelerado</string>
     <string name="collect_data">Coletando dados…</string>
     <string name="cool_down_your_phone">Deixe esfriar seu telefone</string>
-    <string name="clean_junk_description_not_optimized_D">Liberte %d MB</string>
+    <string name="clean_junk_description_not_optimized_D">Liberte %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Reduza a tensão da memória e acelere seu telefone</string>
     <string name="cooling_cpu_description_not_optimized">Esfriar seu processador</string>
     <string name="memory_is_overloaded_optimization_is_required">A memória fica sobrecarregada! Otimização necessária!</string>

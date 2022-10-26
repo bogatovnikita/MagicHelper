@@ -1,10 +1,11 @@
 package ar.cleaner.first.pf.domain.mapper
 
+import ar.cleaner.first.pf.domain.models.BatteryTime
 import kotlin.math.ceil
 import kotlin.math.roundToInt
 
 private const val MAX_MINUTES = 59
-fun Double.asRemainingTime(): String {
+fun Double.asRemainingTime(): BatteryTime {
     var remainder = (this - this.toInt()) * 100
     if (remainder > MAX_MINUTES) {
         val difference = remainder - MAX_MINUTES
@@ -13,9 +14,7 @@ fun Double.asRemainingTime(): String {
     val minutes = (remainder).roundToInt()
     val hours = this.roundToInt()
 
-    return buildString {
-        append("$hours h. $minutes min.")
-    }
+    return BatteryTime(hours, minutes)
 }
 
 fun Double.asPercents(total: Double): Int = ceil((this / total) * 100).roundToInt()
