@@ -13,7 +13,6 @@ class BatteryRepositoryImpl @Inject constructor(
     private val batteryOptimizer: BatteryOptimizer
 ) : BatteryUseCaseRepository {
     override fun getBatteryPercents(): StateFlow<Int> = batteryManager.getBatteryPercents()
-
     override fun startOptimization(mode: BatteryMode): Flow<Int> =
         batteryOptimizer.runOptimization(mode)
 

@@ -1,14 +1,13 @@
 package ar.cleaner.first.pf.ui.menu
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentMenuBinding
@@ -83,7 +82,22 @@ class MenuFragment : Fragment() {
     private fun initRecyclerView() {
         adapter = MenuAdapter(object : MenuAdapter.Listener {
             override fun onChooseMenu(item: MenuItems) {
-                Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+                when (item.id) {
+                    1 -> {
+                        findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToBoostFragment())
+                    }
+                    2 -> {
+                        findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToBatteryFragment())
+                    }
+                    3 -> {
+                        findNavController().navigate(
+                            MenuFragmentDirections.actionMenuFragmentToCoolingFragment()
+                        )
+                    }
+                    4 -> {
+                        findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToJunkFragment())
+                    }
+                }
             }
         })
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)

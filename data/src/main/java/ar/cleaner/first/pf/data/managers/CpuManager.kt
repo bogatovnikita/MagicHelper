@@ -15,7 +15,7 @@ class CpuManager @Inject constructor(
 
     fun getCpuTemperature(isOptimized: Boolean): Double {
         return if (isOptimized) Random.nextDouble(25.0, 30.0)
-        else Random.nextDouble(40.2, 45.3)
+        else Random.nextDouble(34.0, 45.3)
     }
 
     fun getAppsInBackground(): Flow<List<App>> {

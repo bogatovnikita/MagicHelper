@@ -24,7 +24,7 @@
     <string name="clean_junk_description">Очистка выполнена</string>
     <string name="optimization_is_done">Оптимизация выполнена</string>
     <string name="clean_junk_done">Выполнено</string>
-    <string name="clean_junk_description_not_optimized_D">Освободите %.1f gb</string>
+    <string name="clean_junk_description_not_optimized_D">Освободите %.1f гб</string>
     <string name="mb_D">%d Мб</string>
     <string name="occupied_total">Занято/Всего:</string>
     <string name="_F_gb_F_gb">%.1f ГБ/%.1f ГБ</string>

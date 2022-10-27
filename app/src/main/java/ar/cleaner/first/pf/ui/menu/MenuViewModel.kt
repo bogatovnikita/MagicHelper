@@ -162,7 +162,6 @@ class MenuViewModel @Inject constructor(
     }
 
     private fun mapToMenuCleanerItem(response: CleanerDetails) {
-        Log.e("pie", "mapToMenuCleanerItem: $response")
         val itemCleaner = MenuItems(
             id = 4,
             title = context.getString(R.string.clear_junk),

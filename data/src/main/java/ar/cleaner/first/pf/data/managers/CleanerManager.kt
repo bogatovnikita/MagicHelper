@@ -1,10 +1,8 @@
 package ar.cleaner.first.pf.data.managers
 
 import android.app.Application
-import android.content.Context
 import android.os.Environment
 import android.os.StatFs
-import android.util.Log
 import ar.cleaner.first.pf.data.extensions.asJunkFile
 import ar.cleaner.first.pf.data.managers.CleanerManager.SearchJunk.searchRecursivelyEmptyFolders
 import ar.cleaner.first.pf.data.managers.CleanerManager.SearchJunk.searchRecursivelyThumbnails
@@ -61,10 +59,6 @@ class CleanerManager @Inject constructor(
             val stat = StatFs(path.path)
             val blockSize = stat.blockSizeLong
             val availableBlocks = stat.availableBlocksLong
-            Log.e(
-                "!!!",
-                "getAvailableMemorySize: ${((availableBlocks * blockSize).toDouble() / (Const.GB))}"
-            )
             ((availableBlocks * blockSize).toDouble() / (Const.GB))
         } else DEFAULT_DOUBLE_VALUE
     }
