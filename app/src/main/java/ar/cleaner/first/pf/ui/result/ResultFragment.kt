@@ -133,16 +133,16 @@ class ResultFragment : Fragment() {
             override fun onChooseMenu(item: MenuHorizontalItems) {
                 when (item.id) {
                     1 -> {
-                        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBoostFragment())
                     }
                     2 -> {
-                        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBatteryFragment())
                     }
                     3 -> {
-                        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToCoolingFragment())
                     }
                     4 -> {
-                        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToJunkFragment())
                     }
                 }
             }

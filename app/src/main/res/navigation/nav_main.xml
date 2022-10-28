@@ -74,6 +74,9 @@
             android:id="@+id/action_boostProgressFragment_to_resultFragment"
             app:destination="@id/resultFragment"
             app:popUpTo="@id/nav_main" />
+        <argument
+            android:name="listBackgroundApp"
+            app:argType="ar.cleaner.first.pf.models.BackgroundAppsModel[]" />
     </fragment>
 
     <fragment
