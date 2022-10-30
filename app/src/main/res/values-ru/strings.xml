@@ -37,7 +37,7 @@
     <string name="remove_the_trash">Удалите мусор</string>
     <string name="cool_down_your_phone">Охладите ваш телефон</string>
     <string name="speed_up_the_work_of_your_phone">Ускорьте работу вашего телефона</string>
-    <string name="released_F_gb">Освобождено %.1f Мб</string>
+    <string name="released_F_gb">Освобождено %.1f Гб</string>
     <string name="released_D_gb">Освобождено %d Мб</string>
     <string name="now_the_device_is_accelerated_by_D">Теперь устройство ускорено на %d%%</string>
     <string name="available_memory_F_gb_F_gb">Доступная память: %.1f ГБ/%.1f ГБ</string>

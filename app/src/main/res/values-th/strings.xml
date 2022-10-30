@@ -2,7 +2,7 @@
 <resources>
     <string name="temp_files">ไฟล์ชั่วคราว</string>
     <string name="storage_location">พื้นที่เก็บข้อมูล</string>
-    <string name="released_F_gb">ปล่อย %.1f Mb</string>
+    <string name="released_F_gb">ปล่อย %.1f Gb</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">โทรศัพท์ไม่จำเป็นต้องระบายความร้อนในเวลานี้!</string>
     <string name="clean_junk_description">ทำความสะอาด!</string>
     <string name="released_D_gb">ฟรี %d Mb</string>

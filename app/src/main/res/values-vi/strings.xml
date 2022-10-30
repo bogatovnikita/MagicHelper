@@ -2,7 +2,7 @@
 <resources>
     <string name="temp_files">Hồ sơ tạm thời</string>
     <string name="storage_location">Không gian lưu trữ</string>
-    <string name="released_F_gb">Đã phát hành %.1f Mb</string>
+    <string name="released_F_gb">Đã phát hành %.1f Gb</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Điện thoại không cần phải được làm mát vào lúc này!</string>
     <string name="clean_junk_description">Dọn dẹp!</string>
     <string name="released_D_gb">MIỄN PHÍ %d Mb</string>

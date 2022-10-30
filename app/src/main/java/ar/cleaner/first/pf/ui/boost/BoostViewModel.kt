@@ -22,11 +22,7 @@ class BoostViewModel @Inject constructor(
         MutableStateFlow(BoostState())
     val state = _state.asStateFlow()
 
-    init {
-        initRamDetails()
-    }
-
-    private fun initRamDetails() {
+    fun initRamDetails() {
         mainScope {
             getRamDetailsUseCase.invoke().collect { result ->
                 when (result) {
@@ -41,7 +37,6 @@ class BoostViewModel @Inject constructor(
                 }
             }
 
-            _state.value = state.value.copy(isLoadingData = true, isUsageStatsAllowed = true)
             getBackgroundAppsUseCase().collect { it ->
                 when (it) {
                     is CaseResult.Success -> {
@@ -57,7 +52,7 @@ class BoostViewModel @Inject constructor(
 
     fun mapListForOptimization(): Array<BackgroundAppsModel> {
         val newList = state.value.backgroundAppsModelList
-        return newList.map{app->
+        return newList.map { app ->
             BackgroundAppsModel(
                 name = app.name,
                 packageName = app.packageName

@@ -36,7 +36,7 @@ class ResultViewModel @Inject constructor(
     private fun initList() {
         menuHorizontalItems.add(
             MenuHorizontalItems(
-                1,
+                2,
                 R.string.boost,
                 R.drawable.ic_boost,
                 R.string.speed_up_the_work_of_your_phone
@@ -44,7 +44,7 @@ class ResultViewModel @Inject constructor(
         )
         menuHorizontalItems.add(
             MenuHorizontalItems(
-                2, R.string.battery_power, R.drawable.ic_battery,
+                1, R.string.battery_power, R.drawable.ic_battery,
                 R.string.extend_the_operation_of_your_phone
             )
         )

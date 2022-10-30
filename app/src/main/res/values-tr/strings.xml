@@ -2,7 +2,7 @@
 <resources>
     <string name="temp_files">Geçici dosyalar</string>
     <string name="storage_location">Depolama alanı</string>
-    <string name="released_F_gb">%.1f Mb çıktı</string>
+    <string name="released_F_gb">%.1f Gb çıktı</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Telefonun şu anda soğutulmasına gerek yok!</string>
     <string name="clean_junk_description">Temizlemek!</string>
     <string name="released_D_gb">Ücretsiz %d Mb</string>

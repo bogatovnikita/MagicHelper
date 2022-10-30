@@ -19,11 +19,7 @@ class CoolingViewModel @Inject constructor(
     private val _state: MutableStateFlow<CpuDetails> = MutableStateFlow(CpuDetails(0.0, false))
     val state = _state.asStateFlow()
 
-    init {
-        initCpuDetails()
-    }
-
-    private fun initCpuDetails() {
+    fun initCpuDetails() {
         mainScope {
             getCpuDetailsUseCase.invoke().collect { result ->
                 when (result) {

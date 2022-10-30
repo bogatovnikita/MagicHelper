@@ -1,6 +1,7 @@
 package ar.cleaner.first.pf.ui.cooling
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.cooling.CpuOptimizerUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
+import ar.cleaner.first.pf.ui.result.ResultFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -40,14 +42,7 @@ class CoolingProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        updateCoolingUseCase()
         initRecyclerView()
-    }
-
-    private fun updateCoolingUseCase() {
-        lifecycleScope.launch {
-            cpuOptimizerUseCase.invoke().collect {}
-        }
     }
 
     private fun initRecyclerView() {
@@ -65,6 +60,7 @@ class CoolingProgressFragment : Fragment() {
                     adapter.removeFirst()
                 }
             }
+            cpuOptimizerUseCase()
             delay(500)
             withContext(Dispatchers.Main) {
                 binding.recyclerView.visibility = View.GONE
@@ -78,7 +74,7 @@ class CoolingProgressFragment : Fragment() {
     private fun goScreenResult() {
         findNavController().navigate(
             CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
-                3
+                ResultFragment.COOLING_KEY
             )
         )
     }

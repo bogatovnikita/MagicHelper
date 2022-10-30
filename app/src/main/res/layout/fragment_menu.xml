@@ -197,16 +197,289 @@
         app:layout_constraintTop_toBottomOf="@id/occupied_total_ram_tv"
         tools:text="@string/_F_gb_F_gb" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top_for_recycler_view" />
+        app:layout_constraintTop_toBottomOf="@id/guideline_top_for_recycler_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp">
+
+            <View
+                android:id="@+id/background_battery"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_white_min_corners"
+                android:elevation="@dimen/_4sdp"
+                app:layout_constraintBottom_toTopOf="@id/background_cooling"
+                app:layout_constraintEnd_toStartOf="@id/background_boost"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/background_battery_transparent"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_transparent_min_corners"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@id/background_cooling"
+                app:layout_constraintEnd_toStartOf="@id/background_boost"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/battery_title_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/background_battery"
+                app:layout_constraintStart_toStartOf="@id/background_battery"
+                app:layout_constraintEnd_toEndOf="@id/background_battery"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heraclito_semibold"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/battery_power" />
+
+            <TextView
+                android:id="@+id/battery_description_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/heraclito_medium"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/background_battery"
+                app:layout_constraintStart_toStartOf="@id/background_battery"
+                app:layout_constraintTop_toBottomOf="@id/battery_title_tv"
+                tools:text="ываываввваlllввввввввв" />
+
+            <ImageView
+                android:id="@+id/battery_icon_iv"
+                android:elevation="@dimen/_4sdp"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/background_battery"
+                app:layout_constraintEnd_toEndOf="@id/background_battery"
+                app:layout_constraintStart_toStartOf="@id/background_battery"
+                android:src="@drawable/ic_battery"/>
+
+            <View
+                android:id="@+id/background_boost"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:background="@drawable/card_corners_white_min_corners"
+                android:elevation="@dimen/_4sdp"
+                app:layout_constraintBottom_toTopOf="@id/background_clean"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/background_battery"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/background_boost_transparent"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:background="@drawable/card_corners_transparent_min_corners"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@id/background_clean"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/background_battery"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/boost_title_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/background_boost"
+                app:layout_constraintStart_toStartOf="@id/background_boost"
+                app:layout_constraintEnd_toEndOf="@id/background_boost"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heraclito_semibold"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/boost" />
+
+            <TextView
+                android:id="@+id/boost_description_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/heraclito_medium"
+                android:maxLines="2"
+                tools:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/background_boost"
+                app:layout_constraintStart_toStartOf="@id/background_boost"
+                app:layout_constraintTop_toBottomOf="@id/boost_title_tv"
+                tools:text="ываываввваlllввввввввв" />
+
+            <ImageView
+                android:id="@+id/boost_icon_iv"
+                android:elevation="@dimen/_4sdp"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/background_boost"
+                app:layout_constraintEnd_toEndOf="@id/background_boost"
+                app:layout_constraintStart_toStartOf="@id/background_boost"
+                android:src="@drawable/ic_boost"/>
+
+            <View
+                android:id="@+id/background_cooling"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_white_min_corners"
+                android:elevation="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/background_clean"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background_battery" />
+
+            <View
+                android:id="@+id/background_cooling_transparent"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_transparent_min_corners"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/background_clean"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background_battery" />
+
+            <TextView
+                android:id="@+id/cooling_title_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/background_cooling"
+                app:layout_constraintStart_toStartOf="@id/background_cooling"
+                app:layout_constraintEnd_toEndOf="@id/background_cooling"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heraclito_semibold"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/cooling_cpu" />
+
+            <TextView
+                android:id="@+id/cooling_description_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/heraclito_medium"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/background_cooling"
+                app:layout_constraintStart_toStartOf="@id/background_cooling"
+                app:layout_constraintTop_toBottomOf="@id/cooling_title_tv"
+                tools:text="ываываввваlllввввввввв" />
+
+            <ImageView
+                android:id="@+id/cooling_icon_iv"
+                android:elevation="@dimen/_4sdp"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/background_cooling"
+                app:layout_constraintEnd_toEndOf="@id/background_cooling"
+                app:layout_constraintStart_toStartOf="@id/background_cooling"
+                android:src="@drawable/ic_cpu"/>
+
+            <View
+                android:id="@+id/background_clean"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_white_min_corners"
+                android:elevation="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/background_cooling"
+                app:layout_constraintTop_toBottomOf="@id/background_boost" />
+
+            <View
+                android:id="@+id/background_clean_transparent"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/card_corners_transparent_min_corners"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/background_cooling"
+                app:layout_constraintTop_toBottomOf="@id/background_boost" />
+
+            <TextView
+                android:id="@+id/clean_title_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/background_clean"
+                app:layout_constraintStart_toStartOf="@id/background_clean"
+                app:layout_constraintEnd_toEndOf="@id/background_clean"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heraclito_semibold"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/clear_junk" />
+
+            <TextView
+                android:id="@+id/clean_description_tv"
+                android:layout_width="0dp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/heraclito_medium"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/background_clean"
+                app:layout_constraintStart_toStartOf="@id/background_clean"
+                app:layout_constraintTop_toBottomOf="@id/clean_title_tv"
+                tools:text="ываываввваlllввввввввв" />
+
+            <ImageView
+                android:id="@+id/clean_icon_iv"
+                android:elevation="@dimen/_4sdp"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/background_clean"
+                app:layout_constraintEnd_toEndOf="@id/background_clean"
+                app:layout_constraintStart_toStartOf="@id/background_clean"
+                android:src="@drawable/ic_junk"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

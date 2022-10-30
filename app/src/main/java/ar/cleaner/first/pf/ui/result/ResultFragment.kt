@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,6 +20,7 @@ import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
 import ar.cleaner.first.pf.models.MenuHorizontalItems
+import ar.cleaner.first.pf.ui.boost.BoostFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment.Companion.APP_PREFERENCES
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,6 +50,7 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = requireContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
         checkArgs()
         initClick()
         initObserver()
@@ -58,21 +59,20 @@ class ResultFragment : Fragment() {
 
     private fun checkArgs() {
         when (args.value) {
-            1 -> {
+            BATTERY_KEY -> {
+                viewModel.initBatteryDetails()
+                binding.titleTv.text = requireContext().getString(R.string.battery_power)
+            }
+            BOOST_KEY -> {
                 viewModel.initRamDetails()
                 binding.titleTv.text = requireContext().getString(R.string.boost)
             }
-            2 -> {
-                viewModel.initBatteryDetails()
-                binding.titleTv.text = requireContext().getString(R.string.battery_power)
-
-            }
-            3 -> {
+            COOLING_KEY -> {
                 viewModel.initCpuDetails()
                 binding.titleTv.text = requireContext().getString(R.string.cooling_cpu)
 
             }
-            4 -> {
+            CLEANING_KEY -> {
                 viewModel.initCleanerDetails()
                 binding.titleTv.text = requireContext().getString(R.string.clear_junk)
             }
@@ -81,7 +81,7 @@ class ResultFragment : Fragment() {
 
     private fun initClick() {
         binding.arrowBackIv.setOnClickListener {
-            findNavController().navigate(ResultFragmentDirections.actionResultFragmentToMenuFragment())
+            findNavController().popBackStack(R.id.menuFragment,false)
         }
     }
 
@@ -107,11 +107,22 @@ class ResultFragment : Fragment() {
 
     private fun RamDetails?.render() {
         this ?: return
+        var percentOptimized = preferences.getInt(BoostFragment.BOOST_PERCENT, 0) - usagePercents
+        var optimizeValue =
+            preferences.getFloat(BoostFragment.BOOST_CLEAR_VALUE, 0f) - usedRam.toFloat()
+        if (percentOptimized <= 0) percentOptimized = 1
+        if (optimizeValue <= 0) optimizeValue = 0.1f
+        with(binding) {
+            firstDescriptionTv.text = getString(R.string.released_F_gb, optimizeValue)
+            secondDescriptionTv.text =
+                getString(R.string.now_the_device_is_accelerated_by_D, percentOptimized)
+            thirdDescriptionTv.text =
+                getString(R.string.available_memory_F_gb_F_gb, usedRam, totalRam)
+        }
     }
 
     private fun CpuDetails?.render() {
         this ?: return
-        preferences = requireContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
         var cooledTemp =
             preferences.getInt(CoolingFragment.COOLER_TEMPERATURE, 0) - temperature.toInt()
         if (cooledTemp <= 0) cooledTemp = 1
@@ -132,16 +143,16 @@ class ResultFragment : Fragment() {
         adapter = ResultAdapter(object : ResultAdapter.Listener {
             override fun onChooseMenu(item: MenuHorizontalItems) {
                 when (item.id) {
-                    1 -> {
-                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBoostFragment())
-                    }
-                    2 -> {
+                    BATTERY_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBatteryFragment())
                     }
-                    3 -> {
+                    BOOST_KEY -> {
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBoostFragment())
+                    }
+                    COOLING_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToCoolingFragment())
                     }
-                    4 -> {
+                    CLEANING_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToJunkFragment())
                     }
                 }
@@ -159,5 +170,12 @@ class ResultFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val BATTERY_KEY = 1
+        const val BOOST_KEY = 2
+        const val COOLING_KEY = 3
+        const val CLEANING_KEY = 4
     }
 }

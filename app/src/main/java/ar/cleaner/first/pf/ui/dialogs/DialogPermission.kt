@@ -16,11 +16,6 @@ class DialogPermission : DialogFragment() {
     private var _binding: LayoutRequestForPermissionBinding? = null
     private val binding get() = _binding!!
 
-    private var callBackDialogPermissionWriteSetting: CallBackDialogPermission? = null
-    fun addCallBackDialogPermissionWriteSetting(callBackDialogPermission: CallBackDialogPermission) {
-        this.callBackDialogPermissionWriteSetting = callBackDialogPermission
-    }
-
     override fun onResume() {
         super.onResume()
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -47,14 +42,9 @@ class DialogPermission : DialogFragment() {
             cancelBtn.setOnClickListener { dismiss() }
             allowBtn.setOnClickListener{
                 openAccessUsageSettings()
-                callBackDialogPermissionWriteSetting!!.crossAllowBtnClick()
                 dismiss()
             }
         }
-    }
-
-    interface CallBackDialogPermission {
-        fun crossAllowBtnClick()
     }
 }
 

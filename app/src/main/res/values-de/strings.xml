@@ -2,7 +2,7 @@
 <resources>
     <string name="temp_files">Temporäre Dateien</string>
     <string name="storage_location">Lagerraum</string>
-    <string name="released_F_gb">Ig %.1f Mb freigegeben</string>
+    <string name="released_F_gb">Ig %.1f Gb freigegeben</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Das Telefon muss zu diesem Zeitpunkt nicht abgekühlt werden!</string>
     <string name="clean_junk_description">Aufräumen!</string>
     <string name="released_D_gb">Kostenlos %d Mb</string>

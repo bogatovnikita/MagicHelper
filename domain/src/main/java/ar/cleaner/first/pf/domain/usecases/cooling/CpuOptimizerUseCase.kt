@@ -8,15 +8,7 @@ import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class CpuOptimizerUseCase @Inject constructor(
-    private val coolingUseCaseRepository: CoolingUseCaseRepository,
-    private val dispatcher: CoroutineDispatcher
-) : () -> Flow<Int> {
-    override fun invoke(): Flow<Int> = coolingUseCaseRepository.emulateOptimization()
-        .onCompletion {
-            if (isWorking())
-                coolingUseCaseRepository.setLastOptimizationMillis(getCurrentTime())
-        }
-        .cancellable()
-        .catch { e -> e.printStackTrace() }
-        .flowOn(dispatcher)
+    private val coolingUseCaseRepository: CoolingUseCaseRepository
+): () -> Unit {
+    override fun invoke(): Unit = coolingUseCaseRepository.setLastOptimizationMillis(getCurrentTime())
 }
