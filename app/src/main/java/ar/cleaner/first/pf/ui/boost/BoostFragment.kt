@@ -99,7 +99,6 @@ class BoostFragment : Fragment() {
         }
     }
 
-
     private fun initClick() {
         binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
