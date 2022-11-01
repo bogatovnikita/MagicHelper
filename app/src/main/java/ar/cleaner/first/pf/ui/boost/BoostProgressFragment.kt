@@ -1,7 +1,6 @@
 package ar.cleaner.first.pf.ui.boost
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +33,13 @@ class BoostProgressFragment : Fragment() {
     lateinit var extendedOptimizerUseCase: ExtendedOptimizerUseCase
 
     private val args by navArgs<BoostProgressFragmentArgs>()
+
+    private var scanIsDone = false
+
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) scanIsDone()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -73,18 +79,27 @@ class BoostProgressFragment : Fragment() {
         val repeat = strings.size
         lifecycleScope.launch(Dispatchers.Default) {
             repeat(repeat) {
-                delay(TimeUnit.SECONDS.toMillis(4) / repeat)
+                delay(TimeUnit.SECONDS.toMillis(8) / repeat)
                 withContext(Dispatchers.Main) {
                     adapter.removeFirst()
                 }
             }
-            delay(500)
+            scanIsDone = true
+            if (scanIsDone) scanIsDone()
+        }
+    }
+
+    private fun scanIsDone() {
+        lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-                binding.recyclerView.visibility = View.GONE
-                binding.isDoneTv.visibility = View.VISIBLE
+                delay(500)
+                withContext(Dispatchers.Main) {
+                    binding.recyclerView.visibility = View.GONE
+                    binding.isDoneTv.visibility = View.VISIBLE
+                }
+                delay(1000)
+                withContext(Dispatchers.Main) { goScreenResult() }
             }
-            delay(1000)
-            withContext(Dispatchers.Main) { goScreenResult() }
         }
     }
 

@@ -82,4 +82,9 @@
     <string name="description_permission">In order for us to stop background processes and free up RAM, we need access to the usage history</string>
     <string name="cancel">Cancel</string>
     <string name="allow">Allow</string>
+    <string name="snackbar_access_bluetooth">To perform this function, we need access to bluetooth</string>
+    <string name="further">Further</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Allow the app to access bluetooth settings to increase battery life</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">For Extra and Ultra modes, you need access to bluetooth settings</string>
+    <string name="settings">Settings</string>
 </resources>

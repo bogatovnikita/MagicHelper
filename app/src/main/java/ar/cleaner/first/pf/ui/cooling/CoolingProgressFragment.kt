@@ -1,7 +1,6 @@
 package ar.cleaner.first.pf.ui.cooling
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +29,12 @@ class CoolingProgressFragment : Fragment() {
 
     @Inject
     lateinit var cpuOptimizerUseCase: CpuOptimizerUseCase
+    private var scanIsDone = false
+
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) scanIsDone()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,14 +65,23 @@ class CoolingProgressFragment : Fragment() {
                     adapter.removeFirst()
                 }
             }
-            cpuOptimizerUseCase()
-            delay(500)
+            scanIsDone = true
+            if (scanIsDone) scanIsDone()
+        }
+    }
+
+    private fun scanIsDone() {
+        lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-                binding.recyclerView.visibility = View.GONE
-                binding.isDoneTv.visibility = View.VISIBLE
+                cpuOptimizerUseCase()
+                delay(500)
+                withContext(Dispatchers.Main) {
+                    binding.recyclerView.visibility = View.GONE
+                    binding.isDoneTv.visibility = View.VISIBLE
+                }
+                delay(1000)
+                withContext(Dispatchers.Main) { goScreenResult() }
             }
-            delay(1000)
-            withContext(Dispatchers.Main) { goScreenResult() }
         }
     }
 

@@ -80,15 +80,13 @@ class BatteryOptimizer @Inject constructor(
     }
 
     private fun setBrightnessLevel(level: Int) {
-        if (Settings.System.canWrite(context)) {
-            if (Settings.System.getInt(
-                    context.contentResolver,
-                    Settings.System.SCREEN_BRIGHTNESS
-                ) <= level * 10
-            ) return
+        try {
             Settings.System.putInt(
-                context.contentResolver, Settings.System.SCREEN_BRIGHTNESS, level * 10
+                context.contentResolver, Settings.System.SCREEN_BRIGHTNESS,
+                level
             )
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 

@@ -14,11 +14,10 @@ class BatteryOptimizationUseCase @Inject constructor(
 ) : (BatteryMode) -> Flow<Int> {
     override fun invoke(mode: BatteryMode): Flow<Int> {
         val flow = batteryUseCaseRepository.startOptimization(mode)
-        return flow.catch { e -> e.printStackTrace() }
-            .onCompletion {
-                if (isWorking())
-                    batteryUseCaseRepository.setLastOptimizationMillis(getCurrentTime())
-            }
+        return flow.onCompletion {
+            if (isWorking())
+                batteryUseCaseRepository.setLastOptimizationMillis(getCurrentTime())
+        }
             .cancellable()
             .flowOn(dispatcher)
     }

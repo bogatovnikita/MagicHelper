@@ -3,7 +3,6 @@ package ar.cleaner.first.pf.ui.boost
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +14,8 @@ import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentBoostBinding
 import ar.cleaner.first.pf.extensions.checkUsageStatsAllowed
-import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
-import ar.cleaner.first.pf.extensions.observeWhenResumed
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment
-import ar.cleaner.first.pf.ui.dialogs.DialogPermission
+import ar.cleaner.first.pf.ui.dialogs.DialogAccessUsageSettings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,7 +25,7 @@ class BoostFragment : Fragment() {
     private var _binding: FragmentBoostBinding? = null
     private val binding get() = _binding!!
     private val viewModel: BoostViewModel by viewModels()
-    private val dialog = DialogPermission()
+    private val dialog = DialogAccessUsageSettings()
     private lateinit var preferences: SharedPreferences
     private var value = 0
 

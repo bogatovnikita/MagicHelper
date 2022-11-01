@@ -23,6 +23,11 @@ class FirstScanningFragment : Fragment() {
     private val binding get() = _binding!!
     private var scanIsDone = false
 
+    override fun onResume() {
+        super.onResume()
+        if (scanIsDone) goNext()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -73,16 +78,9 @@ class FirstScanningFragment : Fragment() {
     private fun goNext() {
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-//                showAds {
                 findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
-//                }
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (scanIsDone) goNext()
     }
 
     override fun onDestroy() {

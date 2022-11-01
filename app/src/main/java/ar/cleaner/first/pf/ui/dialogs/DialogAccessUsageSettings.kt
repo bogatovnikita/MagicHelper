@@ -11,7 +11,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.LayoutRequestForPermissionBinding
 import ar.cleaner.first.pf.extensions.openAccessUsageSettings
 
-class DialogPermission : DialogFragment() {
+class DialogAccessUsageSettings : DialogFragment() {
 
     private var _binding: LayoutRequestForPermissionBinding? = null
     private val binding get() = _binding!!

@@ -20,6 +20,8 @@ import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
 import ar.cleaner.first.pf.models.MenuHorizontalItems
+import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAINING_TIME_HOUR
+import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAINING_TIME_MINUTE
 import ar.cleaner.first.pf.ui.boost.BoostFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment.Companion.APP_PREFERENCES
@@ -81,7 +83,7 @@ class ResultFragment : Fragment() {
 
     private fun initClick() {
         binding.arrowBackIv.setOnClickListener {
-            findNavController().popBackStack(R.id.menuFragment,false)
+            findNavController().popBackStack(R.id.menuFragment, false)
         }
     }
 
@@ -103,6 +105,26 @@ class ResultFragment : Fragment() {
 
     private fun BatteryDetails?.render() {
         this ?: return
+        val batteryRemainingTimeHour = preferences.getInt(BATTERY_REMAINING_TIME_HOUR, 0)
+        var batteryRemainingTimeMinute = preferences.getInt(BATTERY_REMAINING_TIME_MINUTE, 0)
+        var optimizeHour = batteryRemainingTimeHour - batteryRemainingTime.hour
+        var optimizeMinute = batteryRemainingTimeMinute - batteryRemainingTime.minute
+        if (batteryRemainingTimeMinute < 1) batteryRemainingTimeMinute = 1
+        var percent =
+            ((batteryRemainingTimeHour * 3600 + batteryRemainingTimeMinute * 60) / (batteryRemainingTime.hour * 3600 + batteryRemainingTime.minute * 60)) * 100
+        if (percent < 1) percent = 1
+        if (optimizeHour < 0) optimizeHour = 0
+        if (optimizeMinute <= 0) optimizeMinute = 1
+        with(binding) {
+            firstDescriptionTv.text =
+                getString(R.string.battery_power_optimized_D_D, optimizeHour, optimizeMinute)
+            secondDescriptionTv.text = getString(R.string.working_time_increased_by_D, percent)
+            thirdDescriptionTv.text = getString(
+                R.string.remaining_charging_time_D_h_D_min,
+                batteryRemainingTime.hour,
+                batteryRemainingTime.minute
+            )
+        }
     }
 
     private fun RamDetails?.render() {
