@@ -62,7 +62,6 @@ class BoostProgressFragment : Fragment() {
                 name = app.name,
                 packageName = app.packageName
             )
-
         }.toList()
         lifecycleScope.launch {
             extendedOptimizerUseCase.invoke(newList).collect { }

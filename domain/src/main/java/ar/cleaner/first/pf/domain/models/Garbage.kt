@@ -5,6 +5,11 @@ sealed class Garbage<T> {
     abstract val list: List<T>
 }
 
+data class Cache(
+    val totalGarbageSize: Long,
+    val list: List<App>
+)
+
 data class EmptyFolders(
     override val totalGarbageSize: Double,
     override val list: List<JunkFile>

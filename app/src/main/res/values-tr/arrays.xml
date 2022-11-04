@@ -23,4 +23,12 @@
         <item>Artık dosyalar</item>
         <item>Sistem çöpü</item>
     </array>
+
+    <array name="progress_cooling">
+        <item>Arka plan işlemlerini silme..</item>
+        <item>Sistem yollarını temizleme..</item>
+        <item>Sistem tuşlarını ayarlama..</item>
+        <item>Kullanılmayan bileşenleri kontrol etme..</item>
+        <item>Gereksiz GPS kulelerinin bağlantısını kesmek..</item>
+    </array>
 </resources>

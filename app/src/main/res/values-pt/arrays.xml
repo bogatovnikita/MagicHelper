@@ -23,4 +23,12 @@
         <item>Ficheiros residuais</item>
         <item>Lixo do sistema</item>
     </array>
+
+    <array name="progress_cooling">
+        <item>Exclusão de processos em segundo plano..</item>
+        <item>Caminhos do sistema de compensação..</item>
+        <item>Ajustar as chaves do sistema..</item>
+        <item>Verificação de componentes não utilizados..</item>
+        <item>Desligar de torres de GPS desnecessárias..</item>
+    </array>
 </resources>

@@ -23,4 +23,12 @@
         <item>Restdateien</item>
         <item>Systemmüll</item>
     </array>
+
+    <array name="progress_cooling">
+        <item>Hintergrundprozesse löschen..</item>
+        <item>Systempfade löschen..</item>
+        <item>Einstellen der Systemtasten..</item>
+        <item>Überprüfung nicht verwendeter Komponenten..</item>
+        <item>Trennen von unnötigen GPS-Türmen..</item>
+    </array>
 </resources>

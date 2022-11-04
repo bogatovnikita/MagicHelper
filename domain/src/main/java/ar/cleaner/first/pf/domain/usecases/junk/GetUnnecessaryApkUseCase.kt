@@ -22,7 +22,6 @@ class GetUnnecessaryApkUseCase @Inject constructor(
     }.map { unnecessaryApk ->
         if (unnecessaryApk.isValuesCompatible()) CaseResult.Success(unnecessaryApk)
         else CaseResult.Failure(NullPointerException())
-    }.catch { e -> e.printStackTrace() }
-        .cancellable()
+    }.cancellable()
         .flowOn(dispatcher)
 }

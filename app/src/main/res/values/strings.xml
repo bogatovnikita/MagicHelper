@@ -68,7 +68,6 @@
     <string name="percent_D">%d%%</string>
     <string name="speed_up">Accelerate</string>
     <string name="boost_description">Accelerated</string>
-    <string name="boost_description_not_optimize">Speed up the work of your phone</string>
     <string name="collect_data">Collecting data…</string>
     <string name="cool_down_your_phone">Cool your phone</string>
     <string name="clean_junk_description_not_optimized_D">Free up %.1f gb</string>
@@ -77,6 +76,7 @@
     <string name="memory_is_overloaded_optimization_is_required">Memory gets overloaded! Optimization required!</string>
     <string name="cooled_D">Cooled down %d℃</string>
     <string name="optimization_is_done">Optimization is done</string>
+
     <string name="exit_toast">Tap back button in order to exit</string>
     <string name="we_need_permission">We need permission</string>
     <string name="description_permission">In order for us to stop background processes and free up RAM, we need access to the usage history</string>
@@ -87,4 +87,9 @@
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Allow the app to access bluetooth settings to increase battery life</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">For Extra and Ultra modes, you need access to bluetooth settings</string>
     <string name="settings">Settings</string>
+    <string name="cleaning_is_required">Cleaning is required</string>
+    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">In order for us to clean up the garbage, we need access to the usage history</string>
+    <string name="description_need_permission_files">We need permission to read, delete and modify files so that we can find unnecessary files and you can delete them.</string>
+    <string name="boost_description_not_optimize">Speed up the work of your phone</string>
+    <string name="snackbar_access_files">To perform this function, we need access to files</string>
 </resources>

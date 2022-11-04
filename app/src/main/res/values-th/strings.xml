@@ -75,4 +75,20 @@
     <string name="cooled_D">เย็นลง %d℃</string>
     <string name="optimization_is_done">การเพิ่มประสิทธิภาพจะทำ</string>
     <string name="app_name">ทำความสะอาด-ทำความสะอาดหน่วยความจำแคชโทรศัพท์</string>
+
+    <string name="exit_toast">แตะปุ่มย้อนกลับเพื่อออกจาก</string>
+    <string name="we_need_permission">เราต้องได้รับอนุญาต</string>
+    <string name="description_permission">เพื่อที่เราจะหยุดกระบวนการพื้นหลังและเพิ่มแรม,เราจำเป็นต้องเข้าถึงประวัติการใช้งาน</string>
+    <string name="cancel">การยกเลิก</string>
+    <string name="allow">อนุญาต</string>
+    <string name="snackbar_access_bluetooth">เพื่อทำหน้าที่นี้เราต้องเข้าถึงบลูทูธ</string>
+    <string name="further">เพิ่มเติม</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">จะช่วยให้การตรวจสอบการเข้าถึงคุณลักษณะโทรศัพท์ของอุปกรณ์การอนุญาตนี้จะช่วยให้ก</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">สำหรับโหมดพิเศษและพิเศษที่คุณต้องเข้าถึงการตั้งค่าบลูทูธ</string>
+    <string name="settings">ตั้งค่า</string>
+    <string name="cleaning_is_required">ทำความสะอาดเป็นสิ่งจำเป็น</string>
+    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">นูป๊อปอัปที่จะให้เลือกความช่วยเหลือหากต้องการทดสอบให้คลิกเมาส์ปุ่มขวาบนที่ใดๆของข้</string>
+    <string name="description_need_permission_files">เราจำเป็นต้องมีสิทธิ์ในการอ่าน,ลบและแก้ไขไฟล์เพื่อให้เราสามารถหาไฟล์ที่ไม่จำเป็นแ</string>
+    <string name="boost_description_not_optimize">เพิ่มความเร็วในการทำงานของโทรศัพท์ของคุณ</string>
+    <string name="snackbar_access_files">เพื่อทำหน้าที่นี้เราจำเป็นต้องเข้าถึงไฟล์</string>
 </resources>

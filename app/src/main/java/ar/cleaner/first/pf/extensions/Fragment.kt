@@ -94,3 +94,7 @@ fun Fragment.openWriteSettings() {
     intent.data = Uri.parse("package:" + requireActivity().packageName)
     startActivity(intent)
 }
+
+fun Fragment.openManageExternalSettings() {
+    startActivity(requireContext().manageExternal())
+}

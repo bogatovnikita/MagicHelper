@@ -2,7 +2,6 @@ package ar.cleaner.first.pf.data.optimizers
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.content.Context
 import android.os.Build
 import android.provider.Settings
 import ar.cleaner.first.pf.data.extensions.bluetoothAdapter
@@ -47,7 +46,7 @@ class BatteryOptimizer @Inject constructor(
      */
     private fun highOptimizing(): Flow<Int> = flow {
 
-        emitProgressWithDelay(from = 0, to = 20); setBrightnessLevel(30)
+        emitProgressWithDelay(from = 0, to = 20); setBrightnessLevel(10)
         emitProgressWithDelay(from = 20, to = 40); turnOffAutoBrightness()
         emitProgressWithDelay(from = 40, to = 60); turnOffBluetooth()
         emitProgressWithDelay(from = 60, to = 70); turnOffWifi()
@@ -60,7 +59,9 @@ class BatteryOptimizer @Inject constructor(
      * Decrease brightness to 50%, turn off bluetooth, turn off wifi
      */
     private fun mediumOptimizing(): Flow<Int> = flow {
-        emitProgressWithDelay(from = 0, to = 50); setBrightnessLevel(50)
+        emitProgressWithDelay(from = 0, to = 50);
+        setBrightnessLevel(30)
+        turnOffAutoBrightness()
         emitProgressWithDelay(from = 50, to = 73); turnOffBluetooth()
         emitProgressWithDelay(from = 73, to = 89); turnOffWifi()
         emitProgressWithDelay(from = 89, to = 100)
@@ -73,7 +74,8 @@ class BatteryOptimizer @Inject constructor(
      */
     private fun lowOptimizing(): Flow<Int> = flow {
         emitProgressWithDelay(from = 0, to = 53)
-        setBrightnessLevel(70)
+        turnOffAutoBrightness()
+        setBrightnessLevel(40)
         emitProgressWithDelay(from = 53, to = 100)
     }.onCompletion {
         if (isWorking()) preferencesManager.batteryMode = BatteryMode.NORMAL.name

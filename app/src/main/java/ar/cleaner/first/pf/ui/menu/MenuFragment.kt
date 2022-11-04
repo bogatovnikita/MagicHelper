@@ -1,10 +1,11 @@
 package ar.cleaner.first.pf.ui.menu
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,6 +18,8 @@ import ar.cleaner.first.pf.domain.models.details.CpuDetails
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
+import ar.cleaner.first.pf.ui.cooling.CoolingFragment
+import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,6 +29,9 @@ class MenuFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: MenuViewModel by viewModels()
+
+    private lateinit var preferences: SharedPreferences
+    private var junkSize = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,10 +44,19 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initPreference()
         setColorStatusBar()
         viewModel.initAllUseCase()
         initClick()
         initObserver()
+    }
+
+    private fun initPreference() {
+        preferences = requireContext().getSharedPreferences(
+            CoolingFragment.APP_PREFERENCES,
+            Context.MODE_PRIVATE
+        )
+        junkSize = preferences.getInt(JunkFragment.JUNK_SIZE, 0)
     }
 
     private fun setColorStatusBar() {
@@ -147,10 +162,11 @@ class MenuFragment : Fragment() {
     private fun CleanerDetails?.render() {
         this ?: return
         with(binding) {
-            storageProgressBar.progressPercent = usedPercents.toFloat()
-            storagePercentTv.text = getString(R.string.percent_D, usedPercents)
-            descriptionStorageTv.text = getString(R.string._F_gb_F_gb, usedMemorySize, totalSize)
             if (isOptimized) {
+                storageProgressBar.progressPercent = usedPercents.toFloat() - 1
+                storagePercentTv.text = getString(R.string.percent_D, usedPercents - 1)
+                descriptionStorageTv.text =
+                    getString(R.string._F_gb_F_gb, usedMemorySize - junkSize / 1024, totalSize)
                 cleanDescriptionTv.text = getString(R.string.clean_junk_done)
                 cleanDescriptionTv.setTextColor(
                     ContextCompat.getColor(
@@ -159,9 +175,12 @@ class MenuFragment : Fragment() {
                     )
                 )
             } else {
+                storageProgressBar.progressPercent = usedPercents.toFloat()
+                storagePercentTv.text = getString(R.string.percent_D, usedPercents)
+                descriptionStorageTv.text =
+                    getString(R.string._F_gb_F_gb, usedMemorySize, totalSize)
                 cleanDescriptionTv.text = getString(
-                    R.string.clean_junk_description_not_optimized_D,
-                    trashSize
+                    R.string.cleaning_is_required
                 )
                 cleanDescriptionTv.setTextColor(
                     ContextCompat.getColor(

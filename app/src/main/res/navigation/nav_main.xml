@@ -143,6 +143,9 @@
             app:destination="@id/resultFragment"
             app:popUpTo="@id/junkProgressFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="listJunk"
+            app:argType="ar.cleaner.first.pf.models.ParcelableJunk[]" />
     </fragment>
 
     <fragment

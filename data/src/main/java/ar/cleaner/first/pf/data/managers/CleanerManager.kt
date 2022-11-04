@@ -3,6 +3,7 @@ package ar.cleaner.first.pf.data.managers
 import android.app.Application
 import android.os.Environment
 import android.os.StatFs
+import android.util.Log
 import ar.cleaner.first.pf.data.extensions.asJunkFile
 import ar.cleaner.first.pf.data.managers.CleanerManager.SearchJunk.searchRecursivelyEmptyFolders
 import ar.cleaner.first.pf.data.managers.CleanerManager.SearchJunk.searchRecursivelyThumbnails
@@ -10,6 +11,7 @@ import ar.cleaner.first.pf.data.managers.CleanerManager.SearchJunk.searchRecursi
 import ar.cleaner.first.pf.data.preferences.PreferencesManager
 import ar.cleaner.first.pf.domain.const.Const
 import ar.cleaner.first.pf.domain.const.Const.DEFAULT_DOUBLE_VALUE
+import ar.cleaner.first.pf.domain.models.App
 import ar.cleaner.first.pf.domain.models.JunkFile
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -29,6 +31,10 @@ class CleanerManager @Inject constructor(
         return Environment.getExternalStorageState() ==
                 Environment.MEDIA_MOUNTED
     }
+
+//    suspend fun getCache(): List<App> = withContext(ioDispatcher) {
+//        context.getAppsCache()
+//    }
 
     fun getLastClearedJunk(): Flow<Double> = preferencesManager.lastClearedJunkFlow
 

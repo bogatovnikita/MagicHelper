@@ -1,22 +1,23 @@
 package ar.cleaner.first.pf.domain.usecases.junk
 
+import ar.cleaner.first.pf.domain.models.Junk
 import ar.cleaner.first.pf.domain.repositorys.junk.JunkUseCasRepository
-import ar.cleaner.first.pf.domain.usecases.base.OptimizeUseCase
 import ar.cleaner.first.pf.domain.utils.getCurrentTime
 import ar.cleaner.first.pf.domain.utils.isWorking
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-class GarbageCleanerUseCase @Inject constructor(
+class ExtendedCleanUseCase @Inject constructor(
     private val junkUseCasRepository: JunkUseCasRepository,
     private val dispatcher: CoroutineDispatcher
-) : OptimizeUseCase<Int> {
-    override fun invoke(): Flow<Int> {
-        val flow = junkUseCasRepository.fastOptimization()
-        return flow.cancellable().catch { e -> e.printStackTrace() }.flowOn(dispatcher)
+) : (List<Junk>) -> Flow<Int> {
+    override fun invoke(filesToDelete: List<Junk>): Flow<Int> =
+        junkUseCasRepository.startOptimization(filesToDelete)
             .onCompletion {
-                if (isWorking()) junkUseCasRepository.setLastOptimizationMillis(getCurrentTime())
+                if (isWorking())
+                    junkUseCasRepository.setLastOptimizationMillis(getCurrentTime())
             }
-    }
+            .cancellable()
+            .flowOn(dispatcher)
 }

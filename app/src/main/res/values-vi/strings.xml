@@ -75,4 +75,20 @@
     <string name="cooled_D">Hạ nhiệt %d℃</string>
     <string name="optimization_is_done">Tối ưu hóa được thực hiện</string>
     <string name="app_name">Cleaner-làm sạch bộ nhớ, bộ nhớ cache, điện thoại</string>
+
+    <string name="exit_toast">Nhấn nút quay lại để thoát</string>
+    <string name="we_need_permission">Chúng tôi cần sự cho phép</string>
+    <string name="description_permission">Để ngăn chặn các quá trình nền và giải PHÓNG RAM, chúng ta cần truy cập vào lịch sử sử dụng</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="allow">Cho phép</string>
+    <string name="snackbar_access_bluetooth">Để thực hiện chức năng này, chúng ta cần truy cập vào bluetooth</string>
+    <string name="further">Hơn nữa</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Cho phép các ứng dụng để truy cập vào các thiết lập bluetooth để tăng tuổi thọ pin</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Đối Với Chế độ Extra Và Ultra, bạn cần truy cập vào cài đặt bluetooth</string>
+    <string name="settings">Cài đặt</string>
+    <string name="cleaning_is_required">Làm sạch là cần thiết</string>
+    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">Để chúng tôi dọn rác, chúng tôi cần truy cập vào lịch sử sử dụng</string>
+    <string name="description_need_permission_files">Chúng tôi cần sự cho phép để đọc, xóa và sửa đổi các tập tin để chúng tôi có thể tìm thấy các tập tin không cần thiết và bạn có thể xóa chúng.</string>
+    <string name="boost_description_not_optimize">Tăng tốc độ làm việc của điện thoại của bạn</string>
+    <string name="snackbar_access_files">Để thực hiện chức năng này, chúng ta cần truy cập vào các tập tin</string>
 </resources>

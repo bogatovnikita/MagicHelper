@@ -25,7 +25,9 @@ import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAININ
 import ar.cleaner.first.pf.ui.boost.BoostFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment.Companion.APP_PREFERENCES
+import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.random.Random
 
 @AndroidEntryPoint
 class ResultFragment : Fragment() {
@@ -113,6 +115,7 @@ class ResultFragment : Fragment() {
         var percent =
             ((batteryRemainingTimeHour * 3600 + batteryRemainingTimeMinute * 60) / (batteryRemainingTime.hour * 3600 + batteryRemainingTime.minute * 60)) * 100
         if (percent < 1) percent = 1
+        if (percent > 50) percent = Random.nextInt(5, 15)
         if (optimizeHour < 0) optimizeHour = 0
         if (optimizeMinute <= 0) optimizeMinute = 1
         with(binding) {
@@ -159,6 +162,18 @@ class ResultFragment : Fragment() {
 
     private fun CleanerDetails?.render() {
         this ?: return
+        val junkSize = preferences.getInt(JunkFragment.JUNK_SIZE, 0)
+        with(binding) {
+            firstDescriptionTv.text = getString(R.string.released_D_gb, junkSize)
+            secondDescriptionTv.text =
+                getString(R.string.now_the_devices_memory_is_D_free, 100 - usedPercents)
+            thirdDescriptionTv.text =
+                getString(
+                    R.string.available_memory_F_gb_F_gb,
+                    usedMemorySize - junkSize.toDouble() / 1024,
+                    totalSize
+                )
+        }
     }
 
     private fun initRecyclerView() {

@@ -75,4 +75,21 @@
     <string name="cooled_D">Resfriado %d℃</string>
     <string name="optimization_is_done">Otimização realizada</string>
     <string name="app_name">Limpador-limpe a memória, cache, telefone</string>
+
+
+    <string name="exit_toast">Toque no botão voltar para sair</string>
+    <string name="we_need_permission">Precisamos de autorização</string>
+    <string name="description_permission">Para que possamos interromper processos em segundo plano e liberar RAM, precisamos de acesso ao histórico de uso</string>
+    <string name="cancel">Cancelar</string>
+    <string name="allow">Permitir</string>
+    <string name="snackbar_access_bluetooth">Para executar esta função, precisamos de acesso ao bluetooth</string>
+    <string name="further">Adicional</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Permitir que o aplicativo acesse as configurações de bluetooth para aumentar a vida útil da bateria</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Para os modos Extra e Ultra, você precisa acessar as configurações de bluetooth</string>
+    <string name="settings">Definicao</string>
+    <string name="cleaning_is_required">A limpeza é necessária</string>
+    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">Para que possamos limpar o lixo, precisamos de acesso ao histórico de Utilização</string>
+    <string name="description_need_permission_files">Necessitamos de autorização para ler, eliminar e modificar ficheiros, para que possamos encontrar ficheiros desnecessários e para que os possamos eliminar.</string>
+    <string name="boost_description_not_optimize">Acelere o trabalho do seu telefone</string>
+    <string name="snackbar_access_files">Para executar esta função, precisamos de acesso aos ficheiros</string>
 </resources>

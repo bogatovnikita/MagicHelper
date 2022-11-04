@@ -77,7 +77,6 @@ class CleanerOptimizer @Inject constructor(
         emitProgressWithDelay(isRandomDelay = true, from = 73, to = 100)
         preferencesManager.lastClearedJunk = calculatedJunkSize
     }
-
     private fun deleteFilesInAppFolders(packageName: String) {
         packageUriList.forEach { uri ->
             if (packageName.trim() == uri.lastPathSegment?.substringAfterLast('/')?.trim()) {

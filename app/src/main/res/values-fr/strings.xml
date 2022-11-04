@@ -75,4 +75,20 @@
     <string name="cooled_D">Refroidi %d℃</string>
     <string name="optimization_is_done">Optimisation effectuée</string>
     <string name="app_name">Cleaner-nettoyer la mémoire, le cache, le téléphone</string>
+
+    <string name="exit_toast">Appuyez sur le bouton Retour pour quitter</string>
+    <string name="we_need_permission">Nous avons besoin d`une autorisation</string>
+    <string name="description_permission">Pour que nous puissions arrêter les processus en arrière-plan et libérer de la RAM, nous devons avoir accès à l`historique d`utilisation</string>
+    <string name="cancel">Annuler</string>
+    <string name="allow">Permettre</string>
+    <string name="snackbar_access_bluetooth">Pour effectuer cette fonction, nous avons besoin d`un accès à bluetooth</string>
+    <string name="further">Plus</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Autoriser l`application à accéder aux paramètres Bluetooth pour augmenter la durée de vie de la batterie</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Pour les modes Extra et Ultra, vous devez accéder aux paramètres Bluetooth</string>
+    <string name="settings">Paramètre</string>
+    <string name="cleaning_is_required">Le nettoyage est requis</string>
+    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">Pour que nous puissions nettoyer les ordures, nous avons besoin d`accéder à l`historique d`utilisation</string>
+    <string name="description_need_permission_files">Nous avons besoin d`une autorisation pour lire, supprimer et modifier des fichiers afin que nous puissions trouver des fichiers inutiles et que vous puissiez les supprimer.</string>
+    <string name="boost_description_not_optimize">Accélérez le travail de votre téléphone</string>
+    <string name="snackbar_access_files">Pour effectuer cette fonction, nous avons besoin d`accéder aux fichiers</string>
 </resources>

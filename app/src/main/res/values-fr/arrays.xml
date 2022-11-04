@@ -23,4 +23,12 @@
         <item>Fichiers résiduels</item>
         <item>Ordures du système</item>
     </array>
+
+    <array name="progress_cooling">
+        <item>Suppression des processus d`arrière-plan..</item>
+        <item>Effacer les chemins du système..</item>
+        <item>Réglage des touches du système..</item>
+        <item>Vérification des composants inutilisés..</item>
+        <item>Déconnexion des tours GPS inutiles..</item>
+    </array>
 </resources>

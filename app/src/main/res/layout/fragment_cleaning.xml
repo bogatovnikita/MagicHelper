@@ -75,6 +75,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arrow_back_iv" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_percent_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/percent_tv"
+        app:layout_constraintEnd_toEndOf="@id/percent_tv"
+        app:layout_constraintStart_toStartOf="@id/percent_tv"
+        app:layout_constraintTop_toTopOf="@id/percent_tv"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="800"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear">
+
+        <FrameLayout
+            android:id="@+id/shimmer_place_holder_percent_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_place_holder_background" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/percent_tv"
         android:layout_width="0dp"
@@ -150,25 +171,45 @@
 
     <TextView
         android:id="@+id/cache_tittle_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
-        app:layout_constraintEnd_toStartOf="@id/cache_count_tv"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/cache"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/cache_background"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toStartOf="@id/cache_count_tv"
         app:layout_constraintStart_toStartOf="@id/cache_background"
         app:layout_constraintTop_toTopOf="@id/cache_background" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_cache_tv"
+        android:layout_width="0dp"
+        android:elevation="@dimen/_11sdp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/cache_count_tv"
+        app:layout_constraintEnd_toEndOf="@id/cache_count_tv"
+        app:layout_constraintStart_toStartOf="@id/cache_count_tv"
+        app:layout_constraintTop_toTopOf="@id/cache_count_tv"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="800"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear">
+
+        <FrameLayout
+            android:id="@+id/shimmer_place_holder_cache_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_place_holder_background" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/cache_count_tv"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/cache_tittle_tv"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
@@ -178,6 +219,7 @@
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/cache_background"
         app:layout_constraintEnd_toEndOf="@id/cache_background"
+        app:layout_constraintStart_toEndOf="@id/cache_tittle_tv"
         app:layout_constraintTop_toTopOf="@id/cache_background"
         tools:text="@string/mb_D" />
 
@@ -223,33 +265,55 @@
 
     <TextView
         android:id="@+id/temp_files_tittle_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/temp_files"
-        app:layout_constraintEnd_toStartOf="@id/temp_files_count_tv"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/temp_files_background"
+        app:layout_constraintEnd_toStartOf="@id/temp_files_count_tv"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/temp_files_background"
         app:layout_constraintTop_toTopOf="@id/temp_files_background" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_temp_files"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/temp_files_count_tv"
+        app:layout_constraintEnd_toEndOf="@id/temp_files_count_tv"
+        app:layout_constraintStart_toStartOf="@id/temp_files_count_tv"
+        app:layout_constraintTop_toTopOf="@id/temp_files_count_tv"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="800"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear">
+
+        <FrameLayout
+            android:id="@+id/shimmer_place_holder_temp_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_place_holder_background" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/temp_files_count_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textAlignment="viewEnd"
         android:textColor="@color/grey"
-        app:layout_constraintStart_toEndOf="@id/temp_files_tittle_tv"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/temp_files_background"
         app:layout_constraintEnd_toEndOf="@id/temp_files_background"
+        app:layout_constraintStart_toEndOf="@id/temp_files_tittle_tv"
         app:layout_constraintTop_toTopOf="@id/temp_files_background"
         tools:text="@string/mb_D" />
 
@@ -295,7 +359,7 @@
 
     <TextView
         android:id="@+id/residual_files_titles_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
@@ -304,24 +368,46 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/residual_files_background"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintEnd_toStartOf="@id/residual_files_count_tv"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/residual_files_background"
         app:layout_constraintTop_toTopOf="@id/residual_files_background" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_residual_files"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/residual_files_count_tv"
+        app:layout_constraintEnd_toEndOf="@id/residual_files_count_tv"
+        app:layout_constraintStart_toStartOf="@id/residual_files_count_tv"
+        app:layout_constraintTop_toTopOf="@id/residual_files_count_tv"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="800"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear">
+
+        <FrameLayout
+            android:id="@+id/shimmer_place_holder_residual_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_place_holder_background" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/residual_files_count_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toEndOf="@id/residual_files_titles_tv"
         android:textColor="@color/grey"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/residual_files_background"
         app:layout_constraintEnd_toEndOf="@id/residual_files_background"
+        app:layout_constraintStart_toEndOf="@id/residual_files_titles_tv"
         app:layout_constraintTop_toTopOf="@id/residual_files_background"
         tools:text="@string/mb_D" />
 
@@ -367,7 +453,7 @@
 
     <TextView
         android:id="@+id/system_garbage_tittle_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
@@ -375,15 +461,37 @@
         android:text="@string/system_garbage"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toStartOf="@id/system_garbage_count_tv"
         app:layout_constraintBottom_toBottomOf="@id/system_garbage_background"
+        app:layout_constraintEnd_toStartOf="@id/system_garbage_count_tv"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@id/system_garbage_background"
         app:layout_constraintTop_toTopOf="@id/system_garbage_background" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_garbage_files"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/system_garbage_count_tv"
+        app:layout_constraintEnd_toEndOf="@id/system_garbage_count_tv"
+        app:layout_constraintStart_toStartOf="@id/system_garbage_count_tv"
+        app:layout_constraintTop_toTopOf="@id/system_garbage_count_tv"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="800"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear">
+
+        <FrameLayout
+            android:id="@+id/shimmer_place_holder_garbage_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shimmer_place_holder_background" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <TextView
         android:id="@+id/system_garbage_count_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:elevation="@dimen/_10sdp"
@@ -391,9 +499,9 @@
         android:textAlignment="viewEnd"
         android:textColor="@color/grey"
         android:textSize="@dimen/_12ssp"
-        app:layout_constraintStart_toEndOf="@id/system_garbage_tittle_tv"
         app:layout_constraintBottom_toBottomOf="@id/system_garbage_background"
         app:layout_constraintEnd_toEndOf="@id/system_garbage_background"
+        app:layout_constraintStart_toEndOf="@id/system_garbage_tittle_tv"
         app:layout_constraintTop_toTopOf="@id/system_garbage_background"
         tools:text="@string/mb_D" />
 
@@ -431,21 +539,69 @@
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:clickable="false"
+        android:ellipsize="end"
         android:fontFamily="@font/heraclito_medium"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/_4sdp"
         android:textAllCaps="false"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toTopOf="@id/boost_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.07"
-        android:paddingHorizontal="@dimen/_4sdp"
-        android:ellipsize="end"
-        android:maxLines="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/root_background_iv"
         app:layout_constraintVertical_bias="1"
         tools:background="@drawable/background_button_danger"
         tools:text="@string/memory_is_overloaded_optimization_is_required"
         tools:textColor="@color/red" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/snackbar_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="snackbar_background,tv_description,tv_settings" />
+
+    <View
+        android:id="@+id/snackbar_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/background_snackbar"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toTopOf="@id/boost_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:elevation="21dp"
+        android:text="@string/snackbar_access_files"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toBottomOf="@id/snackbar_background"
+        app:layout_constraintEnd_toStartOf="@id/tv_settings"
+        app:layout_constraintStart_toStartOf="@id/snackbar_background"
+        app:layout_constraintTop_toTopOf="@id/snackbar_background" />
+
+    <TextView
+        android:id="@+id/tv_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:elevation="21dp"
+        android:fontFamily="@font/heraclito_bold"
+        android:text="@string/settings"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/snackbar_background"
+        app:layout_constraintEnd_toEndOf="@id/snackbar_background"
+        app:layout_constraintTop_toTopOf="@id/snackbar_background" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boost_button"
@@ -462,5 +618,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/shimmer_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="shimmer_percent_tv,shimmer_cache_tv,shimmer_temp_files,shimmer_residual_files,shimmer_garbage_files" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

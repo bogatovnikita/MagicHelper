@@ -22,7 +22,7 @@ class GetThumbnailsUseCase @Inject constructor(
         if (thumbnails.isValuesCompatible())
             CaseResult.Success(thumbnails)
         else CaseResult.Failure(NullPointerException())
-    }.catch { e -> e.printStackTrace() }
+    }
         .cancellable()
         .flowOn(dispatcher)
 }

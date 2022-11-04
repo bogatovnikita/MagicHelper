@@ -23,4 +23,12 @@
         <item>ไฟล์ที่เหลือ</item>
         <item>ระบบขยะ</item>
     </array>
+
+    <array name="progress_cooling">
+        <item>การลบกระบวนการพื้นหลัง.</item>
+        <item>เส้นทางระบบการล้าง.</item>
+        <item>การปรับปุ่มระบบ.</item>
+        <item>การตรวจสอบส่วนประกอบที่ไม่ได้ใช้.</item>
+        <item>ตัดการเชื่อมต่อจากเสาจีพีเอสที่ไม่จำเป็น.</item>
+    </array>
 </resources>
