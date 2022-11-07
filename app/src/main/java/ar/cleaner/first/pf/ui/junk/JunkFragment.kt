@@ -87,16 +87,43 @@ class JunkFragment : Fragment() {
         binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
         }
+
         binding.boostButton.setOnClickListener {
-            if (checkPermissions(*permissionsList)) {
-                preferences.edit().putInt(JUNK_SIZE, junkSize).apply()
-                findNavController().navigate(
-                    JunkFragmentDirections.actionJunkFragmentToJunkProgressFragment(
-                        viewModel.state.value.listParcelableJunk.toTypedArray()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                if (Environment.isExternalStorageManager() && checkUsageStatsAllowed()) {
+                    preferences.edit().putInt(JUNK_SIZE, junkSize).apply()
+                    findNavController().navigate(
+                        JunkFragmentDirections.actionJunkFragmentToJunkProgressFragment(
+                            viewModel.state.value.listParcelableJunk.toTypedArray()
+                        )
                     )
-                )
+                } else if (!Environment.isExternalStorageManager()) {
+                    dialogManageStorage.show(
+                        parentFragmentManager,
+                        "JunkFragmentStorage"
+                    )
+                } else if (!checkUsageStatsAllowed()) {
+                    dialogAccessUsageSettings.show(
+                        parentFragmentManager,
+                        "JunkFragmentUsage"
+                    )
+                }
             } else {
-                showSnackBar()
+                if (checkPermissions(*permissionsList) && checkUsageStatsAllowed()) {
+                    preferences.edit().putInt(JUNK_SIZE, junkSize).apply()
+                    findNavController().navigate(
+                        JunkFragmentDirections.actionJunkFragmentToJunkProgressFragment(
+                            viewModel.state.value.listParcelableJunk.toTypedArray()
+                        )
+                    )
+                } else if (!checkPermissions(*permissionsList)) {
+                    showSnackBar()
+                } else if (!checkUsageStatsAllowed()) {
+                    dialogAccessUsageSettings.show(
+                        parentFragmentManager,
+                        "JunkFragmentUsage"
+                    )
+                }
             }
         }
     }
@@ -147,7 +174,7 @@ class JunkFragment : Fragment() {
                         setTextColor(
                             ContextCompat.getColor(
                                 requireContext(),
-                                R.color.green
+                                R.color.black
                             )
                         )
                         setBackgroundResource(R.drawable.background_button_not_danger)
@@ -161,14 +188,18 @@ class JunkFragment : Fragment() {
     private fun launchPermissionsOrSubscribeOnData() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             when {
-                !Environment.isExternalStorageManager() -> dialogManageStorage.show(
-                    parentFragmentManager,
-                    "JunkFragmentStorage"
-                )
-                !checkUsageStatsAllowed() -> dialogAccessUsageSettings.show(
-                    parentFragmentManager,
-                    "JunkFragmentUsage"
-                )
+                !Environment.isExternalStorageManager() -> {
+                    dialogManageStorage.show(
+                        parentFragmentManager,
+                        "JunkFragmentStorage"
+                    )
+                }
+                !checkUsageStatsAllowed() -> {
+                    dialogAccessUsageSettings.show(
+                        parentFragmentManager,
+                        "JunkFragmentUsage"
+                    )
+                }
                 else -> {
                     viewModel.loadingJunkFilesIsDone()
                     initObservers()
@@ -176,7 +207,9 @@ class JunkFragment : Fragment() {
             }
         } else {
             when {
-                checkPermissions(*permissionsList) -> checkUsageStats()
+                checkPermissions(*permissionsList) -> {
+                    checkUsageStats()
+                }
                 else -> {
                     if (preferences.getBoolean(CHECK_WRITE_READ_PERMISSION, true)) {
                         dialogReadPermission.show(parentFragmentManager, "JunkFragment")

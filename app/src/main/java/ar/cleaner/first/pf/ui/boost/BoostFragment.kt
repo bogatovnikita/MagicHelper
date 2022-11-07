@@ -73,7 +73,7 @@ class BoostFragment : Fragment() {
                 setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
-                        R.color.green
+                        R.color.black
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_not_danger)

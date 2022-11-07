@@ -74,7 +74,7 @@
     <string name="memory_is_overloaded_optimization_is_required">Bộ nhớ bị quá tải! Yêu cầu tối ưu hóa!</string>
     <string name="cooled_D">Hạ nhiệt %d℃</string>
     <string name="optimization_is_done">Tối ưu hóa được thực hiện</string>
-    <string name="app_name">Cleaner-làm sạch bộ nhớ, bộ nhớ cache, điện thoại</string>
+    <string name="app_name">Sạch hơn-làm sạch bộ nhớ, bộ nhớ cache, điện thoại</string>
 
     <string name="exit_toast">Nhấn nút quay lại để thoát</string>
     <string name="we_need_permission">Chúng tôi cần sự cho phép</string>

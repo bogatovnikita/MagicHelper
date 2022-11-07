@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.databinding.LayoutRequestForPermissionBinding
+import ar.cleaner.first.pf.databinding.LayoutRequestForUsageSettingsBinding
 import ar.cleaner.first.pf.extensions.openAccessUsageSettings
 
 class DialogAccessUsageSettings : DialogFragment() {
 
-    private var _binding: LayoutRequestForPermissionBinding? = null
+    private var _binding: LayoutRequestForUsageSettingsBinding? = null
     private val binding get() = _binding!!
 
     override fun onResume() {
@@ -26,7 +26,7 @@ class DialogAccessUsageSettings : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = LayoutRequestForPermissionBinding.inflate(inflater, container, false)
+        _binding = LayoutRequestForUsageSettingsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,10 +37,10 @@ class DialogAccessUsageSettings : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(binding){
-            crossExitIv.setOnClickListener {  dismiss()}
+        with(binding) {
+            crossExitIv.setOnClickListener { dismiss() }
             cancelBtn.setOnClickListener { dismiss() }
-            allowBtn.setOnClickListener{
+            allowBtn.setOnClickListener {
                 openAccessUsageSettings()
                 dismiss()
             }

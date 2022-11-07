@@ -3,7 +3,6 @@ package ar.cleaner.first.pf.ui.cooling
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +14,6 @@ import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentCoolingBinding
 import ar.cleaner.first.pf.domain.models.details.CpuDetails
-import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
-import ar.cleaner.first.pf.extensions.observeWhenResumed
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -72,7 +69,7 @@ class CoolingFragment : Fragment() {
 
     private fun renderState(cpuDetails: CpuDetails) {
         binding.percentTv.text =
-            requireContext().getString(R.string.percent_D, cpuDetails.temperature.toInt())
+            requireContext().getString(R.string.temperature_D, cpuDetails.temperature.toInt())
         if (cpuDetails.isOptimized) {
             binding.groupOptimizeIsDone.visibility = View.VISIBLE
             binding.groupIsNotOptimize.visibility = View.GONE
@@ -80,7 +77,7 @@ class CoolingFragment : Fragment() {
                 setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
-                        R.color.green
+                        R.color.black
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_not_danger)
