@@ -38,6 +38,7 @@ class FirstScanningFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        preloadAd()
         firstOptimization()
     }
 
@@ -67,7 +68,7 @@ class FirstScanningFragment : Fragment() {
                     binding.percentProgressBarTv.text = getString(R.string.percent_D, i)
                     binding.progressBar.progress = i.toFloat()
                     animationProgressBar(i)
-                    delay(70)
+                    delay(100)
                 }
             }
             scanIsDone = true
@@ -76,10 +77,12 @@ class FirstScanningFragment : Fragment() {
     }
 
     private fun goNext() {
-        lifecycleScope.launch(Dispatchers.Default) {
-            withContext(Dispatchers.Main) {
-                findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
-            }
+//        showAds {
+//            findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
+//        }
+        //TODO чтобы убрать рекламу раскомениторовать нижний код и закоментировать верхний
+        lifecycleScope.launch(Dispatchers.Main) {
+            findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
         }
     }
 

@@ -1,7 +1,6 @@
 package ar.cleaner.first.pf.ui.junk
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,6 +52,7 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        preloadAd()
         initRecyclerView()
         updateUseCase()
     }
@@ -100,11 +100,13 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
     }
 
     private fun goScreenResult() {
+//        showAds {
         findNavController().navigate(
             JunkProgressFragmentDirections.actionJunkProgressFragmentToResultFragment(
                 ResultFragment.CLEANING_KEY
             )
         )
+//        }
     }
 
     private fun scanList(): List<String> {

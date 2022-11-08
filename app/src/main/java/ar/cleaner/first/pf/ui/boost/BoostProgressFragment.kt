@@ -52,6 +52,7 @@ class BoostProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        preloadAd()
         updateExtendedOptimizerUseCase()
         initRecyclerView()
     }
@@ -103,11 +104,13 @@ class BoostProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-        findNavController().navigate(
-            BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
-                ResultFragment.BOOST_KEY
+//        showAds {
+            findNavController().navigate(
+                BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
+                    ResultFragment.BOOST_KEY
+                )
             )
-        )
+//        }
     }
 
     override fun onDestroy() {

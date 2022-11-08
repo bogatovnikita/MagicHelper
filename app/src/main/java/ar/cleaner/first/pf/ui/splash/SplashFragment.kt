@@ -29,7 +29,6 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        preloadAd()
         lifecycleScope.launch(Dispatchers.Default) {
             delay(2000)
             withContext(Dispatchers.Main) {

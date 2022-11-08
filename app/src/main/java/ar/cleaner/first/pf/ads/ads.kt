@@ -2,6 +2,7 @@ package ar.cleaner.first.pf.ads
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import ar.cleaner.first.pf.BuildConfig
 import com.ads.library.AdsDelegate
 import com.ads.library.AdsManager
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +24,7 @@ import kotlinx.coroutines.withContext
 //        }
 //    }
 //}
-
+//
 //fun Fragment.preloadAd() {
 //    if (!AdsManager.checkAdsLoaded()) {
 //        AdsManager.preloadAd(requireActivity(), BuildConfig.ADMOB_INTERSTITIAL)

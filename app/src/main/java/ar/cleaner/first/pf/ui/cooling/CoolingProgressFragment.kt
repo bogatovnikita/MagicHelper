@@ -47,6 +47,7 @@ class CoolingProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        preloadAd()
         initRecyclerView()
     }
 
@@ -86,11 +87,13 @@ class CoolingProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-        findNavController().navigate(
-            CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
-                ResultFragment.COOLING_KEY
+//        showAds {
+            findNavController().navigate(
+                CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
+                    ResultFragment.COOLING_KEY
+                )
             )
-        )
+//        }
     }
 
     override fun onDestroy() {
