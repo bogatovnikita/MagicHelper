@@ -1,18 +1,19 @@
 package ar.cleaner.first.pf.ui.boost
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
-import ar.cleaner.first.pf.domain.models.BackgroundApp
 import ar.cleaner.first.pf.domain.usecases.boosting.ExtendedOptimizerUseCase
+import ar.cleaner.first.pf.domain.usecases.boosting.GetBackgroundAppsUseCase
+import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +33,8 @@ class BoostProgressFragment : Fragment() {
     @Inject
     lateinit var extendedOptimizerUseCase: ExtendedOptimizerUseCase
 
-    private val args by navArgs<BoostProgressFragmentArgs>()
+    @Inject
+    lateinit var getBackgroundAppsUseCase: GetBackgroundAppsUseCase
 
     private var scanIsDone = false
 
@@ -58,14 +60,20 @@ class BoostProgressFragment : Fragment() {
     }
 
     private fun updateExtendedOptimizerUseCase() {
-        val newList = args.listBackgroundApp.map { app ->
-            BackgroundApp(
-                name = app.name,
-                packageName = app.packageName
-            )
-        }.toList()
-        lifecycleScope.launch {
-            extendedOptimizerUseCase.invoke(newList).collect { }
+        lifecycleScope.launch(Dispatchers.Default) {
+            getBackgroundAppsUseCase.invoke().collect {
+                when (it) {
+                    is CaseResult.Success -> {
+                        extendedOptimizerUseCase.invoke(it.response).collect {}
+                    }
+                    is CaseResult.Failure -> {
+                        Log.e(
+                            "pie",
+                            "updateExtendedOptimizerUseCase: BoostProgressFragment Failure",
+                        )
+                    }
+                }
+            }
         }
     }
 
@@ -105,11 +113,11 @@ class BoostProgressFragment : Fragment() {
 
     private fun goScreenResult() {
 //        showAds {
-            findNavController().navigate(
-                BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
-                    ResultFragment.BOOST_KEY
-                )
+        findNavController().navigate(
+            BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
+                ResultFragment.BOOST_KEY
             )
+        )
 //        }
     }
 

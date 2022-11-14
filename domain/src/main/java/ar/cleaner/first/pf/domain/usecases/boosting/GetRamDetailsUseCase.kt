@@ -22,7 +22,7 @@ class GetRamDetailsUseCase @Inject constructor(
             val isOptimized = !isTimePassed(time)
             val totalRam = boostingUseCaseRepository.getTotalRam()
             val usedRam = if (isOptimized) {
-                (totalRam - ram) * 0.4
+                (totalRam - ram) * 0.8
             } else totalRam - ram
 
             RamDetails(

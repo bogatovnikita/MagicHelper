@@ -120,9 +120,7 @@ class BoostFragment : Fragment() {
                     viewModel.state.value.ramDetails!!.usedRam.toFloat()
                 ).apply()
                 findNavController().navigate(
-                    BoostFragmentDirections.actionBoostFragmentToBoostProgressFragment(
-                        viewModel.mapListForOptimization()
-                    )
+                    BoostFragmentDirections.actionBoostFragmentToBoostProgressFragment()
                 )
             }
             else -> {

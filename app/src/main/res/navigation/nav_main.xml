@@ -63,9 +63,6 @@
         android:name="ar.cleaner.first.pf.ui.boost.BoostProgressFragment"
         android:label="BoostProgressFragment"
         tools:layout="@layout/fragment_progress">
-        <argument
-            android:name="listBackgroundApp"
-            app:argType="ar.cleaner.first.pf.models.BackgroundAppsModel[]" />
         <action
             android:id="@+id/action_boostProgressFragment_to_resultFragment"
             app:destination="@id/resultFragment"

@@ -2,14 +2,12 @@ package ar.cleaner.first.pf.data.optimizers
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.content.Context
 import ar.cleaner.first.pf.data.extensions.activityManager
 import ar.cleaner.first.pf.data.extensions.getAppsOnPhone
 import ar.cleaner.first.pf.data.optimizers.base.BaseOptimizer
 import ar.cleaner.first.pf.data.preferences.PreferencesManager
 import ar.cleaner.first.pf.domain.mapper.asPercents
 import ar.cleaner.first.pf.domain.models.BackgroundApp
-import ar.cleaner.first.pf.domain.utils.emitProgressWithDelay
 import ar.cleaner.first.pf.domain.utils.emulateProgressWorkFlow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -32,13 +30,8 @@ class RamOptimizer @Inject constructor(
 
     @SuppressLint("MissingPermission")
     fun runOptimization(backgroundApps: List<BackgroundApp>): Flow<Int> = flow {
-        var previous = 0
-        val isRandomDelay = backgroundApps.size <= 20
         backgroundApps.forEachIndexed { i, app ->
-            val backgroundAppPos = i + 1
             context.activityManager.killBackgroundProcesses(app.packageName)
-            emitProgressWithDelay(150, isRandomDelay = isRandomDelay, previous, backgroundAppPos.asPercents(backgroundApps.size))
-            previous = backgroundAppPos.asPercents(backgroundApps.size) + 1
         }
     }
 

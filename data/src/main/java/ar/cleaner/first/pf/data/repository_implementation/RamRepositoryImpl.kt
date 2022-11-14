@@ -24,7 +24,7 @@ class RamRepositoryImpl @Inject constructor(
     override fun getAvailableRam(scope: CoroutineScope?): StateFlow<Double> =
         ramManager.getAvailableRam(scope)
 
-    override fun getTotalRam(): Double = ramManager.totalRam.toDouble()
+    override fun getTotalRam(): Double = ramManager.totalRam
 
     override suspend fun getBackgroundApps(): List<BackgroundApp> = ramManager.getBackgroundApps()
 

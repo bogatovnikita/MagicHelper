@@ -3,7 +3,6 @@ package ar.cleaner.first.pf.data.managers
 import android.app.ActivityManager
 import android.app.Application
 import android.app.usage.UsageStatsManager
-import android.content.Context
 import ar.cleaner.first.pf.data.extensions.activityManager
 import ar.cleaner.first.pf.data.extensions.getAppName
 import ar.cleaner.first.pf.data.extensions.isSystem
@@ -13,10 +12,8 @@ import ar.cleaner.first.pf.domain.const.Const
 import ar.cleaner.first.pf.domain.models.BackgroundApp
 import ar.cleaner.first.pf.domain.utils.lazyStateFlow
 import kotlinx.coroutines.*
-import java.lang.Exception
 import javax.inject.Inject
 import kotlin.math.abs
-import kotlin.math.roundToInt
 
 class RamManager @Inject constructor(
     private val context: Application,
@@ -38,13 +35,13 @@ class RamManager @Inject constructor(
         }
     }
 
-    val totalRam: Int by lazy {
+    val totalRam: Double by lazy {
         val actManager = context.activityManager
 
         val memInfo = ActivityManager.MemoryInfo()
 
         actManager.getMemoryInfo(memInfo)
-        (memInfo.totalMem.toDouble() / (MEGABYTE)).roundToInt()
+        (memInfo.totalMem.toDouble() / (MEGABYTE))
     }
 
     suspend fun getBackgroundApps(): List<BackgroundApp> = withContext(dispatcher) {
@@ -61,7 +58,7 @@ class RamManager @Inject constructor(
                         name = context.getAppName(it.packageName)
                     )
                 )
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
