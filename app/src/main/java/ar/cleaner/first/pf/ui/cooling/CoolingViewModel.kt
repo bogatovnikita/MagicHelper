@@ -26,7 +26,8 @@ class CoolingViewModel @Inject constructor(
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
                             temperature = result.response.temperature,
-                            isOptimized = result.response.isOptimized
+                            isOptimized = result.response.isOptimized,
+                            loadingIsDone = true
                         )
                     }
                     is CaseResult.Failure -> {

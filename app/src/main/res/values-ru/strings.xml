@@ -92,4 +92,5 @@
     <string name="description_need_permission_files">Нам нужно разрешение на чтение, удаление и изменение файлов, чтобы мы могли находить ненужные файлы, а вы могли их удалять.</string>
     <string name="boost_description_not_optimize">Ускорьте работу вашего телефона</string>
     <string name="snackbar_access_files">Чтобы выполнить эту функцию, нам нужен доступ к файлам</string>
+    <string name="cleaner_title">Очиститель</string>
 </resources>

@@ -24,7 +24,8 @@ class BoostViewModel @Inject constructor(
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            ramDetails = result.response
+                            ramDetails = result.response,
+                            isLoadingData = true
                         )
                     }
                     is CaseResult.Failure -> {

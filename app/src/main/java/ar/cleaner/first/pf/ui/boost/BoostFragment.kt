@@ -27,7 +27,6 @@ class BoostFragment : Fragment() {
     private val viewModel: BoostViewModel by viewModels()
     private val dialog = DialogAccessUsageSettings()
     private lateinit var preferences: SharedPreferences
-    private var value = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,8 +47,6 @@ class BoostFragment : Fragment() {
     private fun initObserver() {
         lifecycleScope.launch {
             viewModel.state.collect {
-                value += 1
-                if (value == 1) return@collect
                 renderState(it)
             }
         }
@@ -57,6 +54,7 @@ class BoostFragment : Fragment() {
 
     private fun renderState(state: BoostState) {
         state.ramDetails ?: return
+        if(!state.isLoadingData) return
         binding.percentTv.text = requireContext().getString(
             R.string.percent_D, state.ramDetails.usagePercents
         )

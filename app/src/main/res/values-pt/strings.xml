@@ -92,4 +92,5 @@
     <string name="description_need_permission_files">Necessitamos de autorização para ler, eliminar e modificar ficheiros, para que possamos encontrar ficheiros desnecessários e para que os possamos eliminar.</string>
     <string name="boost_description_not_optimize">Acelere o trabalho do seu telefone</string>
     <string name="snackbar_access_files">Para executar esta função, precisamos de acesso aos ficheiros</string>
+    <string name="cleaner_title">Limpeza</string>
 </resources>

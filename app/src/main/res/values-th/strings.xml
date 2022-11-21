@@ -91,4 +91,5 @@
     <string name="description_need_permission_files">เราจำเป็นต้องมีสิทธิ์ในการอ่าน,ลบและแก้ไขไฟล์เพื่อให้เราสามารถหาไฟล์ที่ไม่จำเป็นแ</string>
     <string name="boost_description_not_optimize">เพิ่มความเร็วในการทำงานของโทรศัพท์ของคุณ</string>
     <string name="snackbar_access_files">เพื่อทำหน้าที่นี้เราจำเป็นต้องเข้าถึงไฟล์</string>
+    <string name="cleaner_title">ทำความสะอาด</string>
 </resources>

@@ -137,49 +137,50 @@ class JunkFragment : Fragment() {
     }
 
     private fun renderState(state: JunkState) {
-        if (state.isLoadingJunkFiles) {
-            binding.shimmerGroup.visibility = View.GONE
-            if (!state.responseUseCase) return
-            if (!state.isOptimizeDone) {
-                with(binding) {
-                    groupNotOptimized.visibility = View.VISIBLE
-                    groupIsOptimized.visibility = View.GONE
-                    junkSize =
-                        state.valueEmptyFolders + state.valueCache + state.valueThumbnails + state.valueUnnecessaryApk
-                    binding.percentTv.text = getString(R.string.mb_D, junkSize)
-                    cacheCountTv.text = getString(R.string.mb_D, state.valueCache)
-                    tempFilesCountTv.text = getString(R.string.mb_D, state.valueUnnecessaryApk)
-                    residualFilesCountTv.text =
-                        getString(R.string.mb_D, state.valueEmptyFolders)
-                    systemGarbageCountTv.text = getString(R.string.mb_D, state.valueThumbnails)
-                    dangerButton.apply {
-                        setTextColor(
-                            ContextCompat.getColor(
-                                requireContext(),
-                                R.color.red
-                            )
+        if (!state.responseUseCase) return
+        if (state.isOptimizeDone) {
+            with(binding) {
+                shimmerGroup.visibility = View.GONE
+                groupNotOptimized.visibility = View.GONE
+                groupIsOptimized.visibility = View.VISIBLE
+                junkSize = Random.nextInt(4, 7)
+                binding.percentTv.text = getString(R.string.mb_D, junkSize)
+                dangerButton.apply {
+                    visibility = View.VISIBLE
+                    setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.black
                         )
-                        setBackgroundResource(R.drawable.background_button_danger)
-                        text =
-                            getString(R.string.the_phone_needs_to_be_cleaned_of_excess_garbage)
-                    }
+                    )
+                    setBackgroundResource(R.drawable.background_button_not_danger)
+                    text = getString(R.string.the_phone_is_cleared_of_excess_garbage)
                 }
-            } else {
-                with(binding) {
-                    groupNotOptimized.visibility = View.GONE
-                    groupIsOptimized.visibility = View.VISIBLE
-                    junkSize = Random.nextInt(4, 7)
-                    binding.percentTv.text = getString(R.string.mb_D, junkSize)
-                    dangerButton.apply {
-                        setTextColor(
-                            ContextCompat.getColor(
-                                requireContext(),
-                                R.color.black
-                            )
+            }
+        } else {
+            with(binding) {
+                shimmerGroup.visibility = View.GONE
+                groupNotOptimized.visibility = View.VISIBLE
+                groupIsOptimized.visibility = View.GONE
+                junkSize =
+                    state.valueEmptyFolders + state.valueCache + state.valueThumbnails + state.valueUnnecessaryApk
+                binding.percentTv.text = getString(R.string.mb_D, junkSize)
+                cacheCountTv.text = getString(R.string.mb_D, state.valueCache)
+                tempFilesCountTv.text = getString(R.string.mb_D, state.valueUnnecessaryApk)
+                residualFilesCountTv.text =
+                    getString(R.string.mb_D, state.valueEmptyFolders)
+                systemGarbageCountTv.text = getString(R.string.mb_D, state.valueThumbnails)
+                dangerButton.apply {
+                    visibility = View.VISIBLE
+                    setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.red
                         )
-                        setBackgroundResource(R.drawable.background_button_not_danger)
-                        text = getString(R.string.the_phone_is_cleared_of_excess_garbage)
-                    }
+                    )
+                    setBackgroundResource(R.drawable.background_button_danger)
+                    text =
+                        getString(R.string.the_phone_needs_to_be_cleaned_of_excess_garbage)
                 }
             }
         }
@@ -201,7 +202,7 @@ class JunkFragment : Fragment() {
                     )
                 }
                 else -> {
-                    viewModel.loadingJunkFilesIsDone()
+                    viewModel.initUseCases()
                     initObservers()
                 }
             }
@@ -241,7 +242,7 @@ class JunkFragment : Fragment() {
             )
         } else {
             viewModel.handleUsageStatsGranted(true)
-            viewModel.loadingJunkFilesIsDone()
+            viewModel.initUseCases()
             initObservers()
         }
     }

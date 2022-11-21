@@ -34,18 +34,13 @@ class JunkViewModel @Inject constructor(
         )
     }
 
-    fun loadingJunkFilesIsDone() {
-        _state.value = state.value.copy(isLoadingJunkFiles = true)
-        initUseCases()
-    }
-
     fun handleUsageStatsGranted(isGranted: Boolean) {
         _state.value = state.value.copy(
             isUsageStatsGranted = isGranted
         )
     }
 
-    private fun initUseCases() {
+    fun initUseCases() {
         mainScope {
             _state.value = state.value.copy(valueCache = Random.nextInt(199, 287))
             getEmptyFoldersUseCase.invoke().collect { result ->

@@ -91,4 +91,5 @@
     <string name="description_need_permission_files">Chúng tôi cần sự cho phép để đọc, xóa và sửa đổi các tập tin để chúng tôi có thể tìm thấy các tập tin không cần thiết và bạn có thể xóa chúng.</string>
     <string name="boost_description_not_optimize">Tăng tốc độ làm việc của điện thoại của bạn</string>
     <string name="snackbar_access_files">Để thực hiện chức năng này, chúng ta cần truy cập vào các tập tin</string>
+    <string name="cleaner_title">Sạch hơn</string>
 </resources>

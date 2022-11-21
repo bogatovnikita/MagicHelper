@@ -92,4 +92,5 @@
     <string name="description_need_permission_files">Gereksiz dosyaları bulabilmemiz ve silebilmeniz için dosyaları okuma, silme ve değiştirme iznine ihtiyacımız var.</string>
     <string name="boost_description_not_optimize">Telefonunuzun çalışmasını hızlandırın</string>
     <string name="snackbar_access_files">Bu işlevi gerçekleştirmek için dosyalara erişmemiz gerekir</string>
+    <string name="cleaner_title">Temizleyici</string>
 </resources>

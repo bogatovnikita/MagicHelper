@@ -26,7 +26,6 @@ class CoolingFragment : Fragment() {
     private lateinit var preferences: SharedPreferences
 
     private val viewModel: CoolingViewModel by viewModels()
-    private var value = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,14 +59,13 @@ class CoolingFragment : Fragment() {
     private fun initObserver() {
         lifecycleScope.launch {
             viewModel.state.collect {
-                value += 1
-                if (value == 1) return@collect
                 renderState(it)
             }
         }
     }
 
     private fun renderState(cpuDetails: CpuDetails) {
+        if (!cpuDetails.loadingIsDone) return
         binding.percentTv.text =
             requireContext().getString(R.string.temperature_D, cpuDetails.temperature.toInt())
         if (cpuDetails.isOptimized) {

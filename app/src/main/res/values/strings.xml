@@ -76,7 +76,6 @@
     <string name="memory_is_overloaded_optimization_is_required">Memory gets overloaded! Optimization required!</string>
     <string name="cooled_D">Cooled down %d℃</string>
     <string name="optimization_is_done">Optimization is done</string>
-
     <string name="exit_toast">Tap back button in order to exit</string>
     <string name="we_need_permission">We need permission</string>
     <string name="description_permission">In order for us to stop background processes and free up RAM, we need access to the usage history</string>
@@ -92,4 +91,5 @@
     <string name="description_need_permission_files">We need permission to read, delete and modify files so that we can find unnecessary files and you can delete them.</string>
     <string name="boost_description_not_optimize">Speed up the work of your phone</string>
     <string name="snackbar_access_files">To perform this function, we need access to files</string>
+    <string name="cleaner_title">Cleaner</string>
 </resources>

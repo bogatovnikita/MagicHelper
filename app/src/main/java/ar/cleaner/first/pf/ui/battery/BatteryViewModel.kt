@@ -42,7 +42,8 @@ class BatteryViewModel @Inject constructor(
                                 batteryCharge = result.response.batteryCharge,
                                 batteryMode = result.response.batteryMode,
                                 batteryRemainingTime = result.response.batteryRemainingTime,
-                                isOptimized = result.response.isOptimized
+                                isOptimized = result.response.isOptimized,
+                                loadingIsDone = true
                             )
                     }
                     is CaseResult.Failure -> {

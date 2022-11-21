@@ -8,4 +8,5 @@ data class BatteryDetails(
     val batteryMode: BatteryMode,
     val batteryRemainingTime: BatteryTime,
     val isOptimized: Boolean,
+    val loadingIsDone:Boolean = false
 )

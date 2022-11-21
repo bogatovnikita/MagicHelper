@@ -46,7 +46,7 @@ class BatteryOptimizer @Inject constructor(
      */
     private fun highOptimizing(): Flow<Int> = flow {
 
-        emitProgressWithDelay(from = 0, to = 20); setBrightnessLevel(10)
+        emitProgressWithDelay(from = 0, to = 20); setBrightnessLevel(1)
         emitProgressWithDelay(from = 20, to = 40); turnOffAutoBrightness()
         emitProgressWithDelay(from = 40, to = 60); turnOffBluetooth()
         emitProgressWithDelay(from = 60, to = 70); turnOffWifi()
@@ -60,7 +60,7 @@ class BatteryOptimizer @Inject constructor(
      */
     private fun mediumOptimizing(): Flow<Int> = flow {
         emitProgressWithDelay(from = 0, to = 50);
-        setBrightnessLevel(30)
+        setBrightnessLevel(7)
         turnOffAutoBrightness()
         emitProgressWithDelay(from = 50, to = 73); turnOffBluetooth()
         emitProgressWithDelay(from = 73, to = 89); turnOffWifi()
@@ -75,7 +75,7 @@ class BatteryOptimizer @Inject constructor(
     private fun lowOptimizing(): Flow<Int> = flow {
         emitProgressWithDelay(from = 0, to = 53)
         turnOffAutoBrightness()
-        setBrightnessLevel(40)
+        setBrightnessLevel(20)
         emitProgressWithDelay(from = 53, to = 100)
     }.onCompletion {
         if (isWorking()) preferencesManager.batteryMode = BatteryMode.NORMAL.name

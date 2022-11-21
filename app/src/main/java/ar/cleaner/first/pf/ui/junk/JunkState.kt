@@ -9,7 +9,6 @@ data class JunkState(
     val valueCache: Int = 0,
     val listParcelableJunk: List<ParcelableJunk> = emptyList(),
     val responseUseCase: Boolean = false,
-    val isLoadingJunkFiles: Boolean = false,
     val isStorageGranted: Boolean = false,
     val isUsageStatsGranted: Boolean = false,
     val isOptimizeDone: Boolean = false

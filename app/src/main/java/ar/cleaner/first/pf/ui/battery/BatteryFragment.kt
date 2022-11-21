@@ -45,7 +45,6 @@ class BatteryFragment : Fragment() {
     private val viewModel: BatteryViewModel by viewModels()
     private val dialog = DialogWriteSettings()
     private val dialogBluetooth = DialogBluetoothPermission()
-    private var value = 0
     private var batteryMode: BatteryMode = BatteryMode.NORMAL
     private lateinit var preferences: SharedPreferences
 
@@ -166,8 +165,6 @@ class BatteryFragment : Fragment() {
     private fun initObserver() {
         lifecycleScope.launch {
             viewModel.state.collect {
-                value += 1
-                if (value == 1) return@collect
                 renderState(it)
             }
         }
@@ -197,6 +194,7 @@ class BatteryFragment : Fragment() {
     }
 
     private fun renderState(batteryDetails: BatteryDetails) {
+        if (!batteryDetails.loadingIsDone) return
         with(binding) {
             titleTv.text = getString(R.string.battery_power)
             percentTv.text = getString(R.string.percent_D, batteryDetails.batteryCharge)
@@ -207,7 +205,6 @@ class BatteryFragment : Fragment() {
             )
             progressBar.progress = batteryDetails.batteryCharge
         }
-
         if (batteryDetails.isOptimized) {
             binding.groupOptimizeIsDone.visibility = View.VISIBLE
             binding.dangerButton.apply {

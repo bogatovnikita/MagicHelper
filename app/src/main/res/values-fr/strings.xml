@@ -91,4 +91,5 @@
     <string name="description_need_permission_files">Nous avons besoin d`une autorisation pour lire, supprimer et modifier des fichiers afin que nous puissions trouver des fichiers inutiles et que vous puissiez les supprimer.</string>
     <string name="boost_description_not_optimize">Accélérez le travail de votre téléphone</string>
     <string name="snackbar_access_files">Pour effectuer cette fonction, nous avons besoin d`accéder aux fichiers</string>
+    <string name="cleaner_title">Nettoyeur</string>
 </resources>
