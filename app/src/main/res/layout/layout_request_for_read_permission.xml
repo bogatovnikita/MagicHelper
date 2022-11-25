@@ -23,14 +23,14 @@
         android:id="@+id/title_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_15sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/we_need_permission"
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintBottom_toTopOf="@id/body_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/body_text"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/body_text"
         app:layout_constraintTop_toBottomOf="@id/cross_exit_iv" />
 
     <TextView

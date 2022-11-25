@@ -28,9 +28,10 @@
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintBottom_toTopOf="@id/body_text"
-        app:layout_constraintTop_toBottomOf="@id/cross_exit_iv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/body_text"
+        app:layout_constraintTop_toBottomOf="@id/cross_exit_iv" />
 
     <TextView
         android:id="@+id/body_text"
