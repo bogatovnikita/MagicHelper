@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -13,6 +14,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.JunkFile
 import ar.cleaner.first.pf.domain.usecases.junk.ExtendedCleanUseCase
+import ar.cleaner.first.pf.ui.menu.MenuViewModel
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +35,8 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
 
     @Inject
     lateinit var extendedCleanUseCase: ExtendedCleanUseCase
+
+    private val viewModel: MenuViewModel by activityViewModels()
 
     private val args by navArgs<JunkProgressFragmentArgs>()
 
@@ -88,6 +92,7 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
     private fun scanIsDone() {
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
+                viewModel.initAllUseCase()
                 delay(500)
                 withContext(Dispatchers.Main) {
                     binding.recyclerView.visibility = View.GONE

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentMenuBinding
@@ -28,7 +28,7 @@ class MenuFragment : Fragment() {
     private var _binding: FragmentMenuBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MenuViewModel by viewModels()
+    private val viewModel: MenuViewModel by activityViewModels()
 
     private lateinit var preferences: SharedPreferences
     private var junkSize = 0
