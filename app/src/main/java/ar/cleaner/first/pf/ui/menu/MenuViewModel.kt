@@ -85,8 +85,7 @@ class MenuViewModel @Inject constructor(
 
     private fun initCleanerDetails() {
         mainScope {
-            getCleanerDetailsUseCase.invoke().collect { result ->
-                when (result) {
+                when (val result = getCleanerDetailsUseCase.get()) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
                             cleanerDetails = result.response
@@ -95,7 +94,6 @@ class MenuViewModel @Inject constructor(
                     is CaseResult.Failure -> {
                         Log.e("pie", "MenuViewModel:initCleanerDetails Failure")
                     }
-                }
             }
         }
     }

@@ -112,8 +112,7 @@ class JunkViewModel @Inject constructor(
                     }
                 }
             }
-            getCleanerDetailsUseCase.invoke().collect { result ->
-                when (result) {
+                when (val result = getCleanerDetailsUseCase.get()) {
                     is CaseResult.Success -> {
                         _state.value =
                             state.value.copy(
@@ -125,7 +124,6 @@ class JunkViewModel @Inject constructor(
                         Log.e("pie", "getCleanerDetailsUseCase: Failure")
                     }
                 }
-            }
         }
     }
 

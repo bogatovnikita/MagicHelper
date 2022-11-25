@@ -31,7 +31,6 @@ class MenuFragment : Fragment() {
     private val viewModel: MenuViewModel by activityViewModels()
 
     private lateinit var preferences: SharedPreferences
-    private var junkSize = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,7 +55,6 @@ class MenuFragment : Fragment() {
             CoolingFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE
         )
-        junkSize = preferences.getInt(JunkFragment.JUNK_SIZE, 0)
     }
 
     private fun setColorStatusBar() {
@@ -165,8 +163,9 @@ class MenuFragment : Fragment() {
             if (isOptimized) {
                 storageProgressBar.progressPercent = usedPercents.toFloat() - 1
                 storagePercentTv.text = getString(R.string.percent_D, usedPercents - 1)
+                val generalSize = if (isOptimized) usedMemorySize - preferences.getInt(JunkFragment.JUNK_SIZE, 0).toDouble() / 1024 else usedMemorySize
                 descriptionStorageTv.text =
-                    getString(R.string._F_gb_F_gb, usedMemorySize - junkSize / 1024, totalSize)
+                    getString(R.string._F_gb_F_gb, generalSize, totalSize)
                 cleanDescriptionTv.text = getString(R.string.clean_junk_done)
                 cleanDescriptionTv.setTextColor(
                     ContextCompat.getColor(

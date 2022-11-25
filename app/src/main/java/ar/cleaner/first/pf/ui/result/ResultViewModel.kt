@@ -121,16 +121,14 @@ class ResultViewModel @Inject constructor(
 
     fun initCleanerDetails() {
         mainScope {
-            getCleanerDetailsUseCase.invoke().collect { result ->
-                when (result) {
-                    is CaseResult.Success -> {
-                        _state.value = state.value.copy(
-                            cleanerDetails = result.response
-                        )
-                    }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "initCleanerDetails: Failure")
-                    }
+            when (val result = getCleanerDetailsUseCase.get()) {
+                is CaseResult.Success -> {
+                    _state.value = state.value.copy(
+                        cleanerDetails = result.response
+                    )
+                }
+                is CaseResult.Failure -> {
+                    Log.e("pie", "initCleanerDetails: Failure")
                 }
             }
         }

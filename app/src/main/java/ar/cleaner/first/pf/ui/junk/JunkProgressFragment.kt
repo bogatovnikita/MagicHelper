@@ -17,6 +17,7 @@ import ar.cleaner.first.pf.domain.usecases.junk.ExtendedCleanUseCase
 import ar.cleaner.first.pf.ui.menu.MenuViewModel
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
+import ar.cleaner.first.pf.ui.result.ResultViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -36,7 +37,9 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
     @Inject
     lateinit var extendedCleanUseCase: ExtendedCleanUseCase
 
-    private val viewModel: MenuViewModel by activityViewModels()
+    private val menuViewModel: MenuViewModel by activityViewModels()
+
+    private val resultViewModel: ResultViewModel by activityViewModels()
 
     private val args by navArgs<JunkProgressFragmentArgs>()
 
@@ -87,12 +90,13 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
         lifecycleScope.launch(Dispatchers.Main) {
             extendedCleanUseCase.invoke(junk).collect {}
         }
+        resultViewModel.initCleanerDetails()
     }
 
     private fun scanIsDone() {
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-                viewModel.initAllUseCase()
+                menuViewModel.initAllUseCase()
                 delay(500)
                 withContext(Dispatchers.Main) {
                     binding.recyclerView.visibility = View.GONE
