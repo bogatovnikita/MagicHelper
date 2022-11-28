@@ -252,7 +252,7 @@
         app:layout_constraintEnd_toEndOf="@id/background_battery"
         app:layout_constraintStart_toStartOf="@id/background_battery"
         app:layout_constraintTop_toBottomOf="@id/battery_title_tv"
-        tools:text="ываываhkjhkjhkjhkjhввввввв" />
+        tools:text="ываываhkjhkjhkjhkjввв" />
 
     <ImageView
         android:id="@+id/battery_icon_iv"
@@ -261,9 +261,11 @@
         android:layout_marginBottom="@dimen/_8sdp"
         android:elevation="@dimen/_4sdp"
         android:src="@drawable/ic_battery"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="@id/background_battery"
         app:layout_constraintEnd_toEndOf="@id/background_battery"
-        app:layout_constraintStart_toStartOf="@id/background_battery" />
+        app:layout_constraintStart_toStartOf="@id/background_battery"
+        app:layout_constraintTop_toBottomOf="@+id/battery_description_tv" />
 
     <View
         android:id="@+id/background_boost"
@@ -327,11 +329,13 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:elevation="@dimen/_4sdp"
         android:src="@drawable/ic_boost"
         app:layout_constraintBottom_toBottomOf="@id/background_boost"
         app:layout_constraintEnd_toEndOf="@id/background_boost"
-        app:layout_constraintStart_toStartOf="@id/background_boost" />
+        app:layout_constraintStart_toStartOf="@id/background_boost"
+        app:layout_constraintTop_toBottomOf="@+id/boost_description_tv" />
 
     <View
         android:id="@+id/background_cooling"
@@ -395,11 +399,13 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:elevation="@dimen/_4sdp"
         android:src="@drawable/ic_cpu"
         app:layout_constraintBottom_toBottomOf="@id/background_cooling"
         app:layout_constraintEnd_toEndOf="@id/background_cooling"
-        app:layout_constraintStart_toStartOf="@id/background_cooling" />
+        app:layout_constraintStart_toStartOf="@id/background_cooling"
+        app:layout_constraintTop_toBottomOf="@+id/cooling_description_tv" />
 
     <View
         android:id="@+id/background_clean"
@@ -463,10 +469,12 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:elevation="@dimen/_4sdp"
         android:src="@drawable/ic_junk"
         app:layout_constraintBottom_toBottomOf="@id/background_clean"
         app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean" />
+        app:layout_constraintStart_toStartOf="@id/background_clean"
+        app:layout_constraintTop_toBottomOf="@+id/clean_description_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
