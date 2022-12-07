@@ -49,7 +49,7 @@
     <string name="ultra_mode_activates_restrictions">Ultra mode activates the limits:</string>
     <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
     <string name="remove_the_trash">Remove garbage</string>
-    <string name="processor_temperature">Processor temperature</string>
+    <string name="processor_temperature">Processor temperature:</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Runtime increased by %d%%</string>
     <string name="extra_mode_60">+60\nExtra</string>

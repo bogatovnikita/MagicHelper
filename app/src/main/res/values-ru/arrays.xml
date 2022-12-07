@@ -9,12 +9,12 @@
     </array>
 
     <array name="battery_items">
-        <item>Уменьшить яркость</item>
-        <item>Отключить автояркость</item>
-        <item>Отключить Wi-Fi</item>
+        <item>Уменьшение яркости</item>
+        <item>Отключение автояркости</item>
+        <item>Отключение Wi-Fi</item>
         <item>Заморозка фоновых приложений</item>
-        <item>Отключить Bluetooth</item>
-        <item>Отключить вибрацию</item>
+        <item>Отключение Bluetooth</item>
+        <item>Отключение вибрации</item>
     </array>
 
     <array name="junk_items">

@@ -47,7 +47,7 @@
     <string name="ultra_mode_activates_restrictions">Chế độ Ultra kích hoạt các giới hạn:</string>
     <string name="_F_gb_F_gb">%.1f gb/%.1f gb</string>
     <string name="remove_the_trash">Loại bỏ rác</string>
-    <string name="processor_temperature">Nhiệt độ bộ xử lý</string>
+    <string name="processor_temperature">Nhiệt độ bộ xử lý:</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Thời gian chạy tăng %d%%</string>
     <string name="extra_mode_60">+60\nThêm</string>
