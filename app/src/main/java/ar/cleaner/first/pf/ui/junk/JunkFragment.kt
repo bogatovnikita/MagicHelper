@@ -98,11 +98,13 @@ class JunkFragment : Fragment() {
                         )
                     )
                 } else if (!Environment.isExternalStorageManager()) {
+                    if (dialogManageStorage.isAdded) return@setOnClickListener
                     dialogManageStorage.show(
                         parentFragmentManager,
                         "JunkFragmentStorage"
                     )
                 } else if (!checkUsageStatsAllowed()) {
+                    if (dialogAccessUsageSettings.isAdded) return@setOnClickListener
                     dialogAccessUsageSettings.show(
                         parentFragmentManager,
                         "JunkFragmentUsage"
@@ -119,6 +121,7 @@ class JunkFragment : Fragment() {
                 } else if (!checkPermissions(*permissionsList)) {
                     showSnackBar()
                 } else if (!checkUsageStatsAllowed()) {
+                    if (dialogAccessUsageSettings.isAdded) return@setOnClickListener
                     dialogAccessUsageSettings.show(
                         parentFragmentManager,
                         "JunkFragmentUsage"
@@ -190,12 +193,14 @@ class JunkFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             when {
                 !Environment.isExternalStorageManager() -> {
+                    if (dialogManageStorage.isAdded) return
                     dialogManageStorage.show(
                         parentFragmentManager,
                         "JunkFragmentStorage"
                     )
                 }
                 !checkUsageStatsAllowed() -> {
+                    if (dialogAccessUsageSettings.isAdded) return
                     dialogAccessUsageSettings.show(
                         parentFragmentManager,
                         "JunkFragmentUsage"
@@ -213,6 +218,7 @@ class JunkFragment : Fragment() {
                 }
                 else -> {
                     if (preferences.getBoolean(CHECK_WRITE_READ_PERMISSION, true)) {
+                        if (dialogReadPermission.isAdded) return
                         dialogReadPermission.show(parentFragmentManager, "JunkFragment")
                         dialogReadPermission.isCancelable = true
                         dialogReadPermission.addCallBackDialogPermissionWriteSetting(object :
@@ -236,6 +242,7 @@ class JunkFragment : Fragment() {
 
     private fun checkUsageStats() {
         if (!checkUsageStatsAllowed()) {
+            if (dialogAccessUsageSettings.isAdded) return
             dialogAccessUsageSettings.show(
                 parentFragmentManager,
                 "JunkFragmentUsage"

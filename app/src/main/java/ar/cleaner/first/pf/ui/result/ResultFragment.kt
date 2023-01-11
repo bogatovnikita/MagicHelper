@@ -112,9 +112,11 @@ class ResultFragment : Fragment() {
         var optimizeHour = batteryRemainingTimeHour - batteryRemainingTime.hour
         var optimizeMinute = batteryRemainingTimeMinute - batteryRemainingTime.minute
         if (batteryRemainingTimeMinute < 1) batteryRemainingTimeMinute = 1
-        var percent =
+        var percent = try {
             ((batteryRemainingTimeHour * 3600 + batteryRemainingTimeMinute * 60) / (batteryRemainingTime.hour * 3600 + batteryRemainingTime.minute * 60)) * 100
-        if (percent < 1) percent = 1
+        } catch (e: Exception) {
+            1
+        }
         if (percent > 50) percent = Random.nextInt(5, 15)
         if (optimizeHour < 0) optimizeHour = 0
         if (optimizeMinute <= 0) optimizeMinute = 1

@@ -14,7 +14,7 @@ fun Context.usageAccessSettings(): Intent {
             Uri.parse(String.format("package:%s", packageName))
         )
     } else Intent(
-        Settings.ACTION_USAGE_ACCESS_SETTINGS,
+        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
     )
 }
 

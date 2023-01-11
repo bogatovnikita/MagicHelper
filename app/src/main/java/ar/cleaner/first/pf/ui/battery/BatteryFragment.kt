@@ -243,10 +243,10 @@ class BatteryFragment : Fragment() {
                         checkWriteSettings() -> {
                             navigateNext()
                         }
-                        !checkWriteSettings() -> dialog.show(
-                            parentFragmentManager,
-                            "BatteryFragment"
-                        )
+                        !checkWriteSettings() -> {
+                            if (dialog.isAdded) return@setOnClickListener
+                            dialog.show(parentFragmentManager, "BatteryFragment")
+                        }
                     }
                 }
                 BatteryMode.MEDIUM, BatteryMode.HIGH -> {
@@ -258,12 +258,13 @@ class BatteryFragment : Fragment() {
                                 navigateNext()
                             }
                         }
-                        !checkWriteSettings() -> dialog.show(
-                            parentFragmentManager,
-                            "BatteryFragment"
-                        )
+                        !checkWriteSettings() -> {
+                            if (dialog.isAdded) return@setOnClickListener
+                            dialog.show(parentFragmentManager, "BatteryFragment")
+                        }
                         !checkBluetoothPermission() -> {
                             if (!preferences.getBoolean(CHECK_BLUETOOTH_PERMISSION, false)) {
+                                if (dialogBluetooth.isAdded) return@setOnClickListener
                                 dialogBluetooth.show(parentFragmentManager, "BatterySaver")
                                 dialogBluetooth.isCancelable = true
                                 dialogBluetooth.addCallBackDialogPermissionWriteSetting(object :

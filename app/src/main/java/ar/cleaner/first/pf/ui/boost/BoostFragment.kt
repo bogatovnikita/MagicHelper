@@ -54,7 +54,7 @@ class BoostFragment : Fragment() {
 
     private fun renderState(state: BoostState) {
         state.ramDetails ?: return
-        if(!state.isLoadingData) return
+        if (!state.isLoadingData) return
         binding.percentTv.text = requireContext().getString(
             R.string.percent_D, state.ramDetails.usagePercents
         )
@@ -122,6 +122,7 @@ class BoostFragment : Fragment() {
                 )
             }
             else -> {
+                if (dialog.isAdded) return
                 dialog.show(parentFragmentManager, "BoostFragment")
             }
         }
