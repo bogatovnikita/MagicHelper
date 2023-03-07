@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <array name="boost_and_cooling_items">
+        <item>Menghapus proses latar belakang...</item>
+        <item>Membersihkan jalur sistem...</item>
+        <item>Menyesuaikan kunci sistem...</item>
+        <item>Memeriksa komponen yang tidak digunakan...</item>
+        <item>Nonaktifkan menara GPS yang tidak perlu...</item>
+    </array>
+
+    <array name="battery_items">
+        <item>Kurangi kecerahan</item>
+        <item>Nonaktifkan Kecerahan Otomatis</item>
+        <item>Nonaktifkan Wi-Fi</item>
+        <item>Bekukan aplikasi latar belakang</item>
+        <item>Nonaktifkan Bluetooth</item>
+        <item>Nonaktifkan Getaran</item>
+    </array>
+
+    <array name="junk_items">
+        <item>Cache</item>
+        <item>Berkas sementara</item>
+        <item>Berkas sisa</item>
+        <item>Sampah sistem</item>
+    </array>
+
+    <array name="progress_cooling">
+        <item>Menghapus proses latar belakang..</item>
+        <item>Membersihkan jalur sistem..</item>
+        <item>Menyesuaikan tombol sistem..</item>
+        <item>Memeriksa komponen yang tidak digunakan..</item>
+        <item>Memutuskan sambungan dari menara GPS yang tidak perlu..</item>
+    </array>
+
+</resources>

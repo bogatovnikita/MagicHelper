@@ -50,7 +50,7 @@ fun Fragment.checkUsageStatsAllowed(): Boolean {
 }
 
 fun Fragment.openAccessUsageSettings() {
-    startActivity(requireContext().usageAccessSettings())
+    startActivity(usageAccessSettings())
 }
 
 fun Fragment.checkPermissions(vararg permission: String): Boolean {

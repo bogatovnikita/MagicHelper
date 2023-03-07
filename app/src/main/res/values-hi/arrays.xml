@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <array name="boost_and_cooling_items">
+        <item>पृष्ठभूमि प्रक्रियाओं को हटाना।..</item>
+        <item>समाशोधन प्रणाली पथ।..</item>
+        <item>सिस्टम कुंजियों को अनुकूलित करना । ..</item>
+        <item>अप्रयुक्त घटकों की जाँच करना । ..</item>
+        <item>अनावश्यक जीपीएस टावरों को अक्षम करें । ..</item>
+    </array>
+
+    <array name="battery_items">
+        <item>चमक कम करें</item>
+        <item>ऑटो चमक अक्षम करें</item>
+        <item>वाई-फाई अक्षम करें</item>
+        <item>पृष्ठभूमि अनुप्रयोगों को फ्रीज करें</item>
+        <item>ब्लूटूथ अक्षम करें</item>
+        <item>कंपन अक्षम करें</item>
+    </array>
+
+    <array name="junk_items">
+        <item>कैश</item>
+        <item>अस्थायी फ़ाइलें</item>
+        <item>अवशिष्ट फ़ाइलें</item>
+        <item>सिस्टम कचरा</item>
+    </array>
+
+    <array name="progress_cooling">
+        <item>पृष्ठभूमि प्रक्रियाओं को हटाना।.</item>
+        <item>समाशोधन प्रणाली पथ।.</item>
+        <item>सिस्टम कुंजियों को समायोजित करना । .</item>
+        <item>अप्रयुक्त घटकों की जाँच करना । .</item>
+        <item>अनावश्यक जीपीएस टावरों से डिस्कनेक्ट करना । .</item>
+    </array>
+
+</resources>
