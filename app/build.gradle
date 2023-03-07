@@ -15,8 +15,8 @@ android {
         applicationId "ar.cleaner.first.pf"
         minSdk 23
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
         archivesBaseName = "${rootProject.name}-${applicationId}-v${versionName}(${versionCode})"
         resValue "string", "ADMOB_APP_KEY", "ca-app-pub-8834500067134040~7162160754"
         buildConfigField "String", "YANDEX_KEY", '"0ad084d3-711b-4bd7-bf90-07c8af8a411b"'
