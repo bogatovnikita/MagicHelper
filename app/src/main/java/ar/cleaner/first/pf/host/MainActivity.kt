@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        SubscriptionProvider.getInstance(this).init(this)
-//        AdsManager.init(this, BuildConfig.DEBUG)
-//        AdsManager.initBanner(binding.adView)
+        SubscriptionProvider.getInstance(this).init(this)
+        AdsManager.init(this, BuildConfig.DEBUG)
+        AdsManager.initBanner(binding.adView)
     }
 }

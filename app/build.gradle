@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
         archivesBaseName = "${rootProject.name}-${applicationId}-v${versionName}(${versionCode})"
-        resValue "string", "ADMOB_APP_KEY", "ca-app-pub-1234567891231236~1234567890"
+        resValue "string", "ADMOB_APP_KEY", "ca-app-pub-8834500067134040~7162160754"
         buildConfigField "String", "YANDEX_KEY", '"0ad084d3-711b-4bd7-bf90-07c8af8a411b"'
     }
 
@@ -26,6 +26,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ADMOB_INTERSTITIAL", '"ca-app-pub-8834500067134040/9888126944"'
+            resValue "string", "ADMOB_BANNER", "ca-app-pub-8834500067134040/5849079081"
         }
         debug {
             minifyEnabled false

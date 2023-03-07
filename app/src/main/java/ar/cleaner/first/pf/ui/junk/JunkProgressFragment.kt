@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
+import ar.cleaner.first.pf.ads.preloadAd
+import ar.cleaner.first.pf.ads.showAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.JunkFile
 import ar.cleaner.first.pf.domain.usecases.junk.ExtendedCleanUseCase
@@ -59,7 +61,7 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        preloadAd()
+        preloadAd()
         initRecyclerView()
         updateUseCase()
     }
@@ -109,13 +111,13 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
     }
 
     private fun goScreenResult() {
-//        showAds {
-        findNavController().navigate(
-            JunkProgressFragmentDirections.actionJunkProgressFragmentToResultFragment(
-                ResultFragment.CLEANING_KEY
+        showAds {
+            findNavController().navigate(
+                JunkProgressFragmentDirections.actionJunkProgressFragmentToResultFragment(
+                    ResultFragment.CLEANING_KEY
+                )
             )
-        )
-//        }
+        }
     }
 
     private fun scanList(): List<String> {

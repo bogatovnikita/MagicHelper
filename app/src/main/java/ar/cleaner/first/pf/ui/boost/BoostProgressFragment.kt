@@ -10,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
+import ar.cleaner.first.pf.ads.preloadAd
+import ar.cleaner.first.pf.ads.showAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.boosting.ExtendedOptimizerUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetBackgroundAppsUseCase
@@ -54,7 +56,7 @@ class BoostProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        preloadAd()
+        preloadAd()
         updateExtendedOptimizerUseCase()
         initRecyclerView()
     }
@@ -112,13 +114,13 @@ class BoostProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-//        showAds {
+        showAds {
         findNavController().navigate(
             BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
                 ResultFragment.BOOST_KEY
             )
         )
-//        }
+        }
     }
 
     override fun onDestroy() {

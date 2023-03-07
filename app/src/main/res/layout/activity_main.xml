@@ -7,13 +7,13 @@
     android:fitsSystemWindows="false"
     tools:context=".host.MainActivity">
 
-<!--    <com.google.android.gms.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        ads:adSize="SMART_BANNER"-->
-<!--        ads:adUnitId="@string/ADMOB_BANNER"-->
-<!--        ads:layout_constraintTop_toTopOf="parent" />-->
+    <com.google.android.gms.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ADMOB_BANNER"
+        ads:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
