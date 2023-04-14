@@ -6,5 +6,6 @@ interface UiOuter {
     fun out(updateOut: UpdateOut)
     fun out(allSelectionOut: AllSelectionOut)
     fun showGroup(groupName: GroupName)
+    fun showSortingSelection()
 
 }

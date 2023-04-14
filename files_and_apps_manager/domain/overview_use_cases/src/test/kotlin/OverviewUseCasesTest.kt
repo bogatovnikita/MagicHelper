@@ -63,4 +63,11 @@ class OverviewUseCasesTest {
         }
     }
 
+    @Test
+    fun testShowSortingSelection(){
+        useCases.showSortingSelection()
+
+        coVerify { uiOuter.showSortingSelection() }
+    }
+
 }

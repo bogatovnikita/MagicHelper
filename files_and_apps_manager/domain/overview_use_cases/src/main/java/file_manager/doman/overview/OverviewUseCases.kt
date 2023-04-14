@@ -29,4 +29,8 @@ class OverviewUseCases(
         uiOuter.out(outProvider.createAllSelectionOut())
     }
 
+    fun showSortingSelection(){
+        uiOuter.showSortingSelection()
+    }
+
 }
