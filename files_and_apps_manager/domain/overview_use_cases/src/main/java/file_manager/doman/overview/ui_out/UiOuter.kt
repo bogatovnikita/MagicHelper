@@ -1,4 +1,4 @@
-package file_manager.doman.file_manager_use_cases.ui_out
+package file_manager.doman.overview.ui_out
 
 interface UiOuter {
 

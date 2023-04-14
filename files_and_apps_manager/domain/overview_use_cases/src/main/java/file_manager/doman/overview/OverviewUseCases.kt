@@ -1,0 +1,18 @@
+package file_manager.doman.overview
+
+import file_manager.doman.overview.ui_out.UiOuter
+import file_manager.doman.overview.ui_out.UpdateOut
+
+class OverviewUseCases(
+    private val uiOuter: UiOuter
+) {
+
+    fun close(){
+        uiOuter.close()
+    }
+
+    fun update(){
+        uiOuter.out(UpdateOut())
+    }
+
+}
