@@ -4,6 +4,7 @@ interface UiOuter {
 
     fun close()
     fun out(updateOut: UpdateOut)
+    fun out(allSelectionOut: AllSelectionOut)
     fun showGroup(groupName: GroupName)
 
 }

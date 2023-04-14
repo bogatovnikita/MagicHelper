@@ -1,5 +1,8 @@
+import file_manager.domain.server.FileManagerServer
+import file_manager.doman.overview.AllSelectionOutProvider
 import file_manager.doman.overview.OverviewUseCases
 import file_manager.doman.overview.UpdateOutProvider
+import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupName
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
@@ -13,10 +16,14 @@ class OverviewUseCasesTest {
 
     private val uiOuter: UiOuter = spyk()
     private val updateOutProvider: UpdateOutProvider = mockk()
+    private val allSelectionOutProvider: AllSelectionOutProvider = mockk()
+    private val server: FileManagerServer = spyk()
 
     private val useCases = OverviewUseCases(
         uiOuter = uiOuter,
-        updateOutProvider = updateOutProvider
+        updateOutProvider = updateOutProvider,
+        allSelectionOutProvider = allSelectionOutProvider,
+        server = server,
     )
 
     @Test
@@ -44,6 +51,19 @@ class OverviewUseCasesTest {
             coVerify { uiOuter.showGroup(it) }
         }
 
+    }
+
+    @Test
+    fun testSwitchAllSelection(){
+        val allSelectionOut = AllSelectionOut(selectedCount = 10)
+        coEvery { allSelectionOutProvider.provide() } returns allSelectionOut
+
+        useCases.switchAllSelection()
+
+        coVerify {
+            server.switchAllSelection()
+            uiOuter.out(allSelectionOut)
+        }
     }
 
 }
