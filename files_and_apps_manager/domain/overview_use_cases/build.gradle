@@ -10,7 +10,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
-    implementation project(":file_manager:domain:server")
+    implementation project(":files_and_apps_manager:domain:server")
 }
 
 test {
