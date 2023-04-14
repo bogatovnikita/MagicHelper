@@ -1,5 +1,6 @@
 import file_manager.doman.overview.OverviewUseCases
 import file_manager.doman.overview.UpdateOutProvider
+import file_manager.doman.overview.ui_out.GroupName
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
 import io.mockk.coEvery
@@ -33,6 +34,16 @@ class OverviewUseCasesTest {
         useCases.update()
 
         coVerify { uiOuter.out(updateOut) }
+    }
+
+    @Test
+    fun testSwitchGroup(){
+        GroupName.values().forEach {
+            useCases.switchGroup(it)
+
+            coVerify { uiOuter.showGroup(it) }
+        }
+
     }
 
 }
