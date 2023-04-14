@@ -8,8 +8,7 @@ import file_manager.doman.overview.ui_out.UpdateOut
 
 class OverviewUseCases(
     private val uiOuter: UiOuter,
-    private val updateOutProvider: UpdateOutProvider,
-    private val allSelectionOutProvider: AllSelectionOutProvider,
+    private val outProvider: OutProvider,
     private val server: FileManagerServer
 ) {
 
@@ -18,7 +17,7 @@ class OverviewUseCases(
     }
 
     fun update(){
-        uiOuter.out(updateOutProvider.provide())
+        uiOuter.out(outProvider.createUpdateOut())
     }
 
     fun switchGroup(groupName: GroupName){
@@ -27,7 +26,7 @@ class OverviewUseCases(
 
     fun switchAllSelection(){
         server.switchAllSelection()
-        uiOuter.out(allSelectionOutProvider.provide())
+        uiOuter.out(outProvider.createAllSelectionOut())
     }
 
 }
