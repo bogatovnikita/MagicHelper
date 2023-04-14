@@ -1,14 +1,11 @@
 package file_manager.doman.overview
 
 import file_manager.domain.server.FileManagerServer
-import file_manager.doman.overview.ui_out.AllSelectionOut
-import file_manager.doman.overview.ui_out.GroupName
-import file_manager.doman.overview.ui_out.UiOuter
-import file_manager.doman.overview.ui_out.UpdateOut
+import file_manager.doman.overview.ui_out.*
 
 class OverviewUseCases(
     private val uiOuter: UiOuter,
-    private val outProvider: OutProvider,
+    private val outCreator: OutCreator,
     private val server: FileManagerServer
 ) {
 
@@ -17,7 +14,7 @@ class OverviewUseCases(
     }
 
     fun update(){
-        uiOuter.out(outProvider.createUpdateOut())
+        uiOuter.out(outCreator.createUpdateOut())
     }
 
     fun switchGroup(groupName: GroupName){
@@ -26,11 +23,16 @@ class OverviewUseCases(
 
     fun switchAllSelection(){
         server.switchAllSelection()
-        uiOuter.out(outProvider.createAllSelectionOut())
+        uiOuter.out(outCreator.createAllSelectionOut())
     }
 
     fun showSortingSelection(){
         uiOuter.showSortingSelection()
+    }
+
+    fun switchItemSelection(itemId: String){
+        server.switchItemSelection(itemId)
+        uiOuter.out(outCreator.createItemSelectionOut(itemId))
     }
 
 }
