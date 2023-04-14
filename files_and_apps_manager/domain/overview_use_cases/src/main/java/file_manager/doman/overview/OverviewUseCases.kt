@@ -4,7 +4,8 @@ import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
 
 class OverviewUseCases(
-    private val uiOuter: UiOuter
+    private val uiOuter: UiOuter,
+    private val updateOutProvider: UpdateOutProvider
 ) {
 
     fun close(){
@@ -12,7 +13,7 @@ class OverviewUseCases(
     }
 
     fun update(){
-        uiOuter.out(UpdateOut())
+        uiOuter.out(updateOutProvider.provide())
     }
 
 }
