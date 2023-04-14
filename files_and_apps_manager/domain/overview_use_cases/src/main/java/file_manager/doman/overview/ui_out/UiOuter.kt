@@ -8,5 +8,6 @@ interface UiOuter {
     fun out(itemSelectionOut: ItemSelectionOut)
     fun showGroup(groupName: GroupName)
     fun showSortingSelection()
+    fun showAskDeleteDialog()
 
 }

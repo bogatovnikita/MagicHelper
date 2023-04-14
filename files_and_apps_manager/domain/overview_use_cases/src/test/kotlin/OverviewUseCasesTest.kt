@@ -6,6 +6,7 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.spyk
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class OverviewUseCasesTest {
@@ -19,6 +20,7 @@ class OverviewUseCasesTest {
         outCreator = outCreator,
         server = server,
     )
+
 
     @Test
     fun testClose(){
@@ -80,6 +82,30 @@ class OverviewUseCasesTest {
             server.switchItemSelection(itemId)
             uiOuter.out(itemSelectionOut)
         }
+    }
+
+    @Test
+    fun testAskDelete(){
+
+
+        assertAskIfHasSelected()
+        assertDoNotAskIfHasNotSelected()
+    }
+
+    private fun assertAskIfHasSelected() {
+        coEvery { server.hasSelected } returns true
+
+        useCases.showAskDeleteDialog()
+
+        coVerify { uiOuter.showAskDeleteDialog() }
+    }
+
+    private fun assertDoNotAskIfHasNotSelected(){
+        coEvery { server.hasSelected } returns false
+
+        useCases.showAskDeleteDialog()
+
+        coVerify(exactly = 1) { uiOuter.showAskDeleteDialog() }
     }
 
 }
