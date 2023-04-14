@@ -12,3 +12,8 @@ rootProject.name = "AR154"
 include ':app'
 include ':data'
 include ':domain'
+include ':file_manager'
+include ':file_manager:domain'
+include ':file_manager:domain:start_screen_use_cases'
+include ':file_manager:domain:scan_progress_use_cases'
+include ':file_manager:domain:file_manager_use_cases'
