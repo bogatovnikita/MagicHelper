@@ -37,9 +37,9 @@ class OverviewUseCases(
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
     }
 
-    fun showAskDeleteDialog(){
+    fun showDeleteDialog(){
         if (server.hasSelected){
-            uiOuter.showAskDeleteDialog()
+            uiOuter.showDeleteDialog()
         }
     }
 

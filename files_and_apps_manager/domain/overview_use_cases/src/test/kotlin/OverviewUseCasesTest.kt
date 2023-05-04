@@ -87,7 +87,7 @@ class OverviewUseCasesTest {
     }
 
     @Test
-    fun testAskDelete(){
+    fun testShowDeleteDialog(){
         assertAskIfHasSelected()
         assertDoNotAskIfHasNotSelected()
     }
@@ -95,17 +95,17 @@ class OverviewUseCasesTest {
     private fun assertAskIfHasSelected() {
         coEvery { server.hasSelected } returns true
 
-        useCases.showAskDeleteDialog()
+        useCases.showDeleteDialog()
 
-        coVerify { uiOuter.showAskDeleteDialog() }
+        coVerify { uiOuter.showDeleteDialog() }
     }
 
     private fun assertDoNotAskIfHasNotSelected(){
         coEvery { server.hasSelected } returns false
 
-        useCases.showAskDeleteDialog()
+        useCases.showDeleteDialog()
 
-        coVerify(exactly = 1) { uiOuter.showAskDeleteDialog() }
+        coVerify(exactly = 1) { uiOuter.showDeleteDialog() }
     }
 
     @Test
