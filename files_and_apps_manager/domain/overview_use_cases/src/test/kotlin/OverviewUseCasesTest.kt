@@ -1,12 +1,11 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.doman.overview.OutCreator
-import file_manager.doman.overview.OverviewUseCases
+import file_manager.doman.overview.use_cases.OverviewUseCases
 import file_manager.doman.overview.ui_out.*
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.spyk
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class OverviewUseCasesTest {
