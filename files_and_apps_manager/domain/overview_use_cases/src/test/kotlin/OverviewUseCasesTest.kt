@@ -2,6 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.doman.overview.OutCreator
 import file_manager.doman.overview.use_cases.OverviewUseCases
 import file_manager.doman.overview.ui_out.*
+import file_manager.doman.overview.use_cases.DeleteUseCase
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -13,11 +14,13 @@ class OverviewUseCasesTest {
     private val uiOuter: UiOuter = spyk()
     private val outCreator: OutCreator = mockk()
     private val server: FileManagerServer = spyk()
+    private val deleteUseCase: DeleteUseCase = spyk()
 
     private val useCases = OverviewUseCases(
         uiOuter = uiOuter,
         outCreator = outCreator,
         server = server,
+        deleteUseCase = deleteUseCase,
     )
 
 
@@ -103,6 +106,13 @@ class OverviewUseCasesTest {
         useCases.showAskDeleteDialog()
 
         coVerify(exactly = 1) { uiOuter.showAskDeleteDialog() }
+    }
+
+    @Test
+    fun testDelete(){
+        useCases.delete()
+
+        coVerify { deleteUseCase.delete() }
     }
 
 }

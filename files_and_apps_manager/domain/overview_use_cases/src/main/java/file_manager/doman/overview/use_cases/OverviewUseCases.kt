@@ -7,7 +7,8 @@ import file_manager.doman.overview.ui_out.*
 class OverviewUseCases(
     private val uiOuter: UiOuter,
     private val outCreator: OutCreator,
-    private val server: FileManagerServer
+    private val server: FileManagerServer,
+    private val deleteUseCase: DeleteUseCase
 ) {
 
     fun close(){
@@ -40,6 +41,10 @@ class OverviewUseCases(
         if (server.hasSelected){
             uiOuter.showAskDeleteDialog()
         }
+    }
+
+    fun delete(){
+        deleteUseCase.delete()
     }
 
 }
