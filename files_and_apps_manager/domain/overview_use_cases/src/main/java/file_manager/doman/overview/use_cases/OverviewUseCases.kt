@@ -4,11 +4,12 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.doman.overview.OutCreator
 import file_manager.doman.overview.ui_out.*
 
-class OverviewUseCases(
+internal class OverviewUseCases(
     private val uiOuter: UiOuter,
     private val outCreator: OutCreator,
     private val server: FileManagerServer,
-    private val deleteUseCase: DeleteUseCase
+    private val deleteUseCase: DeleteUseCase,
+    private val updateUseCase: UpdateUseCase
 ) {
 
     fun close(){
@@ -16,7 +17,7 @@ class OverviewUseCases(
     }
 
     fun update(){
-        uiOuter.out(outCreator.createUpdateOut())
+        updateUseCase.update()
     }
 
     fun switchGroup(groupName: GroupName){

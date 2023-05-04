@@ -3,6 +3,7 @@ import file_manager.doman.overview.OutCreator
 import file_manager.doman.overview.use_cases.OverviewUseCases
 import file_manager.doman.overview.ui_out.*
 import file_manager.doman.overview.use_cases.DeleteUseCase
+import file_manager.doman.overview.use_cases.UpdateUseCase
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -15,12 +16,14 @@ class OverviewUseCasesTest {
     private val outCreator: OutCreator = mockk()
     private val server: FileManagerServer = spyk()
     private val deleteUseCase: DeleteUseCase = spyk()
+    private val updateUseCase: UpdateUseCase = spyk()
 
     private val useCases = OverviewUseCases(
         uiOuter = uiOuter,
         outCreator = outCreator,
         server = server,
         deleteUseCase = deleteUseCase,
+        updateUseCase = updateUseCase
     )
 
 
@@ -33,12 +36,9 @@ class OverviewUseCasesTest {
 
     @Test
     fun testUpdate(){
-        val updateOut = UpdateOut()
-        coEvery { outCreator.createUpdateOut() } returns updateOut
-
         useCases.update()
 
-        coVerify { uiOuter.out(updateOut) }
+        coVerify { updateUseCase.update() }
     }
 
     @Test
