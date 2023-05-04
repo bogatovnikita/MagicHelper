@@ -47,4 +47,8 @@ class OverviewUseCases(
         deleteUseCase.delete()
     }
 
+    fun hideDeleteDialog(){
+        uiOuter.hideDeleteDialog()
+    }
+
 }

@@ -109,6 +109,13 @@ class OverviewUseCasesTest {
     }
 
     @Test
+    fun testHideDeleteDialog(){
+        useCases.hideDeleteDialog()
+
+        coVerify { uiOuter.hideDeleteDialog() }
+    }
+
+    @Test
     fun testDelete(){
         useCases.delete()
 

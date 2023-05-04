@@ -9,5 +9,6 @@ interface UiOuter {
     fun showGroup(groupName: GroupName)
     fun showSortingSelection()
     fun showDeleteDialog()
+    fun hideDeleteDialog()
 
 }
