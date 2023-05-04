@@ -1,4 +1,4 @@
-package file_manager.doman.overview.ui_out
+package file_manager.domain.server
 
 enum class GroupName {
 

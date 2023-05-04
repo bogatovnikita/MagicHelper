@@ -1,5 +1,7 @@
 package file_manager.doman.overview.ui_out
 
+import file_manager.domain.server.GroupName
+
 interface UiOuter {
 
     fun close()
