@@ -27,7 +27,7 @@ class ScanUseCaseTest {
 
     @Test
     fun testScan() = runTest{
-        val filesList: List<File> = emptyList()
+        val filesList: List<String> = emptyList()
         coEvery { filesAndApps.provide() } returns filesList
 
         useCase.scan()

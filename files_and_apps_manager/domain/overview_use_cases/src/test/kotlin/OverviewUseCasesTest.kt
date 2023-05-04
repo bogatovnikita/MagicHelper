@@ -86,8 +86,6 @@ class OverviewUseCasesTest {
 
     @Test
     fun testAskDelete(){
-
-
         assertAskIfHasSelected()
         assertDoNotAskIfHasNotSelected()
     }
