@@ -1,11 +1,15 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.doman.overview.OutCreator
-import file_manager.doman.overview.use_cases.OverviewUseCases
-import file_manager.doman.overview.ui_out.*
+import file_manager.doman.overview.ui_out.AllSelectionOut
+import file_manager.doman.overview.ui_out.GroupName
+import file_manager.doman.overview.ui_out.ItemSelectionOut
+import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_cases.DeleteUseCase
+import file_manager.doman.overview.use_cases.OverviewUseCases
 import file_manager.doman.overview.use_cases.UpdateUseCase
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.coVerifySequence
 import io.mockk.mockk
 import io.mockk.spyk
 import org.junit.jupiter.api.Test
@@ -120,6 +124,16 @@ class OverviewUseCasesTest {
         useCases.delete()
 
         coVerify { deleteUseCase.delete() }
+    }
+
+    @Test
+    fun testCompleteDelete(){
+        useCases.completeDelete()
+
+        coVerifySequence {
+            uiOuter.hideDeleteDialog()
+            updateUseCase.update()
+        }
     }
 
 }

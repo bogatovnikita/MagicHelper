@@ -52,4 +52,9 @@ internal class OverviewUseCases(
         uiOuter.hideDeleteDialog()
     }
 
+    fun completeDelete(){
+        uiOuter.hideDeleteDialog()
+        updateUseCase.update()
+    }
+
 }
