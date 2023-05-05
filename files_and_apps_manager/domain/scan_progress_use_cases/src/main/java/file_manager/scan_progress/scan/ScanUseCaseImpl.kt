@@ -2,6 +2,7 @@ package file_manager.scan_progress.scan
 
 import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.UiOuter
+import file_manager.scan_progress.gateways.FilesAndApps
 
 class ScanUseCaseImpl(
     private val uiOuter: UiOuter,

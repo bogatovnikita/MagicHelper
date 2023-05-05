@@ -1,13 +1,12 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.scan.Delayer
-import file_manager.scan_progress.scan.FilesAndApps
+import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.scan.ScanUseCaseImpl
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
-import java.io.File
 
 
 @OptIn(ExperimentalCoroutinesApi::class)

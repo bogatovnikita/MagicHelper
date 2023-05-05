@@ -1,4 +1,4 @@
-package file_manager.scan_progress.scan
+package file_manager.scan_progress.gateways
 
 interface FilesAndApps {
 
