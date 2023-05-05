@@ -1,4 +1,6 @@
 import file_manager.start_screen.*
+import file_manager.start_screen.clean_checker.CleanChecker
+import file_manager.start_screen.gateways.UsedMem
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

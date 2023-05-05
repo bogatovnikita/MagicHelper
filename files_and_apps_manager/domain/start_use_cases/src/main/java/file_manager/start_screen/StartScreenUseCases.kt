@@ -1,5 +1,8 @@
 package file_manager.start_screen
 
+import file_manager.start_screen.clean_checker.CleanChecker
+import file_manager.start_screen.gateways.UsedMem
+
 class StartScreenUseCases(
     private val uiOuter: UiOuter,
     private val usedMem: UsedMem,
