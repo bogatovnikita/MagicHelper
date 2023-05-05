@@ -1,4 +1,4 @@
-package file_manager.domain.server
+package file_manager.scan_progress.grouper
 
 class FileGroups {
     private val video = mapOf(
