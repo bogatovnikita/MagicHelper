@@ -1,4 +1,5 @@
 import file_manager.domain.server.FileManagerServer
+import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_cases.DeleteUseCaseImpl
@@ -15,12 +16,14 @@ class DeleteUseCaseTest {
     private val server: FileManagerServer = mockk()
     private val updateUseCase: UpdateUseCase = spyk()
     private val uiOuter: UiOuter = spyk()
+    private val deleteTimeSaver: DeleteTimeSaver = spyk()
 
     private val deleteUseCase = DeleteUseCaseImpl(
         deleter = deleter,
         server = server,
         updateUseCase = updateUseCase,
-        uiOuter = uiOuter
+        uiOuter = uiOuter,
+        deleteTimeSaver = deleteTimeSaver
     )
 
 
@@ -34,8 +37,11 @@ class DeleteUseCaseTest {
 
         coVerifySequence {
             uiOuter.showDeleteProgress()
+
             deleter.delete(ids)
+            deleteTimeSaver.saveDeleteTime()
             updateUseCase.update()
+
             uiOuter.showDeleteCompletion()
         }
     }
