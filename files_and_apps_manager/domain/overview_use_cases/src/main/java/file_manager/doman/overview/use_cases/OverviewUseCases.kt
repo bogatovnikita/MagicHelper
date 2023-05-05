@@ -25,8 +25,8 @@ internal class OverviewUseCases(
         uiOuter.showGroup(groupName)
     }
 
-    fun switchAllSelection(){
-        server.switchAllSelection()
+    fun switchAllSelection(groupName: GroupName){
+        server.switchAllSelection(groupName)
         uiOuter.out(outCreator.createAllSelectionOut())
     }
 
@@ -34,8 +34,8 @@ internal class OverviewUseCases(
         uiOuter.showSortingSelection()
     }
 
-    fun switchItemSelection(itemId: String){
-        server.switchItemSelection(itemId)
+    fun switchItemSelection(groupName: GroupName, itemId: String){
+        server.switchItemSelection(groupName, itemId)
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
     }
 
@@ -45,8 +45,8 @@ internal class OverviewUseCases(
         }
     }
 
-    fun delete(){
-        deleteUseCase.deleteAndUpdate()
+    fun delete(groupName: GroupName){
+        deleteUseCase.deleteAndUpdate(groupName)
     }
 
     fun hideDeleteDialog(){

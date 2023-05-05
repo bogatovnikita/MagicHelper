@@ -1,6 +1,7 @@
 package file_manager.doman.overview.use_cases
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
@@ -13,10 +14,10 @@ internal class DeleteUseCaseImpl(
     private val deleteTimeSaver: DeleteTimeSaver
 ) : DeleteUseCase {
 
-    override fun deleteAndUpdate() {
+    override fun deleteAndUpdate(groupName: GroupName) {
         uiOuter.showDeleteProgress()
 
-        deleter.delete(server.selected)
+        deleter.delete(server.selected[groupName]?:emptyList())
         deleteTimeSaver.saveDeleteTime()
         updateUseCase.update()
 

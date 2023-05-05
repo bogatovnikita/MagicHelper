@@ -60,10 +60,10 @@ class OverviewUseCasesTest {
         val allSelectionOut = AllSelectionOut(selectedCount = 10)
         coEvery { outCreator.createAllSelectionOut() } returns allSelectionOut
 
-        useCases.switchAllSelection()
+        useCases.switchAllSelection(GroupName.Video)
 
         coVerify {
-            server.switchAllSelection()
+            server.switchAllSelection(GroupName.Video)
             uiOuter.out(allSelectionOut)
         }
     }
@@ -82,10 +82,10 @@ class OverviewUseCasesTest {
 
         coEvery { outCreator.createItemSelectionOut(itemId) } returns itemSelectionOut
 
-        useCases.switchItemSelection(itemId)
+        useCases.switchItemSelection(GroupName.Video, itemId)
 
         coVerify {
-            server.switchItemSelection(itemId)
+            server.switchItemSelection(GroupName.Video, itemId)
             uiOuter.out(itemSelectionOut)
         }
     }
@@ -121,9 +121,10 @@ class OverviewUseCasesTest {
 
     @Test
     fun testDelete(){
-        useCases.delete()
+        val groupName = GroupName.Video
+        useCases.delete(groupName)
 
-        coVerify { deleteUseCase.deleteAndUpdate() }
+        coVerify { deleteUseCase.deleteAndUpdate(groupName) }
     }
 
     @Test

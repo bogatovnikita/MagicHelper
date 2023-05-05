@@ -8,12 +8,12 @@ interface FileManagerServer {
 
     var groups: Map<GroupName, List<String>>
 
-    val selected: List<String>
+    val selected: Map<GroupName, List<String>>
 
-    fun isItemSelected(id: String) : Boolean
+    fun isItemSelected(groupName: GroupName, id: String) : Boolean
 
-    fun switchAllSelection()
-    fun switchItemSelection(item: String)
+    fun switchAllSelection(groupName: GroupName)
+    fun switchItemSelection(groupName: GroupName, item: String)
 
 
 }

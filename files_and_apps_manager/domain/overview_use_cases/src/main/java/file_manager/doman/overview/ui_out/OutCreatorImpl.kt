@@ -1,6 +1,7 @@
 package file_manager.doman.overview.ui_out
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.GroupName
 
 class OutCreatorImpl(
     private val server: FileManagerServer
@@ -29,7 +30,7 @@ class OutCreatorImpl(
     override fun createItemSelectionOut(itemId: String): ItemSelectionOut {
         return ItemSelectionOut(
             id = itemId,
-            isItemSelected = server.isItemSelected(itemId),
+            isItemSelected = server.isItemSelected(GroupName.Video, itemId),
             isAllSelected = server.isAllSelected,
             selectedCount = server.selectedCount
         )

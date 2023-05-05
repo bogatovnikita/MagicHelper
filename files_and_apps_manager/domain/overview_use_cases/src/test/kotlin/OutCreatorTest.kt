@@ -52,7 +52,7 @@ class OutCreatorTest {
         selectedCount: Int
     ) {
         coEvery { server.isAllSelected } returns isAllSelected
-        coEvery { server.isItemSelected(itemId) } returns isItemSelected
+        coEvery { server.isItemSelected(GroupName.Video, itemId) } returns isItemSelected
         coEvery { server.selectedCount } returns selectedCount
 
         val expected = ItemSelectionOut(

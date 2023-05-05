@@ -1,4 +1,5 @@
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
@@ -29,16 +30,17 @@ class DeleteUseCaseTest {
 
     @Test
     fun testDeleteAndUpdate(){
-        val ids = emptyList<String>()
+        val video = listOf("video")
+        val ids = mapOf(GroupName.Video to video)
 
         coEvery { server.selected } returns ids
 
-        deleteUseCase.deleteAndUpdate()
+        deleteUseCase.deleteAndUpdate(GroupName.Video)
 
         coVerifySequence {
             uiOuter.showDeleteProgress()
 
-            deleter.delete(ids)
+            deleter.delete(video.map { it })
             deleteTimeSaver.saveDeleteTime()
             updateUseCase.update()
 
