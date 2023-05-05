@@ -46,7 +46,7 @@ internal class OverviewUseCases(
     }
 
     fun delete(){
-        deleteUseCase.delete()
+        deleteUseCase.deleteAndUpdate()
     }
 
     fun hideDeleteDialog(){
@@ -55,7 +55,6 @@ internal class OverviewUseCases(
 
     fun completeDelete(){
         uiOuter.hideDeleteDialog()
-        updateUseCase.update()
     }
 
 }

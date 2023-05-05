@@ -1,8 +1,8 @@
 import file_manager.domain.server.FileManagerServer
-import file_manager.doman.overview.ui_out.OutCreator
-import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.domain.server.GroupName
+import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
+import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_cases.DeleteUseCase
 import file_manager.doman.overview.use_cases.OverviewUseCases
@@ -123,7 +123,7 @@ class OverviewUseCasesTest {
     fun testDelete(){
         useCases.delete()
 
-        coVerify { deleteUseCase.delete() }
+        coVerify { deleteUseCase.deleteAndUpdate() }
     }
 
     @Test
@@ -132,7 +132,6 @@ class OverviewUseCasesTest {
 
         coVerifySequence {
             uiOuter.hideDeleteDialog()
-            updateUseCase.update()
         }
     }
 

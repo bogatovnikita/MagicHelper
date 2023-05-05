@@ -12,5 +12,7 @@ interface UiOuter {
     fun showSortingSelection()
     fun showDeleteDialog()
     fun hideDeleteDialog()
+    fun showDeleteProgress()
+    fun showDeleteCompletion()
 
 }

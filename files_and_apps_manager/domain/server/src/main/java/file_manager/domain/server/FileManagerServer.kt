@@ -8,6 +8,8 @@ interface FileManagerServer {
 
     val groups: Map<GroupName, List<String>>
 
+    val selected: List<String>
+
     fun isItemSelected(id: String) : Boolean
 
     fun setFilesAndApps(filesAndApps: List<String>)
