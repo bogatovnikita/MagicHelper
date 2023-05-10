@@ -44,13 +44,13 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.1'
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 
     //inject
     implementation 'javax.inject:javax.inject:1'
 
     //hilt
-    implementation 'com.google.dagger:hilt-android:2.44'
-    kapt "com.google.dagger:hilt-compiler:2.44"
+    implementation 'com.google.dagger:hilt-android:2.46'
+    kapt 'com.google.dagger:hilt-compiler:2.46'
 }
