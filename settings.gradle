@@ -19,3 +19,6 @@ include ':files_and_apps_manager:domain:overview_use_cases'
 include ':files_and_apps_manager:domain:server'
 include ':files_and_apps_manager:data'
 include ':files_and_apps_manager:presentation'
+
+include ':lifecycle_aware'
+include ':files_and_apps_manager:test'

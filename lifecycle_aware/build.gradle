@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'yin_kio.files_and_apps_manager.data'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
-        minSdk 23
-        targetSdk 33
+        minSdk 21
+        targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -27,15 +26,18 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs +=["-Xjvm-default=all",]
     }
 }
 
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation project(':files_and_apps_manager:domain:start_use_cases')
-    implementation project(':files_and_apps_manager:domain:overview_use_cases')
-    implementation project(':files_and_apps_manager:domain:scan_progress_use_cases')
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+
 }

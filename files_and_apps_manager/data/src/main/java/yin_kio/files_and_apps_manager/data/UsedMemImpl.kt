@@ -2,8 +2,8 @@ package yin_kio.files_and_apps_manager.data
 
 import android.app.ActivityManager
 import android.content.Context
-import file_manager.start_screen.UsedMemOut
 import file_manager.start_screen.gateways.UsedMem
+import file_manager.start_screen.ui_out.UsedMemOut
 
 class UsedMemImpl(
     private val context: Context

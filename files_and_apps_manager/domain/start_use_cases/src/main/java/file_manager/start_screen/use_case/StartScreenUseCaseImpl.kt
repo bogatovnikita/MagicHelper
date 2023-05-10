@@ -1,24 +1,26 @@
-package file_manager.start_screen
+package file_manager.start_screen.use_case
 
 import file_manager.start_screen.clean_checker.CleanChecker
 import file_manager.start_screen.gateways.UsedMem
+import file_manager.start_screen.ui_out.UiOuter
+import file_manager.start_screen.ui_out.UpdateOut
 
-class StartScreenUseCases(
+internal class StartScreenUseCaseImpl(
     private val uiOuter: UiOuter,
     private val usedMem: UsedMem,
     private val cleanChecker: CleanChecker
-) {
+) : StartScreenUseCase {
 
 
-    fun close(){
+    override fun close(){
         uiOuter.close()
     }
 
-    fun scan(){
+    override fun scan(){
         uiOuter.showScanProgress()
     }
 
-    fun update(){
+    override fun update(){
         val usedMemOut = usedMem.provide()
         val isCleaned = cleanChecker.isCleaned
 

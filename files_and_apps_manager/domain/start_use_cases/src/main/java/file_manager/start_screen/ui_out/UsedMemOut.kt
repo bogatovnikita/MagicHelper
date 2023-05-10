@@ -1,4 +1,4 @@
-package file_manager.start_screen
+package file_manager.start_screen.ui_out
 
 data class UsedMemOut(
 

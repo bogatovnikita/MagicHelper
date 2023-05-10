@@ -1,18 +1,20 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'Yin_Koi.files_and_apps_manager.presentation'
+    namespace 'com.example.test'
     compileSdk 33
 
     defaultConfig {
+        applicationId "com.example.test"
         minSdk 23
         targetSdk 33
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -28,32 +30,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    buildFeatures{
-        viewBinding true
-    }
 }
 
 dependencies {
-    implementation project(':lifecycle_aware')
-    implementation project(':files_and_apps_manager:domain:start_use_cases')
-    implementation project(':files_and_apps_manager:domain:overview_use_cases')
-    implementation project(':files_and_apps_manager:domain:scan_progress_use_cases')
-    implementation project(':files_and_apps_manager:data')
 
+    implementation project(':files_and_apps_manager:presentation')
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.fragment:fragment:1.5.7'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation 'com.github.kirich1409:viewbindingpropertydelegate-full:1.5.9'
-    //ktx
-    implementation 'androidx.fragment:fragment-ktx:1.5.7'
     def nav_version = "2.5.3"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
 }

@@ -133,7 +133,7 @@
         android:fontFamily="@font/heraclito_medium"
         android:maxLines="2"
         android:padding="8dp"
-        android:paddingHorizontal="@dimen/_4sdp"
+        android:paddingHorizontal="4dp"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/scan_button"
