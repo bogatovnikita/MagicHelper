@@ -1,5 +1,7 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.selectable_form.SelectableForm
+import file_manager.domain.server.selectable_form.SimpleSelectableForm
 import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
@@ -69,16 +71,20 @@ class OutCreatorTest {
 
     @Test
     fun testCreateUpdateOut(){
+        val selectableForm = SimpleSelectableForm<String>().apply {
+            content = listOf("some_id")
+        }
+
         assertCorrectUpdateOutCreation(input = emptyMap(), expected = emptyList())
         assertCorrectUpdateOutCreation(
-            input = mapOf(GroupName.Images to listOf("some_id")),
+            input = mapOf(GroupName.Images to selectableForm),
             expected = listOf(GroupOut(name = GroupName.Images, ids = listOf("some_id")))
         )
 
     }
 
     private fun assertCorrectUpdateOutCreation(
-        input: Map<GroupName, List<String>>,
+        input: Map<GroupName, SelectableForm<String>>,
         expected: List<GroupOut>
     ) {
         coEvery { server.groups } returns input

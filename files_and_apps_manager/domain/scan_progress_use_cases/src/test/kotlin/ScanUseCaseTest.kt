@@ -1,5 +1,6 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.gateways.FilesAndApps
@@ -32,7 +33,7 @@ class ScanUseCaseTest {
     fun testScan() = runTest{
         val files: List<String> = emptyList()
         val apps: List<String> = emptyList()
-        val groups = mapOf<GroupName, List<String>>()
+        val groups = mapOf<GroupName, SelectableForm<String>>()
 
         coEvery { filesAndApps.provideFiles() } returns files
         coEvery { filesAndApps.provideApps() } returns apps

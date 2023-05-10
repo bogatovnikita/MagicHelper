@@ -31,9 +31,9 @@ class DeleteUseCaseTest {
     @Test
     fun testDeleteAndUpdate(){
         val video = listOf("video")
-        val ids = mapOf(GroupName.Video to video)
+        val ids = listOf("video")
 
-        coEvery { server.selected } returns ids
+        coEvery { server.getSelected(GroupName.Video) } returns ids
 
         deleteUseCase.deleteAndUpdate(GroupName.Video)
 

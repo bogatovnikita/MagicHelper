@@ -19,7 +19,7 @@ class OutCreatorImpl(
             groups = server.groups.map {group ->
                 GroupOut(
                     name = group.key,
-                    ids = group.value
+                    ids = group.value.content as List<String>
                 )
             },
             isAllSelected = server.isAllSelected,
