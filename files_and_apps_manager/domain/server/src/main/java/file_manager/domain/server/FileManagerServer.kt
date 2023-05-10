@@ -1,19 +1,21 @@
 package file_manager.domain.server
 
+import file_manager.domain.server.selectable_form.SelectableForm
+
 interface FileManagerServer {
 
     val hasSelected: Boolean
     val isAllSelected: Boolean
     val selectedCount: Int
 
-    var groups: Map<GroupName, List<String>>
+    var groups: Map<GroupName, SelectableForm<String>>
 
-    val selected: List<String>
+    fun getSelected(groupName: GroupName): List<String>
 
-    fun isItemSelected(id: String) : Boolean
+    fun isItemSelected(groupName: GroupName, id: String) : Boolean
 
-    fun switchAllSelection()
-    fun switchItemSelection(item: String)
+    fun switchAllSelection(groupName: GroupName)
+    fun switchItemSelection(groupName: GroupName, item: String)
 
 
 }

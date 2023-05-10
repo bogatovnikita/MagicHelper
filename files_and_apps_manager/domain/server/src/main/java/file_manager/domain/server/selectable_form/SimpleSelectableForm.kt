@@ -1,6 +1,6 @@
 package file_manager.domain.server.selectable_form
 
-internal open class SimpleSelectableForm<T> : SelectableForm<T> {
+open class SimpleSelectableForm<T> : SelectableForm<T> {
 
 
 

@@ -1,6 +1,8 @@
 package file_manager.scan_progress.grouper
 
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.selectable_form.SelectableForm
+import file_manager.domain.server.selectable_form.SimpleSelectableForm
 import kotlin.io.path.Path
 import kotlin.io.path.extension
 
@@ -11,7 +13,7 @@ class GrouperImpl : Grouper {
     override fun groupFilesAndApps(
         files: List<String>,
         apps: List<String>
-    ): Map<GroupName, List<String>> {
+    ): Map<GroupName, SelectableForm<String>> {
 
         val images = mutableListOf<String>()
         val audio = mutableListOf<String>()
@@ -29,12 +31,24 @@ class GrouperImpl : Grouper {
             }
         }
 
+        val imagesForm = SimpleSelectableForm<String>()
+        val audioForm = SimpleSelectableForm<String>()
+        val documentsForm = SimpleSelectableForm<String>()
+        val videoForm = SimpleSelectableForm<String>()
+        val appsForm = SimpleSelectableForm<String>()
+
+        imagesForm.content = images
+        audioForm.content = audio
+        documentsForm.content = documents
+        videoForm.content = video
+        appsForm.content = apps
+
         return mapOf(
-            GroupName.Images to images,
-            GroupName.Video to video,
-            GroupName.Audio to audio,
-            GroupName.Documents to documents,
-            GroupName.Apps to apps,
-        ).filter { it.value.isNotEmpty() }
+            GroupName.Images to imagesForm,
+            GroupName.Video to videoForm,
+            GroupName.Audio to audioForm,
+            GroupName.Documents to documentsForm,
+            GroupName.Apps to appsForm,
+        ).filter { it.value.content.isNotEmpty() }
     }
 }
