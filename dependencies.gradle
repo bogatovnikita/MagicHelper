@@ -1,0 +1,48 @@
+buildscript {
+
+    ext {
+
+        versions = [
+                navigation : '2.5.3',
+                core_ktx : '1.10.0',
+                appcompat: '1.6.1',
+                material: '1.9.0',
+                vbProperty : '1.5.9',
+                fragment_ktx : '1.5.7',
+                lottie : '6.0.0',
+                constraint : '2.1.4',
+                coroutines : '1.6.4'
+        ]
+
+        presentation = [
+                'nav_fragment_ktx'  : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                'nav_ui_ktx'        : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                'core_ktx'          : "androidx.core:core-ktx:${versions.core_ktx}",
+                'lottie'            : "com.airbnb.android:lottie:${versions.lottie}",
+                'appcompat'         : "androidx.appcompat:appcompat:${versions.appcompat}",
+                'material'          : "com.google.android.material:material:${versions.material}",
+                'vb'                : "com.github.kirich1409:viewbindingpropertydelegate:${versions.vbProperty}",
+                'fragment_ktx'      : "androidx.fragment:fragment-ktx:${versions.fragment_ktx}",
+                'constraint'        : "androidx.constraintlayout:constraintlayout:$versions.constraint",
+
+        ]
+
+
+        navigation = [
+                'nav_fragment_ktx'  : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                'nav_ui_ktx'        : "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+        ]
+
+        domain = [
+                'coroutines'        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+        ]
+
+        testDomain = [
+                'junit'             : 'org.junit.jupiter:junit-jupiter:5.9.3',
+                'mockk'             : 'io.mockk:mockk:1.13.5',
+                'testCoroutines'    : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+        ]
+
+    }
+
+}

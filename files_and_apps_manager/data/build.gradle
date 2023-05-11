@@ -32,9 +32,6 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
     implementation project(':files_and_apps_manager:domain:start_use_cases')
     implementation project(':files_and_apps_manager:domain:overview_use_cases')
     implementation project(':files_and_apps_manager:domain:scan_progress_use_cases')

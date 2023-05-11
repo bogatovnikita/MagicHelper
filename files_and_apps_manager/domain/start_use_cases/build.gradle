@@ -4,9 +4,8 @@ plugins {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
-    testImplementation 'io.mockk:mockk:1.13.5'
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation testDomain.values()
+    implementation domain.values()
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 }
