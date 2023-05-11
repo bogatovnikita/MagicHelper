@@ -1,6 +1,7 @@
 import file_manager.scan_progress.gateways.Permissions
 import file_manager.scan_progress.ScanProgressUseCase
-import file_manager.scan_progress.scan.ScanUseCase
+import file_manager.scan_progress.ScanProgressUseCaseImpl
+import file_manager.scan_progress.scan.ScanAction
 import file_manager.scan_progress.UiOuter
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -15,33 +16,35 @@ import org.junit.jupiter.api.Test
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class ScanProgressUseCaseTest {
+class ScanProgressUseCaseImplTest {
 
     private val uiOuter: UiOuter = spyk()
     private val permissions: Permissions = mockk()
-    private val scanUseCase: ScanUseCase = spyk()
+    private val scanAction: ScanAction = spyk()
 
     private val dispatcher = StandardTestDispatcher()
     private val testScope = TestScope(dispatcher)
 
-    private val useCases = ScanProgressUseCase(
+    private val useCases = ScanProgressUseCaseImpl(
         uiOuter = uiOuter,
-        scanUseCase = scanUseCase,
+        scanAction = scanAction,
         permissions = permissions,
         coroutineScope = testScope,
         dispatcher = dispatcher
     )
 
     @Test
-    fun testClose(){
+    fun testClose() = testScope.runTest{
         useCases.close()
+        advanceUntilIdle()
 
         coVerify { uiOuter.close() }
     }
 
     @Test
-    fun requestPermission(){
+    fun requestPermission() = testScope.runTest{
         useCases.requestPermission()
+        advanceUntilIdle()
 
         coVerify { uiOuter.requestPermission() }
     }
@@ -67,7 +70,7 @@ class ScanProgressUseCaseTest {
         useCases.scan()
         advanceUntilIdle()
 
-        coVerify { scanUseCase.scan() }
+        coVerify { scanAction.scan() }
     }
 
 }

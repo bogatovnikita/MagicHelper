@@ -1,6 +1,6 @@
 package file_manager.scan_progress.scan
 
-interface ScanUseCase {
+internal interface ScanAction {
 
     suspend fun scan()
 

@@ -5,15 +5,16 @@ import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.grouper.Grouper
-import file_manager.scan_progress.scan.ScanUseCaseImpl
+import file_manager.scan_progress.scan.ScanActionImpl
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class ScanUseCaseTest {
+class ScanActionTest {
 
     private val uiOuter: UiOuter = spyk()
     private val delayer: Delayer = spyk()
@@ -21,7 +22,7 @@ class ScanUseCaseTest {
     private val filesAndApps: FilesAndApps = mockk()
     private val grouper: Grouper = mockk()
 
-    private val useCase = ScanUseCaseImpl(
+    private val useCase = ScanActionImpl(
         uiOuter = uiOuter,
         delayer = delayer,
         filesAndApps = filesAndApps,
