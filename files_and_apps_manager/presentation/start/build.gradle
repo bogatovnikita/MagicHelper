@@ -36,7 +36,9 @@ android {
 
 dependencies {
     implementation project(':lifecycle_aware')
-    implementation project(':files_and_apps_manager:domain:start_use_cases')
+    implementation project(':files_and_apps_manager:domain:start_use_case')
+    implementation project(':files_and_apps_manager:domain:overview_use_case')
+    implementation project(':files_and_apps_manager:domain:scan_progress_use_case')
     implementation project(':files_and_apps_manager:data')
 
 
