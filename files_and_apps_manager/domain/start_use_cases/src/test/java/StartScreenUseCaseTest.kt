@@ -8,18 +8,31 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.spyk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
+
+@OptIn(ExperimentalCoroutinesApi::class)
 class StartScreenUseCaseTest {
 
     private val uiOuter: UiOuter = spyk()
     private val usedMem: UsedMem = mockk()
     private val cleanChecker: CleanChecker = mockk()
 
+
+    private val dispatcher = StandardTestDispatcher()
+    private val testScope = TestScope(dispatcher)
+
     private val useCases = StartScreenUseCaseImpl(
         uiOuter = uiOuter,
         usedMem = usedMem,
-        cleanChecker = cleanChecker
+        cleanChecker = cleanChecker,
+        coroutineScope = testScope,
+        dispatcher = dispatcher
     )
 
     @Test
@@ -37,12 +50,12 @@ class StartScreenUseCaseTest {
     }
 
     @Test
-    fun testUpdate(){
-        assertUpdate(true)
-        assertUpdate(false)
+    fun testUpdate() = testScope.runTest{
+        assertUpdateOutCorrectPassing(true)
+        assertUpdateOutCorrectPassing(false)
     }
 
-    private fun assertUpdate(isCleaned: Boolean) {
+    private fun TestScope.assertUpdateOutCorrectPassing(isCleaned: Boolean) {
         val usedMemOut = UsedMemOut()
         val updateOut = UpdateOut(
             usedMemOut = usedMemOut,
@@ -55,6 +68,7 @@ class StartScreenUseCaseTest {
 
 
         useCases.update()
+        advanceUntilIdle()
 
         coVerify {
             uiOuter.out(updateOut)
