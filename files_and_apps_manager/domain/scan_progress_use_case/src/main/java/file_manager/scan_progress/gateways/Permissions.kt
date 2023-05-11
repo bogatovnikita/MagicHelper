@@ -1,4 +1,4 @@
-package file_manager.scan_progress.facade
+package file_manager.scan_progress.gateways
 
 interface Permissions {
 

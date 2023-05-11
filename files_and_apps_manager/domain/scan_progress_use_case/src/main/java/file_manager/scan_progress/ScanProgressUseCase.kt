@@ -1,6 +1,7 @@
-package file_manager.scan_progress.facade
+package file_manager.scan_progress
 
 import file_manager.scan_progress.UiOuter
+import file_manager.scan_progress.gateways.Permissions
 import file_manager.scan_progress.scan.ScanUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

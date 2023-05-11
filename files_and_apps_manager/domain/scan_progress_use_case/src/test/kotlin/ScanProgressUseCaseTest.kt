@@ -1,5 +1,5 @@
-import file_manager.scan_progress.facade.Permissions
-import file_manager.scan_progress.facade.ScanProgressUseCase
+import file_manager.scan_progress.gateways.Permissions
+import file_manager.scan_progress.ScanProgressUseCase
 import file_manager.scan_progress.scan.ScanUseCase
 import file_manager.scan_progress.UiOuter
 import io.mockk.coEvery
