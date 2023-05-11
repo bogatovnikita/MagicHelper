@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="midnight_blue">#3A3A69</color>
+    <color name="white">#FFFFFF</color>
+    <color name="slate_gray">#5C5C86</color>
+    <color name="light_blue">#EEF4FF</color>
+    <color name="red">#FF5648</color>
+    <color name="green">#96D581</color>
+    <color name="dark_blue">#3A3A69</color>
+    <color name="black">#FF000000</color>
+    <color name="light_black">#4D3A3A3A</color>
+    <color name="dark_green">#5D8A4E</color>
+
+
+
+
+</resources>
