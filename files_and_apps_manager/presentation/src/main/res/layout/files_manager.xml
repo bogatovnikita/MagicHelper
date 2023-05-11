@@ -1,112 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
+        android:id="@+id/background"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/arrow_back_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/baseline_arrow_back" />
+
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/heraclito_medium"
+                android:text="@string/deleting_files"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="17dp"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/card_for_info"/>
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/danger_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:fontFamily="@font/heraclito_medium"
+        android:maxLines="2"
+        android:padding="8dp"
+        android:textAllCaps="false"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        tools:background="@drawable/background_button_danger"
+        tools:text="Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/heraclito_medium"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/scan"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
+
 
 </LinearLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <ImageView
-            android:id="@+id/background_color"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="380dp"
-            android:src="@drawable/background" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/arrow_back_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/baseline_arrow_back" />
-
-        <TextView
-            android:id="@+id/title_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/heraclito_medium"
-            android:text="@string/deleting_files"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="620dp"
-            android:background="@drawable/background_button"
-            android:fontFamily="@font/heraclito_medium"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="@string/scan"
-            android:textAllCaps="false"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/danger_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="540dp"
-            android:clickable="false"
-            android:ellipsize="end"
-            android:fontFamily="@font/heraclito_medium"
-            android:maxLines="2"
-            android:padding="8dp"
-            android:textAllCaps="false"
-            android:textColor="@color/red"
-            android:textSize="16sp"
-            tools:background="@drawable/background_button_danger"
-            tools:text="Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!" />
-    </LinearLayout>
-
-
-
-
-
-
-
-</FrameLayout>
