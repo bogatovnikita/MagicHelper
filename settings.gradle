@@ -23,5 +23,6 @@ include ':files_and_apps_manager:presentation'
 include ':lifecycle_aware'
 include ':files_and_apps_manager:test'
 include ':files_and_apps_manager:presentation:start'
+include ':res'
 
 include ':permissions'
