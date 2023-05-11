@@ -28,9 +28,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
+
+    implementation project(':files_and_apps_manager:domain:server')
+    implementation project(':lifecycle_aware')
+    implementation project(':files_and_apps_manager:domain:scan_progress_use_case')
+    implementation project(':files_and_apps_manager:data')
 
     implementation presentation.values()
     implementation project(':res')

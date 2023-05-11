@@ -35,6 +35,8 @@ android {
 dependencies {
 
     implementation project(':files_and_apps_manager:presentation:start')
+    implementation project(':files_and_apps_manager:presentation:scan')
+    implementation project(':res')
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

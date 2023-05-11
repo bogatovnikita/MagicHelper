@@ -4,10 +4,7 @@
     <string name="deleting_files">Удаление файлов</string>
     <string name="memory_used">Использовано памятий</string>
     <string name="scan">Сканировать</string>
-    <string name="we_need_permission">Нам нужно разрешение</string>
-    <string name="also_permission">Чтобы мы могли остановить фоновые процессы и освободить оперативную память, нам нужен доступ к истории использования</string>
-    <string name="cancel">Отмена</string>
-    <string name="allow">Разрешить</string>
+
 
     <string name="file_and_apps_manager_percents">%d%%</string>
     <string name="file_and_apps_manager_occupied_and_total">%s / %s</string>
