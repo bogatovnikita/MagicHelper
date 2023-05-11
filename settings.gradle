@@ -26,3 +26,4 @@ include ':files_and_apps_manager:presentation:start'
 include ':res'
 
 include ':permissions'
+include ':files_and_apps_manager:presentation:scan'

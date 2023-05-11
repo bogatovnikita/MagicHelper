@@ -10,5 +10,9 @@
     <style name="Text.Medium">
         <item name="android:fontFamily">@font/heraclito_medium</item>
     </style>
+    <style name="Text.Regular">
+        <item name="android:fontFamily">@font/heraclito_regular</item>
+    </style>
+
 
 </resources>
