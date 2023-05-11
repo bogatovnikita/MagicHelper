@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
@@ -26,7 +27,6 @@
                 android:layout_marginTop="50dp"
                 android:src="@drawable/baseline_arrow_back" />
 
-
             <TextView
                 android:id="@+id/title_tv"
                 android:layout_width="match_parent"
@@ -36,8 +36,73 @@
                 android:fontFamily="@font/heraclito_medium"
                 android:text="@string/deleting_files"
                 android:textColor="@color/white"
-                android:textSize="24sp"/>
+                android:textSize="24sp" />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/card_for_info">
+
+            <TextView
+                android:id="@+id/memory_use_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/heraclito_medium"
+                android:text="@string/memory_used"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/percentage_used_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/percentage_used_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/heraclito_medium"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/memory_use_tv"
+                tools:text="75%" />
+
+            <TextView
+                android:id="@+id/gigabyte_used_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/heraclito_medium"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/progress_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="60,0 Гб / 64,0 Гб" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:progressDrawable="@drawable/progress_bar_gradient"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:progress="80" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 
