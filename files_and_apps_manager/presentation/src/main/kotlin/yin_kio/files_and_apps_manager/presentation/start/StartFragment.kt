@@ -3,6 +3,7 @@ package yin_kio.files_and_apps_manager.presentation.start
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesManagerBinding
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -24,12 +25,11 @@ class StartFragment : Fragment(R.layout.files_manager) {
 
     private val binding: FilesManagerBinding by viewBinding()
     private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
-
+    private val server = currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
-
+        server.value
 
         binding.scanButton.setOnClickListener {
             viewModel.scan()
@@ -46,7 +46,7 @@ class StartFragment : Fragment(R.layout.files_manager) {
         viewLifecycleOwner.lifecycleScope.launch{
             viewModel.command.collect{
                 when(it){
-                    Command.ShowScanProgress -> TODO()
+                    Command.ShowScanProgress -> findNavController().navigate(R.id.action_startFragment_to_scanFragment)
                     Command.Close -> findNavController().navigateUp()
                 }
             }
