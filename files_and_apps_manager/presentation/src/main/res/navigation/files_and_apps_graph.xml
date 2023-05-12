@@ -10,7 +10,7 @@
         android:name="yin_kio.files_and_apps_manager.presentation.start.StartFragment"
         android:label="StartFragment" >
         <action
-            android:id="@+id/action_startFragment_to_scanFragment"
+            android:id="@+id/toScanFragment"
             app:destination="@id/scanFragment" />
     </fragment>
     <fragment
@@ -18,7 +18,7 @@
         android:name="yin_kio.files_and_apps_manager.presentation.scan.ScanFragment"
         android:label="ScanFragment" >
         <action
-            android:id="@+id/action_scanFragment_to_fileManagerPermissionDialog"
+            android:id="@+id/toPermissionDialog"
             app:destination="@id/fileManagerPermissionDialog" />
     </fragment>
     <dialog

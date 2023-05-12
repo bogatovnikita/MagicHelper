@@ -3,7 +3,6 @@ package yin_kio.files_and_apps_manager.presentation.start
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesManagerBinding
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -46,7 +45,7 @@ class StartFragment : Fragment(R.layout.files_manager) {
         viewLifecycleOwner.lifecycleScope.launch{
             viewModel.command.collect{
                 when(it){
-                    Command.ShowScanProgress -> findNavController().navigate(R.id.action_startFragment_to_scanFragment)
+                    Command.ShowScanProgress -> findNavController().navigate(R.id.toScanFragment)
                     Command.Close -> findNavController().navigateUp()
                 }
             }
