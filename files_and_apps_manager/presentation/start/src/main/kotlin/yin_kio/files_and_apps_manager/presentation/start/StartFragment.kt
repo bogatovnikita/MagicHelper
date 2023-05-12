@@ -32,11 +32,24 @@ class StartFragment : Fragment(R.layout.files_manager) {
         currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
 
 
+        binding.scanButton.setOnClickListener {
+            viewModel.scan()
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect{
                 binding.percentageUsedTv.text = it.percents
                 binding.gigabyteUsedTv.text = it.occupiedAndTotal
                 binding.progressBar.progress = it.progress
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch{
+            viewModel.command.collect{
+                when(it){
+                    Command.ShowScanProgress -> TODO()
+                    Command.Close -> findNavController().navigateUp()
+                }
             }
         }
     }

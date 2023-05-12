@@ -18,11 +18,11 @@ internal class StartScreenUseCaseImpl(
 
 
     override fun close(){
-        uiOuter.close()
+        coroutineScope.launch(dispatcher) { uiOuter.close() }
     }
 
     override fun scan(){
-        uiOuter.showScanProgress()
+        coroutineScope.launch(dispatcher) { uiOuter.showScanProgress() }
     }
 
     override fun update(){

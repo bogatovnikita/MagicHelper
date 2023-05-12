@@ -9,12 +9,12 @@ internal class UiOuterImpl(
 
     var viewModel: ViewModel? = null
 
-    override fun close() {
-        TODO("Not yet implemented")
+    override suspend fun close() {
+        viewModel?.sendCommand(Command.Close)
     }
 
-    override fun showScanProgress() {
-        TODO("Not yet implemented")
+    override suspend fun showScanProgress() {
+        viewModel?.sendCommand(Command.ShowScanProgress)
     }
 
     override fun out(updateOut: UpdateOut) {
