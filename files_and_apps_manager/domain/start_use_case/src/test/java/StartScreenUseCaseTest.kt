@@ -36,15 +36,17 @@ class StartScreenUseCaseTest {
     )
 
     @Test
-    fun testClose(){
+    fun testClose() = testScope.runTest{
         useCases.close()
+        advanceUntilIdle()
 
         coVerify { uiOuter.close() }
     }
 
     @Test
-    fun testScan(){
+    fun testScan() = testScope.runTest{
         useCases.scan()
+        advanceUntilIdle()
 
         coVerify { uiOuter.showScanProgress() }
     }
