@@ -41,6 +41,7 @@ class FileManagerPermissionDialog : DialogFragment(R.layout.files_app_manager_pe
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.cancelBtn.setOnClickListener { viewModel.close() }
+        binding.crossExitIv.setOnClickListener { viewModel.close() }
         binding.allowBtn.setOnClickListener { viewModel.requestPermission() }
 
 
