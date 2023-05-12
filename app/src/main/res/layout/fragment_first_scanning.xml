@@ -29,7 +29,7 @@
         android:text="@string/scanning_system"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/Text.24"
         app:layout_constraintBottom_toTopOf="@id/progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +37,8 @@
 
     <yinkio.android.customView.progressBar.ArcCircleProgressBar
         android:id="@+id/progress_bar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="172dp"
+        android:layout_height="172dp"
         android:layout_marginHorizontal="@dimen/_96sdp"
         app:canalColor="@color/light_grey"
         app:canalHasShadow="false"
@@ -61,7 +61,7 @@
         android:fontFamily="@font/heraclito_bold"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/Text.40"
         app:layout_constraintBottom_toBottomOf="@id/progress_bar"
         app:layout_constraintEnd_toEndOf="@id/progress_bar"
         app:layout_constraintStart_toStartOf="@id/progress_bar"
@@ -79,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/guideline_for_top_anim"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        tools:lottie_progress="0.5"
         app:lottie_rawRes="@raw/folders" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

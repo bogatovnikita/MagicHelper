@@ -21,7 +21,7 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_regular"
         android:textColor="@color/black"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/Text.14"
         tools:text="sdfsdfsdf" />
 
 </LinearLayout>

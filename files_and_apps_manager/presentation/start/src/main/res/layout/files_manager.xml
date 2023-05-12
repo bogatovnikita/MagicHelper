@@ -36,7 +36,7 @@
                 android:fontFamily="@font/heraclito_medium"
                 android:text="@string/deleting_files"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="@dimen/Text.24" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,7 +56,7 @@
                 android:fontFamily="@font/heraclito_medium"
                 android:text="@string/memory_used"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="@dimen/Text.18"
                 app:layout_constraintBottom_toTopOf="@id/percentage_used_tv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/heraclito_medium"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="@dimen/Text.24"
                 app:layout_constraintBottom_toTopOf="@id/progress_bar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/memory_use_tv"
@@ -84,7 +84,7 @@
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/heraclito_medium"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/Text.16"
                 app:layout_constraintBottom_toTopOf="@id/progress_bar"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="60,0 Гб / 64,0 Гб" />
@@ -112,21 +112,18 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
         android:id="@+id/danger_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:clickable="false"
-        android:ellipsize="end"
         android:fontFamily="@font/heraclito_medium"
         android:maxLines="2"
         android:padding="8dp"
-        android:textAllCaps="false"
         android:textColor="@color/red"
-        android:textSize="16sp"
-        tools:background="@drawable/background_button_danger"
-        tools:text="Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!" />
+        android:textSize="@dimen/Text.16"
+        android:background="@drawable/background_button_danger"
+        android:text="Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -142,7 +139,6 @@
         android:padding="20dp"
         android:text="@string/scan"
         android:textAllCaps="false"
-        android:textSize="18sp" />
-
+        android:textSize="@dimen/Text.18" />
 
 </LinearLayout>

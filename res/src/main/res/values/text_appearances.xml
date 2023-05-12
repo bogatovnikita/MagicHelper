@@ -14,5 +14,13 @@
         <item name="android:fontFamily">@font/heraclito_regular</item>
     </style>
 
+    <style name="Text.Bold">
+        <item name="android:fontFamily">@font/heraclito_bold</item>
+    </style>
+
+    <style name="Text.Light">
+        <item name="android:fontFamily">@font/heraclito_light</item>
+    </style>
+
 
 </resources>
