@@ -1,23 +1,20 @@
 package yin_kio.files_and_apps_manager.presentation.scan
 
+import Yin_Koi.files_and_apps_manager.presentation.R
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
-import by.kirich1409.viewbindingdelegate.viewBinding
 import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.ScanProgressUseCaseCreator
 import jamycake.lifecycle_aware.currentBackStackEntry
-import jamycake.lifecycle_aware.lifecycleAware
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.data.PermissionsImpl
-import yin_kio.files_and_apps_manager.presentation.scan.databinding.FamFragmentScanBinding
 
 class ScanFragment : Fragment(R.layout.fam_fragment_scan) {
 
@@ -43,7 +40,7 @@ class ScanFragment : Fragment(R.layout.fam_fragment_scan) {
 
 
 
-    private fun createViewModel(coroutineScope: CoroutineScope) : ViewModel{
+    private fun createViewModel(coroutineScope: CoroutineScope) : ViewModel {
         val context = requireContext().applicationContext
 
 

@@ -1,7 +1,6 @@
 package yin_kio.files_and_apps_manager.presentation.start
 
 import Yin_Koi.files_and_apps_manager.presentation.R
-import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesAppManagerStartBinding
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesManagerBinding
 import android.os.Bundle
 import android.view.View

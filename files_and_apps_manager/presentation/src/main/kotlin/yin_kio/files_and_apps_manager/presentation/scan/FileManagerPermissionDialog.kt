@@ -1,5 +1,7 @@
 package yin_kio.files_and_apps_manager.presentation.scan
 
+import Yin_Koi.files_and_apps_manager.presentation.R
+import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesAppManagerPermissionDialogBinding
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.DialogFragment
@@ -7,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import jamycake.lifecycle_aware.previousBackStackEntry
-import yin_kio.files_and_apps_manager.presentation.scan.databinding.FilesAppManagerPermissionDialogBinding
 
 class FileManagerPermissionDialog : DialogFragment(R.layout.files_app_manager_permission_dialog) {
 
