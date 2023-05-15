@@ -64,6 +64,14 @@
         <item name="android:textSize">@dimen/Text.18</item>
     </style>
 
+    <style name="SortPopupItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Text.Regular</item>
+        <item name="android:textSize">@dimen/Text.18</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
 
     
 </resources>
