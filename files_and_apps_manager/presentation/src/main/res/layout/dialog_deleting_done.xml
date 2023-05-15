@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="276dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/card_corners_white">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_exit_cross"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="9dp"
+        android:layout_marginTop="19dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Dialog.Title"
+            android:text="@string/file_apps_manager_files_deleting"
+            android:gravity="center"/>
+        
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_check_mark"
+            android:layout_marginVertical="18dp"/>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="match_parent"
+            style="@style/Dialog.Button.Ok"
+            android:text="@string/file_apps_manager_done"/>
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

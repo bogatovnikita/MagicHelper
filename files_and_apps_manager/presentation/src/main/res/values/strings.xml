@@ -35,5 +35,7 @@
     <string name="file_apps_manager_files_deleting_progress_description">Пожалуйста, не закрывайте окно во время удаления</string>
 
     <string name="file_apps_manager_delete">Удалить</string>
+    <string name="file_apps_manager_done">Готово</string>
+
 
 </resources>
