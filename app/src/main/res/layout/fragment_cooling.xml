@@ -132,11 +132,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/processor_temperature"
         android:textColor="@color/white"
-        android:textSize="@dimen/Text.24"
+        android:textSize="@dimen/Text.18"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toTopOf="@id/first_view_for_background" />
@@ -148,7 +148,7 @@
         android:layout_marginStart="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
-        android:textSize="@dimen/Text.24"
+        android:textSize="@dimen/Text.18"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/description_tv"
         tools:text="@string/temperature_D" />
@@ -166,6 +166,7 @@
         app:layout_constraintStart_toEndOf="@id/percent_tv"
         app:layout_constraintTop_toTopOf="@id/percent_tv" />
 
+
     <TextView
         android:id="@+id/normal_temperature_tv"
         android:layout_width="0dp"
@@ -175,11 +176,9 @@
         android:text="@string/the_normal_temperature_of_the_processor_is_25_30"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.14"
-        app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/percent_tv" />
-
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_is_not_optimize"

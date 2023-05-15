@@ -2,7 +2,7 @@
 <resources>
 
     <string name="deleting_files">Удаление файлов</string>
-    <string name="memory_used">Использовано памятий</string>
+    <string name="memory_used">Использовано памяти</string>
     <string name="scan">Сканировать</string>
 
 
