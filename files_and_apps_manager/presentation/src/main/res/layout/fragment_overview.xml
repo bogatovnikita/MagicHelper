@@ -125,6 +125,20 @@
     </LinearLayout>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/list_item_file"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_marginTop="14dp"
+        tools:text="Удалить (1)"
+        style="@style/MainButton"/>
 
 
 
