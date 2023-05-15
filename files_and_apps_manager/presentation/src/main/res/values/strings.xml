@@ -16,6 +16,11 @@
     <string name="allow">Разрешить</string>
     <string name="also_permission">Чтобы мы могли остановить фоновые процессы и освободить оперативную память, нам нужен доступ к истории использования</string>
 
+    <string name="file_apps_manager_photo">Фотографии</string>
+    <string name="file_apps_manager_video">Видео</string>
+    <string name="file_apps_manager_audio">Аудио</string>
+    <string name="file_apps_manager_documents">Документы</string>
+    <string name="file_apps_manager_apps">Приложения</string>
 
 
 </resources>
