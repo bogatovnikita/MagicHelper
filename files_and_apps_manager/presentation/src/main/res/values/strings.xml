@@ -29,4 +29,9 @@
     <string name="file_apps_manager_sort_big_first">Сначала большие</string>
     <string name="file_apps_manager_sort_small_first">Сначала маленькие</string>
 
+    <string name="file_apps_manager_files_deleting">Удаление файлов</string>
+    <string name="file_apps_manager_files_deleting_description">Вы уверены что хотите удалить выбранные файлы? Эти файлы будут удалены безвозвратно</string>
+
+    <string name="file_apps_manager_delete">Удалить</string>
+
 </resources>
