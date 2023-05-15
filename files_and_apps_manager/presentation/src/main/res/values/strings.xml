@@ -31,6 +31,8 @@
 
     <string name="file_apps_manager_files_deleting">Удаление файлов</string>
     <string name="file_apps_manager_files_deleting_description">Вы уверены что хотите удалить выбранные файлы? Эти файлы будут удалены безвозвратно</string>
+    <string name="file_apps_manager_files_deleting_progress">Идёт удаление файлов</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Пожалуйста, не закрывайте окно во время удаления</string>
 
     <string name="file_apps_manager_delete">Удалить</string>
 
