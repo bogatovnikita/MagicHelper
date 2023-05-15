@@ -21,5 +21,22 @@
         <item name="android:button">@drawable/button_checkbox</item>
     </style>
 
+    <style name="Text.ListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Text.Regular</item>
+    </style>
+
+    <style name="Text.ListItem.Title">
+        <item name="android:textSize">@dimen/Text.16</item>
+    </style>
+
+    <style name="Text.ListItem.Description">
+        <item name="android:textSize">@dimen/Text.14</item>
+        <item name="android:textColor">@color/file_app_manager_text_gray</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
     
 </resources>
