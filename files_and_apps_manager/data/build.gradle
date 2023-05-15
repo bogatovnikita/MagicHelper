@@ -5,11 +5,12 @@ plugins {
 
 android {
     namespace 'yin_kio.files_and_apps_manager.data'
-    compileSdk 33
+    compileSdk rootProject.ext.compileSdk
+
 
     defaultConfig {
-        minSdk 23
-        targetSdk 33
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

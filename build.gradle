@@ -19,3 +19,9 @@ apply from: 'dependencies.gradle'
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    minSdk = 23
+    targetSdk = 33
+    compileSdk = 33
+}
