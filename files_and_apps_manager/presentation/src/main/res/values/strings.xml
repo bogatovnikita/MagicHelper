@@ -21,6 +21,7 @@
     <string name="file_apps_manager_audio">Аудио</string>
     <string name="file_apps_manager_documents">Документы</string>
     <string name="file_apps_manager_apps">Приложения</string>
+    <string name="file_apps_manager_select_all">Выбрать всё</string>
 
 
 </resources>
