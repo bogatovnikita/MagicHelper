@@ -24,4 +24,9 @@
     <string name="file_apps_manager_select_all">Выбрать всё</string>
 
 
+    <string name="file_apps_manager_sort_new_first">Сначала новые</string>
+    <string name="file_apps_manager_sort_old_first">Сначала старые</string>
+    <string name="file_apps_manager_sort_big_first">Сначала большие</string>
+    <string name="file_apps_manager_sort_small_first">Сначала маленькие</string>
+
 </resources>
