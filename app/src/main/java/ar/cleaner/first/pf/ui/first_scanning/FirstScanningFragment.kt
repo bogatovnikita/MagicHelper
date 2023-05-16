@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.preloadAd
-import ar.cleaner.first.pf.ads.showAds
+import ar.cleaner.first.pf.ads.appPreloadAd
+import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentFirstScanningBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -40,7 +40,7 @@ class FirstScanningFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        preloadAd()
+        appPreloadAd()
         firstOptimization()
     }
 
@@ -79,7 +79,7 @@ class FirstScanningFragment : Fragment() {
     }
 
     private fun goNext() {
-        showAds {
+        appShowAds {
             findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
         }
     }
