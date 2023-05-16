@@ -132,6 +132,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="25dp"
+        style="@style/MainButton"
         android:background="@drawable/background_button"
         android:fontFamily="@font/heraclito_medium"
         android:gravity="center"
