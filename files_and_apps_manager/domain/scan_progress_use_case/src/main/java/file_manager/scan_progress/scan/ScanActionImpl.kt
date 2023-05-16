@@ -2,6 +2,7 @@ package file_manager.scan_progress.scan
 
 import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.UiOuter
+import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.grouper.Grouper
 
@@ -10,10 +11,12 @@ internal class ScanActionImpl(
     private val delayer: Delayer,
     private val filesAndApps: FilesAndApps,
     private val fileManagerServer: FileManagerServer,
-    private val grouper: Grouper
+    private val grouper: Grouper,
+    private val ads: Ads
 ): ScanAction {
 
     override suspend fun scan() {
+        ads.preloadAd()
         val files = filesAndApps.provideFiles()
         val apps = filesAndApps.provideApps()
 

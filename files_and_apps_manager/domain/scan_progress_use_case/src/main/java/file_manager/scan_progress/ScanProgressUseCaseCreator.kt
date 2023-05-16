@@ -1,6 +1,7 @@
 package file_manager.scan_progress
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.gateways.Permissions
 import file_manager.scan_progress.grouper.GrouperImpl
@@ -16,6 +17,7 @@ object ScanProgressUseCaseCreator {
         filesAndApps: FilesAndApps,
         fileManagerServer: FileManagerServer,
         permissions: Permissions,
+        ads: Ads,
         coroutineScope: CoroutineScope
     ) : ScanProgressUseCase{
         return ScanProgressUseCaseImpl(
@@ -25,7 +27,8 @@ object ScanProgressUseCaseCreator {
                 delayer = Delayer(),
                 filesAndApps = filesAndApps,
                 fileManagerServer = fileManagerServer,
-                grouper = GrouperImpl()
+                grouper = GrouperImpl(),
+                ads = ads
             ),
             permissions = permissions,
             coroutineScope = coroutineScope,

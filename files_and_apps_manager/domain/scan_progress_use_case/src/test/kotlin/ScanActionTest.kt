@@ -2,6 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.scan_progress.UiOuter
+import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.grouper.Grouper
@@ -21,13 +22,16 @@ class ScanActionTest {
     private val server: FileManagerServer = spyk()
     private val filesAndApps: FilesAndApps = mockk()
     private val grouper: Grouper = mockk()
+    private val ads: Ads = spyk()
+
 
     private val useCase = ScanActionImpl(
         uiOuter = uiOuter,
         delayer = delayer,
         filesAndApps = filesAndApps,
         fileManagerServer = server,
-        grouper = grouper
+        grouper = grouper,
+        ads = ads
     )
 
     @Test
@@ -45,6 +49,7 @@ class ScanActionTest {
         useCase.scan()
 
         coVerifyOrder {
+            ads.preloadAd()
             uiOuter.showProgress()
             server.groups = groups
             delayer.makeDelay()

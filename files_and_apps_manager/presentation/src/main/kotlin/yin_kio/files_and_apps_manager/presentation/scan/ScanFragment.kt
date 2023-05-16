@@ -2,17 +2,20 @@ package yin_kio.files_and_apps_manager.presentation.scan
 
 import Yin_Koi.files_and_apps_manager.presentation.R
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
+import com.yin_kio.ads.showAds
 import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.ScanProgressUseCaseCreator
 import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import yin_kio.files_and_apps_manager.data.AdsImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.data.PermissionsImpl
 
@@ -30,7 +33,11 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
                 when(it){
                     Command.Close -> findNavController().navigateUp()
                     Command.ShowPermissionDialog -> findNavController().navigate(R.id.toPermissionDialog)
-                    Command.ShowInter -> TODO()
+                    Command.ShowInter -> {
+                        showAds {
+                            Log.d("!!!", "ads closed")
+                        }
+                    }
                     Command.ShowProgress -> {}
                     else -> {}
                 }
@@ -50,7 +57,8 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
             filesAndApps = FilesAndAppsImpl(context),
             fileManagerServer = server,
             permissions = PermissionsImpl(context),
-            coroutineScope = coroutineScope
+            coroutineScope = coroutineScope,
+            ads = AdsImpl(context)
         )
 
         uiOuter.viewModel = ViewModel(useCase)
