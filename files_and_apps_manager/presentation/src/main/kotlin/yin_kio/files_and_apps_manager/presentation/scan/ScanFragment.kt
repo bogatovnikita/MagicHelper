@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.data.PermissionsImpl
 
-class ScanFragment : Fragment(R.layout.fam_fragment_scan) {
+class ScanFragment : Fragment(R.layout.fragment_scan) {
 
     private val server: FileManagerServer by previousBackStackEntry()
     private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }

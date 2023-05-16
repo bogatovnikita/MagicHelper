@@ -25,7 +25,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_exit_cross"/>
+            app:srcCompat="@drawable/ic_exit_cross"
+            android:importantForAccessibility="no" />
 
 
     </LinearLayout>
@@ -50,7 +51,7 @@
             android:layout_width="0dp"
             style="@style/Dialog.Button.Cancel"
             android:layout_weight="1"
-            android:text="@string/cancel"/>
+            android:text="@string/file_apps_manager_cancel"/>
 
         <Button
             android:layout_width="0dp"

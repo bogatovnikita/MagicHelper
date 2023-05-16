@@ -1,7 +1,7 @@
 package yin_kio.files_and_apps_manager.presentation.scan
 
 import Yin_Koi.files_and_apps_manager.presentation.R
-import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesAppManagerPermissionDialogBinding
+import Yin_Koi.files_and_apps_manager.presentation.databinding.DialogFileAppManagerPermissionBinding
 import android.Manifest
 import android.app.Dialog
 import android.graphics.drawable.ColorDrawable
@@ -17,9 +17,9 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.permissions.requestManageExternalStorage
 import jamycake.lifecycle_aware.previousBackStackEntry
 
-class FileManagerPermissionDialog : DialogFragment(R.layout.files_app_manager_permission_dialog) {
+class FileManagerPermissionDialog : DialogFragment(R.layout.dialog_file_app_manager_permission) {
 
-    private val binding: FilesAppManagerPermissionDialogBinding by viewBinding()
+    private val binding: DialogFileAppManagerPermissionBinding by viewBinding()
     private val viewModel: ViewModel by previousBackStackEntry()
 
     private val permissionLauncher = registerForActivityResult(
