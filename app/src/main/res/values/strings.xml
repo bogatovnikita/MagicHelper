@@ -12,7 +12,6 @@
     <string name="remaining_charging_time_D_h_D_min">Remaining charging time %d h %d min</string>
     <string name="available_memory_F_gb_F_gb">Available memory: %.1f GB/%.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Delete unwanted files safely</string>
-    <string name="now_the_device_is_accelerated_by_D">Your device is now faster by %d%%</string>
     <string name="optimize">Optimize</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
@@ -27,8 +26,6 @@
     <string name="cache">Cache</string>
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
-    <string name="usage_ram">Used RAM</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">Phone does not need to be accelerated at the moment!</string>
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="done">Done!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -36,12 +33,10 @@
     <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Cleaning</string>
     <string name="cleared_junk">Clean up</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">Right now background processes and applications load RAM</string>
-    <string name="boost">Boost</string>
+
     <string name="scanning_system">Scanning system…</string>
     <string name="clean_junk_done">Done</string>
     <string name="now_the_devices_memory_is_D_free">Device memory is now %d%%</string>
-    <string name="acceleration_completed">Acceleration complete</string>
     <string name="speed_up_the_work_of_your_phone">Accelerate your phone</string>
     <string name="ultra_mode_activates_restrictions">Ultra mode activates the limits:</string>
     <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
@@ -62,11 +57,9 @@
     <string name="system_garbage">System Junk</string>
     <string name="processor_temperature_D">Processor temperature %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Accelerate</string>
     <string name="boost_description">Accelerated</string>
     <string name="collect_data">Collecting data…</string>
     <string name="clean_junk_description_not_optimized_D">Free up %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Reduce memory strain and speed up your phone</string>
     <string name="cooled_D">Cooled down %d℃</string>
     <string name="optimization_is_done">Optimization is done</string>
     <string name="exit_toast">Tap back button in order to exit</string>
@@ -86,7 +79,9 @@
     <string name="snackbar_access_files">To perform this function, we need access to files</string>
     <string name="cleaner_title">Cleaner</string>
 
-<!--    new strings-->
+    <string name="boost_usage_ram">Used RAM</string>
+
+    <!--    new strings-->
     <string name="temperature_title">Температура</string>
     <string name="temperature_check">Проверить</string>
     <string name="temperature_danger_desc">Требуется действие!</string>
@@ -96,4 +91,16 @@
     <string name="temperature_need_check">Проверьте температуру</string>
     <string name="temperature_checked">Действие выполнено</string>
     <string name="temperature_normal">Нормальная температура процессора не должна превыщать 50℃</string>
+
+    <string name="boost_description_view_title">Прямо сейчас фоновые процессы и приложения могут влиять на скорость работы устройства</string>
+    <string name="boost_description_view_body">Снижайте нагрузку на оперативную память и оптимизируйте работу вашего телефона</string>
+    <string name="boost_button_optimize">Оптимизировать</string>
+    <string name="boost_title_name">Оптимизация</string>
+    <string name="boost_optimize_done">Оптимизация выполнена</string>
+    <string name="boost_phone_dont_need_optimize">Телефон не нуждается в оптимизации на данный момент!</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">Теперь устройство оптимизировано на %d%%</string>
+
+
+    <string name="general_action_required">Требуется действие!</string>
+
 </resources>

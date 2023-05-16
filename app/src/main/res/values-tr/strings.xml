@@ -10,7 +10,6 @@
     <string name="remaining_charging_time_D_h_D_min">Kalan şarj süresi %d h %d dakika</string>
     <string name="available_memory_F_gb_F_gb">Mevcut Bellek: %.1f GB/ %.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">İstenmeyen dosyaları güvenli bir şekilde silin</string>
-    <string name="now_the_device_is_accelerated_by_D">Cihazınız artık %d%%</string>
     <string name="optimize">Optimize etmek</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
@@ -25,8 +24,7 @@
     <string name="cache">Önbellek</string>
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Telefonun fazla çöpten temizlenmesi gerekiyor!</string>
-    <string name="usage_ram">Kullanılmış RAM</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">Telefon şu anda hızlandırılmasına gerek yok!</string>
+    <string name="boost_usage_ram">Kullanılmış RAM</string>
     <string name="extend_the_operation_of_your_phone">Telefonunuzun hayatını uzatın</string>
     <string name="done">Tamamlandı!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -34,12 +32,9 @@
     <string name="battery_power_only_time_D_D">%d h %d dk</string>
     <string name="clear_junk">Temizlik</string>
     <string name="cleared_junk">Temizlemek</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">Şu anda arka plan işlemleri ve uygulamaları RAM Yükle</string>
-    <string name="boost">Hızlanmak</string>
     <string name="scanning_system">Tarama sistemi…</string>
     <string name="clean_junk_done">Tamamlandı</string>
     <string name="now_the_devices_memory_is_D_free">Cihaz belleği artık %d%% ücretsiz</string>
-    <string name="acceleration_completed">Hızlanma tamamlandı</string>
     <string name="speed_up_the_work_of_your_phone">Telefonunuzu Hızlandırın</string>
     <string name="ultra_mode_activates_restrictions">Ultra mod sınırları etkinleştirir:</string>
     <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
@@ -60,11 +55,9 @@
     <string name="system_garbage">Sistem önemsiz.</string>
     <string name="processor_temperature_D">İşlemci Sıcaklığı %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Hızlanmak</string>
     <string name="boost_description">Hızlandırılmış</string>
     <string name="collect_data">Veri Toplama…</string>
     <string name="clean_junk_description_not_optimized_D">Ücretsiz %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Bellek suşunu azaltın ve telefonunuzu hızlandırın</string>
     <string name="cooled_D">Soğutulmuş%d℃</string>
     <string name="optimization_is_done">Optimizasyon tamamlandı</string>
     <string name="app_name">Temizleyici - hafızayı, önbelleği, telefonu temizleyin</string>

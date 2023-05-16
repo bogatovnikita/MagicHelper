@@ -10,7 +10,6 @@
     <string name="remaining_charging_time_D_h_D_min">Thời gian sạc còn lại %d h %d min</string>
     <string name="available_memory_F_gb_F_gb">Bộ nhớ có sẵn: %.1f GB/ %.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Xóa các tệp không mong muốn một cách an toàn</string>
-    <string name="now_the_device_is_accelerated_by_D">Thiết bị của bạn hiện nhanh hơn %d%%</string>
     <string name="optimize">Tối ưu hóa</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Bình thường</string>
@@ -25,8 +24,7 @@
     <string name="cache">Bộ nhớ cache</string>
     <string name="ultra_mode">Cực kỳ</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Điện thoại cần được làm sạch rác dư thừa!</string>
-    <string name="usage_ram">Sử dụng ram</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">Điện thoại không cần phải được tăng tốc vào lúc này!</string>
+    <string name="boost_usage_ram">Sử dụng ram</string>
     <string name="extend_the_operation_of_your_phone">Kéo dài cuộc sống của điện thoại của bạn</string>
     <string name="done">Xong!</string>
     <string name="ultra_mode_30">+30\nCực kỳ</string>
@@ -34,12 +32,9 @@
     <string name="battery_power_only_time_D_D">%d h %d phút</string>
     <string name="clear_junk">Làm sạch</string>
     <string name="cleared_junk">Dọn dẹp</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">Ngay bây giờ các quy trình nền và ứng dụng tải RAM</string>
-    <string name="boost">Thúc giục</string>
     <string name="scanning_system">Hệ thống quét…</string>
     <string name="clean_junk_done">Xong</string>
     <string name="now_the_devices_memory_is_D_free">Bộ nhớ thiết bị hiện miễn phí %d%%</string>
-    <string name="acceleration_completed">Gia tốc hoàn thành</string>
     <string name="speed_up_the_work_of_your_phone">Tăng tốc điện thoại của bạn</string>
     <string name="ultra_mode_activates_restrictions">Chế độ Ultra kích hoạt các giới hạn:</string>
     <string name="_F_gb_F_gb">%.1f gb/%.1f gb</string>
@@ -60,11 +55,9 @@
     <string name="system_garbage">Hệ thống rác.</string>
     <string name="processor_temperature_D">Nhiệt độ bộ xử lý%d</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Thúc giục</string>
     <string name="boost_description">Tăng tốc</string>
     <string name="collect_data">Thu thập dữ liệu…</string>
     <string name="clean_junk_description_not_optimized_D">Miễn phí %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Giảm căng thẳng bộ nhớ và tăng tốc điện thoại của bạn</string>
     <string name="cooled_D">Hạ nhiệt %d℃</string>
     <string name="optimization_is_done">Tối ưu hóa được thực hiện</string>
     <string name="app_name">Sạch hơn-làm sạch bộ nhớ, bộ nhớ cache, điện thoại</string>
