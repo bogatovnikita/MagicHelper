@@ -51,9 +51,9 @@ class ResultViewModel @Inject constructor(
         menuHorizontalItems.add(
             MenuHorizontalItems(
                 3,
-                R.string.cooling_cpu,
+                R.string.temperature_title,
                 R.drawable.ic_cpu,
-                R.string.cool_down_your_phone
+                R.string.temperature_need_check
             )
         )
         menuHorizontalItems.add(

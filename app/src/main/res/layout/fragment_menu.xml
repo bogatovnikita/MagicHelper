@@ -373,7 +373,7 @@
         android:elevation="@dimen/_4sdp"
         android:fontFamily="@font/heraclito_semibold"
         android:maxLines="1"
-        android:text="@string/cooling_cpu"
+        android:text="@string/temperature_title"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.18"
         app:layout_constraintEnd_toEndOf="@id/background_cooling"
@@ -388,13 +388,12 @@
         android:layout_marginTop="@dimen/_4sdp"
         android:elevation="@dimen/_4sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:maxLines="2"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.14"
         app:layout_constraintEnd_toEndOf="@id/background_cooling"
         app:layout_constraintStart_toStartOf="@id/background_cooling"
         app:layout_constraintTop_toBottomOf="@id/cooling_title_tv"
-        tools:text="ываываввваlllввввввввв" />
+        tools:text="@string/temperature_desc_not_optimized" />
 
     <ImageView
         android:id="@+id/cooling_icon_iv"

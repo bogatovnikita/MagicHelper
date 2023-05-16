@@ -98,7 +98,7 @@
         android:id="@+id/coolingFragment"
         android:name="ar.cleaner.first.pf.ui.cooling.CoolingFragment"
         android:label="CoolingFragment"
-        tools:layout="@layout/fragment_cooling">
+        tools:layout="@layout/fragment_temperature">
         <action
             android:id="@+id/action_coolingFragment_to_coolingProgressFragment"
             app:destination="@id/coolingProgressFragment"

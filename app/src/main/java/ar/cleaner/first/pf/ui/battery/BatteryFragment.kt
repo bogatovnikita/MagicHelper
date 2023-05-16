@@ -215,7 +215,7 @@ class BatteryFragment : Fragment() {
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_not_danger)
-                text = getString(R.string.the_phone_does_not_need_optimization_at_the_moment)
+                text = "Бипки"
             }
         } else {
             binding.groupOptimizeIsDone.visibility = View.GONE

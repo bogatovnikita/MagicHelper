@@ -8,7 +8,6 @@
     <string name="released_D_gb">ฟรี %d Mb</string>
     <string name="theres_not_much_left">เหลือไม่มาก…</string>
     <string name="remaining_charging_time_D_h_D_min">เวลาชาร์จที่เหลืออยู่ %d H %d นาที</string>
-    <string name="cooling_cpu">การทำให้เย็นลง</string>
     <string name="available_memory_F_gb_F_gb">หน่วยความจำที่มีอยู่: %.1f gb/ %.1f gb</string>
     <string name="deleting_unwanted_files_is_safe">ลบไฟล์ที่ไม่ต้องการอย่างปลอดภัย</string>
     <string name="now_the_device_is_accelerated_by_D">อุปกรณ์ของคุณเร็วขึ้น %d%%</string>
@@ -25,11 +24,9 @@
     <string name="garbage_detected">ตรวจพบเศษซาก</string>
     <string name="cache">แคช</string>
     <string name="ultra_mode">เป็นพิเศษ</string>
-    <string name="the_phone_does_not_need_optimization_at_the_moment">โทรศัพท์ไม่จำเป็นต้องปรับให้เหมาะสมในเวลานี้!</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">โทรศัพท์ต้องทำความสะอาดขยะส่วนเกิน!</string>
     <string name="usage_ram">RAM ที่ใช้แล้ว</string>
     <string name="the_phone_does_need_any_acceleration_at_the_moment">โทรศัพท์ไม่จำเป็นต้องเร่งความเร็วในขณะนี้!</string>
-    <string name="cooling_cpu_description">เย็นลง</string>
     <string name="extend_the_operation_of_your_phone">ยืดอายุการใช้งานโทรศัพท์ของคุณ</string>
     <string name="done">เสร็จแล้ว!</string>
     <string name="ultra_mode_30">+30\nเป็นพิเศษ</string>
@@ -62,16 +59,12 @@
     <string name="extra_mode">พิเศษ</string>
     <string name="system_garbage">ขยะระบบ</string>
     <string name="processor_temperature_D">อุณหภูมิโปรเซสเซอร์ %d℃</string>
-    <string name="the_normal_temperature_of_the_processor_is_25_30">โปรเซสเซอร์อุณหภูมิปกติ 25–30 ℃</string>
     <string name="percent_D">%d%%</string>
     <string name="speed_up">เร่งความเร็ว</string>
     <string name="boost_description">เร่งความเร็ว</string>
     <string name="collect_data">รวบรวมข้อมูล…</string>
-    <string name="cool_down_your_phone">ทำให้โทรศัพท์ของคุณเย็นลง</string>
     <string name="clean_junk_description_not_optimized_D">ฟรี %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">ลดความเครียดหน่วยความจำและเร่งโทรศัพท์ของคุณ</string>
-    <string name="cooling_cpu_description_not_optimized">ทำให้โปรเซสเซอร์ของคุณเย็นลง</string>
-    <string name="memory_is_overloaded_optimization_is_required">หน่วยความจำมากเกินไป! ต้องการการเพิ่มประสิทธิภาพ!</string>
     <string name="cooled_D">เย็นลง %d℃</string>
     <string name="optimization_is_done">การเพิ่มประสิทธิภาพจะทำ</string>
     <string name="app_name">ทำความสะอาด-ทำความสะอาดหน่วยความจำแคชโทรศัพท์</string>

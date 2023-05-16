@@ -92,7 +92,7 @@ class CoolingProgressFragment : Fragment() {
         showAds {
             findNavController().navigate(
                 CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
-                    ResultFragment.COOLING_KEY
+                    ResultFragment.TEMPERATURE_KEY
                 )
             )
         }

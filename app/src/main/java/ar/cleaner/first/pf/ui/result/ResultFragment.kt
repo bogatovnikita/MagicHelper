@@ -71,9 +71,9 @@ class ResultFragment : Fragment() {
                 viewModel.initRamDetails()
                 binding.titleTv.text = requireContext().getString(R.string.boost)
             }
-            COOLING_KEY -> {
+            TEMPERATURE_KEY -> {
                 viewModel.initCpuDetails()
-                binding.titleTv.text = requireContext().getString(R.string.cooling_cpu)
+                binding.titleTv.text = requireContext().getString(R.string.temperature_need_check)
 
             }
             CLEANING_KEY -> {
@@ -155,7 +155,7 @@ class ResultFragment : Fragment() {
         if (cooledTemp <= 0) cooledTemp = 1
         with(binding) {
             secondDescriptionTv.text =
-                getString(R.string.the_normal_temperature_of_the_processor_is_25_30)
+                getString(R.string.temperature_normal)
             thirdDescriptionTv.text =
                 getString(R.string.processor_temperature_D, temperature.toInt())
             firstDescriptionTv.text = getString(R.string.cooled_D, cooledTemp)
@@ -188,7 +188,7 @@ class ResultFragment : Fragment() {
                     BOOST_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBoostFragment())
                     }
-                    COOLING_KEY -> {
+                    TEMPERATURE_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToCoolingFragment())
                     }
                     CLEANING_KEY -> {
@@ -214,7 +214,7 @@ class ResultFragment : Fragment() {
     companion object {
         const val BATTERY_KEY = 1
         const val BOOST_KEY = 2
-        const val COOLING_KEY = 3
+        const val TEMPERATURE_KEY = 3
         const val CLEANING_KEY = 4
     }
 }

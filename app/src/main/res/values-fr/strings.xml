@@ -8,7 +8,6 @@
     <string name="released_D_gb">GRATUIT %d Mb</string>
     <string name="theres_not_much_left">Il ne reste pas beaucoup…</string>
     <string name="remaining_charging_time_D_h_D_min">Temps de charge restant %d h %d min</string>
-    <string name="cooling_cpu">Cooling</string>
     <string name="available_memory_F_gb_F_gb">Mémoire disponible: %.1f gb /%.1f gb</string>
     <string name="deleting_unwanted_files_is_safe">Supprimer les fichiers indésirables en toute sécurité</string>
     <string name="now_the_device_is_accelerated_by_D">Votre appareil est maintenant plus rapide de %d%%</string>
@@ -25,11 +24,9 @@
     <string name="garbage_detected">Débris détectés</string>
     <string name="cache">Cache</string>
     <string name="ultra_mode">Ultra</string>
-    <string name="the_phone_does_not_need_optimization_at_the_moment">Le téléphone n`a pas besoin d`être optimisé pour le moment!</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Le téléphone doit être nettoyé des ordures excédentaires!</string>
     <string name="usage_ram">Ram d`occasion</string>
     <string name="the_phone_does_need_any_acceleration_at_the_moment">Le téléphone n`a pas besoin d`être accéléré pour le moment!</string>
-    <string name="cooling_cpu_description">Refroidissement fait</string>
     <string name="extend_the_operation_of_your_phone">Prolonger la vie de votre téléphone</string>
     <string name="done">Fait!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -62,16 +59,12 @@
     <string name="extra_mode">En plus</string>
     <string name="system_garbage">Junk System</string>
     <string name="processor_temperature_D">Température du processeur %d℃</string>
-    <string name="the_normal_temperature_of_the_processor_is_25_30">Processeur Température normale 25–30℃</string>
     <string name="percent_D">%d%%</string>
     <string name="speed_up">Accélérer</string>
     <string name="boost_description">Accéléré</string>
     <string name="collect_data">La collecte de données…</string>
-    <string name="cool_down_your_phone">Refroidissez votre téléphone</string>
     <string name="clean_junk_description_not_optimized_D">Free Up %.1f gb</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Réduisez la tension mémoire et accélérez votre téléphone</string>
-    <string name="cooling_cpu_description_not_optimized">Refroidissez votre processeur</string>
-    <string name="memory_is_overloaded_optimization_is_required">La mémoire est surchargée! Optimisation requise!</string>
     <string name="cooled_D">Refroidi %d℃</string>
     <string name="optimization_is_done">Optimisation effectuée</string>
     <string name="app_name">Cleaner-nettoyer la mémoire, le cache, le téléphone</string>

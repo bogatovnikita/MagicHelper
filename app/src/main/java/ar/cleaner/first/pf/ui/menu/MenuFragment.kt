@@ -146,7 +146,7 @@ class MenuFragment : Fragment() {
                 )
             } else {
                 coolingDescriptionTv.text =
-                    getString(R.string.cooling_cpu_description_not_optimized)
+                    getString(R.string.temperature_desc_not_optimized)
                 coolingDescriptionTv.setTextColor(
                     ContextCompat.getColor(
                         requireContext(),

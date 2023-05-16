@@ -21,7 +21,7 @@ class CoolingViewModel @Inject constructor(
 
     fun initCpuDetails() {
         mainScope {
-            getCpuDetailsUseCase.invoke().collect { result ->
+            getCpuDetailsUseCase().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(

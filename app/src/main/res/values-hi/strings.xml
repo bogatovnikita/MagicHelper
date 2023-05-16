@@ -10,7 +10,6 @@
     <string name="released_D_gb">मुफ्त %d एमबी</string>
     <string name="theres_not_much_left">ज्यादा नहीं बचा…</string>
     <string name="remaining_charging_time_D_h_D_min">शेष चार्ज समय %d एच %d मिनट</string>
-    <string name="cooling_cpu">ठंडा करना</string>
     <string name="available_memory_F_gb_F_gb">उपलब्ध मेमोरी: %.1f जीबी/%.1f जीबी</string>
     <string name="deleting_unwanted_files_is_safe">अवांछित फ़ाइलों को सुरक्षित रूप से हटाएं</string>
     <string name="now_the_device_is_accelerated_by_D">आपका डिवाइस अब तेज़ है %d%%</string>
@@ -27,11 +26,9 @@
     <string name="garbage_detected">मलबे का पता चला</string>
     <string name="cache">कैश</string>
     <string name="ultra_mode">अल्ट्रा</string>
-    <string name="the_phone_does_not_need_optimization_at_the_moment">इस समय फोन को अनुकूलित करने की आवश्यकता नहीं है!</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">फोन को अतिरिक्त कचरे से साफ करने की जरूरत है!</string>
     <string name="usage_ram">प्रयुक्त रैम</string>
     <string name="the_phone_does_need_any_acceleration_at_the_moment">फोन को फिलहाल तेज करने की जरूरत नहीं है!</string>
-    <string name="cooling_cpu_description">ठंडा किया</string>
     <string name="extend_the_operation_of_your_phone">अपने फोन के जीवन का विस्तार करें</string>
     <string name="done">हो गया!</string>
     <string name="ultra_mode_30">+30\nअल्ट्रा</string>
@@ -64,16 +61,12 @@
     <string name="extra_mode">अतिरिक्त</string>
     <string name="system_garbage">सिस्टम जंक</string>
     <string name="processor_temperature_D">प्रोसेसर तापमान %d℃</string>
-    <string name="the_normal_temperature_of_the_processor_is_25_30">प्रोसेसर सामान्य तापमान 25–30℃</string>
     <string name="percent_D">%d%%</string>
     <string name="speed_up">तेजी लाने</string>
     <string name="boost_description">त्वरित</string>
     <string name="collect_data">डेटा एकत्र करना…</string>
-    <string name="cool_down_your_phone">अपने फोन को ठंडा करें</string>
     <string name="clean_junk_description_not_optimized_D">फ्री अप %.1f जीबी</string>
     <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">मेमोरी स्ट्रेन को कम करें और अपने फोन को तेज करें</string>
-    <string name="cooling_cpu_description_not_optimized">अपने प्रोसेसर को ठंडा करें</string>
-    <string name="memory_is_overloaded_optimization_is_required">स्मृति अतिभारित हो जाती है! अनुकूलन की आवश्यकता है!</string>
     <string name="cooled_D">ठंडा हो गया %d℃</string>
     <string name="optimization_is_done">अनुकूलन किया जाता है</string>
     <string name="exit_toast">बाहर निकलने के क्रम में वापस बटन टैप करें</string>

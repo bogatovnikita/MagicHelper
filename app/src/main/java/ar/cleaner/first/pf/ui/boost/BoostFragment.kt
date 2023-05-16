@@ -88,7 +88,7 @@ class BoostFragment : Fragment() {
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_danger)
-                text = getString(R.string.memory_is_overloaded_optimization_is_required)
+                text = "Бипки"
             }
 
         }
