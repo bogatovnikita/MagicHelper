@@ -20,6 +20,6 @@ class AppClass : Application() {
         YandexMetrica.enableActivityAutoTracking(this)
         FirebaseApp.initializeApp(this)
         FirebaseMessaging.getInstance().isAutoInitEnabled = true
-        onAdsError{type, _, _ -> YandexMetrica.reportEvent(type) }
+        onAdsError{type -> YandexMetrica.reportEvent(type) }
     }
 }

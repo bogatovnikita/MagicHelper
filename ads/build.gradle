@@ -49,11 +49,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
 
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    api fileTree(dir: 'libs', include: ['*.aar'])
     implementation 'com.google.firebase:firebase-config-ktx:21.4.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
     implementation 'androidx.lifecycle:lifecycle-process:2.6.1'
-    implementation 'com.google.android.gms:play-services-ads:20.2.0'
+    implementation 'com.google.android.gms:play-services-ads:22.0.0'
 
     //Возможно не обновлять
     implementation "com.android.billingclient:billing:4.0.0"

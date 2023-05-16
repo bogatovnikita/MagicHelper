@@ -14,6 +14,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.ads.appPreloadAd
 import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentFirstScanningBinding
+import com.yin_kio.ads.preloadAd
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -40,7 +41,7 @@ class FirstScanningFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        appPreloadAd()
+        preloadAd()
         firstOptimization()
     }
 

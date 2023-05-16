@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.appPreloadAd
 import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.JunkFile
@@ -20,6 +19,7 @@ import ar.cleaner.first.pf.ui.menu.MenuViewModel
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
 import ar.cleaner.first.pf.ui.result.ResultViewModel
+import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -61,7 +61,7 @@ class JunkProgressFragment : Fragment(R.layout.fragment_progress) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        appPreloadAd()
+        preloadAd()
         initRecyclerView()
         updateUseCase()
     }

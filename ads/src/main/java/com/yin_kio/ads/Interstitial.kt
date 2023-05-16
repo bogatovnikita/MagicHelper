@@ -7,16 +7,13 @@ import androidx.fragment.app.Fragment
 import com.ads.library.AdsDelegate
 import com.ads.library.AdsManager
 import com.ads.library.SubscriptionProvider
-import com.google.android.gms.AdView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
 fun Fragment.preloadAd(){
-    if (!AdsManager.checkAdsLoaded()){
-        requireActivity().preloadAd()
-    }
+    requireActivity().preloadAd()
 }
 
 
@@ -81,11 +78,7 @@ fun Context.hasSubscription() = SubscriptionProvider.getInstance(this).checkHasS
 fun Activity.emulateSubscription() = SubscriptionProvider.getInstance(this).emulateSubscription()
 
 fun onAdsError(
-    action: (type: String, key: String, error: Any) -> Unit
-){
-    AdsManager.setOnAdsError(action)
-}
-
-fun initBanner(view: AdView){
-    AdsManager.initBanner(view)
+    action: (type: String) -> Unit
+) {
+    AdsManager.setOnAdsError{ type, _, _ -> action(type)  }
 }
