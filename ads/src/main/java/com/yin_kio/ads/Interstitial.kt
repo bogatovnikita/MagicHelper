@@ -1,4 +1,4 @@
-package com.Yin_Kio.ads
+package com.yin_kio.ads
 
 import android.app.Activity
 import android.content.Context
@@ -8,13 +8,16 @@ import com.ads.library.AdsDelegate
 import com.ads.library.AdsManager
 import com.ads.library.SubscriptionProvider
 import com.google.android.ads.BuildConfig
+import com.google.android.gms.AdView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
 fun Fragment.preloadAd(){
-    requireActivity().preloadAd()
+    if (!AdsManager.checkAdsLoaded()){
+        requireActivity().preloadAd()
+    }
 }
 
 
@@ -22,7 +25,7 @@ fun Fragment.preloadAd(){
 fun Context.preloadAd(){
     if (!AdsManager.checkAdsLoaded()){
         Log.i("AdsWrapper", "preloadAds")
-        CoroutineScope(Dispatchers.Main).launch { AdsManager.preloadAd(this@preloadAd, BuildConfig.ADMOB_INTERSTITIAL) }
+        CoroutineScope(Dispatchers.Main).launch { AdsManager.preloadAd(this@preloadAd, com.yin_kio.ads.BuildConfig.ADMOB_INTERSTITIAL) }
     } else {
         Log.i("AdsWrapper", "Ads has already loaded")
     }
@@ -77,3 +80,13 @@ fun Activity.initAds(){
 fun Context.hasSubscription() = SubscriptionProvider.getInstance(this).checkHasSubscription()
 
 fun Activity.emulateSubscription() = SubscriptionProvider.getInstance(this).emulateSubscription()
+
+fun onAdsError(
+    action: (type: String, key: String, error: Any) -> Unit
+){
+    AdsManager.setOnAdsError(action)
+}
+
+fun initBanner(view: AdView){
+    AdsManager.initBanner(view)
+}
