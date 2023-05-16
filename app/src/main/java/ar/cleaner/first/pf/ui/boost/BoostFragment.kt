@@ -76,7 +76,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_not_danger)
-                text = getString(R.string.the_phone_does_need_any_acceleration_at_the_moment)
+                text = getString(R.string.boost_phone_dont_need_optimize)
             }
         } else {
             binding.groupOptimizeIsDone.visibility = View.GONE
