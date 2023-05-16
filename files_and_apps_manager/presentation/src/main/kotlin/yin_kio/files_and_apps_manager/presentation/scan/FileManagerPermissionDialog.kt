@@ -16,7 +16,7 @@ import com.example.permissions.requestManageExternalStorage
 import jamycake.lifecycle_aware.previousBackStackEntry
 import yin_kio.files_and_apps_manager.presentation.dialog.FixedWidthDialogFragment
 
-class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.dialog_file_app_manager_permission) {
+internal class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.dialog_file_app_manager_permission) {
 
     private val binding: DialogFileAppManagerPermissionBinding by viewBinding()
     private val viewModel: ViewModel by previousBackStackEntry()

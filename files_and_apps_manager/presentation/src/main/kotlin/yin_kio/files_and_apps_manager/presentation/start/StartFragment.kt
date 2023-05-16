@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.UsedMemImpl
 
-class StartFragment : Fragment(R.layout.fragment_start) {
+internal class StartFragment : Fragment(R.layout.fragment_start) {
 
 
     private val binding: FragmentStartBinding by viewBinding()
