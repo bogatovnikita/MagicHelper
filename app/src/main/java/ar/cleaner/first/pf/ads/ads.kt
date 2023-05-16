@@ -10,7 +10,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-fun Fragment.showAds(
+fun Fragment.appShowAds(
     onClosed: () -> Unit
 ) {
     lifecycleScope.launch(Dispatchers.Default) {
@@ -25,7 +25,7 @@ fun Fragment.showAds(
     }
 }
 
-fun Fragment.preloadAd() {
+fun Fragment.appPreloadAd() {
     if (!AdsManager.checkAdsLoaded()) {
         AdsManager.preloadAd(requireActivity(), BuildConfig.ADMOB_INTERSTITIAL)
     }

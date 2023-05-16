@@ -9,8 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.preloadAd
-import ar.cleaner.first.pf.ads.showAds
+import ar.cleaner.first.pf.ads.appPreloadAd
+import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.cooling.CpuOptimizerUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
@@ -49,7 +49,7 @@ class CoolingProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        preloadAd()
+        appPreloadAd()
         initRecyclerView()
     }
 
@@ -89,7 +89,7 @@ class CoolingProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-        showAds {
+        appShowAds {
             findNavController().navigate(
                 CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
                     ResultFragment.TEMPERATURE_KEY

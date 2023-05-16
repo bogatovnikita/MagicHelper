@@ -11,8 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.preloadAd
-import ar.cleaner.first.pf.ads.showAds
+import ar.cleaner.first.pf.ads.appPreloadAd
+import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryOptimizationUseCase
@@ -55,14 +55,14 @@ class BatteryProgressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        preloadAd()
+        appPreloadAd()
         initArguments()
     }
 
     private fun initArguments() {
         val actions = resources.getStringArray(R.array.battery_items).toList()
-        var actionsNormal: List<String> = emptyList()
-        var actionsMedium: List<String> = emptyList()
+        val actionsNormal: List<String>
+        val actionsMedium: List<String>
         preferences = requireContext().getSharedPreferences(
             CoolingFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE
@@ -125,7 +125,7 @@ class BatteryProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-        showAds {
+        appShowAds {
             findNavController().navigate(
                 BatteryProgressFragmentDirections.actionBatteryProgressFragmentToResultFragment(
                     ResultFragment.BATTERY_KEY
