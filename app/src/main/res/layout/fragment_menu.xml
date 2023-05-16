@@ -303,7 +303,7 @@
         android:elevation="@dimen/_4sdp"
         android:fontFamily="@font/heraclito_semibold"
         android:maxLines="1"
-        android:text="@string/boost"
+        android:text="@string/boost_title_name"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.18"
         app:layout_constraintEnd_toEndOf="@id/background_boost"

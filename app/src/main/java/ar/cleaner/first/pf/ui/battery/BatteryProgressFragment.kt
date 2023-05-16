@@ -61,8 +61,8 @@ class BatteryProgressFragment : Fragment() {
 
     private fun initArguments() {
         val actions = resources.getStringArray(R.array.battery_items).toList()
-        var actionsNormal: List<String> = emptyList()
-        var actionsMedium: List<String> = emptyList()
+        val actionsNormal: List<String>
+        val actionsMedium: List<String>
         preferences = requireContext().getSharedPreferences(
             CoolingFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE

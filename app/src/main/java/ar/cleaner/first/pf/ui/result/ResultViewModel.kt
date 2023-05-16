@@ -37,7 +37,7 @@ class ResultViewModel @Inject constructor(
         menuHorizontalItems.add(
             MenuHorizontalItems(
                 2,
-                R.string.boost,
+                R.string.boost_title_name,
                 R.drawable.ic_boost,
                 R.string.speed_up_the_work_of_your_phone
             )

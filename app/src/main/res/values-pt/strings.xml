@@ -10,7 +10,6 @@
     <string name="remaining_charging_time_D_h_D_min">Tempo de carregamento restante %d h %d min</string>
     <string name="available_memory_F_gb_F_gb">Memória disponível: %.1f GB/ %.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Exclua arquivos indesejados com segurança</string>
-    <string name="now_the_device_is_accelerated_by_D">Seu dispositivo agora é mais rápido em %d%%</string>
     <string name="optimize">Otimizar</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
@@ -25,8 +24,7 @@
     <string name="cache">Cache</string>
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">O telefone precisa ser limpo do excesso de lixo!</string>
-    <string name="usage_ram">RAM usada</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">O telefone não precisa ser acelerado no momento!</string>
+    <string name="boost_usage_ram">RAM usada</string>
     <string name="extend_the_operation_of_your_phone">Estender a vida do seu telefone</string>
     <string name="done">Feito!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -34,12 +32,9 @@
     <string name="battery_power_only_time_D_D">%d H %d min</string>
     <string name="clear_junk">Limpeza</string>
     <string name="cleared_junk">Limpar</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">No momento, processos e aplicativos em segundo plano carregam RAM</string>
-    <string name="boost">Acelerar</string>
     <string name="scanning_system">Sistema de digitalização…</string>
     <string name="clean_junk_done">Feito</string>
     <string name="now_the_devices_memory_is_D_free">A memória do dispositivo agora é %d%% grátis</string>
-    <string name="acceleration_completed">Aceleração completa</string>
     <string name="speed_up_the_work_of_your_phone">Acelere seu telefone</string>
     <string name="ultra_mode_activates_restrictions">O Modo Ultra ativa os limites:</string>
     <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
@@ -60,11 +55,9 @@
     <string name="system_garbage">Lixo do sistema</string>
     <string name="processor_temperature_D">Temperatura do processador %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Acelerar</string>
     <string name="boost_description">Acelerado</string>
     <string name="collect_data">Coletando dados…</string>
     <string name="clean_junk_description_not_optimized_D">Liberte %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Reduza a tensão da memória e acelere seu telefone</string>
     <string name="cooled_D">Resfriado %d℃</string>
     <string name="optimization_is_done">Otimização realizada</string>
     <string name="app_name">Limpador-limpe a memória, cache, telefone</string>

@@ -10,7 +10,6 @@
     <string name="remaining_charging_time_D_h_D_min">Temps de charge restant %d h %d min</string>
     <string name="available_memory_F_gb_F_gb">Mémoire disponible: %.1f gb /%.1f gb</string>
     <string name="deleting_unwanted_files_is_safe">Supprimer les fichiers indésirables en toute sécurité</string>
-    <string name="now_the_device_is_accelerated_by_D">Votre appareil est maintenant plus rapide de %d%%</string>
     <string name="optimize">Optimiser</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
@@ -25,8 +24,7 @@
     <string name="cache">Cache</string>
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Le téléphone doit être nettoyé des ordures excédentaires!</string>
-    <string name="usage_ram">Ram d`occasion</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">Le téléphone n`a pas besoin d`être accéléré pour le moment!</string>
+    <string name="boost_usage_ram">Ram d`occasion</string>
     <string name="extend_the_operation_of_your_phone">Prolonger la vie de votre téléphone</string>
     <string name="done">Fait!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -34,12 +32,9 @@
     <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Nettoyage</string>
     <string name="cleared_junk">Nettoyer</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">En ce moment, les processus de fond et les applications chargent la RAM</string>
-    <string name="boost">Accélérer</string>
     <string name="scanning_system">Système de numérisation…</string>
     <string name="clean_junk_done">Fait</string>
     <string name="now_the_devices_memory_is_D_free">La mémoire de l`appareil est maintenant libre de %d%%</string>
-    <string name="acceleration_completed">Accélération complète</string>
     <string name="speed_up_the_work_of_your_phone">Accélérez votre téléphone</string>
     <string name="ultra_mode_activates_restrictions">Ultra Mode active les limites:</string>
     <string name="_F_gb_F_gb">%.1f gb /%.1f gb</string>
@@ -60,11 +55,9 @@
     <string name="system_garbage">Junk System</string>
     <string name="processor_temperature_D">Température du processeur %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Accélérer</string>
     <string name="boost_description">Accéléré</string>
     <string name="collect_data">La collecte de données…</string>
     <string name="clean_junk_description_not_optimized_D">Free Up %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Réduisez la tension mémoire et accélérez votre téléphone</string>
     <string name="cooled_D">Refroidi %d℃</string>
     <string name="optimization_is_done">Optimisation effectuée</string>
     <string name="app_name">Cleaner-nettoyer la mémoire, le cache, le téléphone</string>
