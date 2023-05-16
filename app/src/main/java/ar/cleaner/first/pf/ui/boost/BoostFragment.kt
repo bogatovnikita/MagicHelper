@@ -20,10 +20,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BoostFragment : Fragment() {
+class BoostFragment : Fragment(R.layout.fragment_boost) {
 
     private var _binding: FragmentBoostBinding? = null
     private val binding get() = _binding!!
+
     private val viewModel: BoostViewModel by viewModels()
     private val dialog = DialogAccessUsageSettings()
     private lateinit var preferences: SharedPreferences
@@ -88,7 +89,7 @@ class BoostFragment : Fragment() {
                     )
                 )
                 setBackgroundResource(R.drawable.background_button_danger)
-                text = "Бипки"
+                text = getString(R.string.general_action_required)
             }
 
         }
