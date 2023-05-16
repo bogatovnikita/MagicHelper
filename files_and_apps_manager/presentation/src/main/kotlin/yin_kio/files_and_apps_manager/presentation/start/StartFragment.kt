@@ -1,7 +1,7 @@
 package yin_kio.files_and_apps_manager.presentation.start
 
 import Yin_Koi.files_and_apps_manager.presentation.R
-import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesManagerBinding
+import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentStartBinding
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -19,10 +19,10 @@ import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.UsedMemImpl
 
-class StartFragment : Fragment(R.layout.files_manager) {
+internal class StartFragment : Fragment(R.layout.fragment_start) {
 
 
-    private val binding: FilesManagerBinding by viewBinding()
+    private val binding: FragmentStartBinding by viewBinding()
     private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
     private val server = currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
 

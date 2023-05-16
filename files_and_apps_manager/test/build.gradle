@@ -36,6 +36,7 @@ dependencies {
 
     implementation project(':files_and_apps_manager:presentation')
     implementation project(':res')
+    implementation project(':ads')
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -43,7 +44,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.fragment:fragment:1.5.7'
 
-    def nav_version = "2.5.3"
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    implementation navigation.values()
+
 }

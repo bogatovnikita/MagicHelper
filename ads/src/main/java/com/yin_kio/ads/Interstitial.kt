@@ -67,9 +67,6 @@ fun Fragment.showAds(
 }
 
 fun Activity.initAds(){
-    SubscriptionProvider.getInstance(this).init(
-       this
-    )
     AdsManager.init(this, BuildConfig.DEBUG)
 }
 
