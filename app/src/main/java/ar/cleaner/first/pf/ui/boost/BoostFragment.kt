@@ -3,10 +3,9 @@ package ar.cleaner.first.pf.ui.boost
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -16,33 +15,24 @@ import ar.cleaner.first.pf.databinding.FragmentBoostBinding
 import ar.cleaner.first.pf.extensions.checkUsageStatsAllowed
 import ar.cleaner.first.pf.ui.cooling.CoolingFragment
 import ar.cleaner.first.pf.ui.dialogs.DialogAccessUsageSettings
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BoostFragment : Fragment(R.layout.fragment_boost) {
 
-    private var _binding: FragmentBoostBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentBoostBinding by viewBinding()
 
     private val viewModel: BoostViewModel by viewModels()
     private val dialog = DialogAccessUsageSettings()
     private lateinit var preferences: SharedPreferences
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentBoostBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.initRamDetails()
         initObserver()
-        initClick()
+        initClickListener()
     }
 
     private fun initObserver() {
@@ -56,46 +46,49 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
     private fun renderState(state: BoostState) {
         state.ramDetails ?: return
         if (!state.isLoadingData) return
-        binding.percentTv.text = requireContext().getString(
-            R.string.percent_D, state.ramDetails.usagePercents
-        )
-        binding.progressBar.progress = state.ramDetails.usagePercents
-        binding.occupiedTotalTv.text = requireContext().getString(
-            R.string._F_gb_F_gb,
-            state.ramDetails.usedRam,
-            state.ramDetails.totalRam
-        )
-        if (state.ramDetails.isOptimized) {
-            binding.groupOptimizeIsDone.visibility = View.VISIBLE
-            binding.groupIsNotOptimize.visibility = View.GONE
-            binding.dangerButton.apply {
-                setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.black
-                    )
-                )
-                setBackgroundResource(R.drawable.background_button_not_danger)
-                text = getString(R.string.boost_phone_dont_need_optimize)
-            }
-        } else {
-            binding.groupOptimizeIsDone.visibility = View.GONE
-            binding.groupIsNotOptimize.visibility = View.VISIBLE
-            binding.dangerButton.apply {
-                setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.red
-                    )
-                )
-                setBackgroundResource(R.drawable.background_button_danger)
-                text = getString(R.string.general_action_required)
-            }
 
+        initProgress(state)
+        setVisibilityGroup(state.ramDetails.isOptimized)
+        initOptimizeButton(state.ramDetails.isOptimized)
+    }
+
+    private fun initProgress(state: BoostState) {
+        with(binding) {
+            percentTv.text =
+                requireContext().getString(R.string.percent_D, state.ramDetails!!.usagePercents)
+            progressBar.progress = state.ramDetails.usagePercents
+            occupiedTotalTv.text = requireContext().getString(
+                R.string._F_gb_F_gb,
+                state.ramDetails.usedRam,
+                state.ramDetails.totalRam
+            )
         }
     }
 
-    private fun initClick() {
+    private fun setVisibilityGroup(isOptimize: Boolean) {
+        binding.groupOptimizeIsDone.isVisible = isOptimize
+        binding.groupIsNotOptimize.isVisible = !isOptimize
+    }
+
+    private fun initOptimizeButton(isOptimize: Boolean) {
+        binding.dangerButton.apply {
+            setTextColor(
+                if (isOptimize) ContextCompat.getColor(requireContext(), R.color.black)
+                else ContextCompat.getColor(requireContext(), R.color.red)
+            )
+
+            text =
+                if (isOptimize) getString(R.string.boost_phone_dont_need_optimize)
+                else getString(R.string.general_action_required)
+
+            setBackgroundResource(
+                if (isOptimize) R.drawable.background_button_not_danger
+                else R.drawable.background_button_danger
+            )
+        }
+    }
+
+    private fun initClickListener() {
         binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -127,11 +120,6 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
                 dialog.show(parentFragmentManager, "BoostFragment")
             }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
     companion object {

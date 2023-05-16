@@ -1,6 +1,5 @@
 package ar.cleaner.first.pf.ui.boost
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
@@ -14,8 +13,8 @@ import javax.inject.Inject
 class BoostViewModel @Inject constructor(
     private val getRamDetailsUseCase: GetRamDetailsUseCase
 ) : ViewModel() {
-    private val _state: MutableStateFlow<BoostState> =
-        MutableStateFlow(BoostState())
+
+    private val _state: MutableStateFlow<BoostState> = MutableStateFlow(BoostState())
     val state = _state.asStateFlow()
 
     fun initRamDetails() {
@@ -23,14 +22,10 @@ class BoostViewModel @Inject constructor(
             getRamDetailsUseCase.invoke().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
-                        _state.value = state.value.copy(
-                            ramDetails = result.response,
-                            isLoadingData = true
-                        )
+                        _state.value =
+                            state.value.copy(ramDetails = result.response, isLoadingData = true)
                     }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "initRamDetails: Failure")
-                    }
+                    is CaseResult.Failure -> {}
                 }
             }
         }
