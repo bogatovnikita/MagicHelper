@@ -8,16 +8,15 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.permissions.requestManageExternalStorage
 import jamycake.lifecycle_aware.previousBackStackEntry
+import yin_kio.files_and_apps_manager.presentation.dialog.FixedWidthDialogFragment
 
-class FileManagerPermissionDialog : DialogFragment(R.layout.dialog_file_app_manager_permission) {
+class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.dialog_file_app_manager_permission) {
 
     private val binding: DialogFileAppManagerPermissionBinding by viewBinding()
     private val viewModel: ViewModel by previousBackStackEntry()
@@ -41,14 +40,6 @@ class FileManagerPermissionDialog : DialogFragment(R.layout.dialog_file_app_mana
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        dialog?.window?.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-    }
 
 
 
