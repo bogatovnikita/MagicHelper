@@ -12,7 +12,6 @@
     <string name="remaining_charging_time_D_h_D_min">Sisa waktu pengisian %d h %d min</string>
     <string name="available_memory_F_gb_F_gb">Memori yang tersedia: %.1f GB/%.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Hapus file yang tidak diinginkan dengan aman</string>
-    <string name="now_the_device_is_accelerated_by_D">Perangkat Anda sekarang lebih cepat sebesar %d%%</string>
     <string name="optimize">Optimalkan</string>
     <string name="mb_D">%d Mb</string>
     <string name="normal_mode">Normal</string>
@@ -27,8 +26,7 @@
     <string name="cache">Cache</string>
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Telepon perlu dibersihkan dari sampah berlebih!</string>
-    <string name="usage_ram">RAM bekas</string>
-    <string name="the_phone_does_need_any_acceleration_at_the_moment">Telepon tidak perlu dipercepat saat ini!</string>
+    <string name="boost_usage_ram">RAM bekas</string>
     <string name="extend_the_operation_of_your_phone">Perpanjang umur ponsel Anda</string>
     <string name="done">Selesai!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -36,12 +34,9 @@
     <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Pembersihan</string>
     <string name="cleared_junk">Bersihkan</string>
-    <string name="right_now_background_processes_and_applications_are_overloading_ram">Saat ini proses latar belakang dan aplikasi memuat RAM</string>
-    <string name="boost">Boost</string>
     <string name="scanning_system">Sistem pemindaian…</string>
     <string name="clean_junk_done">Selesai</string>
     <string name="now_the_devices_memory_is_D_free">Memori perangkat sekarang %d%%</string>
-    <string name="acceleration_completed">Akselerasi selesai</string>
     <string name="speed_up_the_work_of_your_phone">Percepat ponsel Anda</string>
     <string name="ultra_mode_activates_restrictions">Mode ultra mengaktifkan batas:</string>
     <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
@@ -62,11 +57,9 @@
     <string name="system_garbage">Sampah Sistem</string>
     <string name="processor_temperature_D">Temperatur prosesor %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="speed_up">Mempercepat</string>
     <string name="boost_description">Dipercepat</string>
     <string name="collect_data">Mengumpulkan data…</string>
     <string name="clean_junk_description_not_optimized_D">Bebaskan %.1f gb</string>
-    <string name="reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone">Kurangi ketegangan memori dan percepat ponsel Anda</string>
     <string name="cooled_D">Pendinginan %d ℃</string>
     <string name="optimization_is_done">Optimasi dilakukan</string>
     <string name="exit_toast">Ketuk tombol kembali untuk keluar</string>

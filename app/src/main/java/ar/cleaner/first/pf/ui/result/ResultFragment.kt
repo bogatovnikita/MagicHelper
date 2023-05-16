@@ -69,7 +69,7 @@ class ResultFragment : Fragment() {
             }
             BOOST_KEY -> {
                 viewModel.initRamDetails()
-                binding.titleTv.text = requireContext().getString(R.string.boost)
+                binding.titleTv.text = requireContext().getString(R.string.boost_title_name)
             }
             TEMPERATURE_KEY -> {
                 viewModel.initCpuDetails()
@@ -142,7 +142,7 @@ class ResultFragment : Fragment() {
         with(binding) {
             firstDescriptionTv.text = getString(R.string.released_F_gb, optimizeValue)
             secondDescriptionTv.text =
-                getString(R.string.now_the_device_is_accelerated_by_D, percentOptimized)
+                getString(R.string.boost_now_the_device_is_accelerated_by_D, percentOptimized)
             thirdDescriptionTv.text =
                 getString(R.string.available_memory_F_gb_F_gb, usedRam, totalRam)
         }

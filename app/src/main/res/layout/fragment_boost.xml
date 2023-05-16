@@ -40,10 +40,8 @@
         android:src="@drawable/background"
         app:layout_constraintBottom_toTopOf="@id/guideline_for_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/arrow_back_iv"
@@ -64,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/boost"
+        android:text="@string/boost_title_name"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.24"
         app:layout_constraintBottom_toBottomOf="@id/arrow_back_iv"
@@ -108,9 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/acceleration_completed"
+        android:text="@string/boost_optimize_done"
         android:textColor="@color/white"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/Text.18"
         app:layout_constraintBottom_toBottomOf="@id/optimize_is_done_background"
         app:layout_constraintEnd_toEndOf="@id/optimize_is_done_background"
         app:layout_constraintStart_toEndOf="@id/icon_done_iv"
@@ -135,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/usage_ram"
+        android:text="@string/boost_usage_ram"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.16"
         app:layout_constraintBottom_toTopOf="@id/percent_tv"
@@ -177,25 +175,25 @@
         tools:text="@string/_F_gb_F_gb" />
 
     <ProgressBar
-    android:id="@+id/progress_bar"
-    style="?android:attr/progressBarStyleHorizontal"
-    android:layout_width="0dp"
-    android:layout_height="@dimen/_8sdp"
-    android:layout_marginHorizontal="@dimen/_16sdp"
-    android:layout_marginTop="@dimen/_4sdp"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginBottom="10dp"
-    android:progressDrawable="@drawable/progress_bar_gradient"
-    app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
-    app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
-    app:layout_constraintStart_toStartOf="@id/first_view_for_background"
-    app:layout_constraintTop_toBottomOf="@id/percent_tv"
-    tools:progress="50" />
+        android:progressDrawable="@drawable/progress_bar_gradient"
+        app:layout_constraintBottom_toBottomOf="@id/first_view_for_background"
+        app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
+        app:layout_constraintStart_toStartOf="@id/first_view_for_background"
+        app:layout_constraintTop_toBottomOf="@id/percent_tv"
+        tools:progress="50" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_is_not_optimize"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         app:constraint_referenced_ids="second_view_for_background,rocket_boost_iv,overloading_ram_tv,reduce_ram_tv" />
 
     <View
@@ -226,10 +224,10 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/right_now_background_processes_and_applications_are_overloading_ram"
+        android:text="@string/boost_description_view_title"
         android:textColor="@color/black"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintBottom_toBottomOf="@id/reduce_ram_tv"
+        android:textSize="@dimen/Text.16"
+        app:layout_constraintBottom_toTopOf="@id/reduce_ram_tv"
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintStart_toEndOf="@id/rocket_boost_iv"
         app:layout_constraintTop_toTopOf="@id/second_view_for_background"
@@ -242,9 +240,9 @@
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/reduce_the_load_on_ram_and_speed_up_the_work_of_your_phone"
+        android:text="@string/boost_description_view_body"
         android:textColor="@color/black"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/Text.14"
         app:layout_constraintBottom_toBottomOf="@id/second_view_for_background"
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintStart_toStartOf="@id/second_view_for_background"
@@ -262,6 +260,8 @@
         android:fontFamily="@font/heraclito_medium"
         android:maxLines="2"
         android:paddingHorizontal="@dimen/_4sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="@dimen/Text.16"
         app:layout_constraintBottom_toTopOf="@id/boost_button"
@@ -270,7 +270,7 @@
         app:layout_constraintTop_toBottomOf="@id/root_background_iv"
         app:layout_constraintVertical_bias="1.0"
         tools:background="@drawable/background_button_danger"
-        tools:text="@string/memory_is_overloaded_optimization_is_required"
+        tools:text="@string/general_action_required"
         tools:textColor="@color/red" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -281,7 +281,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/background_button"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/speed_up"
+        android:text="@string/boost_button_optimize"
         android:textAllCaps="false"
         android:textSize="@dimen/Text.18"
         app:layout_constraintBottom_toBottomOf="parent"
