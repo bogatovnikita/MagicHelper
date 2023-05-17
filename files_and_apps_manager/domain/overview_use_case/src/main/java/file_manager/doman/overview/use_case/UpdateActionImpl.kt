@@ -8,7 +8,7 @@ class UpdateActionImpl(
     private val outCreator: OutCreator
 ) : UpdateAction {
 
-    override fun update() {
+    override suspend fun update() {
         uiOuter.out(outCreator.createUpdateOut())
     }
 }

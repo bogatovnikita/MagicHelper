@@ -4,15 +4,15 @@ import file_manager.domain.server.GroupName
 
 interface UiOuter {
 
-    fun close()
-    fun out(updateOut: UpdateOut)
-    fun out(allSelectionOut: AllSelectionOut)
-    fun out(itemSelectionOut: ItemSelectionOut)
-    fun showGroup(groupName: GroupName)
-    fun showSortingSelection()
-    fun showDeleteDialog()
-    fun hideDeleteDialog()
-    fun showDeleteProgress()
-    fun showDeleteCompletion()
+    suspend fun close()
+    suspend fun out(updateOut: UpdateOut)
+    suspend fun out(allSelectionOut: AllSelectionOut)
+    suspend fun out(itemSelectionOut: ItemSelectionOut)
+    suspend fun showGroup(groupName: GroupName)
+    suspend fun showSortingSelection()
+    suspend fun showDeleteDialog()
+    suspend fun hideDeleteDialog()
+    suspend fun showDeleteProgress()
+    suspend fun showDeleteCompletion()
 
 }

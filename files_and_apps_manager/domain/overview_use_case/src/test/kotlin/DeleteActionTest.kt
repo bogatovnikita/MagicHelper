@@ -10,8 +10,12 @@ import io.mockk.coEvery
 import io.mockk.coVerifySequence
 import io.mockk.mockk
 import io.mockk.spyk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
+
+@OptIn(ExperimentalCoroutinesApi::class)
 class DeleteActionTest {
 
     private val deleter: Deleter = spyk()
@@ -30,7 +34,7 @@ class DeleteActionTest {
 
 
     @Test
-    fun testDeleteAndUpdate(){
+    fun testDeleteAndUpdate() = runTest{
         val video = listOf("video")
         val ids = listOf(FileOrApp(id = "video"))
 

@@ -10,7 +10,7 @@ class DeleteTimeSaverImpl(
 
     private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    override fun saveDeleteTime() {
+    override suspend fun saveDeleteTime() {
         val currentTime = System.currentTimeMillis()
         prefs.edit().putLong("time", currentTime).apply()
     }

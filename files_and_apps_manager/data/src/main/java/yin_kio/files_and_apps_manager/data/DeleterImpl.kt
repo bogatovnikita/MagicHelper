@@ -6,7 +6,7 @@ import kotlin.io.path.deleteIfExists
 
 class DeleterImpl : Deleter {
 
-    override fun delete(ids: List<String>) {
+    override suspend fun delete(ids: List<String>) {
         ids.forEach {
             kotlin.runCatching {
                 Path(it).deleteIfExists()

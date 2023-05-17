@@ -14,7 +14,7 @@ internal class DeleteActionImpl(
     private val deleteTimeSaver: DeleteTimeSaver
 ) : DeleteAction {
 
-    override fun deleteAndUpdate(groupName: GroupName) {
+    override suspend fun deleteAndUpdate(groupName: GroupName) {
         uiOuter.showDeleteProgress()
 
         deleter.delete(server.getSelected(groupName).map { it.id })

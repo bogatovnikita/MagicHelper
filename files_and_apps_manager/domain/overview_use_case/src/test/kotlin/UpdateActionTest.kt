@@ -6,8 +6,12 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.spyk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
+
+@OptIn(ExperimentalCoroutinesApi::class)
 class UpdateActionTest {
 
     private val outCreator: OutCreator = mockk()
@@ -18,7 +22,7 @@ class UpdateActionTest {
     )
 
     @Test
-    fun testUpdate(){
+    fun testUpdate() = runTest{
 
         val updateOut = UpdateOut()
         coEvery { outCreator.createUpdateOut() } returns updateOut
