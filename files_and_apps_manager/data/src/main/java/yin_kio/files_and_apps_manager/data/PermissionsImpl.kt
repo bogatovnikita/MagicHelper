@@ -8,6 +8,6 @@ class PermissionsImpl(
     private val context: Context
 ) : Permissions {
 
-    override val hasPermissions: Boolean
+    override val hasStoragePermission: Boolean
         get() = context.hasStoragePermissions()
 }

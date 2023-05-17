@@ -1,5 +1,4 @@
 import file_manager.scan_progress.gateways.Permissions
-import file_manager.scan_progress.ScanProgressUseCase
 import file_manager.scan_progress.ScanProgressUseCaseImpl
 import file_manager.scan_progress.scan.ScanAction
 import file_manager.scan_progress.UiOuter
@@ -56,7 +55,7 @@ class ScanProgressUseCaseImplTest {
     }
 
     private fun TestScope.assertScanWithoutPermission() {
-        coEvery { permissions.hasPermissions } returns false
+        coEvery { permissions.hasStoragePermission } returns false
 
         useCases.scan()
         advanceUntilIdle()
@@ -65,7 +64,7 @@ class ScanProgressUseCaseImplTest {
     }
 
     private fun TestScope.assertScanWithPermission(){
-        coEvery { permissions.hasPermissions } returns true
+        coEvery { permissions.hasStoragePermission } returns true
 
         useCases.scan()
         advanceUntilIdle()

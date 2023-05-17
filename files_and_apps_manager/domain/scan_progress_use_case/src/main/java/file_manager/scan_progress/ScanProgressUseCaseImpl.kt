@@ -22,7 +22,7 @@ internal class ScanProgressUseCaseImpl(
 
     override fun scan(){
         coroutineScope.launch(dispatcher) {
-            if (permissions.hasPermissions){
+            if (permissions.hasStoragePermission){
                 scanAction.scan()
             } else {
                 uiOuter.showPermissionDialog()
