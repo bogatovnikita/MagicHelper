@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="276dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/card_corners_white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Dialog.Title"
+            android:text="@string/file_apps_manager_we_need_permission"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_exit_cross"
+            android:importantForAccessibility="no" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        style="@style/Dialog.Description"
+        android:text="@string/file_apps_manager_files_deleting_description"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="0dp"
+            style="@style/Dialog.Button.Cancel"
+            android:layout_weight="1"
+            android:text="@string/file_apps_manager_cancel"/>
+
+        <Button
+            android:layout_width="0dp"
+            style="@style/Dialog.Button.Ok"
+            android:layout_weight="1"
+            android:text="@string/file_apps_manager_delete"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

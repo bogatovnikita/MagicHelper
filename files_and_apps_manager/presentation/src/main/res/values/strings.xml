@@ -40,5 +40,7 @@
     <string name="file_apps_manager_start_need_free">Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!</string>
     <string name="file_apps_manager_start_already_freed">Телефон очищен от ненужных файлов!</string>
 
+    <string name="file_apps_manager_usage_stats_description">Чтобы вы могли просматривать и удалять приложения с помощью файлового менеджера, нам нужен доступ к истории использования</string>
+
 
 </resources>
