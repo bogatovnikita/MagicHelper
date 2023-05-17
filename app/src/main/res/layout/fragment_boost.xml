@@ -275,11 +275,9 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boost_button"
-        android:text="@string/boost_button_optimize"
-        android:textAllCaps="false"
         style="@style/MainButton"
+        android:text="@string/boost_button_optimize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

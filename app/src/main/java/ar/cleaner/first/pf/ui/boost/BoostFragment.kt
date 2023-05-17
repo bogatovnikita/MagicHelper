@@ -1,7 +1,5 @@
 package ar.cleaner.first.pf.ui.boost
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -12,9 +10,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentBoostBinding
-import ar.cleaner.first.pf.extensions.checkUsageStatsAllowed
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
-import ar.cleaner.first.pf.ui.dialogs.DialogAccessUsageSettings
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,10 +18,7 @@ import kotlinx.coroutines.launch
 class BoostFragment : Fragment(R.layout.fragment_boost) {
 
     private val binding: FragmentBoostBinding by viewBinding()
-
     private val viewModel: BoostViewModel by viewModels()
-    private val dialog = DialogAccessUsageSettings()
-    private lateinit var preferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -93,32 +85,9 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
             findNavController().popBackStack()
         }
         binding.boostButton.setOnClickListener {
-            checkPermissionOrSubscribeOnData()
-        }
-    }
-
-    private fun checkPermissionOrSubscribeOnData() {
-        when {
-            checkUsageStatsAllowed() -> {
-                preferences =
-                    requireContext().getSharedPreferences(
-                        CoolingFragment.APP_PREFERENCES,
-                        Context.MODE_PRIVATE
-                    )
-                preferences.edit()
-                    .putInt(BOOST_PERCENT, viewModel.state.value.ramDetails!!.usagePercents).apply()
-                preferences.edit().putFloat(
-                    BOOST_CLEAR_VALUE,
-                    viewModel.state.value.ramDetails!!.usedRam.toFloat()
-                ).apply()
-                findNavController().navigate(
-                    BoostFragmentDirections.actionBoostFragmentToBoostProgressFragment()
-                )
-            }
-            else -> {
-                if (dialog.isAdded) return
-                dialog.show(parentFragmentManager, "BoostFragment")
-            }
+            findNavController().navigate(
+                BoostFragmentDirections.actionBoostFragmentToBoostProgressFragment()
+            )
         }
     }
 
