@@ -39,4 +39,5 @@ dependencies {
     implementation project(':files_and_apps_manager:domain:server')
     implementation project(':permissions')
     implementation project(':ads')
+    implementation 'androidx.annotation:annotation-jvm:+'
 }
