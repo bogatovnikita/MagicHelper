@@ -1,6 +1,7 @@
 package file_manager.doman.overview.ui_out
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 
 class OutCreatorImpl(
@@ -19,7 +20,7 @@ class OutCreatorImpl(
             groups = server.groups.map {group ->
                 GroupOut(
                     name = group.key,
-                    ids = group.value.content as List<String>
+                    ids = group.value.content as List<FileOrApp>
                 )
             },
             isAllSelected = server.isAllSelected,

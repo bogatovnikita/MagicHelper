@@ -19,7 +19,8 @@
         android:label="ScanFragment" >
         <action
             android:id="@+id/toPermissionDialog"
-            app:destination="@id/fileManagerPermissionDialog" />
+            app:destination="@id/fileManagerPermissionDialog"
+            app:popUpTo="@id/startFragment" />
     </fragment>
     <dialog
         android:id="@+id/fileManagerPermissionDialog"

@@ -17,7 +17,7 @@ internal class DeleteUseCaseImpl(
     override fun deleteAndUpdate(groupName: GroupName) {
         uiOuter.showDeleteProgress()
 
-        deleter.delete(server.getSelected(groupName))
+        deleter.delete(server.getSelected(groupName).map { it.id })
         deleteTimeSaver.saveDeleteTime()
         updateUseCase.update()
 

@@ -1,4 +1,5 @@
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
@@ -31,7 +32,7 @@ class DeleteUseCaseTest {
     @Test
     fun testDeleteAndUpdate(){
         val video = listOf("video")
-        val ids = listOf("video")
+        val ids = listOf(FileOrApp(id = "video"))
 
         coEvery { server.getSelected(GroupName.Video) } returns ids
 

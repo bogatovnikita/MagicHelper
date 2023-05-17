@@ -1,5 +1,6 @@
 package file_manager.scan_progress.grouper
 
+import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.domain.server.selectable_form.SimpleSelectableForm
@@ -11,17 +12,17 @@ class GrouperImpl : Grouper {
     private val fileGroups = FileGroups()
 
     override fun groupFilesAndApps(
-        files: List<String>,
-        apps: List<String>
-    ): Map<GroupName, SelectableForm<String>> {
+        files: List<FileOrApp>,
+        apps: List<FileOrApp>
+    ): Map<GroupName, SelectableForm<FileOrApp>> {
 
-        val images = mutableListOf<String>()
-        val audio = mutableListOf<String>()
-        val documents = mutableListOf<String>()
-        val video = mutableListOf<String>()
+        val images = mutableListOf<FileOrApp>()
+        val audio = mutableListOf<FileOrApp>()
+        val documents = mutableListOf<FileOrApp>()
+        val video = mutableListOf<FileOrApp>()
 
         files.forEach {
-            val extension = Path(it).extension
+            val extension = Path(it.id).extension
 
             when{
                 fileGroups.isAudio(extension) -> audio.add(it)
@@ -31,11 +32,11 @@ class GrouperImpl : Grouper {
             }
         }
 
-        val imagesForm = SimpleSelectableForm<String>()
-        val audioForm = SimpleSelectableForm<String>()
-        val documentsForm = SimpleSelectableForm<String>()
-        val videoForm = SimpleSelectableForm<String>()
-        val appsForm = SimpleSelectableForm<String>()
+        val imagesForm = SimpleSelectableForm<FileOrApp>()
+        val audioForm = SimpleSelectableForm<FileOrApp>()
+        val documentsForm = SimpleSelectableForm<FileOrApp>()
+        val videoForm = SimpleSelectableForm<FileOrApp>()
+        val appsForm = SimpleSelectableForm<FileOrApp>()
 
         imagesForm.content = images
         audioForm.content = audio

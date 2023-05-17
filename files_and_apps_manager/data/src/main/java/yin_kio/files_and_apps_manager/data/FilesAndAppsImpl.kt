@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.Build
 import android.os.Environment
+import file_manager.domain.server.FileOrApp
 import file_manager.scan_progress.gateways.FilesAndApps
 
 
@@ -14,15 +15,15 @@ class FilesAndAppsImpl(
     private val context: Context
 ) : FilesAndApps {
 
-    override fun provideFiles(): List<String> {
+    override fun provideFiles(): List<FileOrApp> {
          return Environment.getExternalStorageDirectory()
             .walkTopDown()
             .filter { it.isFile }
-            .map { it.absolutePath }
+            .map { FileOrApp(id = it.absolutePath) }
             .toList()
     }
 
-    override fun provideApps(): List<String> {
+    override fun provideApps(): List<FileOrApp> {
         val resolveInfos = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             context.packageManager.queryIntentActivities(
                 Intent(Intent.ACTION_MAIN, null).addCategory(Intent.CATEGORY_LAUNCHER),
@@ -36,7 +37,7 @@ class FilesAndAppsImpl(
         }
 
         return resolveInfos.filter { !isSystemPackage(it) }
-            .map { it.activityInfo.packageName }
+            .map { FileOrApp(id = it.activityInfo.packageName) }
     }
 
     private fun isSystemPackage(ri: ResolveInfo): Boolean {
