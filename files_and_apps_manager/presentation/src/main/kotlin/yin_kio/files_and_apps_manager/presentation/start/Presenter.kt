@@ -10,11 +10,11 @@ internal class Presenter(
 ) {
 
     fun presentPercents(percents: Int) : String{
-        return context.getString(R.string.file_and_apps_manager_percents, percents)
+        return context.getString(R.string.file_apps_manager_percents, percents)
     }
 
     fun presentOccupiedAndTotal(occupied: Long, total: Long) : String{
-        return context.getString(R.string.file_and_apps_manager_occupied_and_total,
+        return context.getString(R.string.file_apps_manager_occupied_and_total,
             formatFileSize(context, occupied),
             formatFileSize(context, total)
         )

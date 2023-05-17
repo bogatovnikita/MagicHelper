@@ -25,4 +25,5 @@ include ':files_and_apps_manager:test'
 include ':res'
 
 include ':permissions'
+include ':ads'
 include ':settings'

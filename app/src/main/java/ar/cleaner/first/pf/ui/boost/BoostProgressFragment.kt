@@ -10,14 +10,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.preloadAd
-import ar.cleaner.first.pf.ads.showAds
+import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.boosting.ExtendedOptimizerUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetBackgroundAppsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
+import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -114,7 +114,7 @@ class BoostProgressFragment : Fragment() {
     }
 
     private fun goScreenResult() {
-        showAds {
+        appShowAds {
         findNavController().navigate(
             BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
                 ResultFragment.BOOST_KEY

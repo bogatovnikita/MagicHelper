@@ -1,25 +1,24 @@
 package yin_kio.files_and_apps_manager.presentation.scan
 
 import Yin_Koi.files_and_apps_manager.presentation.R
-import Yin_Koi.files_and_apps_manager.presentation.databinding.FilesAppManagerPermissionDialogBinding
+import Yin_Koi.files_and_apps_manager.presentation.databinding.DialogFileAppManagerPermissionBinding
 import android.Manifest
 import android.app.Dialog
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.permissions.requestManageExternalStorage
 import jamycake.lifecycle_aware.previousBackStackEntry
+import yin_kio.files_and_apps_manager.presentation.dialog.FixedWidthDialogFragment
 
-class FileManagerPermissionDialog : DialogFragment(R.layout.files_app_manager_permission_dialog) {
+internal class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.dialog_file_app_manager_permission) {
 
-    private val binding: FilesAppManagerPermissionDialogBinding by viewBinding()
+    private val binding: DialogFileAppManagerPermissionBinding by viewBinding()
     private val viewModel: ViewModel by previousBackStackEntry()
 
     private val permissionLauncher = registerForActivityResult(
@@ -41,14 +40,6 @@ class FileManagerPermissionDialog : DialogFragment(R.layout.files_app_manager_pe
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        dialog?.window?.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-    }
 
 
 
