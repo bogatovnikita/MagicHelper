@@ -4,13 +4,13 @@ import file_manager.domain.server.selectable_form.SelectableForm
 
 class FileAndAppsServerImpl : FileManagerServer {
 
-    private val _selected: MutableMap<GroupName, SelectableForm<String>> = mutableMapOf()
+    private val _selected: MutableMap<GroupName, SelectableForm<FileOrApp>> = mutableMapOf()
     private var currentGroup: GroupName = GroupName.Images
 
     override val hasSelected: Boolean get() = _selected[currentGroup]?.selected?.isNotEmpty()?:false
     override val isAllSelected: Boolean get() = _selected[currentGroup]?.isAllSelected?:false
     override val selectedCount: Int get() = _selected[currentGroup]?.selected?.size?:0
-    override var groups: Map<GroupName, SelectableForm<String>>
+    override var groups: Map<GroupName, SelectableForm<FileOrApp>>
         get() = _selected
         set(value) {
             value.forEach {
@@ -18,19 +18,26 @@ class FileAndAppsServerImpl : FileManagerServer {
             }
         }
 
-    override fun getSelected(groupName: GroupName): List<String> {
-        return (_selected[groupName]?.content as List<String>?)?: emptyList()
+    override fun getSelected(groupName: GroupName): List<FileOrApp> {
+        return (_selected[groupName]?.content as List<FileOrApp>?)?: emptyList()
     }
 
     override fun isItemSelected(groupName: GroupName, id: String): Boolean {
-        return _selected[groupName]?.isItemSelected(id)?:false
+        _selected[groupName]?.let {
+            val item = it.content.find { it.id == id }?: return false
+            return it.isItemSelected(item)
+        }
+        return false
     }
 
     override fun switchAllSelection(groupName: GroupName) {
         _selected[groupName]?.switchAllSelection()
     }
 
-    override fun switchItemSelection(groupName: GroupName, item: String) {
-        _selected[groupName]?.switchItemSelection(item)
+    override fun switchItemSelection(groupName: GroupName, id: String) {
+        _selected[groupName]?.let {
+            val item = it.content.find { it.id == id }?: return
+            it.switchItemSelection(item)
+        }
     }
 }

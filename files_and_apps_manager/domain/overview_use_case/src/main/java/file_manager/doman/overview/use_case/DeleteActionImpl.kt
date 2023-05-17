@@ -6,20 +6,20 @@ import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
 
-internal class DeleteUseCaseImpl(
+internal class DeleteActionImpl(
     private val deleter: Deleter,
     private val server: FileManagerServer,
-    private val updateUseCase: UpdateUseCase,
+    private val updateAction: UpdateAction,
     private val uiOuter: UiOuter,
     private val deleteTimeSaver: DeleteTimeSaver
-) : DeleteUseCase {
+) : DeleteAction {
 
     override fun deleteAndUpdate(groupName: GroupName) {
         uiOuter.showDeleteProgress()
 
-        deleter.delete(server.getSelected(groupName))
+        deleter.delete(server.getSelected(groupName).map { it.id })
         deleteTimeSaver.saveDeleteTime()
-        updateUseCase.update()
+        updateAction.update()
 
         uiOuter.showDeleteCompletion()
 

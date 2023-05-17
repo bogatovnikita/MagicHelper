@@ -1,28 +1,29 @@
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
-import file_manager.doman.overview.use_case.DeleteUseCaseImpl
-import file_manager.doman.overview.use_case.UpdateUseCase
+import file_manager.doman.overview.use_case.DeleteActionImpl
+import file_manager.doman.overview.use_case.UpdateAction
 import io.mockk.coEvery
 import io.mockk.coVerifySequence
 import io.mockk.mockk
 import io.mockk.spyk
 import org.junit.jupiter.api.Test
 
-class DeleteUseCaseTest {
+class DeleteActionTest {
 
     private val deleter: Deleter = spyk()
     private val server: FileManagerServer = mockk()
-    private val updateUseCase: UpdateUseCase = spyk()
+    private val updateAction: UpdateAction = spyk()
     private val uiOuter: UiOuter = spyk()
     private val deleteTimeSaver: DeleteTimeSaver = spyk()
 
-    private val deleteUseCase = DeleteUseCaseImpl(
+    private val deleteUseCase = DeleteActionImpl(
         deleter = deleter,
         server = server,
-        updateUseCase = updateUseCase,
+        updateAction = updateAction,
         uiOuter = uiOuter,
         deleteTimeSaver = deleteTimeSaver
     )
@@ -31,7 +32,7 @@ class DeleteUseCaseTest {
     @Test
     fun testDeleteAndUpdate(){
         val video = listOf("video")
-        val ids = listOf("video")
+        val ids = listOf(FileOrApp(id = "video"))
 
         coEvery { server.getSelected(GroupName.Video) } returns ids
 
@@ -42,7 +43,7 @@ class DeleteUseCaseTest {
 
             deleter.delete(video.map { it })
             deleteTimeSaver.saveDeleteTime()
-            updateUseCase.update()
+            updateAction.update()
 
             uiOuter.showDeleteCompletion()
         }

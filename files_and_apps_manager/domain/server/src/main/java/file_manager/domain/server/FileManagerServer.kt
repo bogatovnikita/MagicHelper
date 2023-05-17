@@ -8,14 +8,14 @@ interface FileManagerServer {
     val isAllSelected: Boolean
     val selectedCount: Int
 
-    var groups: Map<GroupName, SelectableForm<String>>
+    var groups: Map<GroupName, SelectableForm<FileOrApp>>
 
-    fun getSelected(groupName: GroupName): List<String>
+    fun getSelected(groupName: GroupName): List<FileOrApp>
 
     fun isItemSelected(groupName: GroupName, id: String) : Boolean
 
     fun switchAllSelection(groupName: GroupName)
-    fun switchItemSelection(groupName: GroupName, item: String)
+    fun switchItemSelection(groupName: GroupName, id: String)
 
 
 }
