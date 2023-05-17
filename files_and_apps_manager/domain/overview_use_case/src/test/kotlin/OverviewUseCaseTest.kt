@@ -4,9 +4,9 @@ import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.UiOuter
-import file_manager.doman.overview.use_case.DeleteUseCase
-import file_manager.doman.overview.use_case.OverviewUseCases
-import file_manager.doman.overview.use_case.UpdateUseCase
+import file_manager.doman.overview.use_case.DeleteAction
+import file_manager.doman.overview.use_case.OverviewUseCase
+import file_manager.doman.overview.use_case.UpdateAction
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.coVerifySequence
@@ -14,20 +14,20 @@ import io.mockk.mockk
 import io.mockk.spyk
 import org.junit.jupiter.api.Test
 
-class OverviewUseCasesTest {
+class OverviewUseCaseTest {
 
     private val uiOuter: UiOuter = spyk()
     private val outCreator: OutCreator = mockk()
     private val server: FileManagerServer = spyk()
-    private val deleteUseCase: DeleteUseCase = spyk()
-    private val updateUseCase: UpdateUseCase = spyk()
+    private val deleteAction: DeleteAction = spyk()
+    private val updateAction: UpdateAction = spyk()
 
-    private val useCases = OverviewUseCases(
+    private val useCases = OverviewUseCase(
         uiOuter = uiOuter,
         outCreator = outCreator,
         server = server,
-        deleteUseCase = deleteUseCase,
-        updateUseCase = updateUseCase
+        deleteAction = deleteAction,
+        updateAction = updateAction
     )
 
 
@@ -42,7 +42,7 @@ class OverviewUseCasesTest {
     fun testUpdate(){
         useCases.update()
 
-        coVerify { updateUseCase.update() }
+        coVerify { updateAction.update() }
     }
 
     @Test
@@ -124,7 +124,7 @@ class OverviewUseCasesTest {
         val groupName = GroupName.Video
         useCases.delete(groupName)
 
-        coVerify { deleteUseCase.deleteAndUpdate(groupName) }
+        coVerify { deleteAction.deleteAndUpdate(groupName) }
     }
 
     @Test

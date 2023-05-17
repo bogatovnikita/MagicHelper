@@ -5,12 +5,12 @@ import file_manager.domain.server.GroupName
 import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.*
 
-internal class OverviewUseCases(
+internal class OverviewUseCase(
     private val uiOuter: UiOuter,
     private val outCreator: OutCreator,
     private val server: FileManagerServer,
-    private val deleteUseCase: DeleteUseCase,
-    private val updateUseCase: UpdateUseCase
+    private val deleteAction: DeleteAction,
+    private val updateAction: UpdateAction
 ) {
 
     fun close(){
@@ -18,7 +18,7 @@ internal class OverviewUseCases(
     }
 
     fun update(){
-        updateUseCase.update()
+        updateAction.update()
     }
 
     fun switchGroup(groupName: GroupName){
@@ -46,7 +46,7 @@ internal class OverviewUseCases(
     }
 
     fun delete(groupName: GroupName){
-        deleteUseCase.deleteAndUpdate(groupName)
+        deleteAction.deleteAndUpdate(groupName)
     }
 
     fun hideDeleteDialog(){
