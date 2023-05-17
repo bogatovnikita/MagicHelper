@@ -32,14 +32,6 @@ internal class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.d
     }
 
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return super.onCreateDialog(savedInstanceState).apply {
-            window?.setBackgroundDrawable(ColorDrawable(
-                requireContext().getColor(android.R.color.transparent)
-            ))
-        }
-    }
-
 
 
 
@@ -54,23 +46,25 @@ internal class FileManagerPermissionDialog : FixedWidthDialogFragment(R.layout.d
             viewModel.command.collect{
                 when(it){
                     Command.Close -> closeDialogAndScan()
-                    Command.RequestPermission -> {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                            requireActivity().requestManageExternalStorage()
-                            closeDialogAndScan()
-                        } else {
-                            permissionLauncher.launch(
-                                arrayOf(
-                                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                                )
-                            )
-                        }
-                    }
+                    Command.RequestStoragePermission -> requestPermission()
                     Command.ShowProgress -> findNavController().navigateUp()
                     else -> {}
                 }
             }
+        }
+    }
+
+    private fun requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            requireActivity().requestManageExternalStorage()
+            closeDialogAndScan()
+        } else {
+            permissionLauncher.launch(
+                arrayOf(
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            )
         }
     }
 

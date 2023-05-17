@@ -19,11 +19,17 @@
         android:label="ScanFragment" >
         <action
             android:id="@+id/toPermissionDialog"
-            app:destination="@id/fileManagerPermissionDialog"
-            app:popUpTo="@id/startFragment" />
+            app:destination="@id/fileManagerPermissionDialog" />
+        <action
+            android:id="@+id/toUsageStatsPermission"
+            app:destination="@id/usageStatsPermissionDialog" />
     </fragment>
     <dialog
         android:id="@+id/fileManagerPermissionDialog"
         android:name="yin_kio.files_and_apps_manager.presentation.scan.FileManagerPermissionDialog"
         android:label="FileManagerPermissionDialog" />
+    <dialog
+        android:id="@+id/usageStatsPermissionDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.scan.UsageStatsPermissionDialog"
+        android:label="UsageStatsPermissionDialog" />
 </navigation>

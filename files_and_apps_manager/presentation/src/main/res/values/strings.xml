@@ -14,7 +14,7 @@
     <string name="file_apps_manager_we_need_permission">Нам нужно разрешение</string>
     <string name="file_apps_manager_cancel">Отмена</string>
     <string name="file_apps_manager_allow">Разрешить</string>
-    <string name="file_apps_manager_permission_description">Чтобы мы могли остановить фоновые процессы и освободить оперативную память, нам нужен доступ к истории использования</string>
+    <string name="file_apps_manager_permission_description">Чтобы использовать файловый менеджер, вам необходимо предоставить разрешение на хранение, чтобы вы могли просматривать и удалять файлы из нашего приложения</string>
 
     <string name="file_apps_manager_photo">Фотографии</string>
     <string name="file_apps_manager_video">Видео</string>

@@ -23,6 +23,7 @@
             android:text="@string/file_apps_manager_we_need_permission"/>
 
         <ImageView
+            android:id="@+id/cross_exit_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_exit_cross"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         style="@style/Dialog.Description"
-        android:text="@string/file_apps_manager_files_deleting_description"
+        android:text="@string/file_apps_manager_usage_stats_description"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="8dp"/>
 
@@ -47,17 +48,19 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp">
 
-        <Button
+        <TextView
+            android:id="@+id/cancel"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Cancel"
             android:layout_weight="1"
             android:text="@string/file_apps_manager_cancel"/>
 
-        <Button
+        <TextView
+            android:id="@+id/allow"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Ok"
             android:layout_weight="1"
-            android:text="@string/file_apps_manager_delete"
+            android:text="@string/file_apps_manager_allow"
             android:layout_marginStart="8dp"/>
 
     </LinearLayout>

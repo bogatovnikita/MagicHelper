@@ -32,7 +32,8 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
             viewModel.command.collect{
                 when(it){
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowPermissionDialog -> findNavController().navigate(R.id.toPermissionDialog)
+                    Command.ShowStoragePermissionDialog -> findNavController().navigate(R.id.toPermissionDialog)
+                    Command.ShowUsageStatsPermissionDialog -> findNavController().navigate(R.id.toUsageStatsPermission)
                     Command.ShowInter -> {
                         showAds {
                             Log.d("!!!", "ads closed")
@@ -51,7 +52,9 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
         val context = requireContext().applicationContext
 
 
-        val uiOuter = UiOuterImpl()
+        val uiOuter = UiOuterImpl(
+            presenter = Presenter(context)
+        )
         val useCase = ScanProgressUseCaseCreator.create(
             uiOuter = uiOuter,
             filesAndApps = FilesAndAppsImpl(context),
