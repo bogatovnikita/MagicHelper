@@ -29,7 +29,7 @@ class FunctionSettings(context: Context) {
     }
 
     fun saveLastTemperature(degree: Int) =
-        sharedPreferences.edit().putInt(BOOST_STATUS, degree).apply()
+        sharedPreferences.edit().putInt(TEMPERATURE_DEGREE, degree).apply()
 
     fun gatLastTemperature(): Int = sharedPreferences.getInt(TEMPERATURE_DEGREE, -1)
 
