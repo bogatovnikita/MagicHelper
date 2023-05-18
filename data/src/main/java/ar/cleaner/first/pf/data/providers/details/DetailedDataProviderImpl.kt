@@ -5,6 +5,7 @@ import android.content.Context
 import ar.cleaner.first.pf.domain.models.details.BoostDetails
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 class DetailedDataProviderImpl @Inject constructor(
     @ApplicationContext private val context: Context
@@ -34,11 +35,11 @@ class DetailedDataProviderImpl @Inject constructor(
     private fun getUsagePercent(): Int {
         activityManager.getMemoryInfo(memoryInfo)
 
-        val totalMemoryBytes = memoryInfo.totalMem
-        val usedMemoryBytes = (totalMemoryBytes - memoryInfo.availMem).toFloat()
-
-        return ((usedMemoryBytes / totalMemoryBytes) * 100).toInt()
+        val totalMemoryBytes = memoryInfo.totalMem.toFloat()
+        val usedMemoryBytes = totalMemoryBytes - memoryInfo.availMem.toFloat()
+        val result = (usedMemoryBytes / totalMemoryBytes) * 100
+        return result.roundToInt()
     }
 
-    private fun Long.convertToGb(): Double = (this / (1000 * 1000 * 1000)).toDouble()
+    private fun Long.convertToGb(): Double = this / (1000.0 * 1000.0 * 1000.0)
 }

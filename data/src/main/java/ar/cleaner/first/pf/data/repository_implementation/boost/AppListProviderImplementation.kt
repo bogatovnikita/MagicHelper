@@ -30,7 +30,6 @@ class AppListProviderImplementation @Inject constructor(
         return try {
             RunningApp(
                 nameApp = getName(packageInfo.packageName),
-                iconApp = getIcon(packageInfo.packageName),
                 packageName = packageInfo.packageName
             )
         } catch (e: java.lang.Exception) {
@@ -41,10 +40,6 @@ class AppListProviderImplementation @Inject constructor(
     private fun getName(packageName: String): String {
         return getPackageInfo(packageName).applicationInfo.loadLabel(context.packageManager)
             .toString()
-    }
-
-    private fun getIcon(packageName: String): Int {
-        return getPackageInfo(packageName).applicationInfo.icon
     }
 
     private fun getPackageInfo(packageName: String): PackageInfo {
