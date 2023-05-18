@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
@@ -33,6 +34,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             audio.setOnClickListener { viewModel.switchGroup(GroupName.Audio) }
             documents.setOnClickListener { viewModel.switchGroup(GroupName.Documents) }
             apps.setOnClickListener { viewModel.switchGroup(GroupName.Apps) }
+
+            arrowBackIv.setOnClickListener { viewModel.close() }
         }
 
 
@@ -44,6 +47,18 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                     GroupName.Audio -> binding.audio.isChecked = true
                     GroupName.Documents -> binding.documents.isChecked = true
                     GroupName.Apps -> binding.apps.isChecked = true
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.command.collect{
+                when(it){
+                    Command.Close -> findNavController().navigateUp()
+                    Command.ShowDeleteDialog -> TODO()
+                    Command.HideDeleteDialog -> TODO()
+                    Command.ShowDeleteProgress -> TODO()
+                    Command.ShowDeleteCompletion -> TODO()
                 }
             }
         }
