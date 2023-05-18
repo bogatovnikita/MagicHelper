@@ -100,6 +100,8 @@
     <string name="boost_optimize_done">Оптимизация выполнена</string>
     <string name="boost_phone_dont_need_optimize">Телефон не нуждается в оптимизации на данный момент!</string>
     <string name="boost_now_the_device_is_accelerated_by_D">Теперь устройство оптимизировано на %d%%</string>
+    <string name="boost_checking_apps">Checking apps..</string>
+    <string name="boost_sending_command">Sending command..</string>
 
 
     <string name="general_action_required">Требуется действие!</string>
