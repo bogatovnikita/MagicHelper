@@ -24,11 +24,11 @@
         <item>Systemmüll</item>
     </array>
 
-    <array name="progress_cooling">
-        <item>Hintergrundprozesse löschen..</item>
-        <item>Systempfade löschen..</item>
-        <item>Einstellen der Systemtasten..</item>
-        <item>Überprüfung nicht verwendeter Komponenten..</item>
-        <item>Trennen von unnötigen GPS-Türmen..</item>
+
+    <!--    new array -->
+
+    <array name="progress_temperature">
+        <item>Checking CPU temperature..</item>
+        <item>Checking battery temperature..</item>
     </array>
 </resources>

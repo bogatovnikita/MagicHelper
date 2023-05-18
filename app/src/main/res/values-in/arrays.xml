@@ -24,12 +24,13 @@
         <item>Sampah sistem</item>
     </array>
 
-    <array name="progress_cooling">
-        <item>Menghapus proses latar belakang..</item>
-        <item>Membersihkan jalur sistem..</item>
-        <item>Menyesuaikan tombol sistem..</item>
-        <item>Memeriksa komponen yang tidak digunakan..</item>
-        <item>Memutuskan sambungan dari menara GPS yang tidak perlu..</item>
+
+
+    <!--    new array -->
+
+    <array name="progress_temperature">
+        <item>Checking CPU temperature..</item>
+        <item>Checking battery temperature..</item>
     </array>
 
 </resources>

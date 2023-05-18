@@ -24,12 +24,13 @@
         <item>सिस्टम कचरा</item>
     </array>
 
-    <array name="progress_cooling">
-        <item>पृष्ठभूमि प्रक्रियाओं को हटाना।.</item>
-        <item>समाशोधन प्रणाली पथ।.</item>
-        <item>सिस्टम कुंजियों को समायोजित करना । .</item>
-        <item>अप्रयुक्त घटकों की जाँच करना । .</item>
-        <item>अनावश्यक जीपीएस टावरों से डिस्कनेक्ट करना । .</item>
+
+
+    <!--    new array -->
+
+    <array name="progress_temperature">
+        <item>Checking CPU temperature..</item>
+        <item>Checking battery temperature..</item>
     </array>
 
 </resources>

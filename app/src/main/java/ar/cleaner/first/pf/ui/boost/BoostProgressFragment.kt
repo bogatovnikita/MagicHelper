@@ -80,7 +80,7 @@ class BoostProgressFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val strings = resources.getStringArray(R.array.progress_cooling).toList()
+        val strings = resources.getStringArray(R.array.progress_temperature).toList()
         val adapter = ActionsAdapter(strings)
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())

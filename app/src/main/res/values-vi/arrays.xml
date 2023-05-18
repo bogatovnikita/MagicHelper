@@ -24,11 +24,13 @@
         <item>Hệ thống rác</item>
     </array>
 
-    <array name="progress_cooling">
-        <item>Xóa các quá trình nền..</item>
-        <item>Thanh toán bù trừ đường dẫn hệ thống..</item>
-        <item>Điều chỉnh hệ thống phím..</item>
-        <item>Kiểm tra các thành phần không sử dụng..</item>
-        <item>Ngắt kết nối TỪ THÁP GPS không cần thiết..</item>
+
+
+    <!--    new array -->
+
+    <array name="progress_temperature">
+        <item>Checking CPU temperature..</item>
+        <item>Checking battery temperature..</item>
     </array>
+
 </resources>
