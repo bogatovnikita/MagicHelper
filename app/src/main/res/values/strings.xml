@@ -90,6 +90,7 @@
     <string name="temperature_desc_optimized">Выполнено</string>
     <string name="temperature_need_check">Проверьте температуру</string>
     <string name="temperature_checked">Действие выполнено</string>
+    <string name="temperature_not_checked">не проверена…</string>
     <string name="temperature_normal">Нормальная температура процессора не должна превыщать 50℃</string>
 
     <string name="boost_description_view_title">Прямо сейчас фоновые процессы и приложения могут влиять на скорость работы устройства</string>

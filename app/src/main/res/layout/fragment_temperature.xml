@@ -19,20 +19,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.57" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_for_top_second_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_for_bottom_second_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
-
     <ImageView
         android:id="@+id/root_background_iv"
         android:layout_width="0dp"
@@ -81,8 +67,8 @@
         android:id="@+id/optimize_is_done_background"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:background="@drawable/card_corners_comet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.067"
@@ -118,14 +104,14 @@
         android:id="@+id/first_view_for_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_23sdp"
         android:background="@drawable/card_corners_comet"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/optimize_is_done_background"
-        app:layout_goneMarginTop="@dimen/_24sdp" />
+        app:layout_goneMarginTop="@dimen/_23sdp" />
 
     <TextView
         android:id="@+id/description_tv"
@@ -136,7 +122,7 @@
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/processor_temperature"
         android:textColor="@color/white"
-        android:textSize="@dimen/Text.18"
+        android:textSize="@dimen/Text.24"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toTopOf="@id/first_view_for_background" />
@@ -146,52 +132,96 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
-        android:textSize="@dimen/Text.18"
+        android:textSize="@dimen/Text.24"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/description_tv"
         tools:text="@string/temperature_D" />
+
+    <TextView
+        android:id="@+id/tv_temp_not_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/heraclito_medium"
+        android:text="@string/temperature_not_checked"
+        android:textColor="@color/red_text"
+        android:textSize="@dimen/Text.24"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/first_view_for_background"
+        app:layout_constraintTop_toBottomOf="@id/description_tv" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_right_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_temp_not_check, percent_tv" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_top_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="tv_temp_not_check, percent_tv" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_bottom_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_temp_not_check, percent_tv" />
 
     <ImageView
         android:id="@+id/icon_thermometer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_4sdp"
         android:src="@drawable/ic_thermometer"
-        app:layout_constraintBottom_toBottomOf="@id/percent_tv"
-        app:layout_constraintDimensionRatio="W,1"
-        app:layout_constraintHeight_percent="0.035"
-        app:layout_constraintStart_toEndOf="@id/percent_tv"
-        app:layout_constraintTop_toTopOf="@id/percent_tv" />
-
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@id/barrier_bottom_temperature"
+        app:layout_constraintDimensionRatio="1,1"
+        app:layout_constraintStart_toEndOf="@id/barrier_right_temperature"
+        app:layout_constraintTop_toTopOf="@id/barrier_top_temperature" />
 
     <TextView
         android:id="@+id/normal_temperature_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
-        android:fontFamily="@font/heraclito_medium"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:alpha="0.7"
+        android:fontFamily="@font/heraclito_regular"
         android:text="@string/temperature_normal"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.14"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
         app:layout_constraintStart_toStartOf="@id/first_view_for_background"
-        app:layout_constraintTop_toBottomOf="@id/percent_tv" />
+        app:layout_constraintTop_toBottomOf="@id/barrier_bottom_temperature" />
+
+    <Space
+        android:id="@+id/bottom_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_13sdp"
+        app:layout_constraintTop_toBottomOf="@id/normal_temperature_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/danger_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_13sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:clickable="false"
         android:fontFamily="@font/heraclito_medium"
+        android:gravity="start|center_horizontal"
         android:paddingHorizontal="@dimen/_12sdp"
         android:textAllCaps="false"
         android:textSize="@dimen/Text.16"
-        android:gravity="start|center_horizontal"
         app:layout_constraintBottom_toTopOf="@id/boost_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -203,9 +233,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boost_button"
+        style="@style/MainButton"
         android:text="@string/temperature_check"
         android:textAllCaps="false"
-        style="@style/MainButton"
+        android:layout_marginHorizontal="@dimen/_13sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"

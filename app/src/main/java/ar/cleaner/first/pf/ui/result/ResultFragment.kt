@@ -15,7 +15,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentResultBinding
 import ar.cleaner.first.pf.domain.models.CleanerDetails
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
-import ar.cleaner.first.pf.domain.models.details.CpuDetails
+import ar.cleaner.first.pf.domain.models.details.TemperatureDetails
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
@@ -99,7 +99,7 @@ class ResultFragment : Fragment() {
         with(screenState) {
             batteryDetails.render()
             ramDetails.render()
-            cpuDetails.render()
+            temperatureDetails.render()
             cleanerDetails.render()
         }
     }
@@ -147,7 +147,7 @@ class ResultFragment : Fragment() {
         }
     }
 
-    private fun CpuDetails?.render() {
+    private fun TemperatureDetails?.render() {
         this ?: return
         var cooledTemp =
             preferences.getInt(TemperatureFragment.COOLER_TEMPERATURE, 0) - temperature.toInt()
