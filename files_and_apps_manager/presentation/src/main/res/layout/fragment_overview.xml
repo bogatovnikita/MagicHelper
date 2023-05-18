@@ -48,19 +48,19 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/all_files"
+                android:id="@+id/images"
                 android:drawableLeft="@drawable/ic_images"
                 android:text="@string/file_apps_manager_photo"
                 style="@style/file_apps_manager_chip"/>
             <RadioButton
-                android:id="@+id/images"
-                android:drawableLeft="@drawable/ic_images"
+                android:id="@+id/video"
+                android:drawableLeft="@drawable/ic_video"
                 android:text="@string/file_apps_manager_video"
                 android:checked="true"
                 style="@style/file_apps_manager_chip"/>
             <RadioButton
-                android:id="@+id/video"
-                android:drawableLeft="@drawable/ic_video"
+                android:id="@+id/audio"
+                android:drawableLeft="@drawable/ic_audio"
                 android:text="@string/file_apps_manager_audio"
                 style="@style/file_apps_manager_chip"/>
             <RadioButton
@@ -69,8 +69,8 @@
                 android:text="@string/file_apps_manager_documents"
                 style="@style/file_apps_manager_chip"/>
             <RadioButton
-                android:id="@+id/audio"
-                android:drawableLeft="@drawable/ic_audio"
+                android:id="@+id/apps"
+                android:drawableLeft="@drawable/ic_apps"
                 android:text="@string/file_apps_manager_apps"
                 style="@style/file_apps_manager_chip"/>
 
