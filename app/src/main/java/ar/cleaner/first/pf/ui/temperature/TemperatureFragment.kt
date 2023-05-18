@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.cooling
+package ar.cleaner.first.pf.ui.temperature
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -17,13 +17,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CoolingFragment : Fragment(R.layout.fragment_temperature) {
+class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
 
     private val binding: FragmentTemperatureBinding by viewBinding()
 
     private lateinit var preferences: SharedPreferences
 
-    private val viewModel: CoolingViewModel by viewModels()
+    private val viewModel: TemperatureViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,7 +38,7 @@ class CoolingFragment : Fragment(R.layout.fragment_temperature) {
                 requireContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
             preferences.edit().putInt(COOLER_TEMPERATURE, viewModel.state.value.temperature.toInt())
                 .apply()
-            findNavController().navigate(CoolingFragmentDirections.actionCoolingFragmentToCoolingProgressFragment())
+            findNavController().navigate(TemperatureFragmentDirections.actionTemperatureFragmentToTemperatureProgressFragment())
         }
         binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()

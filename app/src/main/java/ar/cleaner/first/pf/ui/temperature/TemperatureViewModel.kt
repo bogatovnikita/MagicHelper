@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.cooling
+package ar.cleaner.first.pf.ui.temperature
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class CoolingViewModel @Inject constructor(
+class TemperatureViewModel @Inject constructor(
     private val getCpuDetailsUseCase: GetCpuDetailsUseCase
 ) : ViewModel() {
 

@@ -39,8 +39,8 @@
             android:id="@+id/action_menuFragment_to_boostFragment"
             app:destination="@id/boostFragment" />
         <action
-            android:id="@+id/action_menuFragment_to_coolingFragment"
-            app:destination="@id/coolingFragment" />
+            android:id="@+id/action_menuFragment_to_temperatureFragment"
+            app:destination="@id/temperatureFragment" />
         <action
             android:id="@+id/action_menuFragment_to_junkFragment"
             app:destination="@id/junkFragment" />
@@ -95,26 +95,26 @@
     </fragment>
 
     <fragment
-        android:id="@+id/coolingFragment"
-        android:name="ar.cleaner.first.pf.ui.cooling.CoolingFragment"
-        android:label="CoolingFragment"
+        android:id="@+id/temperatureFragment"
+        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureFragment"
+        android:label="TemperatureFragment"
         tools:layout="@layout/fragment_temperature">
         <action
-            android:id="@+id/action_coolingFragment_to_coolingProgressFragment"
-            app:destination="@id/coolingProgressFragment"
-            app:popUpTo="@id/coolingFragment"
+            android:id="@+id/action_temperatureFragment_to_temperatureProgressFragment"
+            app:destination="@id/temperatureProgressFragment"
+            app:popUpTo="@id/temperatureFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/coolingProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.cooling.CoolingProgressFragment"
+        android:id="@+id/temperatureProgressFragment"
+        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureProgressFragment"
         android:label="CoolingProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
-            android:id="@+id/action_coolingProgressFragment_to_resultFragment"
+            android:id="@+id/action_temperatureProgressFragment_to_resultFragment"
             app:destination="@id/resultFragment"
-            app:popUpTo="@id/coolingProgressFragment"
+            app:popUpTo="@id/temperatureProgressFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -164,8 +164,8 @@
             app:popUpTo="@id/resultFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_resultFragment_to_coolingFragment"
-            app:destination="@id/coolingFragment"
+            android:id="@+id/action_resultFragment_to_temperatureFragment"
+            app:destination="@id/temperatureFragment"
             app:popUpTo="@id/resultFragment"
             app:popUpToInclusive="true" />
         <action

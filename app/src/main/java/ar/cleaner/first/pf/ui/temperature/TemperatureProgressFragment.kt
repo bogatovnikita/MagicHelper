@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.cooling
+package ar.cleaner.first.pf.ui.temperature
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class CoolingProgressFragment : Fragment() {
+class TemperatureProgressFragment : Fragment() {
 
     private var _binding: FragmentProgressBinding? = null
     private val binding get() = _binding!!
@@ -91,7 +91,7 @@ class CoolingProgressFragment : Fragment() {
     private fun goScreenResult() {
         appShowAds {
             findNavController().navigate(
-                CoolingProgressFragmentDirections.actionCoolingProgressFragmentToResultFragment(
+                TemperatureProgressFragmentDirections.actionTemperatureProgressFragmentToResultFragment(
                     ResultFragment.TEMPERATURE_KEY
                 )
             )

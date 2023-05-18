@@ -23,8 +23,8 @@ import ar.cleaner.first.pf.models.MenuHorizontalItems
 import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAINING_TIME_HOUR
 import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAINING_TIME_MINUTE
 import ar.cleaner.first.pf.ui.boost.BoostFragment
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment.Companion.APP_PREFERENCES
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment.Companion.APP_PREFERENCES
 import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.random.Random
@@ -151,7 +151,7 @@ class ResultFragment : Fragment() {
     private fun CpuDetails?.render() {
         this ?: return
         var cooledTemp =
-            preferences.getInt(CoolingFragment.COOLER_TEMPERATURE, 0) - temperature.toInt()
+            preferences.getInt(TemperatureFragment.COOLER_TEMPERATURE, 0) - temperature.toInt()
         if (cooledTemp <= 0) cooledTemp = 1
         with(binding) {
             secondDescriptionTv.text =
@@ -189,7 +189,7 @@ class ResultFragment : Fragment() {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToBoostFragment())
                     }
                     TEMPERATURE_KEY -> {
-                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToCoolingFragment())
+                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToTemperatureFragment())
                     }
                     CLEANING_KEY -> {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToJunkFragment())

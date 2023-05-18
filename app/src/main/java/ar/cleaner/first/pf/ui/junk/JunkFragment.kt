@@ -20,7 +20,7 @@ import ar.cleaner.first.pf.databinding.FragmentCleaningBinding
 import ar.cleaner.first.pf.extensions.checkPermissions
 import ar.cleaner.first.pf.extensions.checkUsageStatsAllowed
 import ar.cleaner.first.pf.extensions.openSettings
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.dialogs.DialogAccessUsageSettings
 import ar.cleaner.first.pf.ui.dialogs.DialogManageStorage
 import ar.cleaner.first.pf.ui.dialogs.DialogReadPermission
@@ -77,7 +77,7 @@ class JunkFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         preferences = requireContext().getSharedPreferences(
-            CoolingFragment.APP_PREFERENCES,
+            TemperatureFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE
         )
         initClick()

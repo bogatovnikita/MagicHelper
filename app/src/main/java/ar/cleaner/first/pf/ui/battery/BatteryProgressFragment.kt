@@ -15,7 +15,7 @@ import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryOptimizationUseCase
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
 import com.yin_kio.ads.preloadAd
@@ -64,7 +64,7 @@ class BatteryProgressFragment : Fragment() {
         val actionsNormal: List<String>
         val actionsMedium: List<String>
         preferences = requireContext().getSharedPreferences(
-            CoolingFragment.APP_PREFERENCES,
+            TemperatureFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE
         )
         when (preferences.getString(BatteryFragment.BATTERY_MODE, BatteryMode.NORMAL.name)) {

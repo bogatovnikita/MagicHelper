@@ -18,7 +18,7 @@ import ar.cleaner.first.pf.domain.models.details.CpuDetails
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,7 +52,7 @@ class MenuFragment : Fragment() {
 
     private fun initPreference() {
         preferences = requireContext().getSharedPreferences(
-            CoolingFragment.APP_PREFERENCES,
+            TemperatureFragment.APP_PREFERENCES,
             Context.MODE_PRIVATE
         )
     }
@@ -72,7 +72,7 @@ class MenuFragment : Fragment() {
                 findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToBoostFragment())
             }
             backgroundCoolingTransparent.setOnClickListener {
-                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToCoolingFragment())
+                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToTemperatureFragment())
             }
             backgroundCleanTransparent.setOnClickListener {
                 findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToJunkFragment())

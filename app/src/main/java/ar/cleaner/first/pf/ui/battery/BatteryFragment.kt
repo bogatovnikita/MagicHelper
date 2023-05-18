@@ -24,7 +24,7 @@ import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.extensions.*
 import ar.cleaner.first.pf.models.ModeGroup
-import ar.cleaner.first.pf.ui.cooling.CoolingFragment
+import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.dialogs.DialogBluetoothPermission
 import ar.cleaner.first.pf.ui.dialogs.DialogWriteSettings
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
@@ -86,7 +86,7 @@ class BatteryFragment : Fragment() {
     private fun initPreferences() {
         preferences =
             requireContext().getSharedPreferences(
-                CoolingFragment.APP_PREFERENCES,
+                TemperatureFragment.APP_PREFERENCES,
                 Context.MODE_PRIVATE
             )
         if (!preferences.getBoolean(CHECK_BLUETOOTH_PERMISSION, false))
