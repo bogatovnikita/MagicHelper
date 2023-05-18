@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlin.reflect.KProperty
 
-inline fun <T> DataStore<Preferences>.stateValuePref(
+fun <T> DataStore<Preferences>.stateValuePref(
     prop: KProperty<*>,
     defaultValue: T,
     scope: CoroutineScope

@@ -29,5 +29,4 @@ class BatteryRepositoryImpl @Inject constructor(
     override fun setLastOptimizationMillis(time: Long) =
         batteryOptimizer.setLastOptimizationTime(time)
 
-    override fun emulateOptimization(): Flow<Int> = emulateOptimization()
 }
