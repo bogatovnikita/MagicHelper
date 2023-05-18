@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
-import ar.cleaner.first.pf.domain.usecases.cooling.CpuOptimizerUseCase
+import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureOptimizerUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import ar.cleaner.first.pf.ui.result.ResultFragment
 import com.yin_kio.ads.preloadAd
@@ -30,7 +30,7 @@ class TemperatureProgressFragment : Fragment() {
     private val binding get() = _binding!!
 
     @Inject
-    lateinit var cpuOptimizerUseCase: CpuOptimizerUseCase
+    lateinit var temperatureOptimizerUseCase: TemperatureOptimizerUseCase
     private var scanIsDone = false
 
     override fun onResume() {
@@ -76,7 +76,7 @@ class TemperatureProgressFragment : Fragment() {
     private fun scanIsDone() {
         lifecycleScope.launch(Dispatchers.Default) {
             withContext(Dispatchers.Main) {
-                cpuOptimizerUseCase()
+                temperatureOptimizerUseCase.saveTimeTemperatureOptimization()
                 delay(500)
                 withContext(Dispatchers.Main) {
                     binding.recyclerView.visibility = View.GONE
