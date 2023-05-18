@@ -1,6 +1,7 @@
 package file_manager.doman.overview.use_case
 
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.SortingMode
 
 interface OverviewUseCase {
     fun close()
@@ -13,4 +14,5 @@ interface OverviewUseCase {
     fun delete(groupName: GroupName)
     fun hideAskDeleteDialog()
     fun completeDelete()
+    fun setSortingMode(sortingMode: SortingMode)
 }

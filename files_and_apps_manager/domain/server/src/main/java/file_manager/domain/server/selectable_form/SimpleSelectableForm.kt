@@ -5,14 +5,14 @@ open class SimpleSelectableForm<T> : SelectableForm<T> {
 
 
 
-    override var content: Collection<T> = mutableListOf()
+    override var content: List<T> = mutableListOf()
         set(value) {
             _selected.clear()
             field = value
         }
 
-    private val _selected: MutableCollection<T> = mutableSetOf()
-    override val selected: Collection<T> get() = _selected
+    private val _selected: MutableList<T> = mutableListOf()
+    override val selected: List<T> get() = _selected
 
     override val isAllSelected: Boolean get() {
         if (_selected.isEmpty()) return false

@@ -1,7 +1,6 @@
 package file_manager.doman.overview.ui_out
 
 import file_manager.domain.server.FileManagerServer
-import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 
 class OutCreatorImpl(
@@ -17,16 +16,12 @@ class OutCreatorImpl(
 
     override fun createUpdateOut(): UpdateOut {
         return UpdateOut(
-            groups = server.groups.map {group ->
-                GroupOut(
-                    name = group.key,
-                    ids = group.value.content as List<FileOrApp>
-                )
-            },
+            groups = createGroupOuts(),
             isAllSelected = server.isAllSelected,
             selectedCount = server.selectedCount
         )
     }
+
 
     override fun createItemSelectionOut(itemId: String): ItemSelectionOut {
         return ItemSelectionOut(
@@ -36,4 +31,19 @@ class OutCreatorImpl(
             selectedCount = server.selectedCount
         )
     }
+
+    override fun createSortingModeOut(): SortingModeOut {
+        return SortingModeOut(
+            sortingMode = server.sortingMode,
+            groups = createGroupOuts()
+        )
+    }
+
+    private fun createGroupOuts() = server.groups.map { group ->
+        GroupOut(
+            name = group.key,
+            ids = group.value.content
+        )
+    }
+
 }

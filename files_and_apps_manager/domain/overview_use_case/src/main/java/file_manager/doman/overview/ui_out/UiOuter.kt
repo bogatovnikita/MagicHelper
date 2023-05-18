@@ -8,6 +8,7 @@ interface UiOuter {
     suspend fun out(updateOut: UpdateOut)
     suspend fun out(allSelectionOut: AllSelectionOut)
     suspend fun out(itemSelectionOut: ItemSelectionOut)
+    suspend fun out(sortingModeOut: SortingModeOut)
     suspend fun showGroup(groupName: GroupName)
     suspend fun showSortingSelection()
     suspend fun showDeleteDialog()

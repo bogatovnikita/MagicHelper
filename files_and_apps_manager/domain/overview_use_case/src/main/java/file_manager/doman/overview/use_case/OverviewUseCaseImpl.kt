@@ -2,6 +2,7 @@ package file_manager.doman.overview.use_case
 
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.*
 import kotlinx.coroutines.CoroutineScope
@@ -62,10 +63,17 @@ internal class OverviewUseCaseImpl(
         uiOuter.hideDeleteDialog()
     }
 
+
+
+    override fun setSortingMode(sortingMode: SortingMode) = async {
+        server.setSortingMode(sortingMode)
+        uiOuter.out(outCreator.createSortingModeOut())
+    }
+
+
     private fun async(
         action: suspend CoroutineScope.() -> Unit
     ){
         coroutineScope.launch(dispatcher, block = action)
     }
-
 }

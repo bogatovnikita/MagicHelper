@@ -5,5 +5,6 @@ interface OutCreator {
     fun createAllSelectionOut() : AllSelectionOut
     fun createUpdateOut() : UpdateOut
     fun createItemSelectionOut(itemId: String) : ItemSelectionOut
+    fun createSortingModeOut() : SortingModeOut
 
 }

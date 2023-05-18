@@ -1,14 +1,17 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.OutCreator
+import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteAction
 import file_manager.doman.overview.use_case.OverviewUseCaseImpl
 import file_manager.doman.overview.use_case.UpdateAction
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.coVerifyOrder
 import io.mockk.coVerifySequence
 import io.mockk.mockk
 import io.mockk.spyk
@@ -159,6 +162,27 @@ class OverviewUseCaseImplTest {
         }
     }
 
+    @Test
+    fun testSetSortingMode() = runTest{
+        SortingMode.values().forEach {
+            assertCorrectSortingModeOut(it)
+        }
+
+    }
+
+    private fun TestScope.assertCorrectSortingModeOut(sortingMode: SortingMode) {
+        val sortingModeOut = SortingModeOut(sortingMode = sortingMode)
+
+        coEvery { outCreator.createSortingModeOut() } returns sortingModeOut
+
+        useCases.setSortingMode(sortingMode)
+        advanceUntilIdle()
+
+        coVerifyOrder {
+            server.setSortingMode(sortingMode)
+            uiOuter.out(sortingModeOut)
+        }
+    }
 
     private fun runTest(
         block: suspend TestScope.() -> Unit
