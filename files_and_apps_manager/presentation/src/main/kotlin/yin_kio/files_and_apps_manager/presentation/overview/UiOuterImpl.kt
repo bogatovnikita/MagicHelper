@@ -6,9 +6,20 @@ import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
 
-internal class UiOuterImpl : UiOuter {
+internal class UiOuterImpl(
+    private val presenter: Presenter
+) : UiOuter {
 
     var viewModel: ViewModel? = null
+        set(value) {
+            field = value
+
+            viewModel?.update { it.copy(
+                groupName = GroupName.Images,
+                buttonText = presenter.presentButtonText(),
+                buttonAlpha = presenter.presentButtonAlpha()
+            ) }
+        }
 
     override suspend fun close() {
         viewModel?.sendCommand(Command.Close)

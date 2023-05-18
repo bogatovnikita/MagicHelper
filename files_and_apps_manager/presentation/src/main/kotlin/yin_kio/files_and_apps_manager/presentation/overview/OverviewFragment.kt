@@ -18,6 +18,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
@@ -42,13 +43,9 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect{
-                when(it.groupName){ // Так как здесь используется radiogroup достаточно включить только 1 элемент
-                    GroupName.Images -> binding.images.isChecked = true
-                    GroupName.Video -> binding.video.isChecked = true
-                    GroupName.Audio -> binding.audio.isChecked = true
-                    GroupName.Documents -> binding.documents.isChecked = true
-                    GroupName.Apps -> binding.apps.isChecked = true
-                }
+                binding.delete.alpha = it.buttonAlpha
+                binding.delete.text = it.buttonText
+                showChips(it)
             }
         }
 
@@ -65,6 +62,16 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
         }
     }
 
+    private fun showChips(it: ScreenState) {
+        when (it.groupName) { // Так как здесь используется radiogroup достаточно включить только 1 элемент
+            GroupName.Images -> binding.images.isChecked = true
+            GroupName.Video -> binding.video.isChecked = true
+            GroupName.Audio -> binding.audio.isChecked = true
+            GroupName.Documents -> binding.documents.isChecked = true
+            GroupName.Apps -> binding.apps.isChecked = true
+        }
+    }
+
 
     private fun createViewModel(
         coroutineScope: CoroutineScope
@@ -72,7 +79,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         val context = requireContext().applicationContext
 
-        val uiOuter = UiOuterImpl()
+        val presenter = Presenter(context)
+        val uiOuter = UiOuterImpl(presenter)
         val useCase = OverviewUseCaseCreator.create(
             uiOuter = uiOuter,
             server = server,
