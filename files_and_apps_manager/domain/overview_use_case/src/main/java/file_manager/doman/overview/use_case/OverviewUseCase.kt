@@ -9,8 +9,8 @@ interface OverviewUseCase {
     fun switchAllSelection(groupName: GroupName)
     fun showSortingSelection()
     fun switchItemSelection(groupName: GroupName, itemId: String)
-    fun showDeleteDialog()
+    fun showAskDeleteDialog()
     fun delete(groupName: GroupName)
-    fun hideDeleteDialog()
+    fun hideAskDeleteDialog()
     fun completeDelete()
 }

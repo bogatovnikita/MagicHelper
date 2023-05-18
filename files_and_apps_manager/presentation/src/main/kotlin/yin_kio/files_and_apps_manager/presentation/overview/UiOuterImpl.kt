@@ -35,11 +35,11 @@ internal class UiOuterImpl : UiOuter {
     }
 
     override suspend fun showDeleteDialog() {
-        viewModel?.sendCommand(Command.ShowDeleteDialog)
+        viewModel?.sendCommand(Command.ShowAskDeleteDialog)
     }
 
     override suspend fun hideDeleteDialog() {
-        viewModel?.sendCommand(Command.HideDeleteDialog)
+        viewModel?.sendCommand(Command.HideAskDeleteDialog)
     }
 
     override suspend fun showDeleteProgress() {

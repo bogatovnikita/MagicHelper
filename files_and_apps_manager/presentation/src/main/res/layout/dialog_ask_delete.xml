@@ -23,6 +23,7 @@
             android:text="@string/file_apps_manager_files_deleting"/>
 
         <ImageView
+            android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_exit_cross"
@@ -47,13 +48,15 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Cancel"
             android:layout_weight="1"
             android:text="@string/file_apps_manager_cancel"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delete"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Ok"
             android:layout_weight="1"

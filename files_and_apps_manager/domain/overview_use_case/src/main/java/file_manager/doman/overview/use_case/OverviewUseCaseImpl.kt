@@ -44,7 +44,7 @@ internal class OverviewUseCaseImpl(
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
     }
 
-    override fun showDeleteDialog() = async{
+    override fun showAskDeleteDialog() = async{
         if (server.hasSelected){
             uiOuter.showDeleteDialog()
         }
@@ -54,7 +54,7 @@ internal class OverviewUseCaseImpl(
         deleteAction.deleteAndUpdate(groupName)
     }
 
-    override fun hideDeleteDialog() = async{
+    override fun hideAskDeleteDialog() = async{
         uiOuter.hideDeleteDialog()
     }
 

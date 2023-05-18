@@ -15,7 +15,6 @@ import file_manager.doman.overview.OverviewUseCaseCreator
 import jamycake.lifecycle_aware.lifecycleAware
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.DeleterImpl
@@ -36,6 +35,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             apps.setOnClickListener { viewModel.switchGroup(GroupName.Apps) }
 
             arrowBackIv.setOnClickListener { viewModel.close() }
+
+            delete.setOnClickListener { viewModel.showAskDeleteDialog() }
         }
 
 
@@ -55,10 +56,10 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             viewModel.command.collect{
                 when(it){
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowDeleteDialog -> TODO()
-                    Command.HideDeleteDialog -> TODO()
+                    Command.ShowAskDeleteDialog -> TODO()
                     Command.ShowDeleteProgress -> TODO()
                     Command.ShowDeleteCompletion -> TODO()
+                    else -> {}
                 }
             }
         }

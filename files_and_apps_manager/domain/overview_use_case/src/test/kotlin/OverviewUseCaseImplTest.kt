@@ -117,7 +117,7 @@ class OverviewUseCaseImplTest {
     private fun TestScope.assertAskIfHasSelected() {
         coEvery { server.hasSelected } returns true
 
-        useCases.showDeleteDialog()
+        useCases.showAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify { uiOuter.showDeleteDialog() }
@@ -126,7 +126,7 @@ class OverviewUseCaseImplTest {
     private fun TestScope.assertDoNotAskIfHasNotSelected() {
         coEvery { server.hasSelected } returns false
 
-        useCases.showDeleteDialog()
+        useCases.showAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify(exactly = 1) { uiOuter.showDeleteDialog() }
@@ -134,7 +134,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testHideDeleteDialog() = runTest{
-        useCases.hideDeleteDialog()
+        useCases.hideAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify { uiOuter.hideDeleteDialog() }
