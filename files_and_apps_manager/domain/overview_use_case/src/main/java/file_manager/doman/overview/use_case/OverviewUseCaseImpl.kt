@@ -40,6 +40,10 @@ internal class OverviewUseCaseImpl(
         uiOuter.showSortingSelection()
     }
 
+    override fun hideSortingSelection() = async {
+        uiOuter.hideSortingSelection()
+    }
+
     override fun switchItemSelection(groupName: GroupName, itemId: String) = async{
         server.switchItemSelection(groupName, itemId)
         uiOuter.out(outCreator.createItemSelectionOut(itemId))

@@ -35,7 +35,7 @@ class OverviewUseCaseImplTest {
     private val dispatcher = StandardTestDispatcher()
     private val testScope = TestScope(dispatcher)
 
-    private val useCases = OverviewUseCaseImpl(
+    private val useCase = OverviewUseCaseImpl(
         uiOuter = uiOuter,
         outCreator = outCreator,
         server = server,
@@ -48,7 +48,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testClose() = runTest{
-        useCases.close()
+        useCase.close()
         advanceUntilIdle()
 
         coVerify { uiOuter.close() }
@@ -56,7 +56,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testUpdate() = runTest{
-        useCases.update()
+        useCase.update()
         advanceUntilIdle()
 
         coVerify { updateAction.update() }
@@ -65,7 +65,7 @@ class OverviewUseCaseImplTest {
     @Test
     fun testSwitchGroup() = runTest{
         GroupName.values().forEach {
-            useCases.switchGroup(it)
+            useCase.switchGroup(it)
             advanceUntilIdle()
 
             coVerify { uiOuter.showGroup(it) }
@@ -78,7 +78,7 @@ class OverviewUseCaseImplTest {
         val allSelectionOut = AllSelectionOut(selectedCount = 10)
         coEvery { outCreator.createAllSelectionOut() } returns allSelectionOut
 
-        useCases.switchAllSelection(GroupName.Video)
+        useCase.switchAllSelection(GroupName.Video)
         advanceUntilIdle()
 
         coVerify {
@@ -89,7 +89,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testShowSortingSelection() = runTest{
-        useCases.showSortingSelection()
+        useCase.showSortingSelection()
         advanceUntilIdle()
 
         coVerify { uiOuter.showSortingSelection() }
@@ -102,7 +102,7 @@ class OverviewUseCaseImplTest {
 
         coEvery { outCreator.createItemSelectionOut(itemId) } returns itemSelectionOut
 
-        useCases.switchItemSelection(GroupName.Video, itemId)
+        useCase.switchItemSelection(GroupName.Video, itemId)
         advanceUntilIdle()
 
         coVerify {
@@ -120,7 +120,7 @@ class OverviewUseCaseImplTest {
     private fun TestScope.assertAskIfHasSelected() {
         coEvery { server.hasSelected } returns true
 
-        useCases.showAskDeleteDialog()
+        useCase.showAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify { uiOuter.showDeleteDialog() }
@@ -129,7 +129,7 @@ class OverviewUseCaseImplTest {
     private fun TestScope.assertDoNotAskIfHasNotSelected() {
         coEvery { server.hasSelected } returns false
 
-        useCases.showAskDeleteDialog()
+        useCase.showAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify(exactly = 1) { uiOuter.showDeleteDialog() }
@@ -137,7 +137,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testHideDeleteDialog() = runTest{
-        useCases.hideAskDeleteDialog()
+        useCase.hideAskDeleteDialog()
         advanceUntilIdle()
 
         coVerify { uiOuter.hideDeleteDialog() }
@@ -146,7 +146,7 @@ class OverviewUseCaseImplTest {
     @Test
     fun testDelete() = runTest{
         val groupName = GroupName.Video
-        useCases.delete(groupName)
+        useCase.delete(groupName)
         advanceUntilIdle()
 
         coVerify { deleteAction.deleteAndUpdate(groupName) }
@@ -154,7 +154,7 @@ class OverviewUseCaseImplTest {
 
     @Test
     fun testCompleteDelete() = runTest{
-        useCases.completeDelete()
+        useCase.completeDelete()
         advanceUntilIdle()
 
         coVerifySequence {
@@ -175,13 +175,22 @@ class OverviewUseCaseImplTest {
 
         coEvery { outCreator.createSortingModeOut() } returns sortingModeOut
 
-        useCases.setSortingMode(sortingMode)
+        useCase.setSortingMode(sortingMode)
         advanceUntilIdle()
 
         coVerifyOrder {
             server.setSortingMode(sortingMode)
             uiOuter.out(sortingModeOut)
         }
+    }
+
+
+    @Test
+    fun testHideSortingSelection() = runTest{
+        useCase.hideSortingSelection()
+        advanceUntilIdle()
+
+        coVerify { uiOuter.hideSortingSelection() }
     }
 
     private fun runTest(

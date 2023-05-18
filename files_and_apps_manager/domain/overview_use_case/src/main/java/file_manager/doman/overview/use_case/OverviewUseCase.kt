@@ -9,6 +9,7 @@ interface OverviewUseCase {
     fun switchGroup(groupName: GroupName)
     fun switchAllSelection(groupName: GroupName)
     fun showSortingSelection()
+    fun hideSortingSelection()
     fun switchItemSelection(groupName: GroupName, itemId: String)
     fun showAskDeleteDialog()
     fun delete(groupName: GroupName)

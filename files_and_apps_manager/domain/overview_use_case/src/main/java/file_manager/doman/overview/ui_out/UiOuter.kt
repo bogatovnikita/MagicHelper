@@ -11,6 +11,7 @@ interface UiOuter {
     suspend fun out(sortingModeOut: SortingModeOut)
     suspend fun showGroup(groupName: GroupName)
     suspend fun showSortingSelection()
+    suspend fun hideSortingSelection()
     suspend fun showDeleteDialog()
     suspend fun hideDeleteDialog()
     suspend fun showDeleteProgress()
