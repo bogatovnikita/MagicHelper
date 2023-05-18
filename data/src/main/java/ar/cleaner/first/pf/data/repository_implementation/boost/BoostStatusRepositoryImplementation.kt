@@ -4,13 +4,11 @@ import ar.cleaner.first.pf.domain.repositorys.boosting.BoostStatusRepository
 import com.bogatovnikita.settings.FunctionSettings
 import javax.inject.Inject
 
-class BoostStatusRepositoryImplementation @Inject constructor(private val functionSettings: FunctionSettings) :
-    BoostStatusRepository {
-    override fun saveOptimizationStatus() {
-        TODO("Not yet implemented")
-    }
+class BoostStatusRepositoryImplementation @Inject constructor(
+    private val functionSettings: FunctionSettings
+) : BoostStatusRepository {
 
-    override fun getOptimizationStatus(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun saveOptimizationStatus() = functionSettings.saveBoostStatus()
+
+    override fun getOptimizationStatus(): Boolean = functionSettings.getBoostStatus()
 }
