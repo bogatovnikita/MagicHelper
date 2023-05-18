@@ -134,7 +134,7 @@
         android:layout_marginTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/delete"
         android:layout_marginTop="14dp"
         tools:text="Удалить (1)"
