@@ -5,13 +5,14 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentTemperatureBinding
-import ar.cleaner.first.pf.domain.models.details.CpuDetails
+import ar.cleaner.first.pf.domain.models.details.TemperatureDetails
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -53,12 +54,14 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
         }
     }
 
-    private fun renderState(cpuDetails: CpuDetails) {
-        if (!cpuDetails.loadingIsDone) return
-        binding.percentTv.text =
-            requireContext().getString(R.string.temperature_D, cpuDetails.temperature.toInt())
-        if (cpuDetails.isOptimized) {
-            binding.groupOptimizeIsDone.visibility = View.VISIBLE
+    private fun renderState(temperatureDetails: TemperatureDetails) {
+        renderTemperature(temperatureDetails.temperature)
+        renderButton(temperatureDetails.isTemperatureChecked)
+        binding.groupOptimizeIsDone.isVisible = temperatureDetails.isTemperatureChecked
+    }
+
+    private fun renderButton(isTemperatureChecked: Boolean) {
+        if (isTemperatureChecked) {
             binding.dangerButton.apply {
                 setTextColor(
                     ContextCompat.getColor(
@@ -70,7 +73,6 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
                 text = getString(R.string.temperature_normal_desc)
             }
         } else {
-            binding.groupOptimizeIsDone.visibility = View.GONE
             binding.dangerButton.apply {
                 setTextColor(
                     ContextCompat.getColor(
@@ -83,9 +85,17 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
             }
         }
     }
+    private fun renderTemperature(temperature: Int) {
+        val isShowTemperature = temperature != TEMPERATURE_NOT_SAVE
+        binding.percentTv.isVisible = isShowTemperature
+        binding.tvTempNotCheck.isVisible = !isShowTemperature
+        binding.percentTv.text =
+            requireContext().getString(R.string.temperature_D, temperature)
+    }
 
     companion object {
         const val APP_PREFERENCES = "APP_PREFERENCES"
         const val COOLER_TEMPERATURE = "COOLER_TEMPERATURE"
+        const val TEMPERATURE_NOT_SAVE = -1
     }
 }

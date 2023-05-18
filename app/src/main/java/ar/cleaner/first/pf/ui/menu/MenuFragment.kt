@@ -14,7 +14,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentMenuBinding
 import ar.cleaner.first.pf.domain.models.CleanerDetails
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
-import ar.cleaner.first.pf.domain.models.details.CpuDetails
+import ar.cleaner.first.pf.domain.models.details.TemperatureDetails
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
@@ -91,7 +91,7 @@ class MenuFragment : Fragment() {
         with(screenState) {
             batteryDetails.render()
             ramDetails.render()
-            cpuDetails.render()
+            temperatureDetails.render()
             cleanerDetails.render()
         }
     }
@@ -132,10 +132,10 @@ class MenuFragment : Fragment() {
         }
     }
 
-    private fun CpuDetails?.render() {
+    private fun TemperatureDetails?.render() {
         this ?: return
         with(binding) {
-            if (isOptimized) {
+            if (isTemperatureChecked) {
                 coolingDescriptionTv.text = getString(R.string.clean_junk_done)
                 coolingDescriptionTv.setTextColor(
                     ContextCompat.getColor(
