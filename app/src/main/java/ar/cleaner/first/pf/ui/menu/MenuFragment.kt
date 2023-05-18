@@ -112,23 +112,23 @@ class MenuFragment : Fragment() {
             ramProgressBar.progressPercent = usagePercents.toFloat()
             ramPercentTv.text = getString(R.string.percent_D, usagePercents)
             descriptionRamTv.text = getString(R.string._F_gb_F_gb, usedRam, totalRam)
-            if (isOptimized) {
-                boostDescriptionTv.text = getString(R.string.boost_description)
-                boostDescriptionTv.setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.green
-                    )
-                )
-            } else {
-                boostDescriptionTv.text = getString(R.string.boost_description_not_optimize)
-                boostDescriptionTv.setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.red
-                    )
-                )
-            }
+//            if (isOptimized) {
+//                boostDescriptionTv.text = getString(R.string.boost_description)
+//                boostDescriptionTv.setTextColor(
+//                    ContextCompat.getColor(
+//                        requireContext(),
+//                        R.color.green
+//                    )
+//                )
+//            } else {
+//                boostDescriptionTv.text = getString(R.string.boost_description_not_optimize)
+//                boostDescriptionTv.setTextColor(
+//                    ContextCompat.getColor(
+//                        requireContext(),
+//                        R.color.red
+//                    )
+//                )
+//            }
         }
     }
 
