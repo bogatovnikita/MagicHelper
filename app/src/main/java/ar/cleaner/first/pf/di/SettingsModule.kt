@@ -1,12 +1,10 @@
 package ar.cleaner.first.pf.di
 
-import android.content.Context
+import android.app.Application
 import com.bogatovnikita.settings.FunctionSettings
-import com.bogatovnikita.settings.FunctionSettingsImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -16,8 +14,6 @@ class SettingsModule {
 
     @Provides
     @Singleton
-    fun bindFunctionSettingsToFunctionSettingsImpl(@ApplicationContext context: Context): FunctionSettings {
-        return FunctionSettingsImpl(context = context)
-    }
+    fun provideSettings(application: Application): FunctionSettings = FunctionSettings(application)
 
 }

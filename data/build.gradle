@@ -34,7 +34,7 @@ android {
 
 dependencies {
     implementation project(':domain')
-    implementation project(':settings')
+    api project(':settings')
 
     //Ads lib
     implementation fileTree(dir: 'libs', include: ['*.aar'])

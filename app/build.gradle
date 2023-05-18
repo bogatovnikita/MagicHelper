@@ -53,7 +53,6 @@ dependencies {
     implementation project(':domain')
     implementation project(':data')
     implementation project(':res')
-    implementation project(':settings')
 
     implementation project(':ads')
 
