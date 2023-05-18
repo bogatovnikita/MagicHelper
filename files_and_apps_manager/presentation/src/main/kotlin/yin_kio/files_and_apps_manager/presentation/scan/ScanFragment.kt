@@ -36,7 +36,8 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
                     Command.ShowUsageStatsPermissionDialog -> findNavController().navigate(R.id.toUsageStatsPermission)
                     Command.ShowInter -> {
                         showAds {
-                            Log.d("!!!", "ads closed")
+                            findNavController().popBackStack(R.id.startFragment, false)
+                            findNavController().navigate(R.id.overviewFragment)
                         }
                     }
                     Command.ShowProgress -> {}
