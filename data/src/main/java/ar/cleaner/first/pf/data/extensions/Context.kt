@@ -14,11 +14,7 @@ import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.os.BatteryManager
 import android.os.Build
-import android.text.format.Formatter
 import androidx.annotation.RequiresApi
-import ar.cleaner.first.pf.data.mapper.asApp
-import ar.cleaner.first.pf.domain.models.App
-import java.lang.reflect.Method
 import kotlin.math.roundToInt
 
 val Context.storageStatsManager: StorageStatsManager
@@ -64,50 +60,4 @@ fun Context.getAppsOnPhone() =
     packageManager.getInstalledApplications(PackageManager.GET_META_DATA).filter {
         it.isSystem()
     }
-
-//fun Context.getPackageSizeInfo(): Method {
-//    return packageManager.javaClass.getMethod(
-//        "getPackageSizeInfo", String::class.java, IPackageStatsObserver::class.java
-//    )
-//}
-
-//fun Context.getAppsCache(): List<App> {
-//    return if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
-//        val apps = getAppsOnPhone().map {
-//            val name = packageManager.getApplicationLabel(it).toString()
-//            val storageStats = storageStatsManager.queryStatsForUid(it.storageUuid, it.uid)
-//            val cacheSize = Formatter.formatFileSize(this, storageStats.cacheBytes)
-//            it.asApp(cacheSizeReadable = cacheSize, storageStats.cacheBytes, name)
-//        }
-//        apps.filter { app ->
-//            app.packageName != packageName
-//        }
-//    } else {
-//        val apps = getAppsOnPhone()
-//            .map {
-//                var size = "0 KB"
-//                var cacheSize = 0L
-//                getPackageSizeInfo().invoke(
-//                    packageManager,
-//                    it.packageName,
-//                    object : IPackageStatsObserver.Stub() {
-//
-//                        override fun onGetStatsCompleted(
-//                            pStats: PackageStats?,
-//                            succeeded: Boolean
-//                        ) {
-//                            pStats ?: return
-//                            cacheSize = pStats.cacheSize
-//                            size = Formatter.formatFileSize(this@getAppsCache, cacheSize)
-//                        }
-//                    }
-//                )
-//                val name = packageManager.getApplicationLabel(it).toString()
-//                it.asApp(size, cacheSize, name)
-//            }
-//        apps.filter { app ->
-//            app.packageName != packageName
-//        }
-//    }
-//}
 

@@ -41,9 +41,6 @@
         <action
             android:id="@+id/action_menuFragment_to_temperatureFragment"
             app:destination="@id/temperatureFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_junkFragment"
-            app:destination="@id/junkFragment" />
     </fragment>
 
     <fragment
@@ -119,33 +116,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/junkFragment"
-        android:name="ar.cleaner.first.pf.ui.junk.JunkFragment"
-        android:label="JunkFragment"
-        tools:layout="@layout/fragment_cleaning">
-        <action
-            android:id="@+id/action_junkFragment_to_junkProgressFragment"
-            app:destination="@id/junkProgressFragment"
-            app:popUpTo="@id/junkFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/junkProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.junk.JunkProgressFragment"
-        android:label="JunkProgressFragment"
-        tools:layout="@layout/fragment_progress">
-        <action
-            android:id="@+id/action_junkProgressFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/junkProgressFragment"
-            app:popUpToInclusive="true" />
-        <argument
-            android:name="listJunk"
-            app:argType="ar.cleaner.first.pf.models.ParcelableJunk[]" />
-    </fragment>
-
-    <fragment
         android:id="@+id/resultFragment"
         android:name="ar.cleaner.first.pf.ui.result.ResultFragment"
         android:label="ResultFragment"
@@ -166,11 +136,6 @@
         <action
             android:id="@+id/action_resultFragment_to_temperatureFragment"
             app:destination="@id/temperatureFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_resultFragment_to_junkFragment"
-            app:destination="@id/junkFragment"
             app:popUpTo="@id/resultFragment"
             app:popUpToInclusive="true" />
     </fragment>

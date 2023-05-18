@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 interface OptimizationExecutor {
     fun runOptimization(): Flow<Int>
     fun emulateOptimization(): Flow<Int>
+
 }

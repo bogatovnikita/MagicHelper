@@ -38,5 +38,4 @@ class RamRepositoryImpl @Inject constructor(
 
     override fun fastOptimization(): Flow<Int> = ramOptimizer.fastOptimization()
 
-    override fun emulateOptimization(): Flow<Int> = ramOptimizer.emulateOptimization()
 }

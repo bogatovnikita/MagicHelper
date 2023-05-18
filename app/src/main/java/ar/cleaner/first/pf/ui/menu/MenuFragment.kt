@@ -19,7 +19,6 @@ import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
 import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
-import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -75,7 +74,7 @@ class MenuFragment : Fragment() {
                 findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToTemperatureFragment())
             }
             backgroundCleanTransparent.setOnClickListener {
-                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToJunkFragment())
+                // TODO навигация к files manager
             }
 
         }
@@ -163,7 +162,7 @@ class MenuFragment : Fragment() {
             if (isOptimized) {
                 storageProgressBar.progressPercent = usedPercents.toFloat() - 1
                 storagePercentTv.text = getString(R.string.percent_D, usedPercents - 1)
-                val generalSize = if (isOptimized) usedMemorySize - preferences.getInt(JunkFragment.JUNK_SIZE, 0).toDouble() / 1024 else usedMemorySize
+                val generalSize =  usedMemorySize
                 descriptionStorageTv.text =
                     getString(R.string._F_gb_F_gb, generalSize, totalSize)
                 cleanDescriptionTv.text = getString(R.string.clean_junk_done)

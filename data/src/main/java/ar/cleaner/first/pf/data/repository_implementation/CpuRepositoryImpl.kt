@@ -23,5 +23,4 @@ class CpuRepositoryImpl @Inject constructor(
 
     override fun setLastOptimizationMillis(time: Long) = cpuOptimizer.setLastOptimizationTime(time)
 
-    override fun emulateOptimization(): Flow<Int> = cpuOptimizer.emulateOptimization()
 }

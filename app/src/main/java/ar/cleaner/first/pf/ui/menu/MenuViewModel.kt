@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.cooling.GetCpuDetailsUseCase
-import ar.cleaner.first.pf.domain.usecases.junk.GetCleanerDetailsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,7 +16,6 @@ import javax.inject.Inject
 class MenuViewModel @Inject constructor(
     private val getRamDetailsUseCase: GetRamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
-    private val getCleanerDetailsUseCase: GetCleanerDetailsUseCase,
     private val getCpuDetailsUseCase: GetCpuDetailsUseCase
 ) : ViewModel() {
 
@@ -85,16 +83,7 @@ class MenuViewModel @Inject constructor(
 
     private fun initCleanerDetails() {
         mainScope {
-                when (val result = getCleanerDetailsUseCase.get()) {
-                    is CaseResult.Success -> {
-                        _state.value = state.value.copy(
-                            cleanerDetails = result.response
-                        )
-                    }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "MenuViewModel:initCleanerDetails Failure")
-                    }
-            }
+            // TODO("Not yet implemented")
         }
     }
 }

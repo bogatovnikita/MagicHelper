@@ -25,7 +25,6 @@ import ar.cleaner.first.pf.ui.battery.BatteryFragment.Companion.BATTERY_REMAININ
 import ar.cleaner.first.pf.ui.boost.BoostFragment
 import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.temperature.TemperatureFragment.Companion.APP_PREFERENCES
-import ar.cleaner.first.pf.ui.junk.JunkFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.random.Random
 
@@ -164,7 +163,7 @@ class ResultFragment : Fragment() {
 
     private fun CleanerDetails?.render() {
         this ?: return
-        val junkSize = preferences.getInt(JunkFragment.JUNK_SIZE, 0)
+        val junkSize = -1000
         with(binding) {
             firstDescriptionTv.text = getString(R.string.released_D_gb, junkSize)
             secondDescriptionTv.text =
@@ -192,7 +191,7 @@ class ResultFragment : Fragment() {
                         findNavController().navigate(ResultFragmentDirections.actionResultFragmentToTemperatureFragment())
                     }
                     CLEANING_KEY -> {
-                        findNavController().navigate(ResultFragmentDirections.actionResultFragmentToJunkFragment())
+                        // TODO навигация к files manager
                     }
                 }
             }

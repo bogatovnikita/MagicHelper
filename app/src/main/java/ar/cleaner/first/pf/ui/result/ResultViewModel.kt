@@ -6,7 +6,6 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.cooling.GetCpuDetailsUseCase
-import ar.cleaner.first.pf.domain.usecases.junk.GetCleanerDetailsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
 import ar.cleaner.first.pf.models.MenuHorizontalItems
@@ -19,7 +18,6 @@ import javax.inject.Inject
 class ResultViewModel @Inject constructor(
     private val getRamDetailsUseCase: GetRamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
-    private val getCleanerDetailsUseCase: GetCleanerDetailsUseCase,
     private val getCpuDetailsUseCase: GetCpuDetailsUseCase,
 ) : ViewModel() {
 
@@ -121,16 +119,7 @@ class ResultViewModel @Inject constructor(
 
     fun initCleanerDetails() {
         mainScope {
-            when (val result = getCleanerDetailsUseCase.get()) {
-                is CaseResult.Success -> {
-                    _state.value = state.value.copy(
-                        cleanerDetails = result.response
-                    )
-                }
-                is CaseResult.Failure -> {
-                    Log.e("pie", "initCleanerDetails: Failure")
-                }
-            }
+            // TODO("Not yet implemented")
         }
     }
 }
