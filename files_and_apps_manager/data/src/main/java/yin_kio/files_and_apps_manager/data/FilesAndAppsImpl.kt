@@ -5,6 +5,7 @@ import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.Build
@@ -35,30 +36,25 @@ class FilesAndAppsImpl(
     }
 
     override fun provideApps(): List<FileOrApp> {
-        val resolveInfos = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            context.packageManager.queryIntentActivities(
-                Intent(Intent.ACTION_MAIN, null).addCategory(Intent.CATEGORY_LAUNCHER),
-                PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_DEFAULT_ONLY.toLong())
-            )
-        } else {
-            context.packageManager.queryIntentActivities(
-                Intent(Intent.ACTION_MAIN, null).addCategory(Intent.CATEGORY_LAUNCHER),
-                PackageManager.GET_META_DATA
-            )
-        }
-
-
-
-        return resolveInfos.filter { !isSystemPackage(it) }
+        return getAllPackages().filter { !isSystemPackage(it.applicationInfo) }
             .map {
-                val packageName = it.activityInfo.packageName
+                val packageName = it.packageName
                 FileOrApp(
-                    id = it.activityInfo.packageName,
+                    id = it.packageName,
                     size = appSizeProvider.getAppSize(packageName),
                     lastTimeUsed = getUsageStats()[packageName]?.lastTimeUsed?:0L,
                     type = FileOrApp.Type.App
                 )
             }
+    }
+
+
+    private fun getAllPackages() : List<PackageInfo>{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            context.packageManager.getInstalledPackages(PackageManager.PackageInfoFlags.of(0))
+        } else {
+            context.packageManager.getInstalledPackages(0)
+        }
     }
 
     private fun getUsageStats(): Map<String, UsageStats> {
@@ -72,7 +68,7 @@ class FilesAndAppsImpl(
         ).associateBy { it.packageName }
     }
 
-    private fun isSystemPackage(ri: ResolveInfo): Boolean {
-        return ri.activityInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
+    private fun isSystemPackage(applicationInfo: ApplicationInfo): Boolean {
+        return applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
     }
 }
