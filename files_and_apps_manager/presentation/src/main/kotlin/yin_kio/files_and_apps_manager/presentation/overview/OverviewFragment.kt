@@ -5,7 +5,6 @@ import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewB
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
@@ -46,7 +45,6 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.d("!!!", "server $server")
 
         setupListeners()
         setupStateObserver()

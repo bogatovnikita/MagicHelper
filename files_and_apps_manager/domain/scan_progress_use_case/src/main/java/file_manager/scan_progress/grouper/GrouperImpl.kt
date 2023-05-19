@@ -4,7 +4,6 @@ import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.domain.server.selectable_form.SimpleSelectableForm
-import javax.swing.text.html.HTML.Tag.P
 import kotlin.io.path.Path
 import kotlin.io.path.extension
 
@@ -24,7 +23,6 @@ class GrouperImpl : Grouper {
 
         files.forEach {
             val extension = Path(it.id).extension
-            println("!!! ${extension}")
 
             when{
                 fileGroups.isAudio(extension) -> audio.add(it)

@@ -3,7 +3,6 @@ package yin_kio.files_and_apps_manager.presentation.overview
 import Yin_Koi.files_and_apps_manager.presentation.R
 import android.content.Context
 import android.text.format.Formatter.formatFileSize
-import android.util.Log
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.SortingMode
 import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
@@ -33,7 +32,6 @@ internal class Presenter(
     }
 
     fun presentFilesOrApps(fileOrApps: List<FileOrApp>) : List<FileOrAppItem>{
-        Log.d("!!!", "raw size: ${fileOrApps.size}")
         return fileOrApps.map {
             FileOrAppItem(
                 id = it.id,

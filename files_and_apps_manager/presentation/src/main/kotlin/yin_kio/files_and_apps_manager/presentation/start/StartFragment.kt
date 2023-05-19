@@ -3,7 +3,6 @@ package yin_kio.files_and_apps_manager.presentation.start
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentStartBinding
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -30,7 +29,6 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         server.value
-        Log.d("!!!", "server ${server.value}")
 
         binding.scanButton.setOnClickListener {
             viewModel.scan()
