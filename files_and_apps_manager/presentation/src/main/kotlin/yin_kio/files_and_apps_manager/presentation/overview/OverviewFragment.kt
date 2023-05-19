@@ -39,6 +39,9 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
     private val sortingPopup: PopupWindow by lazy { createSortingPopup() }
 
 
+    private val imageAdapter by lazy { ImageAdapter() }
+    private val docAdapter by lazy { DocAdapter() }
+    private val appAdapter by lazy { AppAdapter() }
 
 
 
@@ -81,23 +84,24 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                 showButton(it)
                 showChips(it)
                 showSortingControlPanel(it)
-
-                val adapter = when(it.groupName){
-                    GroupName.Images -> ImageAdapter()
-                    GroupName.Video -> ImageAdapter()
-                    GroupName.Audio -> DocAdapter()
-                    GroupName.Documents -> DocAdapter()
-                    GroupName.Apps -> AppAdapter()
-                }
-
-                binding.recycler.adapter = adapter
-
-                Log.d("!!!", "${it.filesOrApps.size}")
-
-                adapter.submitList(it.filesOrApps)
+                showList(it)
 
             }
         }
+    }
+
+    private fun showList(it: ScreenState) {
+        val adapter = when (it.groupName) {
+            GroupName.Images -> imageAdapter
+            GroupName.Video -> imageAdapter
+            GroupName.Audio -> docAdapter
+            GroupName.Documents -> docAdapter
+            GroupName.Apps -> appAdapter
+        }
+
+        binding.recycler.adapter = adapter
+
+        adapter.submitList(it.filesOrApps)
     }
 
     private fun showSortingControlPanel(it: ScreenState) {
