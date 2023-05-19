@@ -58,7 +58,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/Text.Regular</item>
         <item name="android:textSize">@dimen/Text.18</item>
-        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:button">@drawable/button_checkbox</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">4dp</item>
     </style>
 
 

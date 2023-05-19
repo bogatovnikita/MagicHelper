@@ -1,6 +1,7 @@
 package file_manager.scan_progress.scan
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.GroupName
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
@@ -20,11 +21,15 @@ internal class ScanActionImpl(
         val files = filesAndApps.provideFiles()
         val apps = filesAndApps.provideApps()
 
+        println("!!! files: ${files.size}, apps: ${apps.size}")
+
         uiOuter.showProgress()
         fileManagerServer.groups = grouper.groupFilesAndApps(
             files = files,
             apps = apps
         )
+
+        println("!!! groups: ${fileManagerServer.groups[GroupName.Apps]!!.content}")
         delayer.makeDelay()
         uiOuter.showInter()
     }

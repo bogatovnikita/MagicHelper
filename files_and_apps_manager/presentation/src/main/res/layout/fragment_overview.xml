@@ -84,7 +84,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/sort_image"
@@ -134,7 +135,7 @@
         android:layout_marginTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/delete"
         android:layout_marginTop="14dp"
         tools:text="Удалить (1)"
