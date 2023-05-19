@@ -10,5 +10,5 @@ internal data class ScreenState(
     val isShowSortingSelection: Boolean = false,
     val sortingMode: SortingMode = SortingMode.NewFirst,
     val sortingModeText: String = "",
-    val filesOrApps: List<FileOrAppItem> = emptyList()
+    val content: List<FileOrAppItem> = emptyList()
 )

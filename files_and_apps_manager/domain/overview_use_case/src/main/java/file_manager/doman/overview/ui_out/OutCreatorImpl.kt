@@ -37,16 +37,10 @@ class OutCreatorImpl(
     override fun createSortingModeOut(): SortingModeOut {
         return SortingModeOut(
             sortingMode = server.sortingMode,
-            groups = createGroupOuts()
+            content = server.selectedGroupContent
         )
     }
 
-    private fun createGroupOuts() = server.groups.map { group ->
-        GroupOut(
-            name = group.key,
-            ids = group.value.content
-        )
-    }
 
     override fun createGroupSwitchingOut(): GroupSwitchingOut {
         return GroupSwitchingOut(

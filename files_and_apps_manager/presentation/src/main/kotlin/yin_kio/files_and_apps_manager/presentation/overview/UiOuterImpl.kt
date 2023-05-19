@@ -31,7 +31,7 @@ internal class UiOuterImpl(
         viewModel?.update { it.copy(
             sortingMode = updateOut.sortingMode,
             sortingModeText = presenter.presentSortingMode(updateOut.sortingMode),
-            filesOrApps = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
+            content = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
             groupName = it.groupName
         ) }
     }
@@ -45,14 +45,18 @@ internal class UiOuterImpl(
     }
 
     override suspend fun out(sortingModeOut: SortingModeOut) {
-        //TODO добавить выбор групп
-        viewModel?.update { it.copy(sortingMode = sortingModeOut.sortingMode) }
+        viewModel?.update { it.copy(
+            sortingMode = sortingModeOut.sortingMode,
+            content = presenter.presentFilesOrApps(sortingModeOut.content),
+            sortingModeText = presenter.presentSortingMode(sortingModeOut.sortingMode),
+            isShowSortingSelection = false
+        ) }
     }
 
     override suspend fun out(groupSwitchingOut: GroupSwitchingOut) {
         viewModel?.update { it.copy(
             groupName = groupSwitchingOut.groupName,
-            filesOrApps = presenter.presentFilesOrApps(groupSwitchingOut.content)
+            content = presenter.presentFilesOrApps(groupSwitchingOut.content),
         ) }
     }
 

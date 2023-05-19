@@ -6,7 +6,7 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 internal class DiffCallback : DiffUtil.ItemCallback<FileOrAppItem>() {
 
     override fun areItemsTheSame(oldItem: FileOrAppItem, newItem: FileOrAppItem): Boolean {
-        return oldItem.id == newItem.id
+        return false
     }
 
     override fun areContentsTheSame(oldItem: FileOrAppItem, newItem: FileOrAppItem): Boolean {

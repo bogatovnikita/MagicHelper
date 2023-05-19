@@ -99,7 +99,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         binding.recycler.adapter = adapter
 
-        adapter.submitList(it.filesOrApps)
+        adapter.submitList(it.content)
     }
 
     private fun showSortingControlPanel(it: ScreenState) {
@@ -183,10 +183,6 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             SortingMode.SmallFirst -> binding.smallFirst.isChecked = true
         }
 
-        binding.newFirst.onClick { viewModel.setSortingMode(SortingMode.NewFirst) }
-        binding.oldFirst.onClick { viewModel.setSortingMode(SortingMode.OldFirst) }
-        binding.bigFirst.onClick { viewModel.setSortingMode(SortingMode.BigFirst) }
-        binding.smallFirst.onClick { viewModel.setSortingMode(SortingMode.SmallFirst) }
 
         val popup = PopupWindow(requireContext()).apply {
             setBackgroundDrawable(ColorDrawable(requireContext().getColor(android.R.color.transparent)))
@@ -196,6 +192,21 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
         }
+
+
+        binding.newFirst.onClick {
+            viewModel.setSortingMode(SortingMode.NewFirst)
+        }
+        binding.oldFirst.onClick {
+            viewModel.setSortingMode(SortingMode.OldFirst)
+        }
+        binding.bigFirst.onClick {
+            viewModel.setSortingMode(SortingMode.BigFirst)
+        }
+        binding.smallFirst.onClick {
+            viewModel.setSortingMode(SortingMode.SmallFirst)
+        }
+
         return popup
     }
 
