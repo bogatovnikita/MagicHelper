@@ -1,7 +1,5 @@
 package ar.cleaner.first.pf.ui.temperature
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -21,8 +19,6 @@ import kotlinx.coroutines.launch
 class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
 
     private val binding: FragmentTemperatureBinding by viewBinding()
-
-    private lateinit var preferences: SharedPreferences
 
     private val viewModel: TemperatureViewModel by viewModels()
 
