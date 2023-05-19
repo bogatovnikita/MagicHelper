@@ -33,7 +33,8 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
         binding.boostButton.setOnClickListener {
             findNavController().navigate(TemperatureFragmentDirections.actionTemperatureFragmentToTemperatureProgressFragment())
         }
-        binding.arrowBackIv.setOnClickListener {
+
+        binding.toolbar.binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
         }
     }

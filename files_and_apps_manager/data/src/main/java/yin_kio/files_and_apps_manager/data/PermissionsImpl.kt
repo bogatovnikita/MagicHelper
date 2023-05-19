@@ -10,6 +10,6 @@ class PermissionsImpl(
     private val context: Context
 ) : Permissions {
 
-    override val hasStoragePermission: Boolean
+    override val hasPermissions: Boolean
         get() = context.hasStoragePermissions() && context.hasSpecial(Manifest.permission.PACKAGE_USAGE_STATS)
 }

@@ -12,6 +12,9 @@
         <action
             android:id="@+id/toScanFragment"
             app:destination="@id/scanFragment" />
+        <action
+            android:id="@+id/toOverview"
+            app:destination="@id/overviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/scanFragment"
@@ -32,4 +35,16 @@
         android:id="@+id/usageStatsPermissionDialog"
         android:name="yin_kio.files_and_apps_manager.presentation.scan.UsageStatsPermissionDialog"
         android:label="UsageStatsPermissionDialog" />
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.OverviewFragment"
+        android:label="OverviewFragment" >
+        <action
+            android:id="@+id/toAskDelete"
+            app:destination="@id/askDeleteDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/askDeleteDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.AskDeleteDialog"
+        android:label="AskDeleteDialog" />
 </navigation>

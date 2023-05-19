@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.boost
+package ar.cleaner.first.pf.ui.boost.progress
 
 import android.os.Bundle
 import android.view.View
@@ -13,7 +13,6 @@ import ar.cleaner.first.pf.domain.models.RunningApp
 import ar.cleaner.first.pf.domain.usecases.boosting.GetInstalledAppsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.KillBackgroundProcessUseCase
 import ar.cleaner.first.pf.ui.progress.BoostAdapter
-import ar.cleaner.first.pf.ui.result.ResultAdapter
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
@@ -108,9 +107,7 @@ class BoostProgressFragment : Fragment(R.layout.fragment_progress) {
     private fun goScreenResult() {
         appShowAds {
             findNavController().navigate(
-                BoostProgressFragmentDirections.actionBoostProgressFragmentToResultFragment(
-                    ResultAdapter.BOOST_KEY
-                )
+                R.id.action_boostProgressFragment_to_boostResultFragment
             )
         }
     }

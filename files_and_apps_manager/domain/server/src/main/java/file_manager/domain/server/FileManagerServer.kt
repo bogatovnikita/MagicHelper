@@ -7,6 +7,9 @@ interface FileManagerServer {
     val hasSelected: Boolean
     val isAllSelected: Boolean
     val selectedCount: Int
+    val sortingMode: SortingMode
+    val selectedGroupContent: List<FileOrApp>
+    var selectedGroup: GroupName
 
     var groups: Map<GroupName, SelectableForm<FileOrApp>>
 
@@ -17,5 +20,6 @@ interface FileManagerServer {
     fun switchAllSelection(groupName: GroupName)
     fun switchItemSelection(groupName: GroupName, id: String)
 
+    fun setSortingMode(sortingMode: SortingMode)
 
 }

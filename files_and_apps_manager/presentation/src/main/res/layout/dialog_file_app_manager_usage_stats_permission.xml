@@ -48,14 +48,14 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cancel"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Cancel"
             android:layout_weight="1"
             android:text="@string/file_apps_manager_cancel"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/allow"
             android:layout_width="0dp"
             style="@style/Dialog.Button.Ok"

@@ -55,7 +55,7 @@ class ScanProgressUseCaseImplTest {
     }
 
     private fun TestScope.assertScanWithoutPermission() {
-        coEvery { permissions.hasStoragePermission } returns false
+        coEvery { permissions.hasPermissions } returns false
 
         useCases.scan()
         advanceUntilIdle()
@@ -64,7 +64,7 @@ class ScanProgressUseCaseImplTest {
     }
 
     private fun TestScope.assertScanWithPermission(){
-        coEvery { permissions.hasStoragePermission } returns true
+        coEvery { permissions.hasPermissions } returns true
 
         useCases.scan()
         advanceUntilIdle()

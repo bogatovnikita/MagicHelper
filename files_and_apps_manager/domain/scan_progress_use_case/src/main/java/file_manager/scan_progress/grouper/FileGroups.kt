@@ -150,15 +150,15 @@ class FileGroups {
     )
 
     fun isImage(ext: String) : Boolean {
-        return images[ext] != null
+        return images[ext.uppercase()] != null
     }
     fun isVideo(ext: String) : Boolean {
-        return video[ext] != null
+        return video[ext.uppercase()] != null
     }
     fun isAudio(ext: String) : Boolean {
-        return audio[ext] != null
+        return audio[ext.uppercase()] != null
     }
     fun isDocument(ext: String) : Boolean {
-        return documents[ext] != null
+        return documents[ext.uppercase()] != null
     }
 }

@@ -28,6 +28,7 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("!!!", "server $server")
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect{
                 when(it){
@@ -36,7 +37,8 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
                     Command.ShowUsageStatsPermissionDialog -> findNavController().navigate(R.id.toUsageStatsPermission)
                     Command.ShowInter -> {
                         showAds {
-                            Log.d("!!!", "ads closed")
+                            findNavController().popBackStack(R.id.startFragment, false)
+                            findNavController().navigate(R.id.overviewFragment)
                         }
                     }
                     Command.ShowProgress -> {}
