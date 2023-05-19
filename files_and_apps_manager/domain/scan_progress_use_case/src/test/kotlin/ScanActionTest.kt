@@ -1,6 +1,7 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.SortingMode
 import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
@@ -53,6 +54,7 @@ class ScanActionTest {
             ads.preloadAd()
             uiOuter.showProgress()
             server.groups = groups
+            server.setSortingMode(SortingMode.BigFirst)
             delayer.makeDelay()
             uiOuter.showInter()
         }

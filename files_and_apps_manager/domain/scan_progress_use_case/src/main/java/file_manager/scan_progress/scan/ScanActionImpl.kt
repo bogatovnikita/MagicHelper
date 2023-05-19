@@ -1,6 +1,7 @@
 package file_manager.scan_progress.scan
 
 import file_manager.domain.server.FileManagerServer
+import file_manager.domain.server.SortingMode
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
@@ -25,6 +26,7 @@ internal class ScanActionImpl(
             files = files,
             apps = apps
         )
+        fileManagerServer.setSortingMode(SortingMode.BigFirst)
 
         delayer.makeDelay()
         uiOuter.showInter()
