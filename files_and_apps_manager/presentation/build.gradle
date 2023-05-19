@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation project(':res')
+    implementation project(':toolbar')
 
     implementation project(':lifecycle_aware')
     implementation project(':files_and_apps_manager:domain:start_use_case')
