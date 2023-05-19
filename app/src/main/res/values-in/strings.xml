@@ -47,7 +47,6 @@
     <string name="extra_mode_60">+60\nEkstra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Telepon dibersihkan dari sampah yang tidak perlu!</string>
     <string name="normal_mode_activates_restrictions">Mode normal mengaktifkan pembatasan:</string>
-    <string name="battery_power_description_D_D">Kiri %d h %d min</string>
     <string name="remaining_charging_time">Sisa waktu pengisian</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">Membutuhkan lebih banyak waktu telepon!</string>
     <string name="occupied_total">Sibuk/Total:</string>

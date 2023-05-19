@@ -45,7 +45,6 @@
     <string name="extra_mode_60">+60\nพิเศษ</string>
     <string name="the_phone_is_cleared_of_excess_garbage">โทรศัพท์ถูกล้างออกจากขยะที่ไม่จำเป็น!</string>
     <string name="normal_mode_activates_restrictions">โหมดปกติเปิดใช้งานข้อ จำกัด :</string>
-    <string name="battery_power_description_D_D">เหลือ %d ชั่วโมง %d นาที</string>
     <string name="remaining_charging_time">เวลาชาร์จที่เหลืออยู่</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">ต้องใช้เวลาโทรศัพท์มากขึ้น!</string>
     <string name="occupied_total">ไม่ว่าง/ทั้งหมด:</string>

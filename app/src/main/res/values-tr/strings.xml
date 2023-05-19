@@ -45,7 +45,6 @@
     <string name="extra_mode_60">+60\nEkstra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Telefon gereksiz çöplerden temizlendi!</string>
     <string name="normal_mode_activates_restrictions">Normal mod kısıtlamaları etkinleştirir:</string>
-    <string name="battery_power_description_D_D">%d h %d dk sol</string>
     <string name="remaining_charging_time">Kalan şarj süresi</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">Daha fazla telefon zamanı gerektirir!</string>
     <string name="occupied_total">Meşgul/Toplam:</string>

@@ -45,7 +45,6 @@
     <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">¡El teléfono está despejado de basura innecesaria!</string>
     <string name="normal_mode_activates_restrictions">El modo normal activa las restricciones:</string>
-    <string name="battery_power_description_D_D">%d h %d min Izquierda</string>
     <string name="remaining_charging_time">Tiempo de carga restante</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">¡Requiere más tiempo de teléfono!</string>
     <string name="occupied_total">Ocupado/total:</string>

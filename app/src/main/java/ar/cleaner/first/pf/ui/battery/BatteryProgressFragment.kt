@@ -1,6 +1,5 @@
 package ar.cleaner.first.pf.ui.battery
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -31,7 +30,6 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
 
     @Inject
     lateinit var batteryOptimizationUseCase: BatteryOptimizationUseCase
-    private lateinit var preferences: SharedPreferences
 
     private var scanIsDone = false
 
@@ -50,7 +48,7 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
         val actions = resources.getStringArray(R.array.battery_items).toList()
         val actionsNormal: List<String>
         val actionsMedium: List<String>
-        when (preferences.getString(BatteryFragment.BATTERY_MODE, BatteryMode.NORMAL.name)) {
+        when (BatteryMode.NORMAL.name) { // TODO заглушка
             BatteryMode.NORMAL.name -> {
                 updateBatteryOptimizationUseCase(BatteryMode.NORMAL)
                 actionsNormal = actions.subList(0, 2)
