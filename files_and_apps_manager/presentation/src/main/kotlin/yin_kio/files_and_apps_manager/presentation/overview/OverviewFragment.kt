@@ -4,6 +4,7 @@ import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewBinding
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
@@ -45,6 +46,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.recycler.itemAnimator = null
 
         setupListeners()
         setupStateObserver()
