@@ -6,5 +6,6 @@ interface OutCreator {
     fun createUpdateOut() : UpdateOut
     fun createItemSelectionOut(itemId: String) : ItemSelectionOut
     fun createSortingModeOut() : SortingModeOut
+    fun createGroupSwitchingOut() : GroupSwitchingOut
 
 }

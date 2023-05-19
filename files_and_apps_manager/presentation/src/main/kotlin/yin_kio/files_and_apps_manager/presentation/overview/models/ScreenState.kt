@@ -9,5 +9,6 @@ internal data class ScreenState(
     val buttonAlpha: Float = 0.5f,
     val isShowSortingSelection: Boolean = false,
     val sortingMode: SortingMode = SortingMode.NewFirst,
-    val sortingModeText: String = ""
+    val sortingModeText: String = "",
+    val filesOrApps: List<FileOrAppItem> = emptyList()
 )

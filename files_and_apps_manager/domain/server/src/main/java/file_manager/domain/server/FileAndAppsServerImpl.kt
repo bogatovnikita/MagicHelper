@@ -8,11 +8,10 @@ class FileAndAppsServerImpl : FileManagerServer {
     override val sortingMode: SortingMode get() = _sortingMode
 
     private val _content: MutableMap<GroupName, SelectableForm<FileOrApp>> = mutableMapOf()
-    private var currentGroup: GroupName = GroupName.Images
-
-    override val hasSelected: Boolean get() = _content[currentGroup]?.selected?.isNotEmpty()?:false
-    override val isAllSelected: Boolean get() = _content[currentGroup]?.isAllSelected?:false
-    override val selectedCount: Int get() = _content[currentGroup]?.selected?.size?:0
+    override var selectedGroup: GroupName = GroupName.Images
+    override val hasSelected: Boolean get() = _content[selectedGroup]?.selected?.isNotEmpty()?:false
+    override val isAllSelected: Boolean get() = _content[selectedGroup]?.isAllSelected?:false
+    override val selectedCount: Int get() = _content[selectedGroup]?.selected?.size?:0
     override var groups: Map<GroupName, SelectableForm<FileOrApp>>
         get() = _content
         set(value) {
@@ -20,6 +19,9 @@ class FileAndAppsServerImpl : FileManagerServer {
                 _content[it.key] = it.value
             }
         }
+
+    override val selectedGroupContent: List<FileOrApp>
+        get() = _content[selectedGroup]?.content?: emptyList()
 
     override fun getSelected(groupName: GroupName): List<FileOrApp> {
         return _content[groupName]?.content ?: emptyList()

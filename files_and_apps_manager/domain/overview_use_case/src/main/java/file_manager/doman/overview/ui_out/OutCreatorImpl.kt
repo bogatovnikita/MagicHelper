@@ -16,7 +16,8 @@ class OutCreatorImpl(
 
     override fun createUpdateOut(): UpdateOut {
         return UpdateOut(
-            groups = createGroupOuts(),
+            selectedGroupContent = server.selectedGroupContent,
+            selectedGroup = server.selectedGroup,
             isAllSelected = server.isAllSelected,
             selectedCount = server.selectedCount,
             sortingMode = server.sortingMode
@@ -47,4 +48,10 @@ class OutCreatorImpl(
         )
     }
 
+    override fun createGroupSwitchingOut(): GroupSwitchingOut {
+        return GroupSwitchingOut(
+            groupName = server.selectedGroup,
+            content = server.selectedGroupContent
+        )
+    }
 }

@@ -28,7 +28,8 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun switchGroup(groupName: GroupName) = async{
-        uiOuter.showGroup(groupName)
+        server.selectedGroup = groupName
+        uiOuter.out(outCreator.createGroupSwitchingOut())
     }
 
     override fun switchAllSelection(groupName: GroupName) = async{

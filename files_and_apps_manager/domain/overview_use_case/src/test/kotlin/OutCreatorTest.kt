@@ -2,10 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
-import file_manager.domain.server.selectable_form.SelectableForm
-import file_manager.domain.server.selectable_form.SimpleSelectableForm
 import file_manager.doman.overview.ui_out.AllSelectionOut
-import file_manager.doman.overview.ui_out.GroupOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.OutCreatorImpl
 import file_manager.doman.overview.ui_out.UpdateOut
@@ -73,29 +70,29 @@ class OutCreatorTest {
 
     @Test
     fun testCreateUpdateOut(){
-        val selectableForm = SimpleSelectableForm<FileOrApp>().apply {
-            content = listOf(FileOrApp(id = "some_id"))
-        }
 
-        assertCorrectUpdateOutCreation(input = emptyMap(), expected = emptyList())
+
+        assertCorrectUpdateOutCreation(groupName = GroupName.Apps, fileOrApps = emptyList())
         assertCorrectUpdateOutCreation(
-            input = mapOf(GroupName.Images to selectableForm),
-            expected = listOf(GroupOut(name = GroupName.Images, ids = listOf(FileOrApp(id = "some_id"))))
+            groupName = GroupName.Images,
+            fileOrApps = listOf(FileOrApp(id = "some_id"))
         )
 
     }
 
     private fun assertCorrectUpdateOutCreation(
-        input: Map<GroupName, SelectableForm<FileOrApp>>,
-        expected: List<GroupOut>
+        groupName: GroupName,
+        fileOrApps: List<FileOrApp>
     ) {
-        coEvery { server.groups } returns input
+        coEvery { server.selectedGroupContent } returns fileOrApps
+        coEvery { server.selectedGroup } returns groupName
         coEvery { server.isAllSelected } returns false
         coEvery { server.selectedCount } returns 0
         coEvery { server.sortingMode } returns SortingMode.NewFirst
 
         val copiedExpected = UpdateOut(
-            groups = expected.map { it.copy() }
+            selectedGroupContent = fileOrApps.map { it.copy() },
+            selectedGroup = groupName
         )
 
         val actual = outCreator.createUpdateOut()

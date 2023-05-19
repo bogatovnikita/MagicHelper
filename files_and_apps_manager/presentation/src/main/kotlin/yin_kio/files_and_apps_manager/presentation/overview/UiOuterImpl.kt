@@ -1,13 +1,12 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
-import android.util.Log
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.ui_out.AllSelectionOut
+import file_manager.doman.overview.ui_out.GroupSwitchingOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
-import kotlinx.coroutines.delay
 
 internal class UiOuterImpl(
     private val presenter: Presenter
@@ -31,7 +30,9 @@ internal class UiOuterImpl(
     override suspend fun out(updateOut: UpdateOut) {
         viewModel?.update { it.copy(
             sortingMode = updateOut.sortingMode,
-            sortingModeText = presenter.presentSortingMode(updateOut.sortingMode)
+            sortingModeText = presenter.presentSortingMode(updateOut.sortingMode),
+            filesOrApps = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
+            groupName = it.groupName
         ) }
     }
 
@@ -48,8 +49,11 @@ internal class UiOuterImpl(
         viewModel?.update { it.copy(sortingMode = sortingModeOut.sortingMode) }
     }
 
-    override suspend fun showGroup(groupName: GroupName) {
-        viewModel?.update { it.copy(groupName = groupName) }
+    override suspend fun out(groupSwitchingOut: GroupSwitchingOut) {
+        viewModel?.update { it.copy(
+            groupName = groupSwitchingOut.groupName,
+            filesOrApps = presenter.presentFilesOrApps(groupSwitchingOut.content)
+        ) }
     }
 
     override suspend fun showSortingSelection() {

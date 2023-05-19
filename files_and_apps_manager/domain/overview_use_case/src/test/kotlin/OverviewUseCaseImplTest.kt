@@ -2,6 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.ui_out.AllSelectionOut
+import file_manager.doman.overview.ui_out.GroupSwitchingOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.SortingModeOut
@@ -65,10 +66,16 @@ class OverviewUseCaseImplTest {
     @Test
     fun testSwitchGroup() = runTest{
         GroupName.values().forEach {
+            val out = GroupSwitchingOut(groupName = it)
+            coEvery { outCreator.createGroupSwitchingOut() } returns out
+
             useCase.switchGroup(it)
             advanceUntilIdle()
 
-            coVerify { uiOuter.showGroup(it) }
+            coVerify {
+                server.selectedGroup = it
+                uiOuter.out(out)
+            }
         }
 
     }

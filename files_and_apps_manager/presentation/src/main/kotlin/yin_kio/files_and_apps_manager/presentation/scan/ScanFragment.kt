@@ -28,6 +28,7 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("!!!", "server $server")
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect{
                 when(it){

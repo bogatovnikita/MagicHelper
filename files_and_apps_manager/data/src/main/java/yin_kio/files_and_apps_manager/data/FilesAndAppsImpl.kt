@@ -27,7 +27,8 @@ class FilesAndAppsImpl(
                 FileOrApp(
                     id = it.absolutePath,
                     size = it.length(),
-                    lastTimeUsed = it.lastModified()
+                    lastTimeUsed = it.lastModified(),
+                    type = FileOrApp.Type.File
                 )
             }
             .toList()
@@ -54,7 +55,8 @@ class FilesAndAppsImpl(
                 FileOrApp(
                     id = it.activityInfo.packageName,
                     size = appSizeProvider.getAppSize(packageName),
-                    lastTimeUsed = getUsageStats()[packageName]?.lastTimeUsed?:0L
+                    lastTimeUsed = getUsageStats()[packageName]?.lastTimeUsed?:0L,
+                    type = FileOrApp.Type.App
                 )
             }
     }

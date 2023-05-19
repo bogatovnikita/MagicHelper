@@ -23,6 +23,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
+import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
+import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
@@ -40,6 +43,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("!!!", "server $server")
+
         setupListeners()
         setupStateObserver()
         setupCommandsObserver()
@@ -76,12 +81,28 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                 showButton(it)
                 showChips(it)
                 showSortingControlPanel(it)
-                binding.sortText.text = it.sortingModeText
+
+                val adapter = when(it.groupName){
+                    GroupName.Images -> ImageAdapter()
+                    GroupName.Video -> ImageAdapter()
+                    GroupName.Audio -> DocAdapter()
+                    GroupName.Documents -> DocAdapter()
+                    GroupName.Apps -> AppAdapter()
+                }
+
+                binding.recycler.adapter = adapter
+
+                Log.d("!!!", "${it.filesOrApps.size}")
+
+                adapter.submitList(it.filesOrApps)
+
             }
         }
     }
 
     private fun showSortingControlPanel(it: ScreenState) {
+        binding.sortText.text = it.sortingModeText
+
         binding.sortImage.isEnabled = !it.isShowSortingSelection
         binding.sortText.isEnabled = !it.isShowSortingSelection
 
