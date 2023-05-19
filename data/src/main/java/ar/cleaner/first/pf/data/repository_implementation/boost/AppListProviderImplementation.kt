@@ -3,6 +3,7 @@ package ar.cleaner.first.pf.data.repository_implementation.boost
 import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import ar.cleaner.first.pf.data.providers.apps.AppsProvider
 import ar.cleaner.first.pf.domain.models.RunningApp
@@ -30,6 +31,7 @@ class AppListProviderImplementation @Inject constructor(
         return try {
             RunningApp(
                 nameApp = getName(packageInfo.packageName),
+                uriIcon = getIcon(packageInfo.packageName),
                 packageName = packageInfo.packageName
             )
         } catch (e: java.lang.Exception) {
@@ -39,6 +41,11 @@ class AppListProviderImplementation @Inject constructor(
 
     private fun getName(packageName: String): String {
         return getPackageInfo(packageName).applicationInfo.loadLabel(context.packageManager)
+            .toString()
+    }
+
+    private fun getIcon(packageName: String): String {
+        return Uri.parse("android.resource://" + packageName + "/" + getPackageInfo(packageName).applicationInfo.icon)
             .toString()
     }
 
