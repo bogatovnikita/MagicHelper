@@ -6,20 +6,19 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.databinding.FragmentTemperatureResultListBinding
+import ar.cleaner.first.pf.databinding.FragmentTemperatureResultBinding
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureUseCase
 import ar.cleaner.first.pf.models.MenuHorizontalItems
 import ar.cleaner.first.pf.ui.result.ResultAdapter
-import ar.cleaner.first.pf.ui.result.ResultFragmentDirections
 import ar.cleaner.first.pf.ui.result.ResultListProvider
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class TemperatureResultListFragment : Fragment(R.layout.fragment_temperature_result_list) {
+class TemperatureResultFragment : Fragment(R.layout.fragment_temperature_result) {
 
-    private val binding: FragmentTemperatureResultListBinding by viewBinding()
+    private val binding: FragmentTemperatureResultBinding by viewBinding()
 
     private lateinit var adapter: ResultAdapter
 
@@ -45,7 +44,7 @@ class TemperatureResultListFragment : Fragment(R.layout.fragment_temperature_res
     private fun initRecyclerView() {
         adapter = ResultAdapter(object : ResultAdapter.Listener {
             override fun onChooseMenu(item: MenuHorizontalItems) {
-                when (item.id) {
+                when (item.type) {
                     ResultAdapter.BATTERY_KEY -> {
                         findNavController().navigate(R.id.action_to_batteryFragment)
                     }

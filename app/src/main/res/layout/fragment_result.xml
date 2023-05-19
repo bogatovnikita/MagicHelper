@@ -53,8 +53,7 @@
         app:layout_constraintBottom_toBottomOf="@id/arrow_back_iv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrow_back_iv"
-        app:layout_constraintTop_toTopOf="@id/arrow_back_iv"
-        tools:text="@string/boost" />
+        app:layout_constraintTop_toTopOf="@id/arrow_back_iv" />
 
     <View
         android:id="@+id/view_for_background"

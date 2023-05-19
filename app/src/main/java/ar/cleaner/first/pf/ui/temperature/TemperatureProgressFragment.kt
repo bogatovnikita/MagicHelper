@@ -1,9 +1,7 @@
 package ar.cleaner.first.pf.ui.temperature
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -13,7 +11,6 @@ import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureOptimizerUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
-import ar.cleaner.first.pf.ui.result.ResultFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
