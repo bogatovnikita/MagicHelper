@@ -7,6 +7,7 @@ import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.ui_out.UpdateOut
+import kotlinx.coroutines.delay
 
 internal class UiOuterImpl(
     private val presenter: Presenter
@@ -19,7 +20,7 @@ internal class UiOuterImpl(
             viewModel?.update { it.copy(
                 groupName = GroupName.Images,
                 buttonText = presenter.presentButtonText(),
-                buttonAlpha = presenter.presentButtonAlpha()
+                buttonAlpha = presenter.presentButtonAlpha(),
             ) }
         }
 
@@ -28,7 +29,10 @@ internal class UiOuterImpl(
     }
 
     override suspend fun out(updateOut: UpdateOut) {
-        TODO("Not yet implemented")
+        viewModel?.update { it.copy(
+            sortingMode = updateOut.sortingMode,
+            sortingModeText = presenter.presentSortingMode(updateOut.sortingMode)
+        ) }
     }
 
     override suspend fun out(allSelectionOut: AllSelectionOut) {

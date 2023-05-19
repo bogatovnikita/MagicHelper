@@ -1,6 +1,7 @@
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
+import file_manager.domain.server.SortingMode
 import file_manager.domain.server.selectable_form.SelectableForm
 import file_manager.domain.server.selectable_form.SimpleSelectableForm
 import file_manager.doman.overview.ui_out.AllSelectionOut
@@ -91,6 +92,7 @@ class OutCreatorTest {
         coEvery { server.groups } returns input
         coEvery { server.isAllSelected } returns false
         coEvery { server.selectedCount } returns 0
+        coEvery { server.sortingMode } returns SortingMode.NewFirst
 
         val copiedExpected = UpdateOut(
             groups = expected.map { it.copy() }

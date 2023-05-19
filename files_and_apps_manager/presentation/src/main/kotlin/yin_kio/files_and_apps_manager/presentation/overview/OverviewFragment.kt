@@ -76,6 +76,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                 showButton(it)
                 showChips(it)
                 showSortingControlPanel(it)
+                binding.sortText.text = it.sortingModeText
             }
         }
     }

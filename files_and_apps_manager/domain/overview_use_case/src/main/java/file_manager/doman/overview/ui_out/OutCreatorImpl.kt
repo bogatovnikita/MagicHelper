@@ -18,7 +18,8 @@ class OutCreatorImpl(
         return UpdateOut(
             groups = createGroupOuts(),
             isAllSelected = server.isAllSelected,
-            selectedCount = server.selectedCount
+            selectedCount = server.selectedCount,
+            sortingMode = server.sortingMode
         )
     }
 

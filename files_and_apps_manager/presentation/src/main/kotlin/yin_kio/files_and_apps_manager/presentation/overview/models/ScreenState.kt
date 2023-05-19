@@ -8,5 +8,6 @@ internal data class ScreenState(
     val buttonText: String = "",
     val buttonAlpha: Float = 0.5f,
     val isShowSortingSelection: Boolean = false,
-    val sortingMode: SortingMode = SortingMode.NewFirst
+    val sortingMode: SortingMode = SortingMode.NewFirst,
+    val sortingModeText: String = ""
 )
