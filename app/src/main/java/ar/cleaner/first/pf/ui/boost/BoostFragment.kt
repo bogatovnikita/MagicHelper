@@ -22,7 +22,6 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.initRamDetails()
         initObserver()
         initClickListener()
     }
@@ -37,11 +36,11 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
 
     private fun renderState(state: BoostState) {
         state.ramDetails ?: return
-        if (!state.isLoadingData) return
+        if (!state.loadData) return
 
         initProgress(state)
-        setVisibilityGroup(state.ramDetails.isOptimized)
-        initOptimizeButton(state.ramDetails.isOptimized)
+        setVisibilityGroup(state.boostStatus)
+        initOptimizeButton(state.boostStatus)
     }
 
     private fun initProgress(state: BoostState) {
@@ -86,7 +85,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
         }
         binding.boostButton.setOnClickListener {
             findNavController().navigate(
-                BoostFragmentDirections.actionBoostFragmentToBoostProgressFragment()
+                R.id.action_boostFragment_to_boostProgressFragment
             )
         }
     }

@@ -26,9 +26,9 @@ class GetRamDetailsUseCase @Inject constructor(
             } else totalRam - ram
 
             RamDetails(
-                isOptimized = isOptimized,
-                usedRam = usedRam,
-                totalRam = totalRam,
+//                isOptimized = isOptimized,
+                usedRam = 0.0,
+                totalRam = 0.0,
                 usagePercents = usedRam.percents(totalRam)
             )
         }.map { details ->

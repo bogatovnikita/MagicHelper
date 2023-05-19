@@ -1,33 +1,41 @@
 package ar.cleaner.first.pf.ui.boost
 
 import androidx.lifecycle.ViewModel
-import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
-import ar.cleaner.first.pf.domain.wrapper.CaseResult
-import ar.cleaner.first.pf.extensions.mainScope
+import androidx.lifecycle.viewModelScope
+import ar.cleaner.first.pf.domain.models.details.RamDetails
+import ar.cleaner.first.pf.domain.usecases.boosting.BoostStatusUseCase
+import ar.cleaner.first.pf.domain.usecases.boosting.GetDetailedBoostDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class BoostViewModel @Inject constructor(
-    private val getRamDetailsUseCase: GetRamDetailsUseCase
+    private val boostStatusUseCase: BoostStatusUseCase,
+    private val getDetailedBoostDataUseCase: GetDetailedBoostDataUseCase
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<BoostState> = MutableStateFlow(BoostState())
     val state = _state.asStateFlow()
 
-    fun initRamDetails() {
-        mainScope {
-            getRamDetailsUseCase.invoke().collect { result ->
-                when (result) {
-                    is CaseResult.Success -> {
-                        _state.value =
-                            state.value.copy(ramDetails = result.response, isLoadingData = true)
-                    }
-                    is CaseResult.Failure -> {}
-                }
-            }
+    init {
+        viewModelScope.launch {
+            _state.value = state.value.copy(
+                boostStatus = boostStatusUseCase.getOptimizationStatus(),
+                ramDetails = boostDetailsMapRamDetails(),
+                loadData = true
+            )
         }
     }
+
+    private fun boostDetailsMapRamDetails(): RamDetails =
+        getDetailedBoostDataUseCase.getBoostingDetails().let { ramDetails ->
+            RamDetails(
+                usagePercents = ramDetails.usagePercents,
+                totalRam = ramDetails.totalRam,
+                usedRam = ramDetails.usedRam
+            )
+        }
 }
