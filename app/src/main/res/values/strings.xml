@@ -27,7 +27,6 @@
     <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
-    <string name="done">Done!</string>
     <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
     <string name="battery_power_only_time_D_D">%d h %d min</string>
@@ -47,7 +46,6 @@
     <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
     <string name="normal_mode_activates_restrictions">Normal mode activates restrictions:</string>
-    <string name="battery_power_description_D_D">Left %d h %d min</string>
     <string name="remaining_charging_time">Remaining charging time</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">Requires more phone time!</string>
     <string name="occupied_total">Busy/Total:</string>
@@ -105,5 +103,9 @@
 
 
     <string name="general_action_required">Требуется действие!</string>
+
+    <string name="battery_power_description_D">Осталось %d%% заряда</string>
+    <string name="done">Выполнено</string>
+    <string name="boost_need_atantion">Требуется внимание</string>
 
 </resources>

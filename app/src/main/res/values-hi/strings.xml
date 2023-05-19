@@ -47,8 +47,6 @@
     <string name="extra_mode_60">+60\nअतिरिक्त</string>
     <string name="the_phone_is_cleared_of_excess_garbage">फोन अनावश्यक कचरे से साफ हो गया है!</string>
     <string name="normal_mode_activates_restrictions">सामान्य मोड प्रतिबंधों को सक्रिय करता है:</string>
-    <string name="battery_power_description_D_D">वाम %d एच %d मिनट</string>
-    <string name="remaining_charging_time">शेष चार्जिंग समय</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">अधिक फोन समय की आवश्यकता है!</string>
     <string name="occupied_total">व्यस्त/कुल:</string>
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">अभी, बैकग्राउंड प्रोसेस और ऐप्स आपके फोन के प्रोसेसर को ओवरहीट कर रहे हैं</string>

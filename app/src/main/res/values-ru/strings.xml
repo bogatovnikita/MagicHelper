@@ -11,7 +11,6 @@
     <string name="battery_power">Питание</string>
     <string name="clear_junk">Очистка</string>
     <string name="cleared_junk">Очистить</string>
-    <string name="battery_power_description_D_D">Осталось %d ч %d мин</string>
     <string name="battery_power_only_time_D_D">%d ч %d мин</string>
     <string name="battery_power_optimized_D_D">Оптимизировано %d ч %d мин</string>
     <string name="boost_description">Ускорено</string>
