@@ -11,4 +11,8 @@ class BoostStatusRepositoryImplementation @Inject constructor(
     override fun saveOptimizationStatus() = functionSettings.saveBoostStatus()
 
     override fun getOptimizationStatus(): Boolean = functionSettings.getBoostStatus()
+
+    override fun getLastOptimizeRam(): Long = functionSettings.getLastUsageRam()
+
+    override fun saveLastOptimizeRam(value: Long) = functionSettings.saveLastUsageRam(value)
 }

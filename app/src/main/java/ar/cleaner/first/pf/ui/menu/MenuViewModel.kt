@@ -35,7 +35,7 @@ class MenuViewModel @Inject constructor(
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            ramDetails = result.response
+                            boostDetails = result.response
                         )
                     }
                     is CaseResult.Failure -> {

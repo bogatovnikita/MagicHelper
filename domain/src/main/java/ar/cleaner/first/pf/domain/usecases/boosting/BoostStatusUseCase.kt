@@ -11,4 +11,7 @@ class BoostStatusUseCase @Inject constructor(
 
     fun getOptimizationStatus(): Boolean = boostStatusRepository.getOptimizationStatus()
 
+    fun getLastOptimizeRam(): Long = boostStatusRepository.getLastOptimizeRam()
+
+    fun saveLastOptimizeRam(value: Long) = boostStatusRepository.saveLastOptimizeRam(value)
 }

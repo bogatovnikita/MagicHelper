@@ -13,7 +13,6 @@ import ar.cleaner.first.pf.databinding.FragmentMenuBinding
 import ar.cleaner.first.pf.domain.models.CleanerDetails
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.domain.models.details.TemperatureDetails
-import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
 import dagger.hilt.android.AndroidEntryPoint
@@ -77,7 +76,6 @@ class MenuFragment : Fragment() {
     private fun renderState(screenState: MenuState) {
         with(screenState) {
             batteryDetails.render()
-            ramDetails.render()
             temperatureDetails.render()
             cleanerDetails.render()
         }
@@ -93,31 +91,31 @@ class MenuFragment : Fragment() {
 
     }
 
-    private fun RamDetails?.render() {
-        this ?: return
-        with(binding) {
-            ramProgressBar.progressPercent = usagePercents.toFloat()
-            ramPercentTv.text = getString(R.string.percent_D, usagePercents)
-            descriptionRamTv.text = getString(R.string._F_gb_F_gb, usedRam, totalRam)
-//            if (isOptimized) {
-//                boostDescriptionTv.text = getString(R.string.boost_description)
-//                boostDescriptionTv.setTextColor(
-//                    ContextCompat.getColor(
-//                        requireContext(),
-//                        R.color.green
-//                    )
-//                )
-//            } else {
-//                boostDescriptionTv.text = getString(R.string.boost_description_not_optimize)
-//                boostDescriptionTv.setTextColor(
-//                    ContextCompat.getColor(
-//                        requireContext(),
-//                        R.color.red
-//                    )
-//                )
-//            }
-        }
-    }
+//    private fun RamDetails?.render() {
+//        this ?: return
+//        with(binding) {
+//            ramProgressBar.progressPercent = usagePercents.toFloat()
+//            ramPercentTv.text = getString(R.string.percent_D, usagePercents)
+//            descriptionRamTv.text = getString(R.string._F_gb_F_gb, usedRam, totalRam)
+////            if (isOptimized) {
+////                boostDescriptionTv.text = getString(R.string.boost_description)
+////                boostDescriptionTv.setTextColor(
+////                    ContextCompat.getColor(
+////                        requireContext(),
+////                        R.color.green
+////                    )
+////                )
+////            } else {
+////                boostDescriptionTv.text = getString(R.string.boost_description_not_optimize)
+////                boostDescriptionTv.setTextColor(
+////                    ContextCompat.getColor(
+////                        requireContext(),
+////                        R.color.red
+////                    )
+////                )
+////            }
+//        }
+//    }
 
     private fun TemperatureDetails?.render() {
         this ?: return

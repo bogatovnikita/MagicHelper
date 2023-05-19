@@ -2,7 +2,7 @@ package ar.cleaner.first.pf.domain.usecases.boosting
 
 import ar.cleaner.first.pf.domain.exception.NonValidValuesException
 import ar.cleaner.first.pf.domain.extencion.isValuesCompatible
-import ar.cleaner.first.pf.domain.models.details.RamDetails
+import ar.cleaner.first.pf.domain.models.details.BoostDetails
 import ar.cleaner.first.pf.domain.repositorys.boosting.BoostingUseCaseRepository
 import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
 import ar.cleaner.first.pf.domain.utils.isTimePassed
@@ -15,8 +15,8 @@ import javax.inject.Inject
 class GetRamDetailsUseCase @Inject constructor(
     private val boostingUseCaseRepository: BoostingUseCaseRepository,
     private val dispatcher: CoroutineDispatcher
-) : DefaultUseCase<RamDetails, Exception> {
-    override fun invoke(): Flow<CaseResult<RamDetails, Exception>> =
+) : DefaultUseCase<BoostDetails, Exception> {
+    override fun invoke(): Flow<CaseResult<BoostDetails, Exception>> =
         boostingUseCaseRepository.getAvailableRam().map { ram ->
             val time = boostingUseCaseRepository.lastOptimizationMillis.first()
             val isOptimized = !isTimePassed(time)
@@ -25,7 +25,7 @@ class GetRamDetailsUseCase @Inject constructor(
                 (totalRam - ram) * 0.8
             } else totalRam - ram
 
-            RamDetails(
+            BoostDetails(
 //                isOptimized = isOptimized,
                 usedRam = 0.0,
                 totalRam = 0.0,

@@ -2,7 +2,7 @@ package ar.cleaner.first.pf.ui.boost.general
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ar.cleaner.first.pf.domain.models.details.RamDetails
+import ar.cleaner.first.pf.domain.models.details.BoostDetails
 import ar.cleaner.first.pf.domain.usecases.boosting.BoostStatusUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetDetailedBoostDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,18 +24,23 @@ class BoostViewModel @Inject constructor(
         viewModelScope.launch {
             _state.value = state.value.copy(
                 boostStatus = boostStatusUseCase.getOptimizationStatus(),
-                ramDetails = boostDetailsMapRamDetails(),
+                boostDetails = boostDetailsMapRamDetails(),
                 loadData = true
             )
         }
     }
 
-    private fun boostDetailsMapRamDetails(): RamDetails =
-        getDetailedBoostDataUseCase.getBoostingDetails().let { ramDetails ->
-            RamDetails(
-                usagePercents = ramDetails.usagePercents,
-                totalRam = ramDetails.totalRam,
-                usedRam = ramDetails.usedRam
+    private fun boostDetailsMapRamDetails(): BoostDetails {
+        return getDetailedBoostDataUseCase.getBoostingDetails().let { boostDetails ->
+            saveLastUsageRam(boostDetails.usedRamLong)
+            BoostDetails(
+                usagePercents = boostDetails.usagePercents,
+                totalRam = boostDetails.totalRam,
+                usedRam = boostDetails.usedRam
             )
         }
+    }
+
+    private fun saveLastUsageRam(value: Long) = boostStatusUseCase.saveLastOptimizeRam(value)
+
 }

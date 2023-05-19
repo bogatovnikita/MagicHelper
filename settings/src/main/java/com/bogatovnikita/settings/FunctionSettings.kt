@@ -18,6 +18,14 @@ class FunctionSettings(context: Context) {
         return saveTime + TimeUnit.DAYS.toMillis(1) > currentTime
     }
 
+    fun saveLastUsageRam(value: Long) {
+        sharedPreferences.edit().putLong(BOOST_LAST_USAGE_RAM, value).apply()
+    }
+
+    fun getLastUsageRam(): Long {
+        return sharedPreferences.getLong(BOOST_LAST_USAGE_RAM,0L)
+    }
+
     fun saveTimeTemperatureOptimization() =
         sharedPreferences.edit().putLong(TEMPERATURE_TIME_OPTIMIZATION, System.currentTimeMillis())
             .apply()
@@ -36,6 +44,7 @@ class FunctionSettings(context: Context) {
     companion object {
         const val FUNCTION_SETTINGS = "FUNCTION_SETTINGS"
         const val BOOST_STATUS = "BOOST_STATUS"
+        const val BOOST_LAST_USAGE_RAM = "BOOST_LAST_USAGE_RAM"
         const val TEMPERATURE_DEGREE = "TEMPERATURE_DEGREE"
         const val TEMPERATURE_TIME_OPTIMIZATION = "TEMPERATURE_TIME_OPTIMIZATION"
     }

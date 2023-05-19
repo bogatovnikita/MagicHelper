@@ -6,4 +6,7 @@ interface BoostStatusRepository {
 
     fun getOptimizationStatus(): Boolean
 
+    fun getLastOptimizeRam(): Long
+
+    fun saveLastOptimizeRam(value: Long)
 }

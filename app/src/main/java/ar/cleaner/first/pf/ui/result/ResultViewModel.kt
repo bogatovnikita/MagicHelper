@@ -27,7 +27,7 @@ class ResultViewModel @Inject constructor(
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            ramDetails = result.response,
+                            boostDetails = result.response,
                             itemsList = resultList.getResultList(ResultListProvider.TYPE_BOOST)
                         )
                     }
