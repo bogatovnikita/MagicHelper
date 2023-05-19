@@ -19,6 +19,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:button">@drawable/button_checkbox</item>
+        <item name="buttonTint">@color/green</item>
     </style>
 
     <style name="Text.ListItem">
