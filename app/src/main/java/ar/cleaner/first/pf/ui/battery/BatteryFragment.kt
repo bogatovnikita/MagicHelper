@@ -181,7 +181,7 @@ class BatteryFragment : Fragment() {
     private fun renderState(batteryDetails: BatteryDetails) {
         if (!batteryDetails.loadingIsDone) return
         with(binding) {
-            titleTv.text = getString(R.string.battery_power)
+            toolbar.binding.titleTv.text = getString(R.string.battery_power)
             percentTv.text = getString(R.string.percent_D, batteryDetails.batteryCharge)
             occupiedTotalTv.text = getString(
                 R.string.battery_power_only_time_D_D,
@@ -218,7 +218,7 @@ class BatteryFragment : Fragment() {
     }
 
     private fun initClickButtonOptimize() {
-        binding.arrowBackIv.setOnClickListener {
+        binding.toolbar.binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
         }
         binding.boostButton.setOnClickListener {
