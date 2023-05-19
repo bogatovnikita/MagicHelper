@@ -45,7 +45,6 @@
     <string name="extra_mode_60">+60\nThêm</string>
     <string name="the_phone_is_cleared_of_excess_garbage">Điện thoại được xóa rác không cần thiết!</string>
     <string name="normal_mode_activates_restrictions">Chế độ bình thường kích hoạt các hạn chế:</string>
-    <string name="battery_power_description_D_D">%d h %d phút còn lại</string>
     <string name="remaining_charging_time">Thời gian sạc còn lại</string>
     <string name="you_need_to_increase_the_working_time_of_the_phone">Yêu cầu nhiều thời gian qua điện thoại hơn!</string>
     <string name="occupied_total">Bận rộn/tổng ​​cộng:</string>

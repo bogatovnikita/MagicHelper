@@ -22,20 +22,22 @@ class MenuViewModel @Inject constructor(
     private val _state: MutableStateFlow<MenuState> = MutableStateFlow(MenuState())
     val state = _state.asStateFlow()
 
-    fun initAllUseCase() {
-        initRamDetails()
-        initBatteryDetails()
-        initCleanerDetails()
-        initCpuDetails()
+    fun updateAllInfo() {
+        updateRamDetails()
+        updateBatteryDetails()
+        updateFileManagerDetails()
+        updateTemperatureDetails()
     }
 
-    private fun initRamDetails() {
+    private fun updateRamDetails() {
         mainScope {
             getRamDetailsUseCase.invoke().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            ramDetails = result.response
+                            totalRam = result.response.totalRam,
+                            usedRam = result.response.usedRam,
+                            usageRamPercents = result.response.usagePercents.toFloat(),
                         )
                     }
                     is CaseResult.Failure -> {
@@ -46,13 +48,14 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    private fun initBatteryDetails() {
+    private fun updateBatteryDetails() {
         mainScope {
             getBatteryDetailsUseCase.invoke().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            batteryDetails = result.response
+                            isBatteryOptimized = result.response.isOptimized,
+                            batteryCharge = result.response.batteryCharge
                         )
                     }
                     is CaseResult.Failure -> {
@@ -63,13 +66,15 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    private fun initCpuDetails() {
+    private fun updateTemperatureDetails() {
         mainScope {
-            // TODO
+            _state.value = state.value.copy(
+                isTemperatureChecked = temperatureUseCase.isOptimized()
+            )
         }
     }
 
-    private fun initCleanerDetails() {
+    private fun updateFileManagerDetails() {
         mainScope {
             // TODO("Not yet implemented")
         }
