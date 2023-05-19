@@ -108,7 +108,7 @@
         tools:layout="@layout/fragment_progress">
         <action
             android:id="@+id/action_temperatureProgressFragment_to_temperatureResultListFragment"
-            app:destination="@id/temperatureResultListFragment"
+            app:destination="@id/temperatureResultFragment"
             app:popUpTo="@id/temperatureFragment"
             app:popUpToInclusive="true"  />
     </fragment>
@@ -123,9 +123,10 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/temperatureResultListFragment"
-        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureResultListFragment"
-        android:label="TemperatureResultListFragment" />
+        android:id="@+id/temperatureResultFragment"
+        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureResultFragment"
+        android:label="TemperatureResultListFragment"
+        tools:layout="@layout/fragment_temperature_result"/>
 
     <action
         android:id="@+id/action_to_temperatureFragment"

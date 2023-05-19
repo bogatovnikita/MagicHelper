@@ -25,7 +25,7 @@ class ResultAdapter(private val listener: Listener) :
             oldItem: MenuHorizontalItems,
             newItem: MenuHorizontalItems
         ): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.type == newItem.type
         }
 
         override fun areContentsTheSame(
