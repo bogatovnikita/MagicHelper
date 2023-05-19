@@ -73,7 +73,7 @@ class BoostProgressFragment : Fragment(R.layout.fragment_progress) {
         var actionList = mutableListOf<RunningApp>()
         lifecycleScope.launch {
             actionList = getInstalledAppsUseCase.getRunningApp().toMutableList()
-            if (actionList.size > 8) {
+            if (actionList.size > 10) {
                 val randomIndices = (0 until actionList.size).shuffled().take(8)
                 val randomObjects = randomIndices.map { actionList[it] }
                 actionList.clear()

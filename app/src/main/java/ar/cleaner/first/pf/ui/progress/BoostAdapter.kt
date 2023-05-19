@@ -1,11 +1,13 @@
 package ar.cleaner.first.pf.ui.progress
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ar.cleaner.first.pf.databinding.ItemActionBinding
 import ar.cleaner.first.pf.databinding.ItemPreviewActionBinding
 import ar.cleaner.first.pf.domain.models.RunningApp
+import com.bumptech.glide.Glide
 
 class BoostAdapter(
     private val previewActions: List<String>,
@@ -88,7 +90,6 @@ class BoostAdapter(
     inner class ActionViewHolder(private val binding: ItemActionBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: RunningApp, position: Int) {
-            val icon = binding.root.context.packageManager.getApplicationIcon(item.packageName)
             val alpha = 1.0f - (position.toFloat()) * 0.4f
 
             binding.tvAction.apply {
@@ -96,7 +97,10 @@ class BoostAdapter(
                 this.alpha = alpha
             }
             binding.imageView.apply {
-                this.setImageDrawable(icon)
+                Glide.with(this)
+                    .load(Uri.parse(item.uriIcon))
+                    .into(this)
+
                 this.alpha = alpha
             }
         }
