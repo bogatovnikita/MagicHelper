@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
-import ar.cleaner.first.pf.domain.usecases.temperature.GetCpuDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +16,7 @@ import javax.inject.Inject
 class MenuViewModel @Inject constructor(
     private val getRamDetailsUseCase: GetRamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
-    private val getCpuDetailsUseCase: GetCpuDetailsUseCase
+    private val temperatureUseCase: TemperatureUseCase
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<MenuState> = MutableStateFlow(MenuState())

@@ -1,8 +1,6 @@
 package ar.cleaner.first.pf.ui.battery
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -24,7 +22,6 @@ import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.extensions.*
 import ar.cleaner.first.pf.models.ModeGroup
-import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.dialogs.DialogBluetoothPermission
 import ar.cleaner.first.pf.ui.dialogs.DialogWriteSettings
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
@@ -46,7 +43,6 @@ class BatteryFragment : Fragment() {
     private val dialog = DialogWriteSettings()
     private val dialogBluetooth = DialogBluetoothPermission()
     private var batteryMode: BatteryMode = BatteryMode.NORMAL
-    private lateinit var preferences: SharedPreferences
 
     private val bluetoothMultiplePermissionLauncher = multiplePermissionLauncher { result ->
         if (result.all { it.value }) {
@@ -76,21 +72,10 @@ class BatteryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.initBatteryDetails()
-        initPreferences()
         initAdapter()
         initBatteryMode()
         initObserver()
         initClickButtonOptimize()
-    }
-
-    private fun initPreferences() {
-        preferences =
-            requireContext().getSharedPreferences(
-                TemperatureFragment.APP_PREFERENCES,
-                Context.MODE_PRIVATE
-            )
-        if (!preferences.getBoolean(CHECK_BLUETOOTH_PERMISSION, false))
-            preferences.edit().putBoolean(CHECK_BLUETOOTH_PERMISSION, false).apply()
     }
 
     private fun initAdapter() {
@@ -263,7 +248,7 @@ class BatteryFragment : Fragment() {
                             dialog.show(parentFragmentManager, "BatteryFragment")
                         }
                         !checkBluetoothPermission() -> {
-                            if (!preferences.getBoolean(CHECK_BLUETOOTH_PERMISSION, false)) {
+                            if (true) {
                                 if (dialogBluetooth.isAdded) return@setOnClickListener
                                 dialogBluetooth.show(parentFragmentManager, "BatterySaver")
                                 dialogBluetooth.isCancelable = true
@@ -277,8 +262,6 @@ class BatteryFragment : Fragment() {
                                         viewModel.handleBluetoothPermission()
                                     }
                                 })
-                                preferences.edit().putBoolean(CHECK_BLUETOOTH_PERMISSION, true)
-                                    .apply()
                             } else {
                                 viewModel.handleBluetoothPermission()
                             }
@@ -290,15 +273,6 @@ class BatteryFragment : Fragment() {
     }
 
     private fun navigateNext() {
-        preferences.edit().putString(BATTERY_MODE, batteryMode.name).apply()
-        preferences.edit()
-            .putInt(BATTERY_REMAINING_TIME_HOUR, viewModel.state.value.batteryRemainingTime.hour)
-            .apply()
-        preferences.edit()
-            .putInt(
-                BATTERY_REMAINING_TIME_MINUTE,
-                viewModel.state.value.batteryRemainingTime.minute
-            ).apply()
         findNavController().navigate(BatteryFragmentDirections.actionBatteryFragmentToBatteryProgressFragment())
     }
 

@@ -57,4 +57,11 @@ class ResultAdapter(private val listener: Listener) :
         val item = v.tag as MenuHorizontalItems
         listener.onChooseMenu(item)
     }
+
+    companion object {
+        const val BATTERY_KEY = 1
+        const val BOOST_KEY = 2
+        const val TEMPERATURE_KEY = 3
+        const val CLEANING_KEY = 4
+    }
 }
