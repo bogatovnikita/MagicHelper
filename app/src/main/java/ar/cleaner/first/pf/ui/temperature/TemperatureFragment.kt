@@ -1,7 +1,5 @@
 package ar.cleaner.first.pf.ui.temperature
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -22,8 +20,6 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
 
     private val binding: FragmentTemperatureBinding by viewBinding()
 
-    private lateinit var preferences: SharedPreferences
-
     private val viewModel: TemperatureViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,10 +31,6 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
 
     private fun initClick() {
         binding.boostButton.setOnClickListener {
-            preferences =
-                requireContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-            preferences.edit().putInt(COOLER_TEMPERATURE, viewModel.state.value.temperature.toInt())
-                .apply()
             findNavController().navigate(TemperatureFragmentDirections.actionTemperatureFragmentToTemperatureProgressFragment())
         }
         binding.arrowBackIv.setOnClickListener {
@@ -94,8 +86,6 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
     }
 
     companion object {
-        const val APP_PREFERENCES = "APP_PREFERENCES"
-        const val COOLER_TEMPERATURE = "COOLER_TEMPERATURE"
         const val TEMPERATURE_NOT_SAVE = -1
     }
 }

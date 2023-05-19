@@ -31,21 +31,18 @@
         android:id="@+id/menuFragment"
         android:name="ar.cleaner.first.pf.ui.menu.MenuFragment"
         android:label="MenuFragment"
-        tools:layout="@layout/fragment_menu">
-        <action
-            android:id="@+id/action_menuFragment_to_batteryFragment"
-            app:destination="@id/batteryFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_boostFragment"
-            app:destination="@id/boostFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_temperatureFragment"
-            app:destination="@id/temperatureFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_menu"/>
+    <action
+        android:id="@+id/action_to_batteryFragment"
+        app:destination="@id/batteryFragment" />
+
+    <action
+        android:id="@+id/action_to_boostFragment"
+        app:destination="@id/boostFragment" />
 
     <fragment
         android:id="@+id/boostFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.BoostFragment"
+        android:name="ar.cleaner.first.pf.ui.boost.general.BoostFragment"
         android:label="BoostFragment"
         tools:layout="@layout/fragment_boost">
         <action
@@ -57,15 +54,21 @@
 
     <fragment
         android:id="@+id/boostProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.BoostProgressFragment"
+        android:name="ar.cleaner.first.pf.ui.boost.progress.BoostProgressFragment"
         android:label="BoostProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
-            android:id="@+id/action_boostProgressFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
+            android:id="@+id/action_boostProgressFragment_to_boostResultFragment"
+            app:destination="@id/boostResultFragment"
             app:popUpTo="@id/boostProgressFragment"
             app:popUpToInclusive="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/boostResultFragment"
+        android:name="ar.cleaner.first.pf.ui.boost.result.BoostResultFragment"
+        android:label="BoostResultFragment"
+        tools:layout="@layout/fragment_boost_result" />
 
     <fragment
         android:id="@+id/batteryFragment"
@@ -109,9 +112,9 @@
         android:label="CoolingProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
-            android:id="@+id/action_temperatureProgressFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/temperatureProgressFragment"
+            android:id="@+id/action_temperatureProgressFragment_to_temperatureResultListFragment"
+            app:destination="@id/temperatureResultFragment"
+            app:popUpTo="@id/temperatureFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -123,21 +126,15 @@
         <argument
             android:name="value"
             app:argType="integer" />
-        <action
-            android:id="@+id/action_resultFragment_to_batteryFragment"
-            app:destination="@id/batteryFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_resultFragment_to_boostFragment"
-            app:destination="@id/boostFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_resultFragment_to_temperatureFragment"
-            app:destination="@id/temperatureFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/temperatureResultFragment"
+        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureResultFragment"
+        android:label="TemperatureResultListFragment"
+        tools:layout="@layout/fragment_temperature_result" />
+
+    <action
+        android:id="@+id/action_to_temperatureFragment"
+        app:destination="@id/temperatureFragment" />
 
 </navigation>

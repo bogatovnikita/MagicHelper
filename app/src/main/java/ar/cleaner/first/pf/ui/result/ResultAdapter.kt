@@ -25,7 +25,7 @@ class ResultAdapter(private val listener: Listener) :
             oldItem: MenuHorizontalItems,
             newItem: MenuHorizontalItems
         ): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.type == newItem.type
         }
 
         override fun areContentsTheSame(
@@ -56,5 +56,12 @@ class ResultAdapter(private val listener: Listener) :
     override fun onClick(v: View) {
         val item = v.tag as MenuHorizontalItems
         listener.onChooseMenu(item)
+    }
+
+    companion object {
+        const val BATTERY_KEY = 1
+        const val BOOST_KEY = 2
+        const val TEMPERATURE_KEY = 3
+        const val CLEANING_KEY = 4
     }
 }

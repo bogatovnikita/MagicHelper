@@ -1,9 +1,7 @@
 package ar.cleaner.first.pf.ui.temperature
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -13,7 +11,7 @@ import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureOptimizerUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
-import ar.cleaner.first.pf.ui.result.ResultFragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -24,10 +22,9 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class TemperatureProgressFragment : Fragment() {
+class TemperatureProgressFragment : Fragment(R.layout.fragment_progress) {
 
-    private var _binding: FragmentProgressBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentProgressBinding by viewBinding()
 
     @Inject
     lateinit var temperatureOptimizerUseCase: TemperatureOptimizerUseCase
@@ -36,15 +33,6 @@ class TemperatureProgressFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         if (scanIsDone) scanIsDone()
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProgressBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -90,17 +78,8 @@ class TemperatureProgressFragment : Fragment() {
 
     private fun goScreenResult() {
         appShowAds {
-            findNavController().navigate(
-                TemperatureProgressFragmentDirections.actionTemperatureProgressFragmentToResultFragment(
-                    ResultFragment.TEMPERATURE_KEY
-                )
-            )
+            findNavController().navigate(R.id.action_temperatureProgressFragment_to_temperatureResultListFragment)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
 }

@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.ui.boost
+package ar.cleaner.first.pf.ui.boost.general
 
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 

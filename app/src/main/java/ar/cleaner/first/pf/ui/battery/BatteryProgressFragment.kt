@@ -1,11 +1,8 @@
 package ar.cleaner.first.pf.ui.battery
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -15,9 +12,9 @@ import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryOptimizationUseCase
-import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
-import ar.cleaner.first.pf.ui.result.ResultFragment
+import ar.cleaner.first.pf.ui.result.ResultAdapter
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -28,10 +25,9 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class BatteryProgressFragment : Fragment() {
+class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
 
-    private var _binding: FragmentProgressBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentProgressBinding by viewBinding()
 
     @Inject
     lateinit var batteryOptimizationUseCase: BatteryOptimizationUseCase
@@ -44,15 +40,6 @@ class BatteryProgressFragment : Fragment() {
         if (scanIsDone) scanIsDone()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProgressBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         preloadAd()
@@ -63,10 +50,6 @@ class BatteryProgressFragment : Fragment() {
         val actions = resources.getStringArray(R.array.battery_items).toList()
         val actionsNormal: List<String>
         val actionsMedium: List<String>
-        preferences = requireContext().getSharedPreferences(
-            TemperatureFragment.APP_PREFERENCES,
-            Context.MODE_PRIVATE
-        )
         when (preferences.getString(BatteryFragment.BATTERY_MODE, BatteryMode.NORMAL.name)) {
             BatteryMode.NORMAL.name -> {
                 updateBatteryOptimizationUseCase(BatteryMode.NORMAL)
@@ -128,14 +111,10 @@ class BatteryProgressFragment : Fragment() {
         appShowAds {
             findNavController().navigate(
                 BatteryProgressFragmentDirections.actionBatteryProgressFragmentToResultFragment(
-                    ResultFragment.BATTERY_KEY
+                    ResultAdapter.BATTERY_KEY
                 )
             )
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
 }

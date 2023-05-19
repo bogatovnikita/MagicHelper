@@ -1,7 +1,5 @@
 package ar.cleaner.first.pf.ui.menu
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +16,6 @@ import ar.cleaner.first.pf.domain.models.details.TemperatureDetails
 import ar.cleaner.first.pf.domain.models.details.RamDetails
 import ar.cleaner.first.pf.extensions.fragmentLifecycleScope
 import ar.cleaner.first.pf.extensions.observeWhenResumed
-import ar.cleaner.first.pf.ui.temperature.TemperatureFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,8 +25,6 @@ class MenuFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: MenuViewModel by activityViewModels()
-
-    private lateinit var preferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,18 +37,10 @@ class MenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initPreference()
         setColorStatusBar()
         viewModel.initAllUseCase()
         initClick()
         initObserver()
-    }
-
-    private fun initPreference() {
-        preferences = requireContext().getSharedPreferences(
-            TemperatureFragment.APP_PREFERENCES,
-            Context.MODE_PRIVATE
-        )
     }
 
     private fun setColorStatusBar() {
@@ -65,13 +52,13 @@ class MenuFragment : Fragment() {
     private fun initClick() {
         with(binding) {
             backgroundBatteryTransparent.setOnClickListener {
-                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToBatteryFragment())
+                findNavController().navigate(R.id.action_to_batteryFragment)
             }
             backgroundBoostTransparent.setOnClickListener {
-                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToBoostFragment())
+                findNavController().navigate(R.id.action_to_boostFragment)
             }
             backgroundCoolingTransparent.setOnClickListener {
-                findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToTemperatureFragment())
+                findNavController().navigate(R.id.action_to_temperatureFragment)
             }
             backgroundCleanTransparent.setOnClickListener {
                 // TODO навигация к files manager
