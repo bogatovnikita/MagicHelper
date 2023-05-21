@@ -112,7 +112,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         }
     }
 
-    fun TextView.setColor(isOptimized: Boolean) {
+    private fun TextView.setColor(isOptimized: Boolean) {
         setTextColor(
             ContextCompat.getColor(
                 requireContext(),

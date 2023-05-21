@@ -5,30 +5,26 @@ import ar.cleaner.first.pf.domain.extencion.isValuesCompatible
 import ar.cleaner.first.pf.domain.models.details.BoostDetails
 import ar.cleaner.first.pf.domain.repositorys.boosting.BoostingUseCaseRepository
 import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
-import ar.cleaner.first.pf.domain.utils.isTimePassed
 import ar.cleaner.first.pf.domain.utils.percents
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-class GetRamDetailsUseCase @Inject constructor(
+class RamDetailsUseCase @Inject constructor(
+    private val boostStatusUseCase: BoostStatusUseCase,
+    private val dispatcher: CoroutineDispatcher,
     private val boostingUseCaseRepository: BoostingUseCaseRepository,
-    private val dispatcher: CoroutineDispatcher
 ) : DefaultUseCase<BoostDetails, Exception> {
     override fun invoke(): Flow<CaseResult<BoostDetails, Exception>> =
         boostingUseCaseRepository.getAvailableRam().map { ram ->
-            val time = boostingUseCaseRepository.lastOptimizationMillis.first()
-            val isOptimized = !isTimePassed(time)
             val totalRam = boostingUseCaseRepository.getTotalRam()
-            val usedRam = if (isOptimized) {
-                (totalRam - ram) * 0.8
-            } else totalRam - ram
+            val usedRam = totalRam - ram
 
             BoostDetails(
-//                isOptimized = isOptimized,
-                usedRam = 0.0,
-                totalRam = 0.0,
+                isOptimized = boostStatusUseCase.getOptimizationStatus(),
+                usedRam = usedRam,
+                totalRam = totalRam,
                 usagePercents = usedRam.percents(totalRam)
             )
         }.map { details ->
