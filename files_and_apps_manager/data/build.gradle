@@ -41,6 +41,7 @@ dependencies {
     implementation project(':ads')
     api project(':clean_checker')
     implementation project(':data')
+    implementation project(':files_and_apps_manager:domain:updater')
 
     implementation 'androidx.annotation:annotation-jvm:+'
 }

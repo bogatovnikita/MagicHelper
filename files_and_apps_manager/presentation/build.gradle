@@ -44,6 +44,8 @@ dependencies {
     implementation project(':files_and_apps_manager:domain:scan_progress_use_case')
     implementation project(':files_and_apps_manager:data')
     implementation project(':files_and_apps_manager:domain:server')
+    implementation project(':files_and_apps_manager:domain:updater')
+    implementation project(':files_and_apps_manager:domain:file_grouper')
     implementation project(':permissions')
     implementation project(':ads')
     implementation 'com.github.bumptech.glide:glide:4.15.1'

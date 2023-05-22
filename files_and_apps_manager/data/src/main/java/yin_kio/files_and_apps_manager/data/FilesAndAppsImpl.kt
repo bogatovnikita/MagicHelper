@@ -3,15 +3,13 @@ package yin_kio.files_and_apps_manager.data
 import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
-import android.content.pm.ResolveInfo
 import android.os.Build
 import android.os.Environment
 import file_manager.domain.server.FileOrApp
-import file_manager.scan_progress.gateways.FilesAndApps
+import yin_kio.file_app_manager.updater.FilesAndApps
 
 
 class FilesAndAppsImpl(
@@ -20,7 +18,7 @@ class FilesAndAppsImpl(
 
     private val appSizeProvider = AppSizeProvider(context)
 
-    override fun provideFiles(): List<FileOrApp> {
+    override suspend fun provideFiles(): List<FileOrApp> {
         return Environment.getExternalStorageDirectory()
             .walkTopDown()
             .filter { it.isFile }
@@ -35,7 +33,7 @@ class FilesAndAppsImpl(
             .toList()
     }
 
-    override fun provideApps(): List<FileOrApp> {
+    override suspend fun provideApps(): List<FileOrApp> {
         return getAllPackages().filter { !isSystemPackage(it.applicationInfo) }
             .map {
                 val packageName = it.packageName

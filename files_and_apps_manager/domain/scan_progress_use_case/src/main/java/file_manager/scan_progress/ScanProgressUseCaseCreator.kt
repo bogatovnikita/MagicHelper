@@ -1,21 +1,18 @@
 package file_manager.scan_progress
 
-import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.gateways.Ads
-import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.gateways.Permissions
-import yin_kio.file_grouper.GrouperImpl
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.scan.ScanActionImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import yin_kio.file_app_manager.updater.UpdaterImpl
 
 object ScanProgressUseCaseCreator {
 
     fun create(
         uiOuter: UiOuter,
-        filesAndApps: FilesAndApps,
-        fileManagerServer: FileManagerServer,
+        updater: UpdaterImpl,
         permissions: Permissions,
         ads: Ads,
         coroutineScope: CoroutineScope
@@ -25,9 +22,7 @@ object ScanProgressUseCaseCreator {
             scanAction = ScanActionImpl(
                 uiOuter = uiOuter,
                 delayer = Delayer(),
-                filesAndApps = filesAndApps,
-                fileManagerServer = fileManagerServer,
-                grouper = GrouperImpl(),
+                updater = updater,
                 ads = ads
             ),
             permissions = permissions,
