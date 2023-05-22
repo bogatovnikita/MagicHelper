@@ -1,6 +1,6 @@
 package ar.cleaner.first.pf.domain.usecases.boosting
 
-import ar.cleaner.first.pf.domain.repositorys.boosting.KillBackgroundProcess
+import ar.cleaner.first.pf.domain.gateways.boosting.KillBackgroundProcess
 import javax.inject.Inject
 
 class KillBackgroundProcessUseCase @Inject constructor(

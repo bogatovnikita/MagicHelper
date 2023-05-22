@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.domain.repositorys.base
+package ar.cleaner.first.pf.domain.gateways.base
 
 import kotlinx.coroutines.flow.StateFlow
 

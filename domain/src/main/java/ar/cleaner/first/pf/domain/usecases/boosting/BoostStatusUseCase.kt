@@ -1,6 +1,6 @@
 package ar.cleaner.first.pf.domain.usecases.boosting
 
-import ar.cleaner.first.pf.domain.repositorys.boosting.BoostStatusRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.BoostStatusRepository
 import javax.inject.Inject
 
 class BoostStatusUseCase @Inject constructor(

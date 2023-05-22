@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.domain.repositorys.boosting
+package ar.cleaner.first.pf.domain.gateways.boosting
 
 interface KillBackgroundProcess {
 

@@ -3,7 +3,7 @@ package ar.cleaner.first.pf.domain.usecases.boosting
 import ar.cleaner.first.pf.domain.exception.NonValidValuesException
 import ar.cleaner.first.pf.domain.extencion.isValuesCompatible
 import ar.cleaner.first.pf.domain.models.details.BoostDetails
-import ar.cleaner.first.pf.domain.repositorys.boosting.BoostingUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.BoostingUseCaseRepository
 import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
 import ar.cleaner.first.pf.domain.utils.percents
 import ar.cleaner.first.pf.domain.wrapper.CaseResult

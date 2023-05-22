@@ -1,7 +1,7 @@
 package ar.cleaner.first.pf.domain.usecases.boosting
 
 import ar.cleaner.first.pf.domain.models.details.BoostDetails
-import ar.cleaner.first.pf.domain.repositorys.boosting.DetailedDataRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.DetailedDataRepository
 import javax.inject.Inject
 
 class GetDetailedBoostDataUseCase @Inject constructor(

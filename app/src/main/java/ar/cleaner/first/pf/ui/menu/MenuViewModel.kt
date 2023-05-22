@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.storage.StorageUseCase
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
@@ -14,6 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MenuViewModel @Inject constructor(
+    private val storageUseCase: StorageUseCase,
     private val ramDetailsUseCase: RamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
     private val temperatureUseCase: TemperatureUseCase
@@ -77,7 +79,14 @@ class MenuViewModel @Inject constructor(
 
     private fun updateFileManagerDetails() {
         mainScope {
-            // TODO("Not yet implemented")
+            storageUseCase.getStorageInfo().also { storageInfo ->
+                _state.value = state.value.copy(
+                    usedMemorySize = storageInfo.occupied,
+                    totalSize = storageInfo.total,
+                    usageMemoryPercents = storageInfo.usageMemoryPercents,
+                    isMemoryOptimized = false,
+                )
+            }
         }
     }
 }

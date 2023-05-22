@@ -1,7 +1,7 @@
 package ar.cleaner.first.pf.domain.usecases.battery
 
 import ar.cleaner.first.pf.domain.models.BatteryMode
-import ar.cleaner.first.pf.domain.repositorys.battery.BatteryUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.battery.BatteryUseCaseRepository
 import ar.cleaner.first.pf.domain.utils.getCurrentTime
 import ar.cleaner.first.pf.domain.utils.isWorking
 import kotlinx.coroutines.CoroutineDispatcher

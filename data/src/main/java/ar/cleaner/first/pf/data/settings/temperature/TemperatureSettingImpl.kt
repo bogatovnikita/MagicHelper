@@ -1,7 +1,7 @@
 package ar.cleaner.first.pf.data.settings.temperature
 
 import android.app.Application
-import ar.cleaner.first.pf.domain.repositorys.temperature.TemperatureSettings
+import ar.cleaner.first.pf.domain.gateways.temperature.TemperatureSettings
 import com.bogatovnikita.settings.FunctionSettings
 import javax.inject.Inject
 

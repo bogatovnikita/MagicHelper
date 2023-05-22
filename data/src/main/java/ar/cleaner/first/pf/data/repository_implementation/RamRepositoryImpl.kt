@@ -4,7 +4,7 @@ import ar.cleaner.first.pf.data.managers.RamManager
 import ar.cleaner.first.pf.data.optimizers.RamOptimizer
 import ar.cleaner.first.pf.data.preferences.PreferencesManager
 import ar.cleaner.first.pf.domain.models.BackgroundApp
-import ar.cleaner.first.pf.domain.repositorys.boosting.BoostingUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.BoostingUseCaseRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow

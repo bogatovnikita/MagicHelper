@@ -1,6 +1,6 @@
 package ar.cleaner.first.pf.data.repository_implementation.boost
 
-import ar.cleaner.first.pf.domain.repositorys.boosting.BoostStatusRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.BoostStatusRepository
 import com.bogatovnikita.settings.FunctionSettings
 import javax.inject.Inject
 

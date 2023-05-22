@@ -4,7 +4,7 @@ import ar.cleaner.first.pf.domain.exception.NonValidValuesException
 import ar.cleaner.first.pf.domain.mapper.asRemainingTime
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
-import ar.cleaner.first.pf.domain.repositorys.battery.BatteryUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.battery.BatteryUseCaseRepository
 import ar.cleaner.first.pf.domain.usecases.base.DefaultUseCase
 import ar.cleaner.first.pf.domain.utils.isTimePassed
 import ar.cleaner.first.pf.domain.wrapper.CaseResult

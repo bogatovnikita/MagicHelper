@@ -7,7 +7,7 @@ import android.net.Uri
 import android.os.Build
 import ar.cleaner.first.pf.data.providers.apps.AppsProvider
 import ar.cleaner.first.pf.domain.models.RunningApp
-import ar.cleaner.first.pf.domain.repositorys.boosting.AppListProvider
+import ar.cleaner.first.pf.domain.gateways.boosting.AppListProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

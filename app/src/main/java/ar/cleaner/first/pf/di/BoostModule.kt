@@ -10,10 +10,10 @@ import ar.cleaner.first.pf.data.repository_implementation.boost.AppListProviderI
 import ar.cleaner.first.pf.data.repository_implementation.boost.BoostStatusRepositoryImplementation
 import ar.cleaner.first.pf.data.repository_implementation.boost.DetailedDataRepositoryImplementation
 import ar.cleaner.first.pf.data.repository_implementation.boost.KillBackgroundProcessImplementation
-import ar.cleaner.first.pf.domain.repositorys.boosting.AppListProvider
-import ar.cleaner.first.pf.domain.repositorys.boosting.BoostStatusRepository
-import ar.cleaner.first.pf.domain.repositorys.boosting.DetailedDataRepository
-import ar.cleaner.first.pf.domain.repositorys.boosting.KillBackgroundProcess
+import ar.cleaner.first.pf.domain.gateways.boosting.AppListProvider
+import ar.cleaner.first.pf.domain.gateways.boosting.BoostStatusRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.DetailedDataRepository
+import ar.cleaner.first.pf.domain.gateways.boosting.KillBackgroundProcess
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

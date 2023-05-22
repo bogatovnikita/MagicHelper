@@ -3,7 +3,7 @@ package ar.cleaner.first.pf.data.repository_implementation
 import ar.cleaner.first.pf.data.managers.BatteryManager
 import ar.cleaner.first.pf.data.optimizers.BatteryOptimizer
 import ar.cleaner.first.pf.domain.models.BatteryMode
-import ar.cleaner.first.pf.domain.repositorys.battery.BatteryUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.battery.BatteryUseCaseRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
