@@ -18,8 +18,8 @@ internal class UiOuterImpl(
 
             viewModel?.update { it.copy(
                 groupName = GroupName.Images,
-                buttonText = presenter.presentButtonText(),
-                buttonAlpha = presenter.presentButtonAlpha(),
+                buttonText = presenter.presentButtonText(0),
+                buttonAlpha = presenter.presentButtonAlpha(0),
             ) }
         }
 
@@ -38,9 +38,11 @@ internal class UiOuterImpl(
     }
 
     override suspend fun out(allSelectionOut: AllSelectionOut) {
-        // TODO add selection count out
         viewModel?.update {
-            it.copy(isAllSelected = allSelectionOut.isAllSelected,
+            it.copy(
+                isAllSelected = allSelectionOut.isAllSelected,
+                buttonText = presenter.presentButtonText(allSelectionOut.selectedCount),
+                buttonAlpha = presenter.presentButtonAlpha(allSelectionOut.selectedCount)
             )
         }
 

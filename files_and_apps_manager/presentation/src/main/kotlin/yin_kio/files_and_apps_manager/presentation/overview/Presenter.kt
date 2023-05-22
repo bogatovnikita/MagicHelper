@@ -13,12 +13,20 @@ internal class Presenter(
     private val context: Context
 ) {
 
-    fun presentButtonText() : String{
-        return context.getString(R.string.file_apps_manager_delete)
+    fun presentButtonText(selectionCount: Int) : String{
+        return if (selectionCount <= 0){
+            context.getString(R.string.file_apps_manager_delete)
+        } else {
+            context.getString(R.string.file_apps_manager_delete_D, selectionCount)
+        }
     }
 
-    fun presentButtonAlpha() : Float{
-        return 0.5f
+    fun presentButtonAlpha(selectionCount: Int) : Float{
+        return if (selectionCount <= 0){
+            0.5f
+        } else{
+            1f
+        }
     }
 
     fun presentSortingMode(sortingMode: SortingMode) : String{

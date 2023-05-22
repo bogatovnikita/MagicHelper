@@ -35,6 +35,7 @@
     <string name="file_apps_manager_files_deleting_progress_description">Пожалуйста, не закрывайте окно во время удаления</string>
 
     <string name="file_apps_manager_delete">Удалить</string>
+    <string name="file_apps_manager_delete_D">Удалить (%d)</string>
     <string name="file_apps_manager_done">Готово</string>
 
     <string name="file_apps_manager_start_need_free">Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!</string>
