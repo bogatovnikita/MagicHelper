@@ -2,7 +2,7 @@ package ar.cleaner.first.pf.ui.result
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.battery.BatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
@@ -15,7 +15,7 @@ import javax.inject.Inject
 class ResultViewModel @Inject constructor(
     private val resultList: ResultListProvider,
     private val ramDetailsUseCase: RamDetailsUseCase,
-    private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
+    private val batteryDetailsUseCase: BatteryDetailsUseCase,
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<ResultState> = MutableStateFlow(ResultState())
@@ -41,18 +41,10 @@ class ResultViewModel @Inject constructor(
 
     fun initBatteryDetails() {
         mainScope {
-            getBatteryDetailsUseCase.invoke().collect { result ->
-                when (result) {
-                    is CaseResult.Success -> {
-                        _state.value = state.value.copy(
-                            batteryDetails = result.response,
-                            itemsList = resultList.getResultList(ResultListProvider.TYPE_BATTERY)
-                        )
-                    }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "initBatteryDetails: Failure")
-                    }
-                }
+            batteryDetailsUseCase.getBatteryDetails().collect { batInfo ->
+                _state.value = state.value.copy(
+                    itemsList = resultList.getResultList(ResultListProvider.TYPE_BATTERY)
+                )
             }
         }
     }

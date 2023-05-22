@@ -29,7 +29,6 @@
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="ultra_mode_30">+30\nUltra</string>
     <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
-    <string name="battery_power_only_time_D_D">%d h %d min</string>
     <string name="clear_junk">Cleaning</string>
     <string name="cleared_junk">Clean up</string>
 
@@ -46,8 +45,6 @@
     <string name="extra_mode_60">+60\nExtra</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
     <string name="normal_mode_activates_restrictions">Normal mode activates restrictions:</string>
-    <string name="remaining_charging_time">Remaining charging time</string>
-    <string name="you_need_to_increase_the_working_time_of_the_phone">Requires more phone time!</string>
     <string name="occupied_total">Busy/Total:</string>
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Right now, background processes and apps are overheating your phone`s processor</string>
     <string name="the_processor_overheated_cooling_is_required">Processor is overheating! Cooling is required!</string>
@@ -103,9 +100,13 @@
 
     <string name="general_action_required">Требуется действие!</string>
 
-    <string name="battery_power_description_D">Осталось %d%% заряда</string>
     <string name="done">Выполнено</string>
     <string name="boost_need_atantion">Требуется внимание</string>
+
+    <string name="battery_danger_description">Вы можете увеличить время работы телефона!</string>
+    <string name="battery_power_description_D">Осталось %d%% заряда</string>
+    <string name="battery_charge_percent">Заряд батареи</string>
+    <string name="battery_not_danger_description">Телефон не нуждается в оптимизации на данный момент!</string>
 
     <string name="file_manager_cleaning_is_required">Обнаружены мусорные файлы</string>
 

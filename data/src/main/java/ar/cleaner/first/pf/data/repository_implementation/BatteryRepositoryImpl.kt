@@ -16,8 +16,6 @@ class BatteryRepositoryImpl @Inject constructor(
     override fun startOptimization(mode: BatteryMode): Flow<Int> =
         batteryOptimizer.runOptimization(mode)
 
-    override fun getRemainingTime(): Flow<Double> = batteryManager.getRemainingChargeTime()
-
     override fun getBatteryMode(): Flow<String> = batteryManager.getBatteryMode()
 
     override fun emulateOptimization(mode: BatteryMode): Flow<Int> =
