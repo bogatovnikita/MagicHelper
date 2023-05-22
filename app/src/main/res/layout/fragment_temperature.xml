@@ -204,7 +204,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/root_background_iv"
         app:layout_constraintVertical_bias="1"
-        tools:background="@drawable/background_button_danger"
+        tools:background="@drawable/bg_button_danger"
         tools:text="@string/temperature_danger_desc"
         tools:textColor="@color/red" />
 

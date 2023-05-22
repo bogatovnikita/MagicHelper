@@ -49,7 +49,7 @@
         android:layout_marginHorizontal="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_15sdp"
-        android:background="@drawable/background_button_allow"
+        android:background="@drawable/bg_button_allow"
         android:text="@string/further"
         style="@style/Dialog.Button"
         android:textColor="@color/white"
