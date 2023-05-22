@@ -88,7 +88,7 @@ internal class UiOuterImpl(
         viewModel?.sendCommand(Command.ShowAskDeleteDialog)
     }
 
-    override suspend fun hideDeleteDialog() {
+    override suspend fun hideAskDeleteDialog() {
         viewModel?.sendCommand(Command.HideAskDeleteDialog)
     }
 
@@ -100,5 +100,7 @@ internal class UiOuterImpl(
         viewModel?.sendCommand(Command.ShowDeleteCompletion)
     }
 
-
+    override suspend fun hideDoneDialog() {
+        viewModel?.sendCommand(Command.HideDoneDialog)
+    }
 }
