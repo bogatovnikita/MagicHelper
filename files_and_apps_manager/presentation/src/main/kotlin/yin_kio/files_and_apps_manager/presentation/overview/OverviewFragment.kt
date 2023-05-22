@@ -19,7 +19,7 @@ import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.OverviewUseCaseCreator
 import file_manager.doman.overview.ui_out.Selectable
-import jamycake.lifecycle_aware.lifecycleAware
+import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -35,7 +35,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val binding: FragmentOverviewBinding by viewBinding()
     private val server: FileManagerServer by previousBackStackEntry()
-    private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
+    private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
 
     private var onDismissSortingPopup: (() -> Unit)? = null // эта лямбда вынесена для того, чтобы диалог не прятался при дисмисе попапа
 
@@ -158,7 +158,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             viewModel.command.collect {
                 when (it) {
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowAskDeleteDialog -> TODO()
+                    Command.ShowAskDeleteDialog -> findNavController().navigate(R.id.toAskDelete)
                     Command.ShowDeleteProgress -> TODO()
                     Command.ShowDeleteCompletion -> TODO()
                     Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
