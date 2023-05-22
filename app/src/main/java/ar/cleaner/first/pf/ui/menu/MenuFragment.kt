@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
@@ -79,7 +78,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             descriptionStorageTv.text =
                 getString(R.string._F_gb_F_gb, usedMemorySize, totalSize)
             cleanDescriptionTv.text = getString(
-                if (isMemoryOptimized) R.string.clean_junk_done else R.string.cleaning_is_required
+                if (isMemoryOptimized) R.string.clean_junk_done else R.string.file_manager_cleaning_is_required
             )
             cleanDescriptionTv.setColor(isMemoryOptimized)
         }
