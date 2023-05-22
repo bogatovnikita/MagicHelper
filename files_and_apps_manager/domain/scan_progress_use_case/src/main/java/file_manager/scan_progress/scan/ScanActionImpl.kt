@@ -5,7 +5,7 @@ import file_manager.domain.server.SortingMode
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
-import file_manager.scan_progress.grouper.Grouper
+import yin_kio.file_grouper.Grouper
 
 internal class ScanActionImpl(
     private val uiOuter: UiOuter,

@@ -4,7 +4,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.gateways.FilesAndApps
 import file_manager.scan_progress.gateways.Permissions
-import file_manager.scan_progress.grouper.GrouperImpl
+import yin_kio.file_grouper.GrouperImpl
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.scan.ScanActionImpl
 import kotlinx.coroutines.CoroutineScope

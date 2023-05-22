@@ -1,4 +1,4 @@
-package file_manager.scan_progress.grouper
+package yin_kio.file_grouper
 
 class FileGroups {
     private val video = mapOf(
