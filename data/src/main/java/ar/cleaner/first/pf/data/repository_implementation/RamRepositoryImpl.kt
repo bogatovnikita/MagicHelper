@@ -13,13 +13,7 @@ import javax.inject.Inject
 class RamRepositoryImpl @Inject constructor(
     private val ramManager: RamManager,
     private val ramOptimizer: RamOptimizer,
-    private val preferencesManager: PreferencesManager
 ):BoostingUseCaseRepository {
-    override suspend fun setHasOptimizeAll(hasOptimizeAll: Boolean) {
-        preferencesManager.hasOptimizeAll = hasOptimizeAll
-    }
-
-    override fun hasOptimizeAllFlow(): Flow<Boolean> = preferencesManager.hasOptimizeAllFlow
 
     override fun getAvailableRam(scope: CoroutineScope?): StateFlow<Double> =
         ramManager.getAvailableRam(scope)
@@ -27,11 +21,6 @@ class RamRepositoryImpl @Inject constructor(
     override fun getTotalRam(): Double = ramManager.totalRam
 
     override suspend fun getBackgroundApps(): List<BackgroundApp> = ramManager.getBackgroundApps()
-
-    override val lastOptimizationMillis: StateFlow<Long>
-        get() = ramOptimizer.lastOptimizationWorkMillis
-
-    override fun setLastOptimizationMillis(time: Long) = ramOptimizer.setLastOptimizationTime(time)
 
     override fun startOptimization(backgroundApps: List<BackgroundApp>): Flow<Int> =
         ramOptimizer.runOptimization(backgroundApps)

@@ -2,7 +2,7 @@ package ar.cleaner.first.pf.ui.menu
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.battery.BatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.storage.StorageUseCase
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureUseCase
@@ -17,7 +17,7 @@ import javax.inject.Inject
 class MenuViewModel @Inject constructor(
     private val storageUseCase: StorageUseCase,
     private val ramDetailsUseCase: RamDetailsUseCase,
-    private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
+    private val batteryDetailsUseCase: BatteryDetailsUseCase,
     private val temperatureUseCase: TemperatureUseCase
 ) : ViewModel() {
 
@@ -53,18 +53,11 @@ class MenuViewModel @Inject constructor(
 
     private fun updateBatteryDetails() {
         mainScope {
-            getBatteryDetailsUseCase.invoke().collect { result ->
-                when (result) {
-                    is CaseResult.Success -> {
-                        _state.value = state.value.copy(
-                            isBatteryOptimized = result.response.isOptimized,
-                            batteryCharge = result.response.batteryCharge
-                        )
-                    }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "MenuViewModel:initBatteryDetails Failure")
-                    }
-                }
+            batteryDetailsUseCase.getBatteryDetails().collect { batInfo ->
+                _state.value = state.value.copy(
+                    isBatteryOptimized = batInfo.isOptimized,
+                    batteryCharge = batInfo.batteryCharge
+                )
             }
         }
     }

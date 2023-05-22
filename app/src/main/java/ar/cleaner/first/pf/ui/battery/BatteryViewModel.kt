@@ -1,12 +1,8 @@
 package ar.cleaner.first.pf.ui.battery
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import ar.cleaner.first.pf.domain.models.BatteryMode
-import ar.cleaner.first.pf.domain.models.BatteryTime
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
-import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
-import ar.cleaner.first.pf.domain.wrapper.CaseResult
+import ar.cleaner.first.pf.domain.usecases.battery.BatteryDetailsUseCase
 import ar.cleaner.first.pf.extensions.mainScope
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
 import ar.cleaner.first.pf.utils.event_delegate.EventDelegate
@@ -21,36 +17,21 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BatteryViewModel @Inject constructor(
-    private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase
+    private val useCase: BatteryDetailsUseCase
 ) : ViewModel(), EventDelegate<BaseEvent> by EventDelegateImpl() {
 
-    private val _state: MutableStateFlow<BatteryDetails> = MutableStateFlow(
-        BatteryDetails(
-            0, BatteryMode.MEDIUM,
-            BatteryTime(0, 0), false
-        )
-    )
+    private val _state: MutableStateFlow<BatteryDetails> = MutableStateFlow(BatteryDetails())
     val state = _state.asStateFlow()
 
     fun initBatteryDetails() {
         mainScope {
-            getBatteryDetailsUseCase.invoke().collect { result ->
-                when (result) {
-                    is CaseResult.Success -> {
-                        _state.value =
-                            state.value.copy(
-                                batteryCharge = result.response.batteryCharge,
-                                batteryMode = result.response.batteryMode,
-                                batteryRemainingTime = result.response.batteryRemainingTime,
-                                isOptimized = result.response.isOptimized,
-                                loadingIsDone = true
-                            )
-                    }
-                    is CaseResult.Failure -> {
-                        Log.e("pie", "BatteryViewModel:initBatteryDetails Failure")
-                    }
-                }
-
+            useCase.getBatteryDetails().collect { batInfo ->
+                _state.value =
+                    state.value.copy(
+                        batteryCharge = batInfo.batteryCharge,
+                        batteryMode = batInfo.batteryMode,
+                        isOptimized = batInfo.isOptimized,
+                    )
             }
         }
     }
