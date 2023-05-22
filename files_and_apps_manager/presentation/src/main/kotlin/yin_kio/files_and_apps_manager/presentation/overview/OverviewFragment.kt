@@ -23,8 +23,11 @@ import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
@@ -189,6 +192,12 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         val context = requireContext().applicationContext
 
+        val updater = UpdaterImpl(
+            filesAndApps = FilesAndAppsImpl(context),
+            server = server,
+            grouper = GrouperImpl()
+        )
+
         val presenter = Presenter(context)
         val uiOuter = UiOuterImpl(presenter)
         val useCase = OverviewUseCaseCreator.create(
@@ -196,6 +205,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             server = server,
             deleter = DeleterImpl(),
             deleteTimeSaver = DeleteTimeSaverImpl(context),
+            updater = updater,
             coroutineScope = coroutineScope
         )
 

@@ -10,7 +10,7 @@ import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteAction
 import file_manager.doman.overview.use_case.OverviewUseCaseImpl
-import file_manager.doman.overview.use_case.UpdateAction
+import file_manager.doman.overview.use_case.UpdateUIAction
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.coVerifyOrder
@@ -32,7 +32,7 @@ class OverviewUseCaseImplTest {
     private val outCreator: OutCreator = mockk()
     private val server: FileManagerServer = spyk()
     private val deleteAction: DeleteAction = spyk()
-    private val updateAction: UpdateAction = spyk()
+    private val updateUIAction: UpdateUIAction = spyk()
 
     private val dispatcher = StandardTestDispatcher()
     private val testScope = TestScope(dispatcher)
@@ -42,7 +42,7 @@ class OverviewUseCaseImplTest {
         outCreator = outCreator,
         server = server,
         deleteAction = deleteAction,
-        updateAction = updateAction,
+        updateUIAction = updateUIAction,
         coroutineScope = testScope,
         dispatcher = dispatcher
     )
@@ -61,7 +61,7 @@ class OverviewUseCaseImplTest {
         useCase.update()
         advanceUntilIdle()
 
-        coVerify { updateAction.update() }
+        coVerify { updateUIAction.update() }
     }
 
     @Test

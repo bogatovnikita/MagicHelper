@@ -8,9 +8,10 @@ import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteActionImpl
 import file_manager.doman.overview.use_case.OverviewUseCase
 import file_manager.doman.overview.use_case.OverviewUseCaseImpl
-import file_manager.doman.overview.use_case.UpdateActionImpl
+import file_manager.doman.overview.use_case.UpdateUIActionImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import yin_kio.file_app_manager.updater.Updater
 
 object OverviewUseCaseCreator {
 
@@ -19,6 +20,7 @@ object OverviewUseCaseCreator {
         server: FileManagerServer,
         deleter: Deleter,
         deleteTimeSaver: DeleteTimeSaver,
+        updater: Updater,
         coroutineScope: CoroutineScope
     ) : OverviewUseCase{
 
@@ -26,17 +28,18 @@ object OverviewUseCaseCreator {
             server = server
         )
 
-        val updateAction = UpdateActionImpl(
+        val updateAction = UpdateUIActionImpl(
             uiOuter = uiOuter,
-            outCreator = outCreator
+            outCreator = outCreator,
         )
 
         val deleteAction = DeleteActionImpl(
             deleter = deleter,
             server = server,
-            updateAction = updateAction,
+            updateUIAction = updateAction,
             uiOuter = uiOuter,
             deleteTimeSaver = deleteTimeSaver,
+            updater = updater
         )
 
         return OverviewUseCaseImpl(
@@ -44,7 +47,7 @@ object OverviewUseCaseCreator {
             outCreator = outCreator,
             server = server,
             deleteAction = deleteAction,
-            updateAction = updateAction,
+            updateUIAction = updateAction,
             coroutineScope = coroutineScope,
             dispatcher = Dispatchers.IO
         )

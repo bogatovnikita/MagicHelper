@@ -14,7 +14,7 @@ internal class OverviewUseCaseImpl(
     private val outCreator: OutCreator,
     private val server: FileManagerServer,
     private val deleteAction: DeleteAction,
-    private val updateAction: UpdateAction,
+    private val updateUIAction: UpdateUIAction,
     private val coroutineScope: CoroutineScope,
     private val dispatcher: CoroutineContext
 ) : OverviewUseCase {
@@ -24,7 +24,7 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun update() = async{
-        updateAction.update()
+        updateUIAction.update()
     }
 
     override fun switchGroup(groupName: GroupName) = async{
