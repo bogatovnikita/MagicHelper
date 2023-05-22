@@ -70,7 +70,6 @@
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Allow the app to access bluetooth settings to increase battery life</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">For Extra and Ultra modes, you need access to bluetooth settings</string>
     <string name="settings">Settings</string>
-    <string name="cleaning_is_required">Cleaning is required</string>
     <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">In order for us to clean up the garbage, we need access to the usage history</string>
     <string name="description_need_permission_files">We need permission to read, delete and modify files so that we can find unnecessary files and you can delete them.</string>
     <string name="boost_description_not_optimize">Speed up the work of your phone</string>
@@ -107,5 +106,7 @@
     <string name="battery_power_description_D">Осталось %d%% заряда</string>
     <string name="done">Выполнено</string>
     <string name="boost_need_atantion">Требуется внимание</string>
+
+    <string name="file_manager_cleaning_is_required">Обнаружены мусорные файлы</string>
 
 </resources>

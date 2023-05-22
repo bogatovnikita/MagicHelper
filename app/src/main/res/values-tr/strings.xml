@@ -72,7 +72,6 @@
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Pil ömrünü artırmak için uygulamanın bluetooth ayarlarına erişmesine izin verin</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Ekstra ve Ultra modlar için bluetooth ayarlarına erişmeniz gerekir</string>
     <string name="settings">Ayarlar</string>
-    <string name="cleaning_is_required">Temizlik gereklidir</string>
     <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">Çöpleri temizleyebilmemiz için kullanım geçmişine erişmemiz gerekiyor</string>
     <string name="description_need_permission_files">Gereksiz dosyaları bulabilmemiz ve silebilmeniz için dosyaları okuma, silme ve değiştirme iznine ihtiyacımız var.</string>
     <string name="boost_description_not_optimize">Telefonunuzun çalışmasını hızlandırın</string>

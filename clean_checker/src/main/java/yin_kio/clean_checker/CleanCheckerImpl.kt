@@ -11,6 +11,6 @@ class CleanCheckerImpl(
             val lastCleanTime = lastCleanTime.provide()
             val currentTime = System.currentTimeMillis()
             val delta = currentTime - lastCleanTime
-            return delta > TimeUnit.HOURS.toMillis(20)
+            return delta < TimeUnit.HOURS.toMillis(20)
         }
 }

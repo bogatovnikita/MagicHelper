@@ -79,12 +79,12 @@ class MenuViewModel @Inject constructor(
 
     private fun updateFileManagerDetails() {
         mainScope {
-            storageUseCase.getStorageInfo().also { storageInfo ->
+            with(storageUseCase.getStorageInfo()) {
                 _state.value = state.value.copy(
-                    usedMemorySize = storageInfo.occupied,
-                    totalSize = storageInfo.total,
-                    usageMemoryPercents = storageInfo.usageMemoryPercents,
-                    isMemoryOptimized = false,
+                    usedMemorySize = occupied,
+                    totalSize = total,
+                    usageMemoryPercents = usageMemoryPercents,
+                    isMemoryOptimized = storageUseCase.isStorageOptimized(),
                 )
             }
         }
