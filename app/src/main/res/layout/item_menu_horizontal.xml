@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toStartOf="@id/icon_arrow"
         app:layout_constraintStart_toEndOf="@id/icon_iv"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/battery_power" />
+        tools:text="@string/battery_title" />
 
     <TextView
         android:id="@+id/description_tv"

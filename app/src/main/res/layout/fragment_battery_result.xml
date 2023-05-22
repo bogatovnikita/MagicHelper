@@ -50,6 +50,7 @@
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.24"
+        android:text="@string/battery_title"
         app:layout_constraintBottom_toBottomOf="@id/arrow_back_iv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrow_back_iv"
@@ -63,7 +64,7 @@
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/card_corners_comet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.185"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arrow_back_iv" />
 
@@ -84,12 +85,12 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
-        android:textSize="@dimen/Text.18"
+        android:textSize="@dimen/Text.20"
+        android:text="@string/battery_optimized"
         app:layout_constraintBottom_toTopOf="@id/second_description_tv"
         app:layout_constraintEnd_toEndOf="@id/view_for_background"
         app:layout_constraintStart_toEndOf="@id/icon_is_done"
-        app:layout_constraintTop_toTopOf="@id/icon_is_done"
-        tools:text="@string/released_D_gb" />
+        app:layout_constraintTop_toTopOf="@id/icon_is_done" />
 
     <TextView
         android:id="@+id/second_description_tv"
@@ -99,26 +100,11 @@
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.14"
+        android:text="@string/battery_switch_on_mode_S"
         app:layout_constraintBottom_toBottomOf="@id/icon_is_done"
         app:layout_constraintEnd_toEndOf="@id/view_for_background"
         app:layout_constraintStart_toEndOf="@id/icon_is_done"
-        app:layout_constraintTop_toBottomOf="@id/first_description_tv"
-        tools:text="@string/boost_now_the_device_is_accelerated_by_D" />
-
-    <TextView
-        android:id="@+id/third_description_tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:fontFamily="@font/heraclito_medium"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="@dimen/Text.16"
-        app:layout_constraintBottom_toBottomOf="@id/view_for_background"
-        app:layout_constraintEnd_toEndOf="@id/view_for_background"
-        app:layout_constraintStart_toStartOf="@id/view_for_background"
-        app:layout_constraintTop_toBottomOf="@id/icon_is_done"
-        tools:text="@string/available_memory_F_gb_F_gb" />
+        app:layout_constraintTop_toBottomOf="@id/first_description_tv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

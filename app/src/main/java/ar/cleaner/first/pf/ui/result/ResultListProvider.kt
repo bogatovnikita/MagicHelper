@@ -14,7 +14,7 @@ class ResultListProvider @Inject constructor() {
             ),
             MenuHorizontalItems(
                 TYPE_BATTERY,
-                R.string.battery_power,
+                R.string.battery_title,
                 R.drawable.ic_battery,
                 R.string.extend_the_operation_of_your_phone
             ),

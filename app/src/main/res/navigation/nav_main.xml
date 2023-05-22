@@ -88,10 +88,10 @@
         android:label="BatteryProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
-            android:id="@+id/action_batteryProgressFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/batteryProgressFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_to_batteryResultFragment"
+            app:destination="@id/batteryResultFragment"
+            app:popUpTo="@id/batteryFragment"
+            app:popUpToInclusive="true"  />
     </fragment>
 
     <fragment
@@ -119,15 +119,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/resultFragment"
-        android:name="ar.cleaner.first.pf.ui.result.ResultFragment"
-        android:label="ResultFragment"
-        tools:layout="@layout/fragment_result">
-        <argument
-            android:name="value"
-            app:argType="integer" />
-    </fragment>
-    <fragment
         android:id="@+id/temperatureResultFragment"
         android:name="ar.cleaner.first.pf.ui.temperature.TemperatureResultFragment"
         android:label="TemperatureResultListFragment"
@@ -136,5 +127,9 @@
     <action
         android:id="@+id/action_to_temperatureFragment"
         app:destination="@id/temperatureFragment" />
+    <fragment
+        android:id="@+id/batteryResultFragment"
+        android:name="ar.cleaner.first.pf.ui.battery.BatteryResultFragment"
+        android:label="BatteryResultFragment" />
 
 </navigation>

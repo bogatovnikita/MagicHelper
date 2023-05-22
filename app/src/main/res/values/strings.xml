@@ -14,17 +14,14 @@
     <string name="deleting_unwanted_files_is_safe">Delete unwanted files safely</string>
     <string name="optimize">Optimize</string>
     <string name="mb_D">%d Mb</string>
-    <string name="normal_mode">Normal</string>
     <string name="residual_files">Residual files</string>
     <string name="modes_of_increasing_the_working_time">Modes to boost uptime</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Cool your phone regularly to reduce processor strain, extend its life, and make your device run faster</string>
     <string name="ram">RAM</string>
     <string name="normal_mode_10">+10\nNormal</string>
-    <string name="battery_power">Charging</string>
     <string name="extra_mode_activates_restrictions">Extra mode activates restrictions:</string>
     <string name="garbage_detected">Debris detected</string>
     <string name="cache">Cache</string>
-    <string name="ultra_mode">Ultra</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="ultra_mode_30">+30\nUltra</string>
@@ -48,7 +45,7 @@
     <string name="occupied_total">Busy/Total:</string>
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Right now, background processes and apps are overheating your phone`s processor</string>
     <string name="the_processor_overheated_cooling_is_required">Processor is overheating! Cooling is required!</string>
-    <string name="extra_mode">Extra</string>
+
     <string name="system_garbage">System Junk</string>
     <string name="processor_temperature_D">Processor temperature %d℃</string>
     <string name="percent_D">%d%%</string>
@@ -107,7 +104,13 @@
     <string name="battery_power_description_D">Осталось %d%% заряда</string>
     <string name="battery_charge_percent">Заряд батареи</string>
     <string name="battery_not_danger_description">Телефон не нуждается в оптимизации на данный момент!</string>
+    <string name="battery_title">Питание</string>
+    <string name="battery_extra_mode">Extra</string>
+    <string name="battery_ultra_mode">Ultra</string>
+    <string name="battery_normal_mode">Normal</string>
 
     <string name="file_manager_cleaning_is_required">Обнаружены мусорные файлы</string>
+    <string name="battery_optimized">Оптимизированно</string>
+    <string name="battery_switch_on_mode_S">Включен режим: %s</string>
 
 </resources>

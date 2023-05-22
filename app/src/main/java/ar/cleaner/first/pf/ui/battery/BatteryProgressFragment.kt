@@ -108,7 +108,7 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
 
     private fun goScreenResult() {
         appShowAds {
-            findNavController().navigate( R.id.action_batteryProgressFragment_to_resultFragment)
+            findNavController().navigate( R.id.action_to_batteryResultFragment)
         }
     }
 

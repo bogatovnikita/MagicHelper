@@ -136,7 +136,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
 
     private fun renderState(batteryDetails: BatteryDetails) {
         with(binding) {
-            toolbar.binding.titleTv.text = getString(R.string.battery_power)
+            toolbar.binding.titleTv.text = getString(R.string.battery_title)
             percentTv.text = getString(R.string.percent_D, batteryDetails.batteryCharge)
             progressBar.progress = batteryDetails.batteryCharge
             groupOptimizeIsDone.isVisible = batteryDetails.isOptimized
@@ -157,7 +157,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
     private fun renderDescriptionItem(isOptimized: Boolean) {
         val color = if (isOptimized) R.color.black else R.color.red
         val background =
-            if (isOptimized) R.drawable.background_button_not_danger else R.drawable.background_button_danger
+            if (isOptimized) R.drawable.bg_button_not_danger else R.drawable.bg_button_danger
         val textId =
             if (isOptimized) R.string.battery_not_danger_description else R.string.battery_danger_description
         binding.dangerButton.apply {

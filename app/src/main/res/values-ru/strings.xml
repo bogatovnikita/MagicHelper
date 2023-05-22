@@ -8,7 +8,7 @@
     <string name="percent_D">%d%%</string>
     <string name="storage_location">Место хранения</string>
     <string name="ram">Оперативная память</string>
-    <string name="battery_power">Питание</string>
+    <string name="battery_title">Питание</string>
     <string name="clear_junk">Очистка</string>
     <string name="cleared_junk">Очистить</string>
     <string name="battery_power_only_time_D_D">%d ч %d мин</string>
@@ -37,9 +37,9 @@
     <string name="processor_temperature">Температура процессора:</string>
     <string name="now_the_devices_memory_is_D_free">Теперь память устройства свободна на %d%%</string>
     <string name="modes_of_increasing_the_working_time">Режимы увеличения времени работы</string>
-    <string name="normal_mode">Нормальный</string>
-    <string name="ultra_mode">Ультра</string>
-    <string name="extra_mode">Экстра</string>
+    <string name="battery_normal_mode">Нормальный</string>
+    <string name="battery_ultra_mode">Ультра</string>
+    <string name="battery_extra_mode">Экстра</string>
     <string name="normal_mode_10">+10\nНормальный</string>
     <string name="ultra_mode_30">+30\nУльтра</string>
     <string name="extra_mode_60">+60\nЭкстра</string>
