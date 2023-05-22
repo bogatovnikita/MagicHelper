@@ -5,11 +5,13 @@ import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
 import file_manager.doman.overview.gateways.Deleter
 import file_manager.doman.overview.ui_out.UiOuter
+import yin_kio.file_app_manager.updater.Updater
 
 internal class DeleteActionImpl(
     private val deleter: Deleter,
     private val server: FileManagerServer,
-    private val updateAction: UpdateAction,
+    private val updateUIAction: UpdateUIAction,
+    private val updater: Updater,
     private val uiOuter: UiOuter,
     private val deleteTimeSaver: DeleteTimeSaver
 ) : DeleteAction {
@@ -19,7 +21,8 @@ internal class DeleteActionImpl(
 
         deleter.delete(server.getSelected(groupName).map { it.id })
         deleteTimeSaver.saveDeleteTime()
-        updateAction.update()
+        updater.update()
+        updateUIAction.update()
 
         uiOuter.showDeleteCompletion()
 

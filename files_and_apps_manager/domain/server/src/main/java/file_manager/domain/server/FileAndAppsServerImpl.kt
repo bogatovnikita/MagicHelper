@@ -24,7 +24,7 @@ class FileAndAppsServerImpl : FileManagerServer {
         get() = _content[selectedGroup]?.content?: emptyList()
 
     override fun getSelected(groupName: GroupName): List<FileOrApp> {
-        return _content[groupName]?.content ?: emptyList()
+        return _content[groupName]?.selected ?: emptyList()
     }
 
     override fun isItemSelected(groupName: GroupName, id: String): Boolean {

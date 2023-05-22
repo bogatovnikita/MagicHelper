@@ -10,7 +10,7 @@ import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteAction
 import file_manager.doman.overview.use_case.OverviewUseCaseImpl
-import file_manager.doman.overview.use_case.UpdateAction
+import file_manager.doman.overview.use_case.UpdateUIAction
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.coVerifyOrder
@@ -32,7 +32,7 @@ class OverviewUseCaseImplTest {
     private val outCreator: OutCreator = mockk()
     private val server: FileManagerServer = spyk()
     private val deleteAction: DeleteAction = spyk()
-    private val updateAction: UpdateAction = spyk()
+    private val updateUIAction: UpdateUIAction = spyk()
 
     private val dispatcher = StandardTestDispatcher()
     private val testScope = TestScope(dispatcher)
@@ -42,7 +42,7 @@ class OverviewUseCaseImplTest {
         outCreator = outCreator,
         server = server,
         deleteAction = deleteAction,
-        updateAction = updateAction,
+        updateUIAction = updateUIAction,
         coroutineScope = testScope,
         dispatcher = dispatcher
     )
@@ -61,7 +61,7 @@ class OverviewUseCaseImplTest {
         useCase.update()
         advanceUntilIdle()
 
-        coVerify { updateAction.update() }
+        coVerify { updateUIAction.update() }
     }
 
     @Test
@@ -107,15 +107,18 @@ class OverviewUseCaseImplTest {
     fun testSwitchItemSelection() = runTest{
         val itemId = "some_id"
         val itemSelectionOut = ItemSelectionOut(id = itemId)
+        val selectable: Selectable = spyk()
 
         coEvery { outCreator.createItemSelectionOut(itemId) } returns itemSelectionOut
+        coEvery { server.isItemSelected(GroupName.Video, itemId) } returns true
 
-        useCase.switchItemSelection(GroupName.Video, itemId)
+        useCase.switchItemSelection(GroupName.Video, itemId, selectable)
         advanceUntilIdle()
 
         coVerify {
             server.switchItemSelection(GroupName.Video, itemId)
             uiOuter.out(itemSelectionOut)
+            selectable.setSelected(true)
         }
     }
 
@@ -148,13 +151,15 @@ class OverviewUseCaseImplTest {
         useCase.hideAskDeleteDialog()
         advanceUntilIdle()
 
-        coVerify { uiOuter.hideDeleteDialog() }
+        coVerify { uiOuter.hideAskDeleteDialog() }
     }
 
     @Test
     fun testDelete() = runTest{
         val groupName = GroupName.Video
-        useCase.delete(groupName)
+        useCase.delete()
+        coEvery { server.selectedGroup } returns groupName
+
         advanceUntilIdle()
 
         coVerify { deleteAction.deleteAndUpdate(groupName) }
@@ -166,7 +171,7 @@ class OverviewUseCaseImplTest {
         advanceUntilIdle()
 
         coVerifySequence {
-            uiOuter.hideDeleteDialog()
+            uiOuter.hideDoneDialog()
         }
     }
 

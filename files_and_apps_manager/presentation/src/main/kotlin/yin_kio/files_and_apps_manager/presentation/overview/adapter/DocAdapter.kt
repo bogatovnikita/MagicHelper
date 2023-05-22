@@ -7,11 +7,12 @@ import yin_kio.files_and_apps_manager.presentation.overview.adapter.holder.DocVi
 import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 
 internal class DocAdapter(
-    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
 ) : ListAdapter<FileOrAppItem, DocViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DocViewHolder {
-        return DocViewHolder.from(parent, onUpdate)
+        return DocViewHolder.from(parent, onUpdate, onItemClick)
     }
 
     override fun onBindViewHolder(holder: DocViewHolder, position: Int) {

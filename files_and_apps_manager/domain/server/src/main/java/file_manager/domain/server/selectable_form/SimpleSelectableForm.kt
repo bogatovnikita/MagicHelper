@@ -16,7 +16,6 @@ open class SimpleSelectableForm<T> : SelectableForm<T> {
 
     override val isAllSelected: Boolean get() {
         if (_selected.isEmpty()) return false
-
         return _selected.containsAll(content)
     }
 

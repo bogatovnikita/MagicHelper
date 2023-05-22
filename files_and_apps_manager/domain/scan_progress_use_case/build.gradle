@@ -6,8 +6,8 @@ plugins {
 dependencies {
     testImplementation testDomain.values()
     implementation domain.values()
+    implementation project(':files_and_apps_manager:domain:updater')
 
-    implementation project(":files_and_apps_manager:domain:server")
 }
 
 test {

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import by.kirich1409.viewbindingdelegate.viewBinding
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.launch
@@ -21,14 +22,19 @@ internal class AskDeleteDialog : FixedWidthDialogFragment(R.layout.dialog_ask_de
         binding.apply {
             cancel.setOnClickListener { viewModel.hideAskDeleteDialog() }
             close.setOnClickListener { viewModel.hideAskDeleteDialog() }
-            delete.setOnClickListener { TODO() }
+            delete.setOnClickListener { viewModel.delete() }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect{
                 when(it){
                     Command.HideAskDeleteDialog -> findNavController().navigateUp()
-                    Command.ShowDeleteProgress -> TODO()
+                    Command.ShowDeleteProgress -> {
+                        findNavController().apply {
+                            popBackStack(R.id.overviewFragment, false)
+                            navigate(R.id.toDeleteProgress)
+                        }
+                    }
                     else -> {}
                 }
             }

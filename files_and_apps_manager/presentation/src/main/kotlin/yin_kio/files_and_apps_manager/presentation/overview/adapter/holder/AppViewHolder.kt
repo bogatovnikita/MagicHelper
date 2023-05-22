@@ -15,7 +15,8 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 
 internal class AppViewHolder(
     private val binding: ListItemAppBinding,
-    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
 ) :  ViewHolder(binding.root) {
 
 
@@ -40,16 +41,20 @@ internal class AppViewHolder(
         }
 
 
+        binding.root.setOnClickListener { onItemClick(item, selectable) }
+        binding.checkbox.setOnClickListener {onItemClick(item, selectable) }
+
     }
 
 
     companion object{
         fun from(parent: ViewGroup,
-                 onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+                 onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+                 onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
         ) : AppViewHolder {
             val inflater = LayoutInflater.from(parent.context)
             val binding = ListItemAppBinding.inflate(inflater, parent, false)
-            return AppViewHolder(binding, onUpdate)
+            return AppViewHolder(binding, onUpdate, onItemClick)
         }
     }
 

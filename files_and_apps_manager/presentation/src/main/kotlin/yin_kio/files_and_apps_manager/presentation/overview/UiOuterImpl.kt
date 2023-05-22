@@ -49,8 +49,12 @@ internal class UiOuterImpl(
         viewModel?.sendCommand(Command.UpdateListContent)
     }
 
-    override suspend fun out(itemSelectionOut: ItemSelectionOut) {
-        TODO("Not yet implemented")
+    override fun out(itemSelectionOut: ItemSelectionOut) {
+        viewModel?.update { it.copy(
+            isAllSelected = itemSelectionOut.isAllSelected,
+            buttonText = presenter.presentButtonText(itemSelectionOut.selectedCount),
+            buttonAlpha = presenter.presentButtonAlpha(itemSelectionOut.selectedCount)
+        ) }
     }
 
     override suspend fun out(sortingModeOut: SortingModeOut) {
@@ -84,7 +88,7 @@ internal class UiOuterImpl(
         viewModel?.sendCommand(Command.ShowAskDeleteDialog)
     }
 
-    override suspend fun hideDeleteDialog() {
+    override suspend fun hideAskDeleteDialog() {
         viewModel?.sendCommand(Command.HideAskDeleteDialog)
     }
 
@@ -96,5 +100,7 @@ internal class UiOuterImpl(
         viewModel?.sendCommand(Command.ShowDeleteCompletion)
     }
 
-
+    override suspend fun hideDoneDialog() {
+        viewModel?.sendCommand(Command.HideDoneDialog)
+    }
 }

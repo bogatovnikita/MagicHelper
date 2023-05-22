@@ -8,6 +8,7 @@ dependencies {
     implementation domain.values()
 
     implementation project(":files_and_apps_manager:domain:server")
+    implementation project(":files_and_apps_manager:domain:updater")
 }
 
 test {

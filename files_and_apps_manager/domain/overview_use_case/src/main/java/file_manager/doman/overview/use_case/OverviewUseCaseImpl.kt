@@ -14,7 +14,7 @@ internal class OverviewUseCaseImpl(
     private val outCreator: OutCreator,
     private val server: FileManagerServer,
     private val deleteAction: DeleteAction,
-    private val updateAction: UpdateAction,
+    private val updateUIAction: UpdateUIAction,
     private val coroutineScope: CoroutineScope,
     private val dispatcher: CoroutineContext
 ) : OverviewUseCase {
@@ -24,7 +24,7 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun update() = async{
-        updateAction.update()
+        updateUIAction.update()
     }
 
     override fun switchGroup(groupName: GroupName) = async{
@@ -45,9 +45,10 @@ internal class OverviewUseCaseImpl(
         uiOuter.hideSortingSelection()
     }
 
-    override fun switchItemSelection(groupName: GroupName, itemId: String) = async{
+    override fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable) {
         server.switchItemSelection(groupName, itemId)
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
+        selectable.setSelected(server.isItemSelected(groupName, itemId))
     }
 
     override fun showAskDeleteDialog() = async{
@@ -56,16 +57,16 @@ internal class OverviewUseCaseImpl(
         }
     }
 
-    override fun delete(groupName: GroupName) = async{
-        deleteAction.deleteAndUpdate(groupName)
+    override fun delete() = async{
+        deleteAction.deleteAndUpdate(server.selectedGroup)
     }
 
     override fun hideAskDeleteDialog() = async{
-        uiOuter.hideDeleteDialog()
+        uiOuter.hideAskDeleteDialog()
     }
 
     override fun completeDelete() = async{
-        uiOuter.hideDeleteDialog()
+        uiOuter.hideDoneDialog()
     }
 
 

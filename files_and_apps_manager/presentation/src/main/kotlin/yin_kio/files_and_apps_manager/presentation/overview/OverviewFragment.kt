@@ -19,12 +19,15 @@ import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.OverviewUseCaseCreator
 import file_manager.doman.overview.ui_out.Selectable
-import jamycake.lifecycle_aware.lifecycleAware
+import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
 import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
@@ -35,7 +38,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val binding: FragmentOverviewBinding by viewBinding()
     private val server: FileManagerServer by previousBackStackEntry()
-    private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
+    private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
 
     private var onDismissSortingPopup: (() -> Unit)? = null // эта лямбда вынесена для того, чтобы диалог не прятался при дисмисе попапа
 
@@ -43,13 +46,27 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
             item, selectable -> viewModel.updateSelectable(
-        viewModel.state.value.groupName, item.id, selectable)
+                viewModel.state.value.groupName, item.id, selectable)
+    }
+
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
+            item, selectable -> viewModel.switchItemSelection(
+                viewModel.state.value.groupName, item.id, selectable)
     }
 
 
-    private val imageAdapter by lazy { ImageAdapter(onUpdate = onItemUpdate) } // ВНИМАНИЕ!!! Здесь идёт жуткое дублирование.
-    private val docAdapter by lazy { DocAdapter(onUpdate = onItemUpdate) }
-    private val appAdapter by lazy { AppAdapter(onUpdate = onItemUpdate) }
+    private val imageAdapter by lazy { ImageAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) } // ВНИМАНИЕ!!! Здесь идёт жуткое дублирование.
+    private val docAdapter by lazy { DocAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) }
+    private val appAdapter by lazy { AppAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) }
 
 
 
@@ -144,9 +161,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             viewModel.command.collect {
                 when (it) {
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowAskDeleteDialog -> TODO()
-                    Command.ShowDeleteProgress -> TODO()
-                    Command.ShowDeleteCompletion -> TODO()
+                    Command.ShowAskDeleteDialog -> findNavController().navigate(R.id.toAskDelete)
                     Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
                     else -> {}
                 }
@@ -177,6 +192,12 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         val context = requireContext().applicationContext
 
+        val updater = UpdaterImpl(
+            filesAndApps = FilesAndAppsImpl(context),
+            server = server,
+            grouper = GrouperImpl()
+        )
+
         val presenter = Presenter(context)
         val uiOuter = UiOuterImpl(presenter)
         val useCase = OverviewUseCaseCreator.create(
@@ -184,6 +205,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             server = server,
             deleter = DeleterImpl(),
             deleteTimeSaver = DeleteTimeSaverImpl(context),
+            updater = updater,
             coroutineScope = coroutineScope
         )
 

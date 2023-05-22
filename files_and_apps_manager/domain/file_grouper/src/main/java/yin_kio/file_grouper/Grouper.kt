@@ -1,4 +1,4 @@
-package file_manager.scan_progress.grouper
+package yin_kio.file_grouper
 
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName

@@ -7,10 +7,11 @@ import yin_kio.files_and_apps_manager.presentation.overview.adapter.holder.AppVi
 import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 
 internal class AppAdapter(
-    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
 ) : ListAdapter<FileOrAppItem, AppViewHolder>(DiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {
-        return AppViewHolder.from(parent, onUpdate)
+        return AppViewHolder.from(parent, onUpdate, onItemClick)
     }
 
     override fun onBindViewHolder(holder: AppViewHolder, position: Int) {
