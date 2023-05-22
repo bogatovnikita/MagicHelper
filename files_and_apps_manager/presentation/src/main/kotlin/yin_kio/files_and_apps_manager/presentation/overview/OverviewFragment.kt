@@ -159,8 +159,6 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                 when (it) {
                     Command.Close -> findNavController().navigateUp()
                     Command.ShowAskDeleteDialog -> findNavController().navigate(R.id.toAskDelete)
-                    Command.ShowDeleteProgress -> TODO()
-                    Command.ShowDeleteCompletion -> TODO()
                     Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
                     else -> {}
                 }
