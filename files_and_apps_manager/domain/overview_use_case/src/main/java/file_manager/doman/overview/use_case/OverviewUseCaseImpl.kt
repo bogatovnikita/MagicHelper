@@ -62,11 +62,11 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun hideAskDeleteDialog() = async{
-        uiOuter.hideDeleteDialog()
+        uiOuter.hideAskDeleteDialog()
     }
 
     override fun completeDelete() = async{
-        uiOuter.hideDeleteDialog()
+        uiOuter.hideDoneDialog()
     }
 
 

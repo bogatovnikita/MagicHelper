@@ -11,8 +11,9 @@ interface UiOuter {
     suspend fun showSortingSelection()
     suspend fun hideSortingSelection()
     suspend fun showDeleteDialog()
-    suspend fun hideDeleteDialog()
+    suspend fun hideAskDeleteDialog()
     suspend fun showDeleteProgress()
     suspend fun showDeleteCompletion()
+    suspend fun hideDoneDialog()
 
 }

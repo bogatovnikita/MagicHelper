@@ -6,6 +6,7 @@ plugins {
 dependencies {
     testImplementation testDomain.values()
     implementation domain.values()
+    implementation project(':files_and_apps_manager:domain:file_grouper')
 
     implementation project(":files_and_apps_manager:domain:server")
 }

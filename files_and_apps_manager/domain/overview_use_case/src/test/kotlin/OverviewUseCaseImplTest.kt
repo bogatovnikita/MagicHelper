@@ -151,7 +151,7 @@ class OverviewUseCaseImplTest {
         useCase.hideAskDeleteDialog()
         advanceUntilIdle()
 
-        coVerify { uiOuter.hideDeleteDialog() }
+        coVerify { uiOuter.hideAskDeleteDialog() }
     }
 
     @Test
@@ -171,7 +171,7 @@ class OverviewUseCaseImplTest {
         advanceUntilIdle()
 
         coVerifySequence {
-            uiOuter.hideDeleteDialog()
+            uiOuter.hideDoneDialog()
         }
     }
 

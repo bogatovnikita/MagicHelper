@@ -7,11 +7,10 @@ import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
 import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.gateways.FilesAndApps
-import file_manager.scan_progress.grouper.Grouper
+import yin_kio.file_grouper.Grouper
 import file_manager.scan_progress.scan.ScanActionImpl
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
