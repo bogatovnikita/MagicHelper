@@ -3,6 +3,7 @@ package yin_kio.files_and_apps_manager.presentation.overview
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewBinding
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -17,6 +18,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.OverviewUseCaseCreator
+import file_manager.doman.overview.ui_out.Selectable
 import jamycake.lifecycle_aware.lifecycleAware
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
@@ -26,6 +28,7 @@ import yin_kio.files_and_apps_manager.data.DeleterImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
+import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
@@ -38,10 +41,15 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val sortingPopup: PopupWindow by lazy { createSortingPopup() }
 
+    private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
+            item, selectable -> viewModel.updateSelectable(
+        viewModel.state.value.groupName, item.id, selectable)
+    }
 
-    private val imageAdapter by lazy { ImageAdapter() }
-    private val docAdapter by lazy { DocAdapter() }
-    private val appAdapter by lazy { AppAdapter() }
+
+    private val imageAdapter by lazy { ImageAdapter(onUpdate = onItemUpdate) } // ВНИМАНИЕ!!! Здесь идёт жуткое дублирование.
+    private val docAdapter by lazy { DocAdapter(onUpdate = onItemUpdate) }
+    private val appAdapter by lazy { AppAdapter(onUpdate = onItemUpdate) }
 
 
 
@@ -74,6 +82,9 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             sortImage.onClick {  viewModel.showSortingSelection() }
             sortText.onClick {  viewModel.showSortingSelection() }
             onDismissSortingPopup = { viewModel.hideSortingSelection() }
+
+            selectAllCheckbox.onClick { viewModel.switchAllSelection(viewModel.state.value.groupName) }
+            selectAllText.onClick { viewModel.switchAllSelection(viewModel.state.value.groupName) }
         }
     }
 
@@ -85,6 +96,10 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                 showChips(it)
                 showSortingControlPanel(it)
                 showList(it)
+
+                Log.d("!!!", "work!!!")
+
+                binding.selectAllCheckbox.isChecked = it.isAllSelected
 
             }
         }
@@ -99,7 +114,10 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             GroupName.Apps -> appAdapter
         }
 
-        binding.recycler.adapter = adapter
+        if (binding.recycler.adapter != adapter){
+
+            binding.recycler.adapter = adapter
+        }
 
         adapter.submitList(it.content)
     }
@@ -120,6 +138,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setupCommandsObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect {
@@ -128,6 +147,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
                     Command.ShowAskDeleteDialog -> TODO()
                     Command.ShowDeleteProgress -> TODO()
                     Command.ShowDeleteCompletion -> TODO()
+                    Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
                     else -> {}
                 }
             }

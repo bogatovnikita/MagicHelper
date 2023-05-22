@@ -32,12 +32,19 @@ internal class UiOuterImpl(
             sortingMode = updateOut.sortingMode,
             sortingModeText = presenter.presentSortingMode(updateOut.sortingMode),
             content = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
-            groupName = it.groupName
+            groupName = it.groupName,
+            isAllSelected = it.isAllSelected
         ) }
     }
 
     override suspend fun out(allSelectionOut: AllSelectionOut) {
-        TODO("Not yet implemented")
+        // TODO add selection count out
+        viewModel?.update {
+            it.copy(isAllSelected = allSelectionOut.isAllSelected,
+            )
+        }
+
+        viewModel?.sendCommand(Command.UpdateListContent)
     }
 
     override suspend fun out(itemSelectionOut: ItemSelectionOut) {

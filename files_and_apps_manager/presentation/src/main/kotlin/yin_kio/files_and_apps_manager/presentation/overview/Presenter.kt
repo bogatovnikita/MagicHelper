@@ -36,7 +36,7 @@ internal class Presenter(
             FileOrAppItem(
                 id = it.id,
                 name = presentName(it),
-                description = presentDescription(it)
+                description = presentDescription(it),
             )
         }
     }

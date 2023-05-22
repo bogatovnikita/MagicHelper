@@ -5,6 +5,7 @@ import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupSwitchingOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
 import file_manager.doman.overview.ui_out.OutCreator
+import file_manager.doman.overview.ui_out.Selectable
 import file_manager.doman.overview.ui_out.SortingModeOut
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteAction
@@ -198,6 +199,20 @@ class OverviewUseCaseImplTest {
         advanceUntilIdle()
 
         coVerify { uiOuter.hideSortingSelection() }
+    }
+
+    @Test
+    fun testUpdateSelectable() = runTest {
+        val isSelected = true
+        val groupName = GroupName.Images
+        val itemId = ""
+        val selectable: Selectable = spyk()
+
+        coEvery { server.isItemSelected(groupName, itemId) } returns isSelected
+
+        useCase.updateSelectable(groupName, itemId, selectable)
+
+        coVerify { selectable.setSelected(isSelected) }
     }
 
     private fun runTest(

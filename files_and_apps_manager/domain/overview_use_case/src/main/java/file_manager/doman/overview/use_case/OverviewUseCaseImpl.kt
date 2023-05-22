@@ -75,6 +75,10 @@ internal class OverviewUseCaseImpl(
         uiOuter.out(outCreator.createSortingModeOut())
     }
 
+    override fun updateSelectable(groupName: GroupName, itemId: String, selectable: Selectable) {
+        val isSelected = server.isItemSelected(groupName, itemId)
+        selectable.setSelected(isSelected)
+    }
 
     private fun async(
         action: suspend CoroutineScope.() -> Unit

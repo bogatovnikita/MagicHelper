@@ -7,5 +7,5 @@ internal enum class Command {
     HideAskDeleteDialog,
     ShowDeleteProgress,
     ShowDeleteCompletion,
-
+    UpdateListContent
 }
