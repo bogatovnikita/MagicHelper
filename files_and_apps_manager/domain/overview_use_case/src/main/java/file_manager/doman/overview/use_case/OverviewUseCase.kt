@@ -13,7 +13,7 @@ interface OverviewUseCase {
     fun hideSortingSelection()
     fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable)
     fun showAskDeleteDialog()
-    fun delete(groupName: GroupName)
+    fun delete()
     fun hideAskDeleteDialog()
     fun completeDelete()
     fun setSortingMode(sortingMode: SortingMode)

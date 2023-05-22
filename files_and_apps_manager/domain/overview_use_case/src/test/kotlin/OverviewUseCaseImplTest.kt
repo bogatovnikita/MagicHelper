@@ -157,7 +157,9 @@ class OverviewUseCaseImplTest {
     @Test
     fun testDelete() = runTest{
         val groupName = GroupName.Video
-        useCase.delete(groupName)
+        useCase.delete()
+        coEvery { server.selectedGroup } returns groupName
+
         advanceUntilIdle()
 
         coVerify { deleteAction.deleteAndUpdate(groupName) }

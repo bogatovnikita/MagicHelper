@@ -57,8 +57,8 @@ internal class OverviewUseCaseImpl(
         }
     }
 
-    override fun delete(groupName: GroupName) = async{
-        deleteAction.deleteAndUpdate(groupName)
+    override fun delete() = async{
+        deleteAction.deleteAndUpdate(server.selectedGroup)
     }
 
     override fun hideAskDeleteDialog() = async{
