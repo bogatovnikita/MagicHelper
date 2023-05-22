@@ -45,7 +45,9 @@ class OutCreatorImpl(
     override fun createGroupSwitchingOut(): GroupSwitchingOut {
         return GroupSwitchingOut(
             groupName = server.selectedGroup,
-            content = server.selectedGroupContent
+            content = server.selectedGroupContent,
+            selectionCount = server.selectedCount,
+            isAllSelected = server.isAllSelected
         )
     }
 }

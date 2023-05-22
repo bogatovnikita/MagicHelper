@@ -5,5 +5,7 @@ import file_manager.domain.server.GroupName
 
 data class GroupSwitchingOut(
     val groupName: GroupName = GroupName.Images,
-    val content: List<FileOrApp> = emptyList()
+    val content: List<FileOrApp> = emptyList(),
+    val selectionCount: Int = 0,
+    val isAllSelected: Boolean = false
 )

@@ -66,6 +66,9 @@ internal class UiOuterImpl(
         viewModel?.update { it.copy(
             groupName = groupSwitchingOut.groupName,
             content = presenter.presentFilesOrApps(groupSwitchingOut.content),
+            buttonText = presenter.presentButtonText(groupSwitchingOut.selectionCount),
+            buttonAlpha = presenter.presentButtonAlpha(groupSwitchingOut.selectionCount),
+            isAllSelected = groupSwitchingOut.isAllSelected
         ) }
     }
 
