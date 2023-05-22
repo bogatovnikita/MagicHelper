@@ -199,7 +199,7 @@ class BatteryFragment : Fragment() {
                         R.color.black
                     )
                 )
-                setBackgroundResource(R.drawable.background_button_not_danger)
+                setBackgroundResource(R.drawable.bg_button_not_danger)
                 text = "Бипки"
             }
         } else {
@@ -211,7 +211,7 @@ class BatteryFragment : Fragment() {
                         R.color.red
                     )
                 )
-                setBackgroundResource(R.drawable.background_button_danger)
+                setBackgroundResource(R.drawable.bg_button_danger)
                 text = getString(R.string.you_need_to_increase_the_working_time_of_the_phone)
             }
         }

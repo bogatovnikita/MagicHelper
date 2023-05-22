@@ -62,7 +62,7 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
                         R.color.black
                     )
                 )
-                setBackgroundResource(R.drawable.background_button_not_danger)
+                setBackgroundResource(R.drawable.bg_button_not_danger)
                 text = getString(R.string.temperature_normal_desc)
             }
         } else {
@@ -73,7 +73,7 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
                         R.color.red
                     )
                 )
-                setBackgroundResource(R.drawable.background_button_danger)
+                setBackgroundResource(R.drawable.bg_button_danger)
                 text = getString(R.string.temperature_danger_desc)
             }
         }

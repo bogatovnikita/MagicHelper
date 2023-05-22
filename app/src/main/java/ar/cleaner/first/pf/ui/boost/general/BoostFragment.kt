@@ -72,8 +72,8 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
                 else getString(R.string.general_action_required)
 
             setBackgroundResource(
-                if (isOptimize) R.drawable.background_button_not_danger
-                else R.drawable.background_button_danger
+                if (isOptimize) R.drawable.bg_button_not_danger
+                else R.drawable.bg_button_danger
             )
         }
     }
