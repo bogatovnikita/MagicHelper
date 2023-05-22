@@ -43,13 +43,27 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
             item, selectable -> viewModel.updateSelectable(
-        viewModel.state.value.groupName, item.id, selectable)
+                viewModel.state.value.groupName, item.id, selectable)
+    }
+
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
+            item, selectable -> viewModel.switchItemSelection(
+                viewModel.state.value.groupName, item.id, selectable)
     }
 
 
-    private val imageAdapter by lazy { ImageAdapter(onUpdate = onItemUpdate) } // ВНИМАНИЕ!!! Здесь идёт жуткое дублирование.
-    private val docAdapter by lazy { DocAdapter(onUpdate = onItemUpdate) }
-    private val appAdapter by lazy { AppAdapter(onUpdate = onItemUpdate) }
+    private val imageAdapter by lazy { ImageAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) } // ВНИМАНИЕ!!! Здесь идёт жуткое дублирование.
+    private val docAdapter by lazy { DocAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) }
+    private val appAdapter by lazy { AppAdapter(
+        onUpdate = onItemUpdate,
+        onItemClick = onItemClick
+    ) }
 
 
 

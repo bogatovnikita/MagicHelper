@@ -107,15 +107,18 @@ class OverviewUseCaseImplTest {
     fun testSwitchItemSelection() = runTest{
         val itemId = "some_id"
         val itemSelectionOut = ItemSelectionOut(id = itemId)
+        val selectable: Selectable = spyk()
 
         coEvery { outCreator.createItemSelectionOut(itemId) } returns itemSelectionOut
+        coEvery { server.isItemSelected(GroupName.Video, itemId) } returns true
 
-        useCase.switchItemSelection(GroupName.Video, itemId)
+        useCase.switchItemSelection(GroupName.Video, itemId, selectable)
         advanceUntilIdle()
 
         coVerify {
             server.switchItemSelection(GroupName.Video, itemId)
             uiOuter.out(itemSelectionOut)
+            selectable.setSelected(true)
         }
     }
 

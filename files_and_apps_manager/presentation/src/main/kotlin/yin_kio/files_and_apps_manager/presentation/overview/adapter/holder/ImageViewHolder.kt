@@ -11,7 +11,8 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 
 internal class ImageViewHolder private constructor(
     private val binding: ListItemImageBinding,
-    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
 ) : ViewHolder(binding.root) {
 
     private val selectable = SelectableImpl(binding.checkbox)
@@ -25,13 +26,19 @@ internal class ImageViewHolder private constructor(
         Glide.with(binding.image)
             .load(item.id)
             .into(binding.image)
+
+        binding.root.setOnClickListener { onItemClick(item, selectable) }
+        binding.checkbox.setOnClickListener {onItemClick(item, selectable) }
     }
 
     companion object{
-        fun from(parent: ViewGroup, onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit) : ImageViewHolder {
+        fun from(parent: ViewGroup,
+                 onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+                 onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+        ) : ImageViewHolder {
             val inflater = LayoutInflater.from(parent.context)
             val binding = ListItemImageBinding.inflate(inflater, parent, false)
-            return ImageViewHolder(binding, onUpdate)
+            return ImageViewHolder(binding, onUpdate, onItemClick)
         }
     }
 

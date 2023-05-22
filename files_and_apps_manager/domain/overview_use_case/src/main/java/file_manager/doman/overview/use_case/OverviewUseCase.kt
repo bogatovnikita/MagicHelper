@@ -11,7 +11,7 @@ interface OverviewUseCase {
     fun switchAllSelection(groupName: GroupName)
     fun showSortingSelection()
     fun hideSortingSelection()
-    fun switchItemSelection(groupName: GroupName, itemId: String)
+    fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable)
     fun showAskDeleteDialog()
     fun delete(groupName: GroupName)
     fun hideAskDeleteDialog()
