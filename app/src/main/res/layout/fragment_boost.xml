@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_for_background"
         android:layout_width="wrap_content"
@@ -37,7 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <yin_kio.toolbar.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -46,7 +44,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:title_text="@string/boost_title_name" />
-
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_optimize_is_done"

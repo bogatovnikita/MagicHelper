@@ -1,6 +1,6 @@
-package ar.cleaner.first.pf.domain.repositorys.battery
+package ar.cleaner.first.pf.domain.gateways.battery
 
-import ar.cleaner.first.pf.domain.repositorys.base.BaseRepository
+import ar.cleaner.first.pf.domain.gateways.base.BaseRepository
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow

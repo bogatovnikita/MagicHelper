@@ -1,4 +1,4 @@
-package ar.cleaner.first.pf.domain.repositorys.temperature
+package ar.cleaner.first.pf.domain.gateways.temperature
 
 interface TemperatureSettings {
 

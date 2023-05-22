@@ -1,11 +1,10 @@
 package ar.cleaner.first.pf.data.providers.temperature
 
 import android.app.Application
-import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
-import ar.cleaner.first.pf.domain.repositorys.temperature.TemperatureProvider
+import ar.cleaner.first.pf.domain.gateways.temperature.TemperatureProvider
 import javax.inject.Inject
 
 class TemperatureProviderImpl @Inject constructor(

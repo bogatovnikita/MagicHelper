@@ -1,7 +1,7 @@
 package ar.cleaner.first.pf.domain.usecases.temperature
 
-import ar.cleaner.first.pf.domain.repositorys.temperature.TemperatureProvider
-import ar.cleaner.first.pf.domain.repositorys.temperature.TemperatureSettings
+import ar.cleaner.first.pf.domain.gateways.temperature.TemperatureProvider
+import ar.cleaner.first.pf.domain.gateways.temperature.TemperatureSettings
 import javax.inject.Inject
 
 class TemperatureOptimizerUseCase @Inject constructor(

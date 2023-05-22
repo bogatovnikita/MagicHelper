@@ -12,7 +12,6 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentBoostBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BoostFragment : Fragment(R.layout.fragment_boost) {
@@ -27,7 +26,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
     }
 
     private fun initObserver() {
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenResumed {
             viewModel.state.collect {
                 renderState(it)
             }
@@ -35,7 +34,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
     }
 
     private fun renderState(state: BoostState) {
-        state.ramDetails ?: return
+        state.boostDetails ?: return
         if (!state.loadData) return
 
         initProgress(state)
@@ -46,12 +45,12 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
     private fun initProgress(state: BoostState) {
         with(binding) {
             percentTv.text =
-                requireContext().getString(R.string.percent_D, state.ramDetails!!.usagePercents)
-            progressBar.progress = state.ramDetails.usagePercents
+                requireContext().getString(R.string.percent_D, state.boostDetails!!.usagePercents)
+            progressBar.progress = state.boostDetails.usagePercents
             occupiedTotalTv.text = requireContext().getString(
                 R.string._F_gb_F_gb,
-                state.ramDetails.usedRam,
-                state.ramDetails.totalRam
+                state.boostDetails.usedRam,
+                state.boostDetails.totalRam
             )
         }
     }
@@ -80,7 +79,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
     }
 
     private fun initClickListener() {
-        binding.arrowBackIv.setOnClickListener {
+        binding.toolbar.binding.arrowBackIv.setOnClickListener {
             findNavController().popBackStack()
         }
         binding.boostButton.setOnClickListener {
@@ -88,10 +87,5 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
                 R.id.action_boostFragment_to_boostProgressFragment
             )
         }
-    }
-
-    companion object {
-        const val BOOST_PERCENT = "BOOST_PERCENT"
-        const val BOOST_CLEAR_VALUE = "BOOST_CLEAR_VALUE"
     }
 }

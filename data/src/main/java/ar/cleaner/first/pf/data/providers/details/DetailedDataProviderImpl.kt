@@ -18,7 +18,8 @@ class DetailedDataProviderImpl @Inject constructor(
         return BoostDetails(
             totalRam = getTotalRam().convertToGb(),
             usedRam = getUsageRam().convertToGb(),
-            usagePercents = getUsagePercent()
+            usagePercents = getUsagePercent(),
+            usedRamLong = getUsageRam()
         )
     }
 

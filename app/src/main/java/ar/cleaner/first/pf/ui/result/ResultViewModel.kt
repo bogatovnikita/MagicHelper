@@ -3,7 +3,7 @@ package ar.cleaner.first.pf.ui.result
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
-import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ResultViewModel @Inject constructor(
     private val resultList: ResultListProvider,
-    private val getRamDetailsUseCase: GetRamDetailsUseCase,
+    private val ramDetailsUseCase: RamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
 ) : ViewModel() {
 
@@ -23,11 +23,11 @@ class ResultViewModel @Inject constructor(
 
     fun initRamDetails() {
         mainScope {
-            getRamDetailsUseCase.invoke().collect { result ->
+            ramDetailsUseCase.invoke().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
-                            ramDetails = result.response,
+                            boostDetails = result.response,
                             itemsList = resultList.getResultList(ResultListProvider.TYPE_BOOST)
                         )
                     }

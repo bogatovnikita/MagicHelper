@@ -3,7 +3,8 @@ package ar.cleaner.first.pf.ui.menu
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import ar.cleaner.first.pf.domain.usecases.battery.GetBatteryDetailsUseCase
-import ar.cleaner.first.pf.domain.usecases.boosting.GetRamDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.storage.StorageUseCase
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureUseCase
 import ar.cleaner.first.pf.domain.wrapper.CaseResult
 import ar.cleaner.first.pf.extensions.mainScope
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MenuViewModel @Inject constructor(
-    private val getRamDetailsUseCase: GetRamDetailsUseCase,
+    private val storageUseCase: StorageUseCase,
+    private val ramDetailsUseCase: RamDetailsUseCase,
     private val getBatteryDetailsUseCase: GetBatteryDetailsUseCase,
     private val temperatureUseCase: TemperatureUseCase
 ) : ViewModel() {
@@ -31,17 +33,18 @@ class MenuViewModel @Inject constructor(
 
     private fun updateRamDetails() {
         mainScope {
-            getRamDetailsUseCase.invoke().collect { result ->
+            ramDetailsUseCase().collect { result ->
                 when (result) {
                     is CaseResult.Success -> {
                         _state.value = state.value.copy(
+                            isRamOptimized = result.response.isOptimized,
                             totalRam = result.response.totalRam,
                             usedRam = result.response.usedRam,
                             usageRamPercents = result.response.usagePercents.toFloat(),
                         )
                     }
                     is CaseResult.Failure -> {
-                        Log.e("pie", "MenuViewModel:initRamDetails Failure")
+                        Log.e("pie", "${result.reason}")
                     }
                 }
             }
@@ -76,7 +79,14 @@ class MenuViewModel @Inject constructor(
 
     private fun updateFileManagerDetails() {
         mainScope {
-            // TODO("Not yet implemented")
+            storageUseCase.getStorageInfo().also { storageInfo ->
+                _state.value = state.value.copy(
+                    usedMemorySize = storageInfo.occupied,
+                    totalSize = storageInfo.total,
+                    usageMemoryPercents = storageInfo.usageMemoryPercents,
+                    isMemoryOptimized = false,
+                )
+            }
         }
     }
 }
