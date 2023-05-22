@@ -17,6 +17,6 @@ class TemperatureSettingImpl @Inject constructor(
 
     override fun saveLastTemperature(degree: Int) = settings.saveLastTemperature(degree)
 
-    override fun gatLastTemperature(): Int = settings.gatLastTemperature()
+    override fun getLastTemperature(): Int = settings.gatLastTemperature()
 
 }

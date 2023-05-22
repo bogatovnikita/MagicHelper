@@ -4,9 +4,11 @@ import ar.cleaner.first.pf.data.providers.storage.StorageInfoProvider
 import ar.cleaner.first.pf.data.providers.temperature.TemperatureProviderImpl
 import ar.cleaner.first.pf.data.repository_implementation.BatteryProviderImpl
 import ar.cleaner.first.pf.data.repository_implementation.RamRepositoryImpl
+import ar.cleaner.first.pf.data.settings.battery.BatterySettingsImpl
 import ar.cleaner.first.pf.data.settings.storage.StorageSettingsImpl
 import ar.cleaner.first.pf.data.settings.temperature.TemperatureSettingImpl
 import ar.cleaner.first.pf.domain.gateways.battery.BatteryProvider
+import ar.cleaner.first.pf.domain.gateways.battery.BatterySettings
 import ar.cleaner.first.pf.domain.gateways.boosting.BoostingUseCaseRepository
 import ar.cleaner.first.pf.domain.gateways.storage.Storage
 import ar.cleaner.first.pf.domain.gateways.storage.StorageSettings
@@ -38,10 +40,11 @@ interface Binds {
     @Binds
     fun bindsCleanChecker(cleanChecker: CleanCheckerImpl): CleanChecker
 
-
     @Binds
     fun bindsStorageSettings(settings: StorageSettingsImpl): StorageSettings
 
+    @Binds
+    fun bindsBatterySettings(settings: BatterySettingsImpl): BatterySettings
 
     @Binds
     fun bindsRamRepositoryImplToBoostingUseCaseRepository(ramRepositoryImpl: RamRepositoryImpl): BoostingUseCaseRepository

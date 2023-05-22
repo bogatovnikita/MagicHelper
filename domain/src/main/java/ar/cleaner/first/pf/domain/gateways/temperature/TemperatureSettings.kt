@@ -8,6 +8,6 @@ interface TemperatureSettings {
 
     fun saveLastTemperature(degree: Int)
 
-    fun gatLastTemperature(): Int
+    fun getLastTemperature(): Int
 
 }

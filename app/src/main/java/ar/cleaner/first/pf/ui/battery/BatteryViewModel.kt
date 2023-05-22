@@ -1,8 +1,10 @@
 package ar.cleaner.first.pf.ui.battery
 
 import androidx.lifecycle.ViewModel
+import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryDetailsUseCase
+import ar.cleaner.first.pf.domain.usecases.battery.BatteryOptimizationUseCase
 import ar.cleaner.first.pf.extensions.mainScope
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
 import ar.cleaner.first.pf.utils.event_delegate.EventDelegate
@@ -17,7 +19,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BatteryViewModel @Inject constructor(
-    private val useCase: BatteryDetailsUseCase
+    private val list: BatteryModeFunctionList,
+    private val useCaseBattery: BatteryDetailsUseCase,
+    private val useCaseOptimization: BatteryOptimizationUseCase,
 ) : ViewModel(), EventDelegate<BaseEvent> by EventDelegateImpl() {
 
     private val _state: MutableStateFlow<BatteryDetails> = MutableStateFlow(BatteryDetails())
@@ -25,15 +29,24 @@ class BatteryViewModel @Inject constructor(
 
     fun initBatteryDetails() {
         mainScope {
-            useCase.getBatteryDetails().collect { batInfo ->
+            useCaseBattery.getBatteryDetails().collect { batInfo ->
                 _state.value =
                     state.value.copy(
                         batteryCharge = batInfo.batteryCharge,
                         batteryMode = batInfo.batteryMode,
                         isOptimized = batInfo.isOptimized,
+                        batteryListFun = list.getListMode(batInfo.batteryMode),
                     )
             }
         }
+    }
+
+    fun setBatteryMode(mode: BatteryMode) {
+        _state.value =
+            state.value.copy(
+                batteryMode = mode,
+                batteryListFun = list.getListMode(mode),
+            )
     }
 
     fun handleBluetoothPermission() {
@@ -43,4 +56,7 @@ class BatteryViewModel @Inject constructor(
     fun handleRationale(event: String) {
         sendEvent(SnackbarEvent(event))
     }
+
+    fun startOptimization() = useCaseOptimization.saveOptimizationMode(state.value.batteryMode)
+
 }

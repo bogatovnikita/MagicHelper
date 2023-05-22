@@ -6,4 +6,5 @@ data class BatteryDetails(
     val batteryCharge: Int = 53,
     val batteryMode: BatteryMode = BatteryMode.NORMAL,
     val isOptimized: Boolean = false,
+    val batteryListFun: List<String> = emptyList(),
 )

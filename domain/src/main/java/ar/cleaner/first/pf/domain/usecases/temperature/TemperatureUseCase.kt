@@ -9,6 +9,6 @@ class TemperatureUseCase @Inject constructor(
 
     fun isOptimized() = settings.isTemperatureChecked()
 
-    fun getTemperature(): Int = settings.gatLastTemperature()
+    fun getTemperature(): Int = settings.getLastTemperature()
 
 }

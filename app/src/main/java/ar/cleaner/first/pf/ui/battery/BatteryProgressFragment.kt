@@ -12,7 +12,6 @@ import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryOptimizationUseCase
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
-import ar.cleaner.first.pf.ui.result.ResultAdapter
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,18 +47,18 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
         val actions = resources.getStringArray(R.array.battery_items).toList()
         val actionsNormal: List<String>
         val actionsMedium: List<String>
-        when (BatteryMode.NORMAL.name) { // TODO заглушка
-            BatteryMode.NORMAL.name -> {
+        when (batteryOptimizationUseCase.getOptimizationMode()) {
+            BatteryMode.NORMAL -> {
                 updateBatteryOptimizationUseCase(BatteryMode.NORMAL)
                 actionsNormal = actions.subList(0, 2)
                 initRecyclerView(actionsNormal)
             }
-            BatteryMode.MEDIUM.name -> {
+            BatteryMode.MEDIUM -> {
                 updateBatteryOptimizationUseCase(BatteryMode.MEDIUM)
                 actionsMedium = actions.subList(0, 4)
                 initRecyclerView(actionsMedium)
             }
-            BatteryMode.HIGH.name -> {
+            BatteryMode.HIGH -> {
                 updateBatteryOptimizationUseCase(BatteryMode.HIGH)
                 initRecyclerView(actions)
             }
@@ -68,7 +67,9 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
 
     private fun updateBatteryOptimizationUseCase(batteryMode: BatteryMode) {
         lifecycleScope.launch {
-            batteryOptimizationUseCase.invoke(batteryMode).collect {}
+            batteryOptimizationUseCase.startOptimization(batteryMode).collect {
+
+            }
         }
     }
 
@@ -107,11 +108,7 @@ class BatteryProgressFragment : Fragment(R.layout.fragment_progress) {
 
     private fun goScreenResult() {
         appShowAds {
-            findNavController().navigate(
-                BatteryProgressFragmentDirections.actionBatteryProgressFragmentToResultFragment(
-                    ResultAdapter.BATTERY_KEY
-                )
-            )
+            findNavController().navigate( R.id.action_batteryProgressFragment_to_resultFragment)
         }
     }
 

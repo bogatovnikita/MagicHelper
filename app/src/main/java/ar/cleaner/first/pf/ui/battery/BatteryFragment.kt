@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.Group
@@ -22,7 +20,6 @@ import ar.cleaner.first.pf.databinding.FragmentBatteryBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.extensions.*
-import ar.cleaner.first.pf.models.ModeGroup
 import ar.cleaner.first.pf.ui.dialogs.DialogBluetoothPermission
 import ar.cleaner.first.pf.ui.dialogs.DialogWriteSettings
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
@@ -43,7 +40,6 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
     private val viewModel: BatteryViewModel by viewModels()
     private val dialog = DialogWriteSettings()
     private val dialogBluetooth = DialogBluetoothPermission()
-    private var batteryMode: BatteryMode = BatteryMode.NORMAL
 
     private val bluetoothMultiplePermissionLauncher = multiplePermissionLauncher { result ->
         if (result.all { it.value }) {
@@ -65,7 +61,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.initBatteryDetails()
         initAdapter()
-        initBatteryMode()
+        initListeners()
         initObserver()
         initClickButtonOptimize()
     }
@@ -77,64 +73,33 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
         }
     }
 
-    private fun initBatteryMode() {
-        val actions = resources.getStringArray(R.array.battery_items).toList()
-        val listMode = mutableListOf<ModeGroup>()
-        listMode.add(
-            ModeGroup(
-                binding.buttonNormalMode,
-                R.string.normal_mode_activates_restrictions,
-                actions.subList(0, 2),
-                BatteryMode.NORMAL
-            )
-        )
-        listMode.add(
-            ModeGroup(
-                binding.buttonUltraMode,
-                R.string.ultra_mode_activates_restrictions,
-                actions.subList(0, 4),
-                BatteryMode.MEDIUM
-            )
-        )
-        listMode.add(
-            ModeGroup(
-                binding.buttonExtraMode,
-                R.string.extra_mode_activates_restrictions,
-                actions,
-                BatteryMode.HIGH
-            )
-        )
+    private fun initListeners() {
         binding.groupModes.setAllOnClickListener { mode ->
             when (mode) {
                 binding.buttonNormalMode -> {
-                    enableMode(listMode[0])
-                    disableMode(listMode.filterNot { it == listMode[0] })
+                    viewModel.setBatteryMode(BatteryMode.NORMAL)
                 }
                 binding.buttonUltraMode -> {
-                    enableMode(listMode[1])
-                    disableMode(listMode.filterNot { it == listMode[1] })
+                    viewModel.setBatteryMode(BatteryMode.MEDIUM)
                 }
                 binding.buttonExtraMode -> {
-                    enableMode(listMode[2])
-                    disableMode(listMode.filterNot { it == listMode[2] })
+                    viewModel.setBatteryMode(BatteryMode.HIGH)
                 }
             }
         }
-        enableMode(listMode[1])
     }
 
-    private fun enableMode(mode: ModeGroup) {
-        mode.modeButton.background =
-            ContextCompat.getDrawable(requireContext(), R.drawable.card_corners_green)
-        actionAdapter.setItems(mode.modeAction)
-        binding.descriptionModeTv.setText(mode.modeHeader)
-        batteryMode = mode.mode
-    }
-
-    private fun disableMode(modeList: List<ModeGroup>) {
-        modeList.forEach {
-            it.modeButton.background =
-                ContextCompat.getDrawable(requireContext(), R.drawable.card_corners_comet)
+    private fun setEnableMode(mode: BatteryMode) {
+        val listBtn =
+            listOf(
+                BatteryMode.HIGH to binding.buttonExtraMode,
+                BatteryMode.MEDIUM to binding.buttonUltraMode,
+                BatteryMode.NORMAL to binding.buttonNormalMode
+            )
+        listBtn.forEach {
+            val background =
+                if (it.first == mode) R.drawable.card_corners_green else R.drawable.card_corners_comet
+            it.second.background = ContextCompat.getDrawable(requireContext(), background)
         }
     }
 
@@ -175,14 +140,26 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
             percentTv.text = getString(R.string.percent_D, batteryDetails.batteryCharge)
             progressBar.progress = batteryDetails.batteryCharge
             groupOptimizeIsDone.isVisible = batteryDetails.isOptimized
+            binding.descriptionModeTv.setText(
+                if (batteryDetails.batteryMode == BatteryMode.NORMAL)
+                    R.string.normal_mode_activates_restrictions
+                else if (batteryDetails.batteryMode == BatteryMode.MEDIUM)
+                    R.string.ultra_mode_activates_restrictions
+                else
+                    R.string.extra_mode_activates_restrictions
+            )
         }
         renderDescriptionItem(batteryDetails.isOptimized)
+        actionAdapter.setItems(batteryDetails.batteryListFun)
+        setEnableMode(batteryDetails.batteryMode)
     }
 
     private fun renderDescriptionItem(isOptimized: Boolean) {
         val color = if (isOptimized) R.color.black else R.color.red
-        val background = if (isOptimized ) R.drawable.background_button_not_danger else R.drawable.background_button_danger
-        val textId = if (isOptimized) R.string.battery_not_danger_description else R.string.battery_danger_description
+        val background =
+            if (isOptimized) R.drawable.background_button_not_danger else R.drawable.background_button_danger
+        val textId =
+            if (isOptimized) R.string.battery_not_danger_description else R.string.battery_danger_description
         binding.dangerButton.apply {
             setTextColor(
                 ContextCompat.getColor(
@@ -200,7 +177,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
             findNavController().popBackStack()
         }
         binding.boostButton.setOnClickListener {
-            when (batteryMode) {
+            when (viewModel.state.value.batteryMode) {
                 BatteryMode.NORMAL -> {
                     when {
                         checkWriteSettings() -> {
@@ -251,7 +228,8 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
     }
 
     private fun navigateNext() {
-        findNavController().navigate(BatteryFragmentDirections.actionBatteryFragmentToBatteryProgressFragment())
+        viewModel.startOptimization()
+        findNavController().navigate(R.id.action_batteryFragment_to_batteryProgressFragment)
     }
 
     private fun Group.setAllOnClickListener(listener: View.OnClickListener?) {
