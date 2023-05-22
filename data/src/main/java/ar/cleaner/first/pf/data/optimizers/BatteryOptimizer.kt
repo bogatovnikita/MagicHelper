@@ -6,7 +6,6 @@ import android.os.Build
 import android.provider.Settings
 import ar.cleaner.first.pf.data.extensions.bluetoothAdapter
 import ar.cleaner.first.pf.data.extensions.wifiManager
-import ar.cleaner.first.pf.data.optimizers.base.BaseOptimizer
 import ar.cleaner.first.pf.data.preferences.PreferencesManager
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.utils.emitProgressWithDelay
@@ -21,14 +20,7 @@ import javax.inject.Inject
 class BatteryOptimizer @Inject constructor(
     private val preferencesManager: PreferencesManager,
     val context: Application
-) :
-    BaseOptimizer() {
-    override val lastOptimizationWorkMillis: StateFlow<Long>
-        get() = preferencesManager.batteryLastOptimizationFlow
-
-    override fun setLastOptimizationTime(time: Long) {
-        preferencesManager.batteryLastOptimizationMillis = time
-    }
+) {
 
     fun runOptimization(mode: BatteryMode): Flow<Int> =
         when (mode) {
@@ -36,10 +28,6 @@ class BatteryOptimizer @Inject constructor(
             BatteryMode.MEDIUM -> mediumOptimizing()
             BatteryMode.HIGH -> highOptimizing()
         }
-
-    fun emulateOptimization(mode: BatteryMode): Flow<Int> = emulateProgressWorkFlow().onCompletion {
-        preferencesManager.batteryMode = mode.name
-    }
 
     /**
      * Decrease brightness to 30%, turn off bluetooth, wifi, turn off auto-brightness

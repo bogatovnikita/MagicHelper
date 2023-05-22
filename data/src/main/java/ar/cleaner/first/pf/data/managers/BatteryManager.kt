@@ -9,7 +9,6 @@ import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class BatteryManager @Inject constructor(
-    private val preferencesManager: PreferencesManager,
     private val context: Application,
     private val defaultScope: CoroutineScope
 ) {
@@ -19,7 +18,5 @@ class BatteryManager @Inject constructor(
         .stateFlowReceiver(scope = defaultScope, Const.INT_DEFAULT_VALUE)
 
     fun getBatteryPercents() = batteryReceiverFlow
-
-    fun getBatteryMode() = preferencesManager.batteryModeFlow
 
 }
