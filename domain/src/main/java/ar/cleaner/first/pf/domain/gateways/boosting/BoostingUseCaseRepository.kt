@@ -1,16 +1,11 @@
 package ar.cleaner.first.pf.domain.gateways.boosting
 
 import ar.cleaner.first.pf.domain.models.BackgroundApp
-import ar.cleaner.first.pf.domain.gateways.base.BaseRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 
-interface BoostingUseCaseRepository : BaseRepository {
-
-    suspend fun setHasOptimizeAll(hasOptimizeAll: Boolean)
-
-    fun hasOptimizeAllFlow(): Flow<Boolean>
+interface BoostingUseCaseRepository {
 
     fun getAvailableRam(scope: CoroutineScope? = null): StateFlow<Double>
 

@@ -5,7 +5,7 @@ interface UiOuter {
     suspend fun close()
     suspend fun out(updateOut: UpdateOut)
     suspend fun out(allSelectionOut: AllSelectionOut)
-    suspend fun out(itemSelectionOut: ItemSelectionOut)
+    fun out(itemSelectionOut: ItemSelectionOut)
     suspend fun out(sortingModeOut: SortingModeOut)
     suspend fun out(groupSwitchingOut: GroupSwitchingOut)
     suspend fun showSortingSelection()

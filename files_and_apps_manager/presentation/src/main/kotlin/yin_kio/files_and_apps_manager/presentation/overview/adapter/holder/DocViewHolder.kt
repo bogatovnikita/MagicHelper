@@ -13,7 +13,8 @@ import kotlin.io.path.extension
 
 internal class DocViewHolder private constructor(
     private val binding: ListItemFileBinding,
-    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+    private val onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+    private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
 ) : ViewHolder(binding.root) {
 
     private val selectable = SelectableImpl(binding.checkbox)
@@ -24,6 +25,9 @@ internal class DocViewHolder private constructor(
         binding.name.text = item.name
         binding.description.text = item.description
         binding.icon.setImageResource(presentDocIconId(item.id))
+
+        binding.root.setOnClickListener { onItemClick(item, selectable) }
+        binding.checkbox.setOnClickListener {onItemClick(item, selectable) }
     }
 
     private fun presentDocIconId(fileId: String) : Int{
@@ -36,10 +40,13 @@ internal class DocViewHolder private constructor(
     }
 
     companion object{
-        fun from(parent: ViewGroup, onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit) : DocViewHolder {
+        fun from(parent: ViewGroup,
+                 onUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit,
+                 onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit
+        ) : DocViewHolder {
             val inflater = LayoutInflater.from(parent.context)
             val binding = ListItemFileBinding.inflate(inflater, parent, false)
-            return DocViewHolder(binding, onUpdate)
+            return DocViewHolder(binding, onUpdate, onItemClick)
         }
     }
 

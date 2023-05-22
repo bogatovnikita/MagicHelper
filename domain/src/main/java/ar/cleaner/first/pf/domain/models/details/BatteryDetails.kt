@@ -1,12 +1,9 @@
 package ar.cleaner.first.pf.domain.models.details
 
 import ar.cleaner.first.pf.domain.models.BatteryMode
-import ar.cleaner.first.pf.domain.models.BatteryTime
 
 data class BatteryDetails(
-    val batteryCharge: Int,
-    val batteryMode: BatteryMode,
-    val batteryRemainingTime: BatteryTime,
-    val isOptimized: Boolean,
-    val loadingIsDone:Boolean = false
+    val batteryCharge: Int = 53,
+    val batteryMode: BatteryMode = BatteryMode.NORMAL,
+    val isOptimized: Boolean = false,
 )

@@ -46,7 +46,6 @@
     <string name="the_phone_is_cleared_of_excess_garbage">Das Telefon ist von unnötigem Müll befreit!</string>
     <string name="normal_mode_activates_restrictions">Der Normalmodus aktiviert Einschränkungen:</string>
     <string name="remaining_charging_time">Verbleibende Ladezeit</string>
-    <string name="you_need_to_increase_the_working_time_of_the_phone">Benötigt mehr Telefonzeit!</string>
     <string name="occupied_total">Geschäftig/insgesamt:</string>
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Derzeit überhitzen Hintergrundprozesse und Apps den Prozessor Ihres Telefons</string>
     <string name="the_processor_overheated_cooling_is_required">Der Prozessor ist überhitzt! Kühlung ist erforderlich!</string>

@@ -2,11 +2,11 @@ package ar.cleaner.first.pf.di
 
 import ar.cleaner.first.pf.data.providers.storage.StorageInfoProvider
 import ar.cleaner.first.pf.data.providers.temperature.TemperatureProviderImpl
-import ar.cleaner.first.pf.data.repository_implementation.BatteryRepositoryImpl
+import ar.cleaner.first.pf.data.repository_implementation.BatteryProviderImpl
 import ar.cleaner.first.pf.data.repository_implementation.RamRepositoryImpl
 import ar.cleaner.first.pf.data.settings.storage.StorageSettingsImpl
 import ar.cleaner.first.pf.data.settings.temperature.TemperatureSettingImpl
-import ar.cleaner.first.pf.domain.gateways.battery.BatteryUseCaseRepository
+import ar.cleaner.first.pf.domain.gateways.battery.BatteryProvider
 import ar.cleaner.first.pf.domain.gateways.boosting.BoostingUseCaseRepository
 import ar.cleaner.first.pf.domain.gateways.storage.Storage
 import ar.cleaner.first.pf.domain.gateways.storage.StorageSettings
@@ -24,7 +24,7 @@ import yin_kio.clean_checker.CleanCheckerImpl
 interface Binds {
 
     @Binds
-    fun bindsBatteryRepositoryImplToBatteryUseCaseRepository(batteryRepositoryImpl: BatteryRepositoryImpl): BatteryUseCaseRepository
+    fun bindsBatteryRepositoryImplToBatteryUseCaseRepository(batteryProviderImpl: BatteryProviderImpl): BatteryProvider
 
     @Binds
     fun bindsTemperatureSettings(settings: TemperatureSettingImpl): TemperatureSettings

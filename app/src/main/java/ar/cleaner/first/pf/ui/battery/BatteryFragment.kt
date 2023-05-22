@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.Group
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -28,17 +29,17 @@ import ar.cleaner.first.pf.utils.bluetoothPermissionList
 import ar.cleaner.first.pf.utils.events.BaseEvent
 import ar.cleaner.first.pf.utils.events.RuntimePermission
 import ar.cleaner.first.pf.utils.events.SnackbarEvent
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BatteryFragment : Fragment() {
+class BatteryFragment : Fragment(R.layout.fragment_battery) {
 
-    private var _binding: FragmentBatteryBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentBatteryBinding by viewBinding()
 
-    private lateinit var actionAdapter: OptimizationActionAdapter
+    private val actionAdapter: OptimizationActionAdapter = OptimizationActionAdapter()
     private val viewModel: BatteryViewModel by viewModels()
     private val dialog = DialogWriteSettings()
     private val dialogBluetooth = DialogBluetoothPermission()
@@ -60,15 +61,6 @@ class BatteryFragment : Fragment() {
         if (!checkWriteSettings()) dialog.show(parentFragmentManager, "BatteryFragment")
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentBatteryBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.initBatteryDetails()
@@ -79,7 +71,6 @@ class BatteryFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        actionAdapter = OptimizationActionAdapter()
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             this.adapter = actionAdapter
@@ -179,41 +170,28 @@ class BatteryFragment : Fragment() {
     }
 
     private fun renderState(batteryDetails: BatteryDetails) {
-        if (!batteryDetails.loadingIsDone) return
         with(binding) {
             toolbar.binding.titleTv.text = getString(R.string.battery_power)
             percentTv.text = getString(R.string.percent_D, batteryDetails.batteryCharge)
-            occupiedTotalTv.text = getString(
-                R.string.battery_power_only_time_D_D,
-                batteryDetails.batteryRemainingTime.hour,
-                batteryDetails.batteryRemainingTime.minute
-            )
             progressBar.progress = batteryDetails.batteryCharge
+            groupOptimizeIsDone.isVisible = batteryDetails.isOptimized
         }
-        if (batteryDetails.isOptimized) {
-            binding.groupOptimizeIsDone.visibility = View.VISIBLE
-            binding.dangerButton.apply {
-                setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.black
-                    )
+        renderDescriptionItem(batteryDetails.isOptimized)
+    }
+
+    private fun renderDescriptionItem(isOptimized: Boolean) {
+        val color = if (isOptimized) R.color.black else R.color.red
+        val background = if (isOptimized ) R.drawable.background_button_not_danger else R.drawable.background_button_danger
+        val textId = if (isOptimized) R.string.battery_not_danger_description else R.string.battery_danger_description
+        binding.dangerButton.apply {
+            setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    color
                 )
-                setBackgroundResource(R.drawable.bg_button_not_danger)
-                text = "Бипки"
-            }
-        } else {
-            binding.groupOptimizeIsDone.visibility = View.GONE
-            binding.dangerButton.apply {
-                setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.red
-                    )
-                )
-                setBackgroundResource(R.drawable.bg_button_danger)
-                text = getString(R.string.you_need_to_increase_the_working_time_of_the_phone)
-            }
+            )
+            setBackgroundResource(background)
+            text = getString(textId)
         }
     }
 
@@ -276,11 +254,6 @@ class BatteryFragment : Fragment() {
         findNavController().navigate(BatteryFragmentDirections.actionBatteryFragmentToBatteryProgressFragment())
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
     private fun Group.setAllOnClickListener(listener: View.OnClickListener?) {
         referencedIds.forEach { id ->
             rootView.findViewById<View>(id).setOnClickListener(listener)
@@ -298,10 +271,4 @@ class BatteryFragment : Fragment() {
         startActivityForResultWiFi.launch(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY))
     }
 
-    companion object {
-        const val BATTERY_MODE = "BATTERY_MODE"
-        const val BATTERY_REMAINING_TIME_HOUR = "BATTERY_REMAINING_TIME_HOUR"
-        const val BATTERY_REMAINING_TIME_MINUTE = "BATTERY_REMAINING_TIME_MINUTE"
-        const val CHECK_BLUETOOTH_PERMISSION = "CHECK_BLUETOOTH_PERMISSION"
-    }
 }

@@ -45,9 +45,10 @@ internal class OverviewUseCaseImpl(
         uiOuter.hideSortingSelection()
     }
 
-    override fun switchItemSelection(groupName: GroupName, itemId: String) = async{
+    override fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable) {
         server.switchItemSelection(groupName, itemId)
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
+        selectable.setSelected(server.isItemSelected(groupName, itemId))
     }
 
     override fun showAskDeleteDialog() = async{
@@ -56,8 +57,8 @@ internal class OverviewUseCaseImpl(
         }
     }
 
-    override fun delete(groupName: GroupName) = async{
-        deleteAction.deleteAndUpdate(groupName)
+    override fun delete() = async{
+        deleteAction.deleteAndUpdate(server.selectedGroup)
     }
 
     override fun hideAskDeleteDialog() = async{
