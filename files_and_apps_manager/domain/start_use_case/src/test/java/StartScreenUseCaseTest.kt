@@ -1,4 +1,3 @@
-import file_manager.start_screen.clean_checker.CleanChecker
 import file_manager.start_screen.gateways.UsedMem
 import file_manager.start_screen.ui_out.UiOuter
 import file_manager.start_screen.ui_out.UpdateOut
@@ -14,6 +13,7 @@ import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
+import yin_kio.clean_checker.CleanChecker
 
 
 @OptIn(ExperimentalCoroutinesApi::class)

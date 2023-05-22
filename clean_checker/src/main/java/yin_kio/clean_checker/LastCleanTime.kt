@@ -1,4 +1,4 @@
-package file_manager.start_screen.gateways
+package yin_kio.clean_checker
 
 interface LastCleanTime {
 

@@ -1,4 +1,4 @@
-package file_manager.start_screen.clean_checker
+package yin_kio.clean_checker
 
 interface CleanChecker {
 

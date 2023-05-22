@@ -1,6 +1,5 @@
-package file_manager.start_screen.clean_checker
+package yin_kio.clean_checker
 
-import file_manager.start_screen.gateways.LastCleanTime
 import java.util.concurrent.TimeUnit
 
 class CleanCheckerImpl(
