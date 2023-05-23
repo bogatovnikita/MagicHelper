@@ -10,6 +10,7 @@ class UpdateUIActionImpl(
 ) : UpdateUIAction {
 
     override suspend fun update() {
-        uiOuter.out(outCreator.createUpdateOut())
+        val updateOut = outCreator.createUpdateOut()
+        uiOuter.out(updateOut)
     }
 }

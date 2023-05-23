@@ -7,7 +7,7 @@ import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteActionImpl
 import file_manager.doman.overview.use_case.UpdateUIAction
 import io.mockk.coEvery
-import io.mockk.coVerifySequence
+import io.mockk.coVerifyOrder
 import io.mockk.mockk
 import io.mockk.spyk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -42,13 +42,15 @@ class DeleteActionTest {
         val ids = listOf(FileOrApp(id = "video"))
 
         coEvery { server.getSelected(GroupName.Video) } returns ids
+        coEvery { server.clearSelected() } returns Unit
 
         deleteUseCase.deleteAndUpdate(GroupName.Video)
 
-        coVerifySequence {
+        coVerifyOrder {
             uiOuter.showDeleteProgress()
 
             deleter.delete(video.map { it })
+            server.clearSelected()
             deleteTimeSaver.saveDeleteTime()
             updater.update()
             updateUIAction.update()
