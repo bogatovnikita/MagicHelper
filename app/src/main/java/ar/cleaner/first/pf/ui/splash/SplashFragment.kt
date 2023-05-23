@@ -32,7 +32,7 @@ class SplashFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.Default) {
             delay(2000)
             withContext(Dispatchers.Main) {
-                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToFirstScanningFragment())
+                findNavController().navigate(SplashFragmentDirections.actionToFirstScanningFragment())
             }
         }
     }

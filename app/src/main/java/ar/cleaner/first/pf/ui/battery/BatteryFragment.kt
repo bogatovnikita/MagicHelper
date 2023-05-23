@@ -229,7 +229,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
 
     private fun navigateNext() {
         viewModel.startOptimization()
-        findNavController().navigate(R.id.action_batteryFragment_to_batteryProgressFragment)
+        findNavController().navigate(R.id.action_to_batteryProgressFragment)
     }
 
     private fun Group.setAllOnClickListener(listener: View.OnClickListener?) {

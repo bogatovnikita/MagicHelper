@@ -36,12 +36,11 @@ class TemperatureResultFragment : Fragment(R.layout.fragment_temperature_result)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initClickListener()
         initRecyclerView()
         binding.percentTv.text =
             requireContext().getString(R.string.temperature_D, temperature.getTemperature())
-        binding.arrowBackIv.setOnClickListener {
-            findNavController().popBackStack()
-        }
+
     }
 
     private fun initRecyclerView() {
@@ -63,6 +62,11 @@ class TemperatureResultFragment : Fragment(R.layout.fragment_temperature_result)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
         adapter.submitList(listResult)
+    }
+    private fun initClickListener() {
+        binding.arrowBackIv.setOnClickListener {
+            findNavController().popBackStack(R.id.menuFragment, false)
+        }
     }
 
 }
