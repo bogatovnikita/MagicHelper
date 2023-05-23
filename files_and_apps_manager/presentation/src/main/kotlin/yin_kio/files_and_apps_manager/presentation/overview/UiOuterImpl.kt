@@ -1,6 +1,5 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
-import file_manager.domain.server.GroupName
 import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupSwitchingOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
@@ -15,9 +14,7 @@ internal class UiOuterImpl(
     var viewModel: ViewModel? = null
         set(value) {
             field = value
-
             viewModel?.update { it.copy(
-                selectedGroup = GroupName.Images,
                 buttonText = presenter.presentButtonText(0),
                 buttonAlpha = presenter.presentButtonAlpha(0),
             ) }
@@ -28,12 +25,13 @@ internal class UiOuterImpl(
     }
 
     override suspend fun out(updateOut: UpdateOut) {
-        viewModel?.update { it.copy(
+        viewModel?.update { screenState ->
+        screenState.copy(
             sortingMode = updateOut.sortingMode,
             sortingModeText = presenter.presentSortingMode(updateOut.sortingMode),
             content = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
-            selectedGroup = it.selectedGroup,
-            isAllSelected = it.isAllSelected,
+            selectedGroup = updateOut.selectedGroup,
+            isAllSelected = updateOut.isAllSelected,
             availableGroups = updateOut.availableGroups
         ) }
     }
