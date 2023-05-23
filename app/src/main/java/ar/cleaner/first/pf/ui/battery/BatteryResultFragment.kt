@@ -37,11 +37,10 @@ class BatteryResultFragment : Fragment(R.layout.fragment_battery_result) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initClickListener()
         initRecyclerView()
         renderOptimizationMode()
-        binding.arrowBackIv.setOnClickListener {
-            findNavController().popBackStack()
-        }
+
     }
 
     private fun renderOptimizationMode() {
@@ -63,6 +62,7 @@ class BatteryResultFragment : Fragment(R.layout.fragment_battery_result) {
                     ResultAdapter.BOOST_KEY -> {
                         findNavController().navigate(R.id.action_to_boostFragment)
                     }
+
                     ResultAdapter.CLEANING_KEY -> {
                         // TODO навигация к files manager
                     }
@@ -72,6 +72,12 @@ class BatteryResultFragment : Fragment(R.layout.fragment_battery_result) {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
         adapter.submitList(listResult)
+    }
+
+    private fun initClickListener() {
+        binding.arrowBackIv.setOnClickListener {
+            findNavController().popBackStack(R.id.menuFragment, false)
+        }
     }
 
 }
