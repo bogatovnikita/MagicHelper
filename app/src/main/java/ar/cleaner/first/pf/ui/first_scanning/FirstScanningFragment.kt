@@ -81,7 +81,7 @@ class FirstScanningFragment : Fragment() {
 
     private fun goNext() {
         appShowAds {
-            findNavController().navigate(FirstScanningFragmentDirections.actionFirstScanningFragmentToMenuFragment())
+            findNavController().navigate(FirstScanningFragmentDirections.actionToMenuFragment())
         }
     }
 

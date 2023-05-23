@@ -107,7 +107,7 @@ class BoostProgressFragment : Fragment(R.layout.fragment_progress) {
     private fun goScreenResult() {
         appShowAds {
             findNavController().navigate(
-                R.id.action_boostProgressFragment_to_boostResultFragment
+                R.id.action_to_boostResultFragment
             )
         }
     }

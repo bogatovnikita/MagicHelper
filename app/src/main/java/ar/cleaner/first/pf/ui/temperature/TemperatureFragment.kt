@@ -31,7 +31,7 @@ class TemperatureFragment : Fragment(R.layout.fragment_temperature) {
 
     private fun initClick() {
         binding.boostButton.setOnClickListener {
-            findNavController().navigate(TemperatureFragmentDirections.actionTemperatureFragmentToTemperatureProgressFragment())
+            findNavController().navigate(TemperatureFragmentDirections.actionToTemperatureProgressFragment())
         }
 
         binding.toolbar.binding.arrowBackIv.setOnClickListener {

@@ -84,7 +84,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
         }
         binding.boostButton.setOnClickListener {
             findNavController().navigate(
-                R.id.action_boostFragment_to_boostProgressFragment
+                R.id.action_to_boostProgressFragment
             )
         }
     }
