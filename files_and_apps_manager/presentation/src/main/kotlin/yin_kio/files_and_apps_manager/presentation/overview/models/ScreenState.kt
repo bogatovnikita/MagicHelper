@@ -4,7 +4,8 @@ import file_manager.domain.server.GroupName
 import file_manager.domain.server.SortingMode
 
 internal data class ScreenState(
-    val groupName: GroupName = GroupName.Audio,
+    val selectedGroup: GroupName = GroupName.Audio,
+    val availableGroups: List<GroupName> = emptyList(),
     val buttonText: String = "",
     val buttonAlpha: Float = 0.5f,
     val isShowSortingSelection: Boolean = false,

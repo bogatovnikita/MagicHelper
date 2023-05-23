@@ -20,7 +20,8 @@ class OutCreatorImpl(
             selectedGroup = server.selectedGroup,
             isAllSelected = server.isAllSelected,
             selectedCount = server.selectedCount,
-            sortingMode = server.sortingMode
+            sortingMode = server.sortingMode,
+            availableGroups = server.groups.keys.toList()
         )
     }
 

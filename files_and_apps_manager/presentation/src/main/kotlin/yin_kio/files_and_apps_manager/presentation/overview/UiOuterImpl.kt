@@ -17,7 +17,7 @@ internal class UiOuterImpl(
             field = value
 
             viewModel?.update { it.copy(
-                groupName = GroupName.Images,
+                selectedGroup = GroupName.Images,
                 buttonText = presenter.presentButtonText(0),
                 buttonAlpha = presenter.presentButtonAlpha(0),
             ) }
@@ -32,8 +32,9 @@ internal class UiOuterImpl(
             sortingMode = updateOut.sortingMode,
             sortingModeText = presenter.presentSortingMode(updateOut.sortingMode),
             content = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
-            groupName = it.groupName,
-            isAllSelected = it.isAllSelected
+            selectedGroup = it.selectedGroup,
+            isAllSelected = it.isAllSelected,
+            availableGroups = updateOut.availableGroups
         ) }
     }
 
@@ -68,7 +69,7 @@ internal class UiOuterImpl(
 
     override suspend fun out(groupSwitchingOut: GroupSwitchingOut) {
         viewModel?.update { it.copy(
-            groupName = groupSwitchingOut.groupName,
+            selectedGroup = groupSwitchingOut.groupName,
             content = presenter.presentFilesOrApps(groupSwitchingOut.content),
             buttonText = presenter.presentButtonText(groupSwitchingOut.selectionCount),
             buttonAlpha = presenter.presentButtonAlpha(groupSwitchingOut.selectionCount),
