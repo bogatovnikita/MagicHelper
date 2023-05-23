@@ -5,6 +5,7 @@ import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewB
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
@@ -20,14 +21,14 @@ import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.OverviewUseCaseCreator
 import file_manager.doman.overview.ui_out.Selectable
 import jamycake.lifecycle_aware.currentBackStackEntry
-import jamycake.lifecycle_aware.previousBackStackEntry
+import jamycake.lifecycle_aware.previousBackStackEntryWithCache
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import yin_kio.file_app_manager.updater.ContentUpdaterImpl
 import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
-import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
+import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
@@ -37,7 +38,7 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val binding: FragmentOverviewBinding by viewBinding()
-    private val server: FileManagerServer by previousBackStackEntry()
+    private val server: FileManagerServer by previousBackStackEntryWithCache()
     private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
 
     private var onDismissSortingPopup: (() -> Unit)? = null // эта лямбда вынесена для того, чтобы диалог не прятался при дисмисе попапа
@@ -71,6 +72,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("!!!", "server: $server")
+
         binding.recycler.itemAnimator = null
 
         setupListeners()

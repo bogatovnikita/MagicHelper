@@ -7,6 +7,19 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.fragment.findNavController
 
+
+
+inline fun <reified T: Any> Fragment.previousBackStackEntryWithCache(
+    noinline onCleared: ViewModel.() -> Unit = {},
+) : Lazy<T>{
+    return currentBackStackEntry(
+        onCleared = onCleared,
+        creator = {
+            previousBackStackEntry<T>().value
+        }
+    )
+}
+
 inline fun <reified T : Any> Fragment.previousBackStackEntry(
     noinline onCleared: ViewModel.() -> Unit = {},
     noinline creator: LifecycleAware.() -> T = { created as T }
