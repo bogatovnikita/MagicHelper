@@ -5,7 +5,6 @@ import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewB
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
@@ -27,7 +26,7 @@ import kotlinx.coroutines.launch
 import yin_kio.file_app_manager.updater.UpdaterImpl
 import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
-import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
@@ -208,7 +207,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
         val useCase = OverviewUseCaseCreator.create(
             uiOuter = uiOuter,
             server = server,
-            deleter = DeleterImpl(),
+            filesDeleter = FilesDeleterImpl(),
             deleteTimeSaver = DeleteTimeSaverImpl(context),
             updater = updater,
             coroutineScope = coroutineScope

@@ -2,7 +2,7 @@ package file_manager.doman.overview
 
 import file_manager.domain.server.FileManagerServer
 import file_manager.doman.overview.gateways.DeleteTimeSaver
-import file_manager.doman.overview.gateways.Deleter
+import file_manager.doman.overview.gateways.FilesDeleter
 import file_manager.doman.overview.ui_out.OutCreatorImpl
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteActionImpl
@@ -18,7 +18,7 @@ object OverviewUseCaseCreator {
     fun create(
         uiOuter: UiOuter,
         server: FileManagerServer,
-        deleter: Deleter,
+        filesDeleter: FilesDeleter,
         deleteTimeSaver: DeleteTimeSaver,
         updater: Updater,
         coroutineScope: CoroutineScope
@@ -34,7 +34,7 @@ object OverviewUseCaseCreator {
         )
 
         val deleteAction = DeleteActionImpl(
-            deleter = deleter,
+            filesDeleter = filesDeleter,
             server = server,
             updateUIAction = updateAction,
             uiOuter = uiOuter,

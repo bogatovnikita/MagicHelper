@@ -3,12 +3,12 @@ package file_manager.doman.overview.use_case
 import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
-import file_manager.doman.overview.gateways.Deleter
+import file_manager.doman.overview.gateways.FilesDeleter
 import file_manager.doman.overview.ui_out.UiOuter
 import yin_kio.file_app_manager.updater.Updater
 
 internal class DeleteActionImpl(
-    private val deleter: Deleter,
+    private val filesDeleter: FilesDeleter,
     private val server: FileManagerServer,
     private val updateUIAction: UpdateUIAction,
     private val updater: Updater,
@@ -19,7 +19,7 @@ internal class DeleteActionImpl(
     override suspend fun deleteAndUpdate(groupName: GroupName) {
         uiOuter.showDeleteProgress()
 
-        deleter.delete(server.getSelected(groupName).map { it.id })
+        filesDeleter.delete(server.getSelected(groupName).map { it.id })
         server.clearSelected()
         deleteTimeSaver.saveDeleteTime()
         updater.update()

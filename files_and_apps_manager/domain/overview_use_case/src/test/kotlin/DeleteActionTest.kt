@@ -2,7 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
-import file_manager.doman.overview.gateways.Deleter
+import file_manager.doman.overview.gateways.FilesDeleter
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteActionImpl
 import file_manager.doman.overview.use_case.UpdateUIAction
@@ -19,7 +19,7 @@ import yin_kio.file_app_manager.updater.Updater
 @OptIn(ExperimentalCoroutinesApi::class)
 class DeleteActionTest {
 
-    private val deleter: Deleter = spyk()
+    private val filesDeleter: FilesDeleter = spyk()
     private val server: FileManagerServer = mockk()
     private val updateUIAction: UpdateUIAction = spyk()
     private val uiOuter: UiOuter = spyk()
@@ -27,7 +27,7 @@ class DeleteActionTest {
     private val updater: Updater = spyk()
 
     private val deleteUseCase = DeleteActionImpl(
-        deleter = deleter,
+        filesDeleter = filesDeleter,
         server = server,
         updateUIAction = updateUIAction,
         uiOuter = uiOuter,
@@ -49,7 +49,7 @@ class DeleteActionTest {
         coVerifyOrder {
             uiOuter.showDeleteProgress()
 
-            deleter.delete(video.map { it })
+            filesDeleter.delete(video.map { it })
             server.clearSelected()
             deleteTimeSaver.saveDeleteTime()
             updater.update()
