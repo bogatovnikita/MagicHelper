@@ -15,4 +15,6 @@ interface SelectableForm<T> {
         content = content.sortedBy(selector)
     }
 
+    fun clearSelected()
+
 }

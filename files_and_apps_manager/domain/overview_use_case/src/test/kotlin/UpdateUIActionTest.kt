@@ -9,7 +9,6 @@ import io.mockk.spyk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
-import yin_kio.file_app_manager.updater.Updater
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -17,7 +16,6 @@ class UpdateUIActionTest {
 
     private val outCreator: OutCreator = mockk()
     private val uiOuter: UiOuter = spyk()
-    private val updater: Updater = spyk()
 
     private val useCase = UpdateUIActionImpl(
         uiOuter = uiOuter,
@@ -33,7 +31,6 @@ class UpdateUIActionTest {
         useCase.update()
 
         coVerifyOrder{
-            updater.update()
             uiOuter.out(updateOut)
         }
 

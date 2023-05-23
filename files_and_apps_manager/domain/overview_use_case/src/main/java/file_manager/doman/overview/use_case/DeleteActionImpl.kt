@@ -20,6 +20,7 @@ internal class DeleteActionImpl(
         uiOuter.showDeleteProgress()
 
         deleter.delete(server.getSelected(groupName).map { it.id })
+        server.clearSelected()
         deleteTimeSaver.saveDeleteTime()
         updater.update()
         updateUIAction.update()

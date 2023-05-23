@@ -15,6 +15,7 @@ class FileAndAppsServerImpl : FileManagerServer {
     override var groups: Map<GroupName, SelectableForm<FileOrApp>>
         get() = _content
         set(value) {
+            _content.clear()
             value.forEach {
                 _content[it.key] = it.value
             }
@@ -55,5 +56,9 @@ class FileAndAppsServerImpl : FileManagerServer {
             SortingMode.BigFirst -> _content.forEach { it.value.sortBy { -it.size } }
             SortingMode.SmallFirst -> _content.forEach { it.value.sortBy { it.size } }
         }
+    }
+
+    override fun clearSelected() {
+        _content.forEach { it.value.clearSelected() }
     }
 }

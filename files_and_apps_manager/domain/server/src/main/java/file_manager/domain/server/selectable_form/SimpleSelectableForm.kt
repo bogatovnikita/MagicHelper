@@ -40,4 +40,8 @@ open class SimpleSelectableForm<T> : SelectableForm<T> {
     override fun isItemSelected(item: T): Boolean {
         return _selected.contains(item)
     }
+
+    override fun clearSelected() {
+        _selected.clear()
+    }
 }

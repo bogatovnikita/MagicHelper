@@ -22,4 +22,6 @@ interface FileManagerServer {
 
     fun setSortingMode(sortingMode: SortingMode)
 
+    fun clearSelected()
+
 }
