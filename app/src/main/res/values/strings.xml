@@ -88,6 +88,7 @@
     <string name="further">Далее</string>
     <string name="cancel">Отмена</string>
     <string name="allow">Разрешить</string>
+    <string name="optimization_done">Готово!</string>
     <string name="description_permission">Чтобы мы могли остановить фоновые процессы и освободить оперативную память, нам нужен доступ к истории использования</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Для Экстра режима нужен доступ к настройкам bluetooth</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Разрешите приложению доступ к настройкам bluetooth для увеличения времени работы батареи</string>

@@ -6,20 +6,19 @@ import android.os.Build
 import android.provider.Settings
 import ar.cleaner.first.pf.data.extensions.bluetoothAdapter
 import ar.cleaner.first.pf.data.extensions.wifiManager
-import ar.cleaner.first.pf.data.preferences.PreferencesManager
+import ar.cleaner.first.pf.data.providers.kill_background_processes.KillBackgroundProcessesProvider
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.utils.emitProgressWithDelay
-import ar.cleaner.first.pf.domain.utils.emulateProgressWorkFlow
-import ar.cleaner.first.pf.domain.utils.isWorking
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class BatteryOptimizer @Inject constructor(
-    private val preferencesManager: PreferencesManager,
-    val context: Application
+    private val context: Application,
+    private val scope: CoroutineScope,
+    private val processes: KillBackgroundProcessesProvider,
 ) {
 
     fun runOptimization(mode: BatteryMode): Flow<Int> =
@@ -33,28 +32,25 @@ class BatteryOptimizer @Inject constructor(
      * Decrease brightness to 30%, turn off bluetooth, wifi, turn off auto-brightness
      */
     private fun highOptimizing(): Flow<Int> = flow {
-
+        killBackgroundProcesses()
         emitProgressWithDelay(from = 0, to = 20); setBrightnessLevel(1)
         emitProgressWithDelay(from = 20, to = 40); turnOffAutoBrightness()
         emitProgressWithDelay(from = 40, to = 60); turnOffBluetooth()
         emitProgressWithDelay(from = 60, to = 70); turnOffWifi()
         emitProgressWithDelay(from = 70, to = 100)
-    }.onCompletion {
-        if (isWorking()) preferencesManager.batteryMode = BatteryMode.HIGH.name
     }
 
     /**
      * Decrease brightness to 50%, turn off bluetooth, turn off wifi
      */
     private fun mediumOptimizing(): Flow<Int> = flow {
+        killBackgroundProcesses()
         emitProgressWithDelay(from = 0, to = 50);
         setBrightnessLevel(7)
         turnOffAutoBrightness()
         emitProgressWithDelay(from = 50, to = 73); turnOffBluetooth()
         emitProgressWithDelay(from = 73, to = 89); turnOffWifi()
         emitProgressWithDelay(from = 89, to = 100)
-    }.onCompletion {
-        if (isWorking()) preferencesManager.batteryMode = BatteryMode.MEDIUM.name
     }
 
     /**
@@ -65,8 +61,6 @@ class BatteryOptimizer @Inject constructor(
         turnOffAutoBrightness()
         setBrightnessLevel(20)
         emitProgressWithDelay(from = 53, to = 100)
-    }.onCompletion {
-        if (isWorking()) preferencesManager.batteryMode = BatteryMode.NORMAL.name
     }
 
     private fun setBrightnessLevel(level: Int) {
@@ -106,4 +100,14 @@ class BatteryOptimizer @Inject constructor(
             )
         }
     }
+
+    private fun killBackgroundProcesses() {
+        scope.launch {
+            processes.killBackGroundProcessesSystemApps()
+        }
+        scope.launch {
+            processes.killBackGroundProcessesInstalledApps()
+        }
+    }
+
 }
