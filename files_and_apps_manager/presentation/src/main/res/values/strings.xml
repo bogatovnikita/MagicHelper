@@ -42,6 +42,6 @@
     <string name="file_apps_manager_start_already_freed">Телефон очищен от ненужных файлов!</string>
 
     <string name="file_apps_manager_usage_stats_description">Чтобы вы могли просматривать и удалять приложения с помощью файлового менеджера, нам нужен доступ к истории использования</string>
-
+    <string name="file_apps_manager_apps_list_updating">Обновление списка приложений</string>
 
 </resources>

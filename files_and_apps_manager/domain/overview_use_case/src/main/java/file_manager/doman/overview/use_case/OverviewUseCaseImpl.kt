@@ -7,6 +7,7 @@ import file_manager.doman.overview.ui_out.OutCreator
 import file_manager.doman.overview.ui_out.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import yin_kio.file_app_manager.updater.ContentUpdater
 import kotlin.coroutines.CoroutineContext
 
 internal class OverviewUseCaseImpl(
@@ -14,8 +15,9 @@ internal class OverviewUseCaseImpl(
     private val outCreator: OutCreator,
     private val server: FileManagerServer,
     private val deleteAction: DeleteAction,
-    private val updateUIAction: UpdateUIAction,
+    private val uiUpdater: UpdateUIAction,
     private val coroutineScope: CoroutineScope,
+    private val contentUpdater: ContentUpdater,
     private val dispatcher: CoroutineContext
 ) : OverviewUseCase {
 
@@ -24,7 +26,7 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun update() = async{
-        updateUIAction.update()
+        uiUpdater.update()
     }
 
     override fun switchGroup(groupName: GroupName) = async{
@@ -66,7 +68,14 @@ internal class OverviewUseCaseImpl(
     }
 
     override fun completeDelete() = async{
-        uiOuter.hideDoneDialog()
+        if (server.selectedGroup == GroupName.Apps){
+            uiOuter.showUpdateAppsProgress()
+            contentUpdater.updateApps()
+            uiUpdater.update()
+            uiOuter.hideUpdateAppsProgress()
+        } else {
+            uiOuter.hideDoneDialog()
+        }
     }
 
 

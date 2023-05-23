@@ -48,17 +48,24 @@
         <action
             android:id="@+id/toDoneDialog"
             app:destination="@id/doneDialog" />
+        <action
+            android:id="@+id/toUpdateAppsListProgress"
+            app:destination="@id/updateAppsListDialog" />
     </fragment>
     <dialog
         android:id="@+id/askDeleteDialog"
-        android:name="yin_kio.files_and_apps_manager.presentation.overview.AskDeleteDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.dialog.AskDeleteDialog"
         android:label="AskDeleteDialog" />
     <dialog
         android:id="@+id/deleteProgressDialog"
-        android:name="yin_kio.files_and_apps_manager.presentation.overview.DeleteProgressDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.dialog.DeleteProgressDialog"
         android:label="DeleteProgressDialog" />
     <dialog
         android:id="@+id/doneDialog"
-        android:name="yin_kio.files_and_apps_manager.presentation.overview.DoneDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.dialog.DoneDialog"
         android:label="DoneDialog" />
+    <dialog
+        android:id="@+id/updateAppsListDialog"
+        android:name="yin_kio.files_and_apps_manager.presentation.overview.dialog.UpdateAppsListDialog"
+        android:label="UpdateAppsListDialog" />
 </navigation>

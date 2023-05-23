@@ -42,7 +42,7 @@ class OverviewUseCaseImplTest {
         outCreator = outCreator,
         server = server,
         deleteAction = deleteAction,
-        updateUIAction = updateUIAction,
+        uiUpdater = updateUIAction,
         coroutineScope = testScope,
         dispatcher = dispatcher
     )

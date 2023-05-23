@@ -52,7 +52,7 @@ internal class Presenter(
     private fun presentName(fileOrApp: FileOrApp) : String {
         return when(fileOrApp.type){
             FileOrApp.Type.File -> Path(fileOrApp.id).name
-            FileOrApp.Type.App -> context.getAppInfo(fileOrApp.id).loadLabel(context.packageManager).toString()
+            FileOrApp.Type.App -> context.getAppInfoOrNull(fileOrApp.id)?.loadLabel(context.packageManager).toString()
         }
     }
 

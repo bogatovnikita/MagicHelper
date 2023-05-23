@@ -13,7 +13,7 @@ import io.mockk.spyk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
-import yin_kio.file_app_manager.updater.Updater
+import yin_kio.file_app_manager.updater.ContentUpdater
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -24,7 +24,7 @@ class DeleteActionTest {
     private val updateUIAction: UpdateUIAction = spyk()
     private val uiOuter: UiOuter = spyk()
     private val deleteTimeSaver: DeleteTimeSaver = spyk()
-    private val updater: Updater = spyk()
+    private val contentUpdater: ContentUpdater = spyk()
 
     private val deleteUseCase = DeleteActionImpl(
         filesDeleter = filesDeleter,
@@ -32,7 +32,7 @@ class DeleteActionTest {
         updateUIAction = updateUIAction,
         uiOuter = uiOuter,
         deleteTimeSaver = deleteTimeSaver,
-        updater = updater
+        contentUpdater = contentUpdater
     )
 
 
@@ -52,7 +52,7 @@ class DeleteActionTest {
             filesDeleter.delete(video.map { it })
             server.clearSelected()
             deleteTimeSaver.saveDeleteTime()
-            updater.update()
+            contentUpdater.updateFilesAndApps()
             updateUIAction.update()
 
             uiOuter.showDeleteCompletion()

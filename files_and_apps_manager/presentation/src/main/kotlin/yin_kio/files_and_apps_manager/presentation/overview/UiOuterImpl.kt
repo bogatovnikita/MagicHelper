@@ -1,5 +1,7 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
+import android.util.Log
+import file_manager.doman.overview.gateways.AppsDeleter
 import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupSwitchingOut
 import file_manager.doman.overview.ui_out.ItemSelectionOut
@@ -9,7 +11,7 @@ import file_manager.doman.overview.ui_out.UpdateOut
 
 internal class UiOuterImpl(
     private val presenter: Presenter
-) : UiOuter {
+) : UiOuter, AppsDeleter {
 
     var viewModel: ViewModel? = null
         set(value) {
@@ -101,5 +103,17 @@ internal class UiOuterImpl(
 
     override suspend fun hideDoneDialog() {
         viewModel?.sendCommand(Command.HideDoneDialog)
+    }
+
+    override suspend fun deleteApps(ids: List<String>) {
+        viewModel?.sendCommand(Command.DeleteApps(ids))
+    }
+
+    override suspend fun showUpdateAppsProgress() {
+        viewModel?.sendCommand(Command.ShowUpdateAppsProgress)
+    }
+
+    override suspend fun hideUpdateAppsProgress() {
+        viewModel?.sendCommand(Command.HideUpdateAppsProgress)
     }
 }
