@@ -29,7 +29,7 @@ class OutCreatorImpl(
     override fun createItemSelectionOut(itemId: String): ItemSelectionOut {
         return ItemSelectionOut(
             id = itemId,
-            isItemSelected = server.isItemSelected(GroupName.Video, itemId),
+            isItemSelected = server.isItemSelected(itemId),
             isAllSelected = server.isAllSelected,
             selectedCount = server.selectedCount
         )

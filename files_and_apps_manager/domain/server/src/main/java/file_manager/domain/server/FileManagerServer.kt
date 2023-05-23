@@ -15,10 +15,10 @@ interface FileManagerServer {
 
     fun getSelected(groupName: GroupName): List<FileOrApp>
 
-    fun isItemSelected(groupName: GroupName, id: String) : Boolean
+    fun isItemSelected(id: String) : Boolean
 
     fun switchAllSelection(groupName: GroupName)
-    fun switchItemSelection(groupName: GroupName, id: String)
+    fun switchItemSelection(id: String)
 
     fun setSortingMode(sortingMode: SortingMode)
 

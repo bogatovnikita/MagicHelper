@@ -1,6 +1,5 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
-import android.util.Log
 import file_manager.doman.overview.use_case.OverviewUseCase
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

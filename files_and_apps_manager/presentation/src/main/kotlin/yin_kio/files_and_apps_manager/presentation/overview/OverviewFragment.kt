@@ -5,7 +5,6 @@ import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentOverviewB
 import Yin_Koi.files_and_apps_manager.presentation.databinding.PopupSortBinding
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
@@ -46,13 +45,11 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
     private val sortingPopup: PopupWindow by lazy { createSortingPopup() }
 
     private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
-            item, selectable -> viewModel.updateSelectable(
-                viewModel.state.value.selectedGroup, item.id, selectable)
+            item, selectable -> viewModel.updateSelectable(item.id, selectable)
     }
 
     private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
-            item, selectable -> viewModel.switchItemSelection(
-                viewModel.state.value.selectedGroup, item.id, selectable)
+            item, selectable -> viewModel.switchItemSelection(item.id, selectable)
     }
 
 
@@ -72,8 +69,6 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.d("!!!", "server: $server")
-
         binding.recycler.itemAnimator = null
 
         setupListeners()

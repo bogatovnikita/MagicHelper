@@ -11,11 +11,11 @@ interface OverviewUseCase {
     fun switchAllSelection(groupName: GroupName)
     fun showSortingSelection()
     fun hideSortingSelection()
-    fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable)
+    fun switchItemSelection(itemId: String, selectable: Selectable)
     fun showAskDeleteDialog()
     fun delete()
     fun hideAskDeleteDialog()
     fun completeDelete()
     fun setSortingMode(sortingMode: SortingMode)
-    fun updateSelectable(groupName: GroupName, itemId: String, selectable: Selectable)
+    fun updateSelectable(itemId: String, selectable: Selectable)
 }
