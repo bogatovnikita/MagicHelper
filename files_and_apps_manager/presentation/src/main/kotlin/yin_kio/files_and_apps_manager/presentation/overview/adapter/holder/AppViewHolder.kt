@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.SelectableImpl
 import yin_kio.files_and_apps_manager.presentation.overview.getAppInfo
+import yin_kio.files_and_apps_manager.presentation.overview.getAppInfoOrNull
 import yin_kio.files_and_apps_manager.presentation.overview.models.FileOrAppItem
 
 internal class AppViewHolder(
@@ -33,7 +34,7 @@ internal class AppViewHolder(
         coroutineScope.launch(Dispatchers.IO) {
             // Возможно, это не самое лучшше решение, так как не контролируется отмена операции
             // однако оно пока сатбильно показывает себя с иконками приложения
-            val icon = context.getAppInfo(item.id).loadIcon(context.packageManager)
+            val icon = context.getAppInfoOrNull(item.id)?.loadIcon(context.packageManager)
 
             withContext(Dispatchers.Main){
                 binding.image.setImageDrawable(icon)

@@ -6,13 +6,13 @@ import file_manager.scan_progress.scan.Delayer
 import file_manager.scan_progress.scan.ScanActionImpl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_app_manager.updater.ContentUpdaterImpl
 
 object ScanProgressUseCaseCreator {
 
     fun create(
         uiOuter: UiOuter,
-        updater: UpdaterImpl,
+        updater: ContentUpdaterImpl,
         permissions: Permissions,
         ads: Ads,
         coroutineScope: CoroutineScope
@@ -22,7 +22,7 @@ object ScanProgressUseCaseCreator {
             scanAction = ScanActionImpl(
                 uiOuter = uiOuter,
                 delayer = Delayer(),
-                updater = updater,
+                contentUpdater = updater,
                 ads = ads
             ),
             permissions = permissions,

@@ -23,5 +23,6 @@ interface FileManagerServer {
     fun setSortingMode(sortingMode: SortingMode)
 
     fun clearSelected()
+    fun setGroupContent(groupName: GroupName, filesOrApps: List<FileOrApp>)
 
 }

@@ -15,5 +15,7 @@ interface UiOuter {
     suspend fun showDeleteProgress()
     suspend fun showDeleteCompletion()
     suspend fun hideDoneDialog()
+    suspend fun showUpdateAppsProgress()
+    suspend fun hideUpdateAppsProgress()
 
 }

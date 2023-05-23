@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
@@ -22,10 +23,10 @@ import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_app_manager.updater.ContentUpdaterImpl
 import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
-import yin_kio.files_and_apps_manager.data.DeleterImpl
+import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
@@ -45,12 +46,12 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
             item, selectable -> viewModel.updateSelectable(
-                viewModel.state.value.groupName, item.id, selectable)
+                viewModel.state.value.selectedGroup, item.id, selectable)
     }
 
     private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
             item, selectable -> viewModel.switchItemSelection(
-                viewModel.state.value.groupName, item.id, selectable)
+                viewModel.state.value.selectedGroup, item.id, selectable)
     }
 
 
@@ -99,8 +100,8 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             sortText.onClick {  viewModel.showSortingSelection() }
             onDismissSortingPopup = { viewModel.hideSortingSelection() }
 
-            selectAllCheckbox.onClick { viewModel.switchAllSelection(viewModel.state.value.groupName) }
-            selectAllText.onClick { viewModel.switchAllSelection(viewModel.state.value.groupName) }
+            selectAllCheckbox.onClick { viewModel.switchAllSelection(viewModel.state.value.selectedGroup) }
+            selectAllText.onClick { viewModel.switchAllSelection(viewModel.state.value.selectedGroup) }
         }
     }
 
@@ -120,7 +121,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
     }
 
     private fun showList(it: ScreenState) {
-        val adapter = when (it.groupName) {
+        val adapter = when (it.selectedGroup) {
             GroupName.Images -> imageAdapter
             GroupName.Video -> imageAdapter
             GroupName.Audio -> docAdapter
@@ -173,13 +174,19 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
     }
 
     private fun showChips(it: ScreenState) {
-        when (it.groupName) { // Так как здесь используется radiogroup достаточно включить только 1 элемент
+        when (it.selectedGroup) { // Так как здесь используется radiogroup достаточно включить только 1 элемент
             GroupName.Images -> binding.images.isChecked = true
             GroupName.Video -> binding.video.isChecked = true
             GroupName.Audio -> binding.audio.isChecked = true
             GroupName.Documents -> binding.documents.isChecked = true
             GroupName.Apps -> binding.apps.isChecked = true
         }
+
+        binding.images.isVisible = it.availableGroups.contains(GroupName.Images)
+        binding.video.isVisible = it.availableGroups.contains(GroupName.Video)
+        binding.audio.isVisible = it.availableGroups.contains(GroupName.Audio)
+        binding.documents.isVisible = it.availableGroups.contains(GroupName.Documents)
+        binding.apps.isVisible = it.availableGroups.contains(GroupName.Apps)
     }
 
 
@@ -189,7 +196,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
         val context = requireContext().applicationContext
 
-        val updater = UpdaterImpl(
+        val updater = ContentUpdaterImpl(
             filesAndApps = FilesAndAppsImpl(context),
             server = server,
             grouper = GrouperImpl()
@@ -200,10 +207,11 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
         val useCase = OverviewUseCaseCreator.create(
             uiOuter = uiOuter,
             server = server,
-            deleter = DeleterImpl(),
+            filesDeleter = FilesDeleterImpl(),
             deleteTimeSaver = DeleteTimeSaverImpl(context),
-            updater = updater,
-            coroutineScope = coroutineScope
+            contentUpdater = updater,
+            appsDeleter = uiOuter,
+            coroutineScope = coroutineScope,
         )
 
         uiOuter.viewModel = ViewModel(useCase)

@@ -4,6 +4,16 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Build
+import java.lang.Exception
+
+
+fun Context.getAppInfoOrNull(packageName: String): ApplicationInfo?{
+    return try {
+        getAppInfo(packageName)
+    } catch (ex: Exception){
+        null
+    }
+}
 
 fun Context.getAppInfo(packageName: String) : ApplicationInfo {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

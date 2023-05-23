@@ -2,13 +2,12 @@ package file_manager.scan_progress.scan
 
 import file_manager.scan_progress.UiOuter
 import file_manager.scan_progress.gateways.Ads
-import yin_kio.file_app_manager.updater.Updater
-import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_app_manager.updater.ContentUpdater
 
 internal class ScanActionImpl(
     private val uiOuter: UiOuter,
     private val delayer: Delayer,
-    private val updater: Updater,
+    private val contentUpdater: ContentUpdater,
     private val ads: Ads
 ): ScanAction {
 
@@ -16,7 +15,7 @@ internal class ScanActionImpl(
         ads.preloadAd()
         uiOuter.showProgress()
 
-        updater.update()
+        contentUpdater.updateFilesAndApps()
 
         delayer.makeDelay()
         uiOuter.showInter()

@@ -9,5 +9,6 @@ data class UpdateOut(
     val selectedCount: Int = 0,
     val selectedGroup: GroupName = GroupName.Images,
     val selectedGroupContent: List<FileOrApp> = emptyList(),
-    val sortingMode: SortingMode = SortingMode.NewFirst
+    val sortingMode: SortingMode = SortingMode.NewFirst,
+    val availableGroups: List<GroupName> = emptyList()
 )

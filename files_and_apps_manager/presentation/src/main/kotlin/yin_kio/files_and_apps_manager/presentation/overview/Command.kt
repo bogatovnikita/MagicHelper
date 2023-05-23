@@ -1,12 +1,16 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
-internal enum class Command {
+internal sealed interface Command{
 
-    Close,
-    ShowAskDeleteDialog,
-    HideAskDeleteDialog,
-    ShowDeleteProgress,
-    ShowDeleteCompletion,
-    UpdateListContent,
-    HideDoneDialog
+    object Close : Command
+    object ShowAskDeleteDialog : Command
+    object ShowUpdateAppsProgress : Command
+    object HideUpdateAppsProgress : Command
+    object HideAskDeleteDialog : Command
+    object ShowDeleteProgress : Command
+    object ShowDeleteCompletion : Command
+    object UpdateListContent : Command
+    object HideDoneDialog  : Command
+    data class DeleteApps(val ids: List<String>) : Command
+
 }

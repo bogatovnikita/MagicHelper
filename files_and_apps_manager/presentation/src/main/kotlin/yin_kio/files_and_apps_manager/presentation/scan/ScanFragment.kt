@@ -14,7 +14,7 @@ import jamycake.lifecycle_aware.currentBackStackEntry
 import jamycake.lifecycle_aware.previousBackStackEntry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import yin_kio.file_app_manager.updater.UpdaterImpl
+import yin_kio.file_app_manager.updater.ContentUpdaterImpl
 import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.AdsImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
@@ -54,7 +54,7 @@ internal class ScanFragment : Fragment(R.layout.fragment_scan) {
         val context = requireContext().applicationContext
 
 
-        val updater = UpdaterImpl(
+        val updater = ContentUpdaterImpl(
             filesAndApps = FilesAndAppsImpl(context),
             server = server,
             grouper = GrouperImpl()

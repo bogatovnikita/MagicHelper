@@ -2,7 +2,7 @@ import file_manager.domain.server.FileManagerServer
 import file_manager.domain.server.FileOrApp
 import file_manager.domain.server.GroupName
 import file_manager.doman.overview.gateways.DeleteTimeSaver
-import file_manager.doman.overview.gateways.Deleter
+import file_manager.doman.overview.gateways.FilesDeleter
 import file_manager.doman.overview.ui_out.UiOuter
 import file_manager.doman.overview.use_case.DeleteActionImpl
 import file_manager.doman.overview.use_case.UpdateUIAction
@@ -13,26 +13,26 @@ import io.mockk.spyk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
-import yin_kio.file_app_manager.updater.Updater
+import yin_kio.file_app_manager.updater.ContentUpdater
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DeleteActionTest {
 
-    private val deleter: Deleter = spyk()
+    private val filesDeleter: FilesDeleter = spyk()
     private val server: FileManagerServer = mockk()
     private val updateUIAction: UpdateUIAction = spyk()
     private val uiOuter: UiOuter = spyk()
     private val deleteTimeSaver: DeleteTimeSaver = spyk()
-    private val updater: Updater = spyk()
+    private val contentUpdater: ContentUpdater = spyk()
 
     private val deleteUseCase = DeleteActionImpl(
-        deleter = deleter,
+        filesDeleter = filesDeleter,
         server = server,
         updateUIAction = updateUIAction,
         uiOuter = uiOuter,
         deleteTimeSaver = deleteTimeSaver,
-        updater = updater
+        contentUpdater = contentUpdater
     )
 
 
@@ -49,10 +49,10 @@ class DeleteActionTest {
         coVerifyOrder {
             uiOuter.showDeleteProgress()
 
-            deleter.delete(video.map { it })
+            filesDeleter.delete(video.map { it })
             server.clearSelected()
             deleteTimeSaver.saveDeleteTime()
-            updater.update()
+            contentUpdater.updateFilesAndApps()
             updateUIAction.update()
 
             uiOuter.showDeleteCompletion()

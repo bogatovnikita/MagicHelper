@@ -61,4 +61,8 @@ class FileAndAppsServerImpl : FileManagerServer {
     override fun clearSelected() {
         _content.forEach { it.value.clearSelected() }
     }
+
+    override fun setGroupContent(groupName: GroupName, filesOrApps: List<FileOrApp>) {
+        _content[groupName]?.content = filesOrApps
+    }
 }
