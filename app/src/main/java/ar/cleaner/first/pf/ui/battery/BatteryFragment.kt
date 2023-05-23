@@ -142,11 +142,11 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
             groupOptimizeIsDone.isVisible = batteryDetails.isOptimized
             binding.descriptionModeTv.setText(
                 if (batteryDetails.batteryMode == BatteryMode.NORMAL)
-                    R.string.normal_mode_activates_restrictions
+                    R.string.battery_normal_mode_activates_restrictions
                 else if (batteryDetails.batteryMode == BatteryMode.MEDIUM)
-                    R.string.ultra_mode_activates_restrictions
+                    R.string.battery_ultra_mode_activates_restrictions
                 else
-                    R.string.extra_mode_activates_restrictions
+                    R.string.battery_extra_mode_activates_restrictions
             )
         }
         renderDescriptionItem(batteryDetails.isOptimized)

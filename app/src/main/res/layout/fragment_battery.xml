@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/optimization_is_done"
+        android:text="@string/battery_optimization_is_done"
         android:textColor="@color/white"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@id/optimize_is_done_background"
@@ -140,7 +140,7 @@
         android:layout_marginHorizontal="@dimen/_13sdp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/modes_of_increasing_the_working_time"
+        android:text="@string/battery_modes_of_increasing_the_working_time"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.18"
         app:layout_constraintBottom_toTopOf="@id/button_ultra_mode"
@@ -236,8 +236,7 @@
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@id/second_view_for_background"
-        app:layout_constraintTop_toTopOf="@id/second_view_for_background"
-        tools:text="@string/remaining_charging_time" />
+        app:layout_constraintTop_toTopOf="@id/second_view_for_background"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
