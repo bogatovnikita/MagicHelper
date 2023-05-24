@@ -58,6 +58,8 @@ dependencies {
 
     implementation project(':toolbar')
 
+    implementation project(':files_and_apps_manager:presentation')
+
     implementation presentation.values()
 
     //gson

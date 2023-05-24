@@ -131,5 +131,6 @@
         android:id="@+id/batteryResultFragment"
         android:name="ar.cleaner.first.pf.ui.battery.BatteryResultFragment"
         android:label="BatteryResultFragment" />
+    <include app:graph="@navigation/files_and_apps_graph" />
 
 </navigation>
