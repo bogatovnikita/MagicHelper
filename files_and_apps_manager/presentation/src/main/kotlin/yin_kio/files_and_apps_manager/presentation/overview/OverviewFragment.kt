@@ -10,7 +10,9 @@ import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -37,8 +39,8 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val binding: FragmentOverviewBinding by viewBinding()
-    private val server: FileManagerServer by previousBackStackEntryWithCache()
-    private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
+    private val server: FileManagerServer by previousBackStackEntryWithCache(R.id.overviewFragment)
+    private val viewModel: ViewModel by currentBackStackEntry(R.id.overviewFragment) { createViewModel(viewModelScope) }
 
     private var onDismissSortingPopup: (() -> Unit)? = null // эта лямбда вынесена для того, чтобы диалог не прятался при дисмисе попапа
 
@@ -105,16 +107,22 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private fun setupStateObserver() {
 
+
+
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.state.collect {
-                showButton(it)
-                showChips(it)
-                showSortingControlPanel(it)
-                showList(it)
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.state.collect {
+                    showButton(it)
+                    showChips(it)
+                    showSortingControlPanel(it)
+                    showList(it)
 
-                binding.selectAllCheckbox.isChecked = it.isAllSelected
+                    binding.selectAllCheckbox.isChecked = it.isAllSelected
 
+                }
             }
+
+
         }
     }
 

@@ -75,6 +75,7 @@ internal class OverviewUseCaseImpl(
             uiOuter.hideUpdateAppsProgress()
         } else {
             uiOuter.hideDoneDialog()
+            uiUpdater.update()
         }
     }
 

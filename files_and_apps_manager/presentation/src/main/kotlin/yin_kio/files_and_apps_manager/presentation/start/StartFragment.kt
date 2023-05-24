@@ -24,7 +24,7 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
 
     private val binding: FragmentStartBinding by viewBinding()
     private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
-    private val server = currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
+    private val server = currentBackStackEntry<FileManagerServer>(R.id.startFragment) { FileAndAppsServerImpl() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

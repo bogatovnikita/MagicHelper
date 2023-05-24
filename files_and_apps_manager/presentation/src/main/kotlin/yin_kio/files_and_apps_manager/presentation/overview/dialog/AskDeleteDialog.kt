@@ -21,7 +21,6 @@ internal class AskDeleteDialog : FixedWidthDialogFragment(R.layout.dialog_ask_de
     private val viewModel: ViewModel by previousBackStackEntry()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         binding.apply {
             cancel.setOnClickListener { viewModel.hideAskDeleteDialog() }
             close.setOnClickListener { viewModel.hideAskDeleteDialog() }

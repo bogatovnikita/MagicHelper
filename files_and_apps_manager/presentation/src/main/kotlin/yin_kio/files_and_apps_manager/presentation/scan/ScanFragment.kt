@@ -23,7 +23,7 @@ import yin_kio.files_and_apps_manager.data.PermissionsImpl
 internal class ScanFragment : Fragment(R.layout.fragment_scan) {
 
     private val server: FileManagerServer by previousBackStackEntry()
-    private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
+    private val viewModel: ViewModel by currentBackStackEntry(R.id.scanFragment) { createViewModel(viewModelScope) }
 
 
 
