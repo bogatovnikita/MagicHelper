@@ -9,12 +9,12 @@
     </array>
 
     <array name="battery_items">
-        <item>Decrease brightness</item>
-        <item>Disable Auto Brightness</item>
-        <item>Disable Wi-Fi</item>
-        <item>Freeze background applications</item>
-        <item>Disable Bluetooth</item>
-        <item>Disable Vibration</item>
+        <item>Уменьшить яркость</item>
+        <item>Отключить автояркость</item>
+        <item>Отключить Wi-Fi</item>
+        <item>Заморозка фоновых приложений</item>
+        <item>Отключить Bluetooth</item>
+        <item>Отключить вибрацию</item>
     </array>
 
     <array name="junk_items">

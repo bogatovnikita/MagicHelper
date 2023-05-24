@@ -79,7 +79,7 @@
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:fontFamily="@font/heraclito_bold"
-        android:text="@string/done"
+        android:text="@string/optimization_done"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"

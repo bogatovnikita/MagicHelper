@@ -142,11 +142,11 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
             groupOptimizeIsDone.isVisible = batteryDetails.isOptimized
             binding.descriptionModeTv.setText(
                 if (batteryDetails.batteryMode == BatteryMode.NORMAL)
-                    R.string.normal_mode_activates_restrictions
+                    R.string.battery_normal_mode_activates_restrictions
                 else if (batteryDetails.batteryMode == BatteryMode.MEDIUM)
-                    R.string.ultra_mode_activates_restrictions
+                    R.string.battery_ultra_mode_activates_restrictions
                 else
-                    R.string.extra_mode_activates_restrictions
+                    R.string.battery_extra_mode_activates_restrictions
             )
         }
         renderDescriptionItem(batteryDetails.isOptimized)
@@ -178,7 +178,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
         }
         binding.boostButton.setOnClickListener {
             when (viewModel.state.value.batteryMode) {
-                BatteryMode.NORMAL -> {
+                BatteryMode.NORMAL, BatteryMode.MEDIUM -> {
                     when {
                         checkWriteSettings() -> {
                             navigateNext()
@@ -189,7 +189,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
                         }
                     }
                 }
-                BatteryMode.MEDIUM, BatteryMode.HIGH -> {
+                BatteryMode.HIGH -> {
                     when {
                         checkWriteSettings() && checkBluetoothPermission() -> {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -203,23 +203,19 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
                             dialog.show(parentFragmentManager, "BatteryFragment")
                         }
                         !checkBluetoothPermission() -> {
-                            if (true) {
-                                if (dialogBluetooth.isAdded) return@setOnClickListener
-                                dialogBluetooth.show(parentFragmentManager, "BatterySaver")
-                                dialogBluetooth.isCancelable = true
-                                dialogBluetooth.addCallBackDialogPermissionWriteSetting(object :
-                                    DialogBluetoothPermission.CallBackDialogPermission {
-                                    override fun crossExitIvClick(isClick: Boolean) {
-                                        viewModel.handleBluetoothPermission()
-                                    }
+                            if (dialogBluetooth.isAdded) return@setOnClickListener
+                            dialogBluetooth.show(parentFragmentManager, "BatterySaver")
+                            dialogBluetooth.isCancelable = true
+                            dialogBluetooth.addCallBackDialogPermissionWriteSetting(object :
+                                DialogBluetoothPermission.CallBackDialogPermission {
+                                override fun crossExitIvClick(isClick: Boolean) {
+                                    viewModel.handleBluetoothPermission()
+                                }
 
-                                    override fun crossAllowBtnClick(isClick: Boolean) {
-                                        viewModel.handleBluetoothPermission()
-                                    }
-                                })
-                            } else {
-                                viewModel.handleBluetoothPermission()
-                            }
+                                override fun crossAllowBtnClick(isClick: Boolean) {
+                                    viewModel.handleBluetoothPermission()
+                                }
+                            })
                         }
                     }
                 }
