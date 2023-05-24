@@ -2,7 +2,6 @@ package yin_kio.files_and_apps_manager.presentation.start
 
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentStartBinding
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -36,9 +35,8 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         server.value
 
-        binding.scanButton.setOnClickListener {
-            viewModel.scan()
-        }
+        binding.scanButton.setOnClickListener { viewModel.scan() }
+        binding.toolbar.binding.arrowBackIv.setOnClickListener { viewModel.close() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect{
