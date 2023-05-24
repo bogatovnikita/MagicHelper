@@ -2,7 +2,6 @@ package ar.cleaner.first.pf.ui.boost.progress
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +11,7 @@ import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.models.RunningApp
 import ar.cleaner.first.pf.domain.usecases.boosting.GetInstalledAppsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.KillBackgroundProcessUseCase
+import ar.cleaner.first.pf.ui.base_fragment.BaseFragment
 import ar.cleaner.first.pf.ui.progress.BoostAdapter
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class BoostProgressFragment : Fragment(R.layout.fragment_progress) {
+class BoostProgressFragment : BaseFragment(R.layout.fragment_progress) {
 
     private val binding: FragmentProgressBinding by viewBinding()
 
