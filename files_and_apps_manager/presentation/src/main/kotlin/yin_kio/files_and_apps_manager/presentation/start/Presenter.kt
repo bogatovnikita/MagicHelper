@@ -24,4 +24,32 @@ internal class Presenter(
         return ((occupied / total.toDouble()) * 100).roundToInt()
     }
 
+    fun presentDangerColor(isCleaned: Boolean): Int{
+        val colorId = if (isCleaned){
+            R.color.black
+        } else {
+            R.color.red
+        }
+
+        return context.getColor(colorId)
+    }
+
+    fun presentDangerText(isCleaned: Boolean) : String{
+        val strId = if (isCleaned){
+            R.string.file_apps_manager_start_already_freed
+        } else {
+            R.string.file_apps_manager_start_need_free
+        }
+
+        return context.getString(strId)
+    }
+
+    fun presentButtonBg(isCleaned: Boolean) : Int{
+        return if (isCleaned){
+            R.drawable.background_button_cleaned
+        } else {
+            R.drawable.background_button_danger
+        }
+    }
+
 }

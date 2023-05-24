@@ -2,6 +2,7 @@ package yin_kio.files_and_apps_manager.presentation.start
 
 import Yin_Koi.files_and_apps_manager.presentation.R
 import Yin_Koi.files_and_apps_manager.presentation.databinding.FragmentStartBinding
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -27,6 +28,11 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
     private val server = currentBackStackEntry<FileManagerServer>(R.id.startFragment) { FileAndAppsServerImpl() }
 
 
+    override fun onStart() {
+        super.onStart()
+        viewModel.update()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         server.value
 
@@ -39,6 +45,9 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
                 binding.percentageUsedTv.text = it.percents
                 binding.gigabyteUsedTv.text = it.occupiedAndTotal
                 binding.progressBar.progress = it.progress
+                binding.dangerButton.text = it.dangerText
+                binding.dangerButton.setTextColor(it.dangerColor)
+                binding.dangerButton.setBackgroundResource(it.dangerBg)
             }
         }
 

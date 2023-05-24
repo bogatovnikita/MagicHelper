@@ -16,10 +16,6 @@ internal class ViewModel(
     private val _command = MutableSharedFlow<Command>()
     val command = _command.asSharedFlow()
 
-    init {
-        useCase.update()
-    }
-
     fun update(newState: (oldState: ScreenState) -> ScreenState){
         _state.value = newState(_state.value)
     }
