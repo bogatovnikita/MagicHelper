@@ -97,7 +97,7 @@
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/heraclito_medium"
-        android:text="@string/processor_temperature"
+        android:text="@string/temperature_processor"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.24"
         app:layout_constraintEnd_toEndOf="@id/first_view_for_background"
