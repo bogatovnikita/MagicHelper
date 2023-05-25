@@ -37,6 +37,7 @@ class BoostFragment : Fragment(R.layout.fragment_boost) {
         state.boostDetails ?: return
         if (!state.loadData) return
 
+        binding.boostButton.isVisible = true
         initProgress(state)
         setVisibilityGroup(state.boostStatus)
         initOptimizeButton(state.boostStatus)
