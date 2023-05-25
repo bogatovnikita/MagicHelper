@@ -238,7 +238,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
         val popup = PopupWindow(requireContext()).apply {
-            setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.background_popup))
+            setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.bg_popup))
             contentView = binding.root
             setOnDismissListener { onDismissSortingPopup?.invoke() }
             isOutsideTouchable = true

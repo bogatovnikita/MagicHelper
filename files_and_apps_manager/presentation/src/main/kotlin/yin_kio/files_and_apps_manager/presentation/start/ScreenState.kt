@@ -8,5 +8,5 @@ internal data class ScreenState(
     val progress: Int = 0,
     val dangerText: String = "",
     val dangerColor: Int = 0,
-    val dangerBg: Int = R.drawable.background_button_danger
+    val dangerBg: Int = R.drawable.bg_button_danger
 )
