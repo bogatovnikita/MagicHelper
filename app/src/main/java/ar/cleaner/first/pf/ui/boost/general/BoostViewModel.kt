@@ -6,6 +6,7 @@ import ar.cleaner.first.pf.domain.models.details.BoostDetails
 import ar.cleaner.first.pf.domain.usecases.boosting.BoostStatusUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.GetDetailedBoostDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -21,7 +22,7 @@ class BoostViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             _state.value = state.value.copy(
                 boostStatus = boostStatusUseCase.getOptimizationStatus(),
                 boostDetails = boostDetailsMapRamDetails(),
