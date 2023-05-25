@@ -19,6 +19,9 @@ class FileAndAppsServerImpl : FileManagerServer {
             value.forEach {
                 _content[it.key] = it.value
             }
+            if (!_content.keys.contains(selectedGroup) && _content.isNotEmpty()){
+                selectedGroup = _content.keys.first()
+            }
         }
 
     override val selectedGroupContent: List<FileOrApp>

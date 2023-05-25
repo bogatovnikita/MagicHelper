@@ -1,6 +1,5 @@
 package yin_kio.files_and_apps_manager.presentation.overview
 
-import android.util.Log
 import file_manager.doman.overview.gateways.AppsDeleter
 import file_manager.doman.overview.ui_out.AllSelectionOut
 import file_manager.doman.overview.ui_out.GroupSwitchingOut
@@ -34,7 +33,8 @@ internal class UiOuterImpl(
             content = presenter.presentFilesOrApps(updateOut.selectedGroupContent),
             selectedGroup = updateOut.selectedGroup,
             isAllSelected = updateOut.isAllSelected,
-            availableGroups = updateOut.availableGroups
+            availableGroups = updateOut.availableGroups,
+            buttonText = presenter.presentButtonText(updateOut.selectedCount)
         ) }
     }
 

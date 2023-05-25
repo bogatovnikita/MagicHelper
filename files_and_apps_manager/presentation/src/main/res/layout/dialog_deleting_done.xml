@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Dialog.Title"
-            android:text="@string/file_apps_manager_files_deleting"
+            android:text="@string/file_apps_manager_files_deleted"
             android:gravity="center"/>
         
         <ImageView
