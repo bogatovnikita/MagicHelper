@@ -104,7 +104,6 @@
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/bg_button_danger"
         android:textAppearance="@style/Text.Medium"
-        android:maxLines="2"
         android:paddingHorizontal="16dp"
         android:gravity="start|center"
         android:text="@string/file_apps_manager_start_need_free"

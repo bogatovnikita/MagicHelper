@@ -165,7 +165,11 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             viewModel.command.collect {
                 when (it) {
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowAskDeleteDialog -> findNavController().navigate(R.id.toAskDelete)
+                    Command.ShowAskDeleteDialog -> findNavController().apply {
+                        if (currentDestination?.id == R.id.overviewFragment){
+                            navigate(R.id.toAskDelete)
+                        }
+                    }
                     Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
                     else -> {}
                 }
