@@ -3,19 +3,14 @@
     <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="app_name">Cleaner - clean the memory, cache, phone</string>
     <string name="temp_files">Temporary files</string>
-    <string name="storage_location">Storage space</string>
     <string name="released_F_gb">Released %.1f GB</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Phone does not need to be cooled at this time!</string>
     <string name="clean_junk_description">Clean Up!</string>
-    <string name="released_D_gb">Free %d Mb</string>
-    <string name="theres_not_much_left">Not much left…</string>
     <string name="remaining_charging_time_D_h_D_min">Remaining charging time %d h %d min</string>
-    <string name="available_memory_F_gb_F_gb">Available memory: %.1f GB/%.1f GB</string>
     <string name="deleting_unwanted_files_is_safe">Delete unwanted files safely</string>
     <string name="mb_D">%d Mb</string>
     <string name="residual_files">Residual files</string>
     <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Cool your phone regularly to reduce processor strain, extend its life, and make your device run faster</string>
-    <string name="ram">RAM</string>
     <string name="garbage_detected">Debris detected</string>
     <string name="cache">Cache</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
@@ -24,17 +19,13 @@
     <string name="clear_junk">Cleaning</string>
     <string name="cleared_junk">Clean up</string>
 
-    <string name="scanning_system">Scanning system…</string>
     <string name="clean_junk_done">Done</string>
     <string name="now_the_devices_memory_is_D_free">Device memory is now %d%%</string>
     <string name="speed_up_the_work_of_your_phone">Accelerate your phone</string>
-    <string name="_F_gb_F_gb">%.1f GB/%.1f GB</string>
     <string name="remove_the_trash">Remove garbage</string>
-    <string name="processor_temperature">Processor temperature:</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Runtime increased by %d%%</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
-    <string name="occupied_total">Busy/Total:</string>
     <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Right now, background processes and apps are overheating your phone`s processor</string>
     <string name="the_processor_overheated_cooling_is_required">Processor is overheating! Cooling is required!</string>
 
@@ -42,21 +33,30 @@
     <string name="processor_temperature_D">Processor temperature %d℃</string>
     <string name="percent_D">%d%%</string>
     <string name="boost_description">Accelerated</string>
-    <string name="collect_data">Collecting data…</string>
     <string name="clean_junk_description_not_optimized_D">Free up %.1f gb</string>
     <string name="cooled_D">Cooled down %d℃</string>
     <string name="exit_toast">Tap back button in order to exit</string>
     <string name="snackbar_access_bluetooth">To perform this function, we need access to bluetooth</string>
-    <string name="settings">Settings</string>
     <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">In order for us to clean up the garbage, we need access to the usage history</string>
     <string name="description_need_permission_files">We need permission to read, delete and modify files so that we can find unnecessary files and you can delete them.</string>
     <string name="boost_description_not_optimize">Speed up the work of your phone</string>
     <string name="snackbar_access_files">To perform this function, we need access to files</string>
     <string name="cleaner_title">Cleaner</string>
 
-    <string name="boost_usage_ram">Used RAM</string>
 
     <!--    new strings-->
+
+    <string name="scanning_system">Сканируем систему…</string>
+    <string name="collect_data">Собираем данные…</string>
+    <string name="theres_not_much_left">Осталось немного…</string>
+    <string name="occupied_total">Занято/Всего:</string>
+    <string name="storage_location">Место хранения</string>
+    <string name="ram">Оперативная память</string>
+    <string name="settings">Настройки</string>
+
+
+
+
     <string name="temperature_title">Температура</string>
     <string name="temperature_check">Проверить</string>
     <string name="temperature_danger_desc">Требуется действие!</string>
@@ -67,6 +67,8 @@
     <string name="temperature_checked">Действие выполнено</string>
     <string name="temperature_not_checked">не проверена…</string>
     <string name="temperature_normal">Нормальная температура процессора не должна превыщать 50℃</string>
+    <string name="temperature_processor">Температура процессора:</string>
+
 
     <string name="boost_description_view_title">Прямо сейчас фоновые процессы и приложения могут влиять на скорость работы устройства</string>
     <string name="boost_description_view_body">Снижайте нагрузку на оперативную память и оптимизируйте работу вашего телефона</string>
@@ -77,6 +79,12 @@
     <string name="boost_now_the_device_is_accelerated_by_D">Теперь устройство оптимизировано на %d%%</string>
     <string name="boost_checking_apps">Checking apps..</string>
     <string name="boost_sending_command">Sending command..</string>
+    <string name="boost_usage_ram">Использовано оперативной памяти</string>
+    <string name="_F_gb_F_gb">%.1f Гб/%.1f Гб</string>
+    <string name="released_D_gb">Освобождено %d Гб</string>
+    <string name="available_memory_F_gb_F_gb">Доступная память: %.1f Гб/%.1f Гб</string>
+
+
 
 
     <string name="general_action_required">Требуется действие!</string>

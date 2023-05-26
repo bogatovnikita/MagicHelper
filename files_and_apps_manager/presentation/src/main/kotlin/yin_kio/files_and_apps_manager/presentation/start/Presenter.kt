@@ -46,9 +46,9 @@ internal class Presenter(
 
     fun presentButtonBg(isCleaned: Boolean) : Int{
         return if (isCleaned){
-            R.drawable.background_button_cleaned
+            R.drawable.bg_button_cleaned
         } else {
-            R.drawable.background_button_danger
+            R.drawable.bg_button_danger
         }
     }
 
