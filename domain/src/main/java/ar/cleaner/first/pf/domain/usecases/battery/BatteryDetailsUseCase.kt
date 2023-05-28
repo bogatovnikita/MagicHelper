@@ -14,16 +14,14 @@ class BatteryDetailsUseCase @Inject constructor(
 ) {
 
     fun getBatteryDetails(): Flow<BatteryDetails> =
-        batteryProvider.getBatteryPercents().map { percents ->
+        batteryProvider.getBatteryPercents().combine(batteryProvider.getTimeToFullCharge()) { percents, time ->
             BatteryDetails(
                 batteryCharge = percents,
                 batteryMode = settings.getBatteryMode(),
-                isOptimized = settings.isBatteryOptimized()
+                isOptimized = settings.isBatteryOptimized(),
+                timeToFullCharge = time,
+                isCharging = batteryProvider.isCharging()
             )
-        }
-            .catch { e ->
-                e.printStackTrace()
-            }
-            .flowOn(dispatcher)
+        }.flowOn(dispatcher)
 
 }

@@ -36,12 +36,15 @@ class BatteryViewModel @Inject constructor(
                         batteryMode = batInfo.batteryMode,
                         isOptimized = batInfo.isOptimized,
                         batteryListFun = list.getListMode(batInfo.batteryMode),
+                        timeToFullCharge = batInfo.timeToFullCharge,
+                        isCharging = batInfo.isCharging
                     )
             }
         }
     }
 
     fun setBatteryMode(mode: BatteryMode) {
+        useCaseOptimization.saveOptimizationMode(mode)
         _state.value =
             state.value.copy(
                 batteryMode = mode,
