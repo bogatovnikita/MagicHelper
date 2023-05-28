@@ -24,21 +24,28 @@ internal class StartFragment : Fragment(R.layout.fragment_start) {
 
     private val binding: FragmentStartBinding by viewBinding()
     private val viewModel: ViewModel by lifecycleAware { createViewModel(viewModelScope) }
-    private val server = currentBackStackEntry<FileManagerServer> { FileAndAppsServerImpl() }
+    private val server = currentBackStackEntry<FileManagerServer>(R.id.startFragment) { FileAndAppsServerImpl() }
 
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.update()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         server.value
 
-        binding.scanButton.setOnClickListener {
-            viewModel.scan()
-        }
+        binding.scanButton.setOnClickListener { viewModel.scan() }
+        binding.toolbar.binding.arrowBackIv.setOnClickListener { viewModel.close() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.collect{
                 binding.percentageUsedTv.text = it.percents
                 binding.gigabyteUsedTv.text = it.occupiedAndTotal
                 binding.progressBar.progress = it.progress
+                binding.dangerButton.text = it.dangerText
+                binding.dangerButton.setTextColor(it.dangerColor)
+                binding.dangerButton.setBackgroundResource(it.dangerBg)
             }
         }
 

@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-        android:id="@+id/view_background"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginVertical="@dimen/_4sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:background="@drawable/card_corners_white_8_corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tv_action"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="@dimen/_3sdp"
-        app:layout_constraintBottom_toBottomOf="@id/view_background"
-        app:layout_constraintEnd_toEndOf="@id/view_background"
-        app:layout_constraintStart_toStartOf="@id/view_background"
-        app:layout_constraintTop_toTopOf="@id/view_background"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
         tools:src="@drawable/aso_icon" />
 
     <TextView
@@ -37,9 +22,7 @@
         android:lines="1"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.18"
-        app:layout_constraintBottom_toBottomOf="@id/view_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/view_background"
-        app:layout_constraintTop_toTopOf="@id/view_background"
+        android:layout_marginStart="10dp"
         tools:text="TextView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

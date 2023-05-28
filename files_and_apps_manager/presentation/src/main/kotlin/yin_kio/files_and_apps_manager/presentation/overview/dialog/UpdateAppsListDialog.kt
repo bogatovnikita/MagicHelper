@@ -3,7 +3,6 @@ package yin_kio.files_and_apps_manager.presentation.overview.dialog
 import Yin_Koi.files_and_apps_manager.presentation.R
 import android.app.Dialog
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -25,7 +24,6 @@ class UpdateAppsListDialog : FixedWidthDialogFragment(R.layout.dialog_update_app
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect{
-                Log.d("!!!", "command from update apps list: ${it}")
                 when(it){
                     Command.HideUpdateAppsProgress -> findNavController().navigateUp()
                     else -> {}

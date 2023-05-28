@@ -21,7 +21,6 @@ internal class AskDeleteDialog : FixedWidthDialogFragment(R.layout.dialog_ask_de
     private val viewModel: ViewModel by previousBackStackEntry()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         binding.apply {
             cancel.setOnClickListener { viewModel.hideAskDeleteDialog() }
             close.setOnClickListener { viewModel.hideAskDeleteDialog() }
@@ -31,7 +30,13 @@ internal class AskDeleteDialog : FixedWidthDialogFragment(R.layout.dialog_ask_de
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.command.collect{
                 when(it){
-                    Command.HideAskDeleteDialog -> findNavController().navigateUp()
+                    Command.HideAskDeleteDialog -> {
+                        findNavController().apply {
+                            if (currentDestination?.id == R.id.askDeleteDialog){
+                                navigateUp()
+                            }
+                        }
+                    }
                     Command.ShowDeleteProgress -> {
                         findNavController().apply {
                             popBackStack(R.id.overviewFragment, false)

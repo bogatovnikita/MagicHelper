@@ -40,9 +40,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:title_text="@string/boost_title_name" />
 
     <androidx.constraintlayout.widget.Group
@@ -251,6 +251,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/boost_button"
         style="@style/MainButton"
+        android:visibility="gone"
         android:text="@string/boost_button_optimize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

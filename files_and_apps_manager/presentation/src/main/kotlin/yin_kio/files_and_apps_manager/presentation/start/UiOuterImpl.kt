@@ -24,7 +24,10 @@ internal class UiOuterImpl(
         viewModel?.update { it.copy(
             percents = presenter.presentPercents(progress),
             occupiedAndTotal = presenter.presentOccupiedAndTotal(occupied, total),
-            progress = progress
+            progress = progress,
+            dangerColor = presenter.presentDangerColor(updateOut.isCleaned),
+            dangerText = presenter.presentDangerText(updateOut.isCleaned),
+            dangerBg = presenter.presentButtonBg(updateOut.isCleaned)
         ) }
     }
 }

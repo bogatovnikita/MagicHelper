@@ -3,27 +3,24 @@ package ar.cleaner.first.pf.ui.first_scanning
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.first.pf.R
-import ar.cleaner.first.pf.ads.appPreloadAd
 import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentFirstScanningBinding
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FirstScanningFragment : Fragment() {
+class FirstScanningFragment : Fragment(R.layout.fragment_first_scanning) {
 
-    private var _binding: FragmentFirstScanningBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentFirstScanningBinding by viewBinding()
     private var scanIsDone = false
 
     override fun onResume() {
@@ -31,14 +28,7 @@ class FirstScanningFragment : Fragment() {
         if (scanIsDone) goNext()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentFirstScanningBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         preloadAd()
@@ -81,12 +71,9 @@ class FirstScanningFragment : Fragment() {
 
     private fun goNext() {
         appShowAds {
-            findNavController().navigate(FirstScanningFragmentDirections.actionToMenuFragment())
+            findNavController().navigate(R.id.action_to_menuFragment)
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
+
 }

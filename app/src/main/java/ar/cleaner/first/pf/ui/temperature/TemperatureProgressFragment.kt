@@ -2,7 +2,6 @@ package ar.cleaner.first.pf.ui.temperature
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +9,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.ads.appShowAds
 import ar.cleaner.first.pf.databinding.FragmentProgressBinding
 import ar.cleaner.first.pf.domain.usecases.temperature.TemperatureOptimizerUseCase
+import ar.cleaner.first.pf.ui.base_fragment.BaseFragment
 import ar.cleaner.first.pf.ui.progress.ActionsAdapter
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.yin_kio.ads.preloadAd
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class TemperatureProgressFragment : Fragment(R.layout.fragment_progress) {
+class TemperatureProgressFragment : BaseFragment(R.layout.fragment_progress) {
 
     private val binding: FragmentProgressBinding by viewBinding()
 

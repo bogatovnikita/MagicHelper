@@ -47,10 +47,10 @@ internal class OverviewUseCaseImpl(
         uiOuter.hideSortingSelection()
     }
 
-    override fun switchItemSelection(groupName: GroupName, itemId: String, selectable: Selectable) {
-        server.switchItemSelection(groupName, itemId)
+    override fun switchItemSelection(itemId: String, selectable: Selectable) {
+        server.switchItemSelection(itemId)
         uiOuter.out(outCreator.createItemSelectionOut(itemId))
-        selectable.setSelected(server.isItemSelected(groupName, itemId))
+        selectable.setSelected(server.isItemSelected(itemId))
     }
 
     override fun showAskDeleteDialog() = async{
@@ -75,6 +75,7 @@ internal class OverviewUseCaseImpl(
             uiOuter.hideUpdateAppsProgress()
         } else {
             uiOuter.hideDoneDialog()
+            uiUpdater.update()
         }
     }
 
@@ -85,8 +86,8 @@ internal class OverviewUseCaseImpl(
         uiOuter.out(outCreator.createSortingModeOut())
     }
 
-    override fun updateSelectable(groupName: GroupName, itemId: String, selectable: Selectable) {
-        val isSelected = server.isItemSelected(groupName, itemId)
+    override fun updateSelectable(itemId: String, selectable: Selectable) {
+        val isSelected = server.isItemSelected(itemId)
         selectable.setSelected(isSelected)
     }
 

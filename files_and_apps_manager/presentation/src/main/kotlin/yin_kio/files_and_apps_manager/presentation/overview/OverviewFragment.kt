@@ -10,7 +10,9 @@ import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -20,14 +22,14 @@ import file_manager.domain.server.SortingMode
 import file_manager.doman.overview.OverviewUseCaseCreator
 import file_manager.doman.overview.ui_out.Selectable
 import jamycake.lifecycle_aware.currentBackStackEntry
-import jamycake.lifecycle_aware.previousBackStackEntry
+import jamycake.lifecycle_aware.previousBackStackEntryWithCache
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import yin_kio.file_app_manager.updater.ContentUpdaterImpl
 import yin_kio.file_grouper.GrouperImpl
 import yin_kio.files_and_apps_manager.data.DeleteTimeSaverImpl
-import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.data.FilesAndAppsImpl
+import yin_kio.files_and_apps_manager.data.FilesDeleterImpl
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.AppAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.DocAdapter
 import yin_kio.files_and_apps_manager.presentation.overview.adapter.ImageAdapter
@@ -37,21 +39,19 @@ import yin_kio.files_and_apps_manager.presentation.overview.models.ScreenState
 internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val binding: FragmentOverviewBinding by viewBinding()
-    private val server: FileManagerServer by previousBackStackEntry()
-    private val viewModel: ViewModel by currentBackStackEntry { createViewModel(viewModelScope) }
+    private val server: FileManagerServer by previousBackStackEntryWithCache(R.id.overviewFragment)
+    private val viewModel: ViewModel by currentBackStackEntry(R.id.overviewFragment) { createViewModel(viewModelScope) }
 
     private var onDismissSortingPopup: (() -> Unit)? = null // эта лямбда вынесена для того, чтобы диалог не прятался при дисмисе попапа
 
     private val sortingPopup: PopupWindow by lazy { createSortingPopup() }
 
     private val onItemUpdate: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
-            item, selectable -> viewModel.updateSelectable(
-                viewModel.state.value.selectedGroup, item.id, selectable)
+            item, selectable -> viewModel.updateSelectable(item.id, selectable)
     }
 
     private val onItemClick: (fileOrApp: FileOrAppItem, selectable: Selectable) -> Unit = {
-            item, selectable -> viewModel.switchItemSelection(
-                viewModel.state.value.selectedGroup, item.id, selectable)
+            item, selectable -> viewModel.switchItemSelection(item.id, selectable)
     }
 
 
@@ -107,16 +107,22 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private fun setupStateObserver() {
 
+
+
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.state.collect {
-                showButton(it)
-                showChips(it)
-                showSortingControlPanel(it)
-                showList(it)
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.state.collect {
+                    showButton(it)
+                    showChips(it)
+                    showSortingControlPanel(it)
+                    showList(it)
 
-                binding.selectAllCheckbox.isChecked = it.isAllSelected
+                    binding.selectAllCheckbox.isChecked = it.isAllSelected
 
+                }
             }
+
+
         }
     }
 
@@ -159,7 +165,11 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
             viewModel.command.collect {
                 when (it) {
                     Command.Close -> findNavController().navigateUp()
-                    Command.ShowAskDeleteDialog -> findNavController().navigate(R.id.toAskDelete)
+                    Command.ShowAskDeleteDialog -> findNavController().apply {
+                        if (currentDestination?.id == R.id.overviewFragment){
+                            navigate(R.id.toAskDelete)
+                        }
+                    }
                     Command.UpdateListContent -> binding.recycler.adapter?.notifyDataSetChanged()
                     else -> {}
                 }
@@ -232,7 +242,7 @@ internal class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
 
         val popup = PopupWindow(requireContext()).apply {
-            setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.background_popup))
+            setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.bg_popup))
             contentView = binding.root
             setOnDismissListener { onDismissSortingPopup?.invoke() }
             isOutsideTouchable = true

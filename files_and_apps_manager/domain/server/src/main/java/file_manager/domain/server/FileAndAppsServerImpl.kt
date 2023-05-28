@@ -19,6 +19,9 @@ class FileAndAppsServerImpl : FileManagerServer {
             value.forEach {
                 _content[it.key] = it.value
             }
+            if (!_content.keys.contains(selectedGroup) && _content.isNotEmpty()){
+                selectedGroup = _content.keys.first()
+            }
         }
 
     override val selectedGroupContent: List<FileOrApp>
@@ -28,8 +31,8 @@ class FileAndAppsServerImpl : FileManagerServer {
         return _content[groupName]?.selected ?: emptyList()
     }
 
-    override fun isItemSelected(groupName: GroupName, id: String): Boolean {
-        _content[groupName]?.let {
+    override fun isItemSelected(id: String): Boolean {
+        _content[selectedGroup]?.let {
             val item = it.content.find { it.id == id }?: return false
             return it.isItemSelected(item)
         }
@@ -40,8 +43,8 @@ class FileAndAppsServerImpl : FileManagerServer {
         _content[groupName]?.switchAllSelection()
     }
 
-    override fun switchItemSelection(groupName: GroupName, id: String) {
-        _content[groupName]?.let {
+    override fun switchItemSelection(id: String) {
+        _content[selectedGroup]?.let {
             val item = it.content.find { it.id == id }?: return
             it.switchItemSelection(item)
         }

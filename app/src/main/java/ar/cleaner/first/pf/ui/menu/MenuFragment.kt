@@ -106,7 +106,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                 findNavController().navigate(R.id.action_to_temperatureFragment)
             }
             backgroundCleanTransparent.setOnClickListener {
-                // TODO навигация к files manager
+                findNavController().navigate(R.id.files_and_apps_graph)
             }
 
         }
