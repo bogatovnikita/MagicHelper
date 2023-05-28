@@ -106,8 +106,8 @@
     <string name="battery_charge_percent">Заряд батареи</string>
     <string name="battery_not_danger_description">Телефон не нуждается в оптимизации на данный момент!</string>
     <string name="battery_title">Питание</string>
-    <string name="battery_to_full_charge_D_D">До полной зарядки \n%d ч. %d мин.</string>
-    <string name="battery_to_full_charge_calculating">До полной зарядки вычисляем…</string>
+    <string name="battery_time_to_full_charge_D_D">До полной зарядки\n%d ч. %d мин.</string>
+    <string name="battery_time_to_full_charge_calculating">До полной зарядки\nвычисляем…</string>
     <string name="battery_extra_mode">Экстра</string>
     <string name="battery_ultra_mode">Ультра</string>
     <string name="battery_normal_mode">Нормальный</string>

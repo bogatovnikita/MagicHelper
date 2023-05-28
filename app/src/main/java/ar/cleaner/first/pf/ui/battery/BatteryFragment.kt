@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -22,6 +25,8 @@ import ar.cleaner.first.pf.domain.models.details.BatteryDetails
 import ar.cleaner.first.pf.extensions.*
 import ar.cleaner.first.pf.ui.dialogs.DialogBluetoothPermission
 import ar.cleaner.first.pf.ui.dialogs.DialogWriteSettings
+import ar.cleaner.first.pf.ui.menu.toHours
+import ar.cleaner.first.pf.ui.menu.toMinutes
 import ar.cleaner.first.pf.utils.bluetoothPermissionList
 import ar.cleaner.first.pf.utils.events.BaseEvent
 import ar.cleaner.first.pf.utils.events.RuntimePermission
@@ -152,6 +157,20 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
         renderDescriptionItem(batteryDetails.isOptimized)
         actionAdapter.setItems(batteryDetails.batteryListFun)
         setEnableMode(batteryDetails.batteryMode)
+        renderTimeToFullCharge(batteryDetails)
+    }
+
+    private fun renderTimeToFullCharge(batteryDetails: BatteryDetails) {
+        binding.tvTimeToFull.isVisible = batteryDetails.isCharging
+        if (batteryDetails.isCharging) {
+            val hours = batteryDetails.timeToFullCharge.toHours()
+            val minutes = batteryDetails.timeToFullCharge.toMinutes()
+            if (hours != 0 && minutes != 0) {
+                binding.tvTimeToFull.text = getString(R.string.battery_time_to_full_charge_D_D, hours, minutes)
+            } else {
+                binding.tvTimeToFull.text = paintEndOfTheString()
+            }
+        }
     }
 
     private fun renderDescriptionItem(isOptimized: Boolean) {
@@ -243,6 +262,16 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
     @RequiresApi(Build.VERSION_CODES.Q)
     private fun openActivityToDisableWifi() {
         startActivityForResultWiFi.launch(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY))
+    }
+
+    private fun paintEndOfTheString(): Spannable {
+        val text = getString(R.string.battery_time_to_full_charge_calculating)
+        val outPutColoredText: Spannable = SpannableString(text)
+        outPutColoredText.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.green)), 18, text.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        return outPutColoredText
     }
 
 }

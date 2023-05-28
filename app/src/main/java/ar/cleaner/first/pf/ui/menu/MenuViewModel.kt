@@ -88,7 +88,8 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    private fun Int.toMinutes() = (this % 3600000) / 60000
-
-    private fun Int.toHours() = this / 3600000
 }
+
+fun Int.toMinutes() = (this % 3600000) / 60000
+
+fun Int.toHours() = this / 3600000

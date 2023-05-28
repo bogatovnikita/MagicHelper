@@ -95,7 +95,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                     batteryDescriptionTv.text = paintEndOfTheString()
                 } else {
                     batteryDescriptionTv.text = getString(
-                        R.string.battery_to_full_charge_D_D,
+                        R.string.battery_time_to_full_charge_D_D,
                         timeToFullCharge.first,
                         timeToFullCharge.second
                     )
@@ -135,9 +135,10 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     }
 
     private fun paintEndOfTheString(): Spannable {
-        val outPutColoredText: Spannable = SpannableString(getString(R.string.battery_to_full_charge_calculating))
+        val text = getString(R.string.battery_time_to_full_charge_calculating)
+        val outPutColoredText: Spannable = SpannableString(text)
         outPutColoredText.setSpan(
-            ForegroundColorSpan(resources.getColor(R.color.green)), 18, 28,
+            ForegroundColorSpan(resources.getColor(R.color.green)), 18, text.length,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         return outPutColoredText
