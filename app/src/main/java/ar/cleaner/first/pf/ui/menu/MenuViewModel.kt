@@ -54,9 +54,14 @@ class MenuViewModel @Inject constructor(
     private fun updateBatteryDetails() {
         mainScope {
             batteryDetailsUseCase.getBatteryDetails().collect { batInfo ->
+                val time = batInfo.timeToFullCharge
+                val minutes = time.toMinutes()
+                val hours = time.toHours()
                 _state.value = state.value.copy(
                     isBatteryOptimized = batInfo.isOptimized,
-                    batteryCharge = batInfo.batteryCharge
+                    batteryCharge = batInfo.batteryCharge,
+                    isBatteryCharging = batInfo.isCharging,
+                    timeToFullCharge = hours to minutes
                 )
             }
         }
@@ -82,4 +87,8 @@ class MenuViewModel @Inject constructor(
             }
         }
     }
+
+    private fun Int.toMinutes() = (this % 3600000) / 60000
+
+    private fun Int.toHours() = this / 3600000
 }

@@ -1,6 +1,9 @@
 package ar.cleaner.first.pf.ui.menu
 
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -56,7 +59,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     private fun renderTemperatureState(screenState: MenuState) = screenState.apply {
         with(binding) {
             coolingDescriptionTv.text =
-                getString(if (isTemperatureChecked) R.string.clean_junk_done else R.string.temperature_desc_not_optimized)
+                getString(if (isTemperatureChecked) R.string.done else R.string.temperature_desc_not_optimized)
             coolingDescriptionTv.setColor(isTemperatureChecked)
         }
     }
@@ -67,7 +70,8 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             ramPercentTv.text = getString(R.string.percent_D, usageRamPercents.toInt())
             descriptionRamTv.text = getString(R.string._F_gb_F_gb, usedRam, totalRam)
             boostDescriptionTv.setColor(isRamOptimized)
-            boostDescriptionTv.text = getString(if (isRamOptimized) R.string.done else R.string.boost_need_atantion)
+            boostDescriptionTv.text =
+                getString(if (isRamOptimized) R.string.done else R.string.boost_need_atantion)
         }
     }
 
@@ -78,7 +82,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             descriptionStorageTv.text =
                 getString(R.string._F_gb_F_gb, usedMemorySize, totalSize)
             cleanDescriptionTv.text = getString(
-                if (isMemoryOptimized) R.string.clean_junk_done else R.string.file_manager_cleaning_is_required
+                if (isMemoryOptimized) R.string.done else R.string.file_manager_cleaning_is_required
             )
             cleanDescriptionTv.setColor(isMemoryOptimized)
         }
@@ -86,10 +90,19 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun renderBatteryState(screenState: MenuState) = screenState.apply {
         with(binding) {
-            if (isBatteryOptimized) {
-                batteryDescriptionTv.text = getString(R.string.battery_power_description_D, batteryCharge)
+            if (isBatteryCharging) {
+                if (timeToFullCharge == 0 to 0) {
+                    batteryDescriptionTv.text = paintEndOfTheString()
+                } else {
+                    batteryDescriptionTv.text = getString(
+                        R.string.battery_to_full_charge_D_D,
+                        timeToFullCharge.first,
+                        timeToFullCharge.second
+                    )
+                }
             } else {
-                batteryDescriptionTv.text = getString(R.string.boost_need_atantion)
+                batteryDescriptionTv.text =
+                    getString(R.string.battery_power_description_D, batteryCharge)
             }
         }
     }
@@ -119,6 +132,15 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                 if (isOptimized) R.color.green else R.color.red
             )
         )
+    }
+
+    private fun paintEndOfTheString(): Spannable {
+        val outPutColoredText: Spannable = SpannableString(getString(R.string.battery_to_full_charge_calculating))
+        outPutColoredText.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.green)), 18, 28,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        return outPutColoredText
     }
 
 }

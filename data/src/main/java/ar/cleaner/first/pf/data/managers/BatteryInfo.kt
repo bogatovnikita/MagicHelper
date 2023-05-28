@@ -36,17 +36,35 @@ class BatteryInfo @Inject constructor(
         }
     }
 
+    private val batteryManager =
+        context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+
     private fun getTime(): Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            batteryManager().computeChargeTimeRemaining().toInt()
+            batteryManager.computeChargeTimeRemaining().toInt()
         } else {
             CAN_NOT_CALCULATE_TIME
         }
     }
 
-    fun isCharging(): Boolean = batteryManager().isCharging
+    private val batteryStatusIntent: Intent?
+        get() {
+            val batFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+            return context.registerReceiver(null, batFilter)
+        }
 
-    private fun batteryManager() =
-        context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+    private val chargingSource: Boolean
+        get() {
+            val intent = batteryStatusIntent
+            val plugged = intent!!.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0)
+            return when (plugged) {
+                BatteryManager.BATTERY_PLUGGED_AC -> true
+                BatteryManager.BATTERY_PLUGGED_USB -> true
+                BatteryManager.BATTERY_PLUGGED_WIRELESS -> true
+                else -> false
+            }
+        }
+
+    fun isCharging(): Boolean = chargingSource
 
 }

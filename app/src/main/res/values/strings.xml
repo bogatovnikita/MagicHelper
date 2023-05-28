@@ -16,7 +16,7 @@
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
     <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
-    <string name="clear_junk">Cleaning</string>
+    <string name="clear_junk">Удаление файлов</string>
     <string name="cleared_junk">Clean up</string>
 
     <string name="clean_junk_done">Done</string>
@@ -106,6 +106,8 @@
     <string name="battery_charge_percent">Заряд батареи</string>
     <string name="battery_not_danger_description">Телефон не нуждается в оптимизации на данный момент!</string>
     <string name="battery_title">Питание</string>
+    <string name="battery_to_full_charge_D_D">До полной зарядки \n%d ч. %d мин.</string>
+    <string name="battery_to_full_charge_calculating">До полной зарядки вычисляем…</string>
     <string name="battery_extra_mode">Экстра</string>
     <string name="battery_ultra_mode">Ультра</string>
     <string name="battery_normal_mode">Нормальный</string>

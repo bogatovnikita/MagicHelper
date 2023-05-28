@@ -450,7 +450,6 @@
         android:layout_marginStart="@dimen/_12sdp"
         android:elevation="@dimen/_4sdp"
         android:fontFamily="@font/heraclito_semibold"
-        android:maxLines="1"
         android:text="@string/clear_junk"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.18"
