@@ -1,8 +1,8 @@
 package yin_kio.files_and_apps_manager.presentation.scan
 
 import Yin_Koi.files_and_apps_manager.presentation.R
-import Yin_Koi.files_and_apps_manager.presentation.databinding.DialogFileAppManagerPermissionBinding
 import Yin_Koi.files_and_apps_manager.presentation.databinding.DialogFileAppManagerUsageStatsPermissionBinding
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
@@ -37,6 +37,11 @@ internal class UsageStatsPermissionDialog : FixedWidthDialogFragment(R.layout.di
                 }
             }
         }
+    }
+
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        viewModel.close()
     }
 
 
