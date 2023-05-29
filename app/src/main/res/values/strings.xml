@@ -3,7 +3,6 @@
     <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="app_name">Cleaner - clean the memory, cache, phone</string>
     <string name="temp_files">Temporary files</string>
-    <string name="released_F_gb">Released %.1f GB</string>
     <string name="the_phone_does_not_need_cooling_at_the_moment">Phone does not need to be cooled at this time!</string>
     <string name="clean_junk_description">Clean Up!</string>
     <string name="remaining_charging_time_D_h_D_min">Remaining charging time %d h %d min</string>
@@ -14,15 +13,12 @@
     <string name="garbage_detected">Debris detected</string>
     <string name="cache">Cache</string>
     <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
-    <string name="extend_the_operation_of_your_phone">Extend your phone`s life</string>
     <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
     <string name="clear_junk">Удаление файлов</string>
     <string name="cleared_junk">Clean up</string>
 
     <string name="clean_junk_done">Done</string>
     <string name="now_the_devices_memory_is_D_free">Device memory is now %d%%</string>
-    <string name="speed_up_the_work_of_your_phone">Accelerate your phone</string>
-    <string name="remove_the_trash">Remove garbage</string>
     <string name="temperature_D">%d℃</string>
     <string name="working_time_increased_by_D">Runtime increased by %d%%</string>
     <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
@@ -53,6 +49,13 @@
     <string name="storage_location">Место хранения</string>
     <string name="ram">Оперативная память</string>
     <string name="settings">Настройки</string>
+    <string name="speed_up_the_work_of_your_phone">Требуется внимание </string>
+    <string name="extend_the_operation_of_your_phone">Продлите работу вашего телефоне</string>
+    <string name="remove_the_trash">Обнаружены мусорные файлы</string>
+
+
+
+
 
 
 
@@ -77,11 +80,11 @@
     <string name="boost_optimize_done">Оптимизация выполнена</string>
     <string name="boost_phone_dont_need_optimize">Телефон не нуждается в оптимизации на данный момент!</string>
     <string name="boost_now_the_device_is_accelerated_by_D">Теперь устройство оптимизировано на %d%%</string>
-    <string name="boost_checking_apps">Checking apps..</string>
-    <string name="boost_sending_command">Sending command..</string>
+    <string name="boost_checking_apps">Проверка приложений...</string>
+    <string name="boost_sending_command">Отправка команды..</string>
     <string name="boost_usage_ram">Использовано оперативной памяти</string>
     <string name="_F_gb_F_gb">%.1f Гб/%.1f Гб</string>
-    <string name="released_D_gb">Освобождено %d Гб</string>
+    <string name="released_F_gb">Освобождено %.1f Гб</string>
     <string name="available_memory_F_gb_F_gb">Доступная память: %.1f Гб/%.1f Гб</string>
 
 
@@ -90,7 +93,7 @@
     <string name="general_action_required">Требуется действие!</string>
     <string name="optimize">Оптимизация</string>
 
-    <string name="done">Выполнено</string>
+    <string name="done">Готово!</string>
     <string name="boost_need_atantion">Требуется внимание</string>
     <string name="we_need_permission">Нам нужно разрешение</string>
     <string name="further">Далее</string>
