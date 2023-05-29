@@ -1,44 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="app_name">Cleaner - clean the memory, cache, phone</string>
-    <string name="temp_files">Temporary files</string>
-    <string name="the_phone_does_not_need_cooling_at_the_moment">Phone does not need to be cooled at this time!</string>
-    <string name="clean_junk_description">Clean Up!</string>
-    <string name="remaining_charging_time_D_h_D_min">Remaining charging time %d h %d min</string>
-    <string name="deleting_unwanted_files_is_safe">Delete unwanted files safely</string>
-    <string name="mb_D">%d Mb</string>
-    <string name="residual_files">Residual files</string>
-    <string name="cool_your_phone_regularly_to_reduce_cpu_load_extend_its_service_life_and_speed_up_your_device">Cool your phone regularly to reduce processor strain, extend its life, and make your device run faster</string>
-    <string name="garbage_detected">Debris detected</string>
-    <string name="cache">Cache</string>
-    <string name="the_phone_needs_to_be_cleaned_of_excess_garbage">Phone needs to be cleaned of excess garbage!</string>
-    <string name="battery_power_optimized_D_D">Optimized %d h %d min</string>
+    <string name="facebook_key" translatable="false">629971811966975</string>
+
     <string name="clear_junk">Удаление файлов</string>
-    <string name="cleared_junk">Clean up</string>
-
-    <string name="clean_junk_done">Done</string>
-    <string name="now_the_devices_memory_is_D_free">Device memory is now %d%%</string>
     <string name="temperature_D">%d℃</string>
-    <string name="working_time_increased_by_D">Runtime increased by %d%%</string>
-    <string name="the_phone_is_cleared_of_excess_garbage">The phone is cleared of unnecessary garbage!</string>
-    <string name="right_now_background_processes_and_apps_are_overheating_your_phones_processor">Right now, background processes and apps are overheating your phone`s processor</string>
-    <string name="the_processor_overheated_cooling_is_required">Processor is overheating! Cooling is required!</string>
-
-    <string name="system_garbage">System Junk</string>
-    <string name="processor_temperature_D">Processor temperature %d℃</string>
     <string name="percent_D">%d%%</string>
-    <string name="boost_description">Accelerated</string>
-    <string name="clean_junk_description_not_optimized_D">Free up %.1f gb</string>
-    <string name="cooled_D">Cooled down %d℃</string>
-    <string name="exit_toast">Tap back button in order to exit</string>
-    <string name="snackbar_access_bluetooth">To perform this function, we need access to bluetooth</string>
-    <string name="in_order_for_us_to_clean_up_the_garbage_we_need_access_to_the_usage_history">In order for us to clean up the garbage, we need access to the usage history</string>
-    <string name="description_need_permission_files">We need permission to read, delete and modify files so that we can find unnecessary files and you can delete them.</string>
-    <string name="boost_description_not_optimize">Speed up the work of your phone</string>
-    <string name="snackbar_access_files">To perform this function, we need access to files</string>
-    <string name="cleaner_title">Cleaner</string>
-
+    <string name="snackbar_access_bluetooth">Для выполнения функции нам нужен доступ к Bluetooth</string>
 
     <!--    new strings-->
 
@@ -52,12 +20,6 @@
     <string name="speed_up_the_work_of_your_phone">Требуется внимание </string>
     <string name="extend_the_operation_of_your_phone">Продлите работу вашего телефоне</string>
     <string name="remove_the_trash">Обнаружены мусорные файлы</string>
-
-
-
-
-
-
 
 
     <string name="temperature_title">Температура</string>
@@ -88,10 +50,9 @@
     <string name="available_memory_F_gb_F_gb">Доступная память: %.1f Гб/%.1f Гб</string>
 
 
-
-
     <string name="general_action_required">Требуется действие!</string>
     <string name="optimize">Оптимизация</string>
+
 
     <string name="ready">Готово!</string>
     <string name="done">Выполнено</string>
@@ -104,6 +65,7 @@
     <string name="description_permission">Чтобы мы могли остановить фоновые процессы и освободить оперативную память, нам нужен доступ к истории использования</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Для Экстра режима нужен доступ к настройкам bluetooth</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Разрешите приложению доступ к настройкам bluetooth для увеличения времени работы батареи</string>
+
 
     <string name="battery_danger_description">Вы можете увеличить время работы телефона!</string>
     <string name="battery_power_description_D">Осталось %d%% заряда</string>
@@ -122,6 +84,7 @@
     <string name="battery_ultra_mode_activates_restrictions">Ультра режим активирует ограничения:</string>
     <string name="battery_extra_mode_activates_restrictions">Экстра режим активирует ограничения:</string>
     <string name="battery_modes_of_increasing_the_working_time">Режимы увелечения времени работы</string>
+
 
     <string name="file_manager_cleaning_is_required">Обнаружены мусорные файлы</string>
     <string name="general_app_name">Magic Helper</string>
