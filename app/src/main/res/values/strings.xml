@@ -93,7 +93,8 @@
     <string name="general_action_required">Требуется действие!</string>
     <string name="optimize">Оптимизация</string>
 
-    <string name="done">Готово!</string>
+    <string name="ready">Готово!</string>
+    <string name="done">Выполнено</string>
     <string name="boost_need_atantion">Требуется внимание</string>
     <string name="we_need_permission">Нам нужно разрешение</string>
     <string name="further">Далее</string>
@@ -123,5 +124,6 @@
     <string name="battery_modes_of_increasing_the_working_time">Режимы увелечения времени работы</string>
 
     <string name="file_manager_cleaning_is_required">Обнаружены мусорные файлы</string>
+    <string name="general_app_name">Magic Helper</string>
 
 </resources>

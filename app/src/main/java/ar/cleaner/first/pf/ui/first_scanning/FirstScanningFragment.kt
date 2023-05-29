@@ -55,7 +55,7 @@ class FirstScanningFragment : Fragment(R.layout.fragment_first_scanning) {
                             binding.titleTv.text = getString(R.string.theres_not_much_left)
                         }
                         100 -> {
-                            binding.titleTv.text = getString(R.string.done)
+                            binding.titleTv.text = getString(R.string.ready)
                         }
                     }
                     binding.percentProgressBarTv.text = getString(R.string.percent_D, i)
