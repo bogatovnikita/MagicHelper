@@ -69,11 +69,11 @@
         android:fontFamily="@font/heraclito_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/Text.18"
+        android:text="@string/released_F_gb"
         app:layout_constraintBottom_toTopOf="@id/second_description_tv"
         app:layout_constraintEnd_toEndOf="@id/view_for_background"
         app:layout_constraintStart_toEndOf="@id/icon_is_done"
-        app:layout_constraintTop_toTopOf="@id/icon_is_done"
-        tools:text="@string/released_D_gb" />
+        app:layout_constraintTop_toTopOf="@id/icon_is_done" />
 
     <TextView
         android:id="@+id/second_description_tv"

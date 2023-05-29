@@ -49,8 +49,8 @@ class BoostResultFragment : Fragment(R.layout.fragment_boost_result) {
         binding.firstDescriptionTv.text =
             getString(R.string.released_F_gb, state.boostResultDetails!!.releasedMemory)
 
-        if (state.boostResultDetails.optimizedPercentages <= 0) binding.secondDescriptionTv.visibility =
-            View.GONE
+        if (state.boostResultDetails.optimizedPercentages <= 0)
+            binding.secondDescriptionTv.visibility = View.GONE
 
         binding.secondDescriptionTv.text =
             getString(
