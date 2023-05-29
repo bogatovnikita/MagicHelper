@@ -8,7 +8,7 @@
     <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_occupied_and_total">%s / %s</string>
 
-    <string name="files_apps_manager_pregress">File Scanning...</string>
+    <string name="files_apps_manager_pregress">Сканирование файлов...</string>
 
     <string name="file_apps_manager_we_need_permission">Нам нужно разрешение</string>
     <string name="file_apps_manager_cancel">Отмена</string>

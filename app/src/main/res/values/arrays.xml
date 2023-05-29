@@ -27,8 +27,8 @@
 <!--    new array -->
 
     <array name="progress_temperature">
-        <item>Checking CPU temperature..</item>
-        <item>Checking battery temperature..</item>
+        <item>Проверка температуры процессора..</item>
+        <item>Проверка температуры батареи..</item>
     </array>
 
 </resources>

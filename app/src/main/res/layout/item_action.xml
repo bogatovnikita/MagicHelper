@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:layout_marginHorizontal="@dimen/_20sdp"
     android:orientation="horizontal"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,6 +13,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="10dp"
+        android:visibility="visible"
         tools:src="@drawable/aso_icon" />
 
     <TextView
@@ -19,10 +21,9 @@
         style="@style/Text.Regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="1"
         android:textColor="@color/black"
+        android:gravity="center"
         android:textSize="@dimen/Text.18"
-        android:layout_marginStart="10dp"
         tools:text="TextView" />
 
 </LinearLayout>
