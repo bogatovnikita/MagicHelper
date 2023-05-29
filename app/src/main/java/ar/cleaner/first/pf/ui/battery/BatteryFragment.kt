@@ -197,10 +197,25 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
         }
         binding.boostButton.setOnClickListener {
             when (viewModel.state.value.batteryMode) {
-                BatteryMode.NORMAL, BatteryMode.MEDIUM -> {
+                BatteryMode.NORMAL -> {
                     when {
                         checkWriteSettings() -> {
                             navigateNext()
+                        }
+                        !checkWriteSettings() -> {
+                            if (dialog.isAdded) return@setOnClickListener
+                            dialog.show(parentFragmentManager, "BatteryFragment")
+                        }
+                    }
+                }
+                BatteryMode.MEDIUM -> {
+                    when {
+                        checkWriteSettings() -> {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                                openActivityToDisableWifi()
+                            } else {
+                                navigateNext()
+                            }
                         }
                         !checkWriteSettings() -> {
                             if (dialog.isAdded) return@setOnClickListener
