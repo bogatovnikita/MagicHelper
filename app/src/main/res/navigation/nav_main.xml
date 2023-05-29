@@ -90,8 +90,8 @@
         <action
             android:id="@+id/action_to_batteryResultFragment"
             app:destination="@id/batteryResultFragment"
-            app:popUpTo="@id/batteryFragment"
-            app:popUpToInclusive="true"  />
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false"  />
     </fragment>
 
     <fragment
@@ -114,8 +114,8 @@
         <action
             android:id="@+id/action_to_temperatureResultListFragment"
             app:destination="@id/temperatureResultFragment"
-            app:popUpTo="@id/temperatureFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false"  />
     </fragment>
 
     <fragment

@@ -54,7 +54,7 @@ class TemperatureResultFragment : Fragment(R.layout.fragment_temperature_result)
                         findNavController().navigate(R.id.action_to_boostFragment)
                     }
                     ResultAdapter.CLEANING_KEY -> {
-                        // TODO навигация к files manager
+                        findNavController().navigate(R.id.files_and_apps_graph)
                     }
                 }
             }

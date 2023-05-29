@@ -64,7 +64,7 @@ class BatteryResultFragment : Fragment(R.layout.fragment_battery_result) {
                     }
 
                     ResultAdapter.CLEANING_KEY -> {
-                        // TODO навигация к files manager
+                        findNavController().navigate(R.id.files_and_apps_graph)
                     }
                 }
             }
