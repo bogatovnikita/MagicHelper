@@ -42,5 +42,6 @@ class DetailedDataProviderImpl @Inject constructor(
         return result.roundToInt()
     }
 
-    private fun Long.convertToGb(): Double = this / (1000.0 * 1000.0 * 1000.0)
 }
+
+fun Long.convertToGb(): Double = this / (1000.0 * 1000.0 * 1000.0)

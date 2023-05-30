@@ -8,12 +8,12 @@ import ar.cleaner.first.pf.data.extensions.getAppName
 import ar.cleaner.first.pf.data.extensions.isSystem
 import ar.cleaner.first.pf.data.extensions.usageStatsManager
 import ar.cleaner.first.pf.data.mapper.asBackgroundApp
+import ar.cleaner.first.pf.data.providers.details.convertToGb
 import ar.cleaner.first.pf.domain.const.Const
 import ar.cleaner.first.pf.domain.models.BackgroundApp
 import ar.cleaner.first.pf.domain.utils.lazyStateFlow
 import kotlinx.coroutines.*
 import javax.inject.Inject
-import kotlin.math.abs
 
 class RamManager @Inject constructor(
     private val context: Application,
@@ -29,7 +29,7 @@ class RamManager @Inject constructor(
             val actManager = context.activityManager
             val memInfo = ActivityManager.MemoryInfo()
             actManager.getMemoryInfo(memInfo)
-            val mem = abs(memInfo.availMem.toDouble() / MEGABYTE)
+            val mem = memInfo.availMem.convertToGb()
             trySend(mem)
             delay(3000)
         }
@@ -41,7 +41,7 @@ class RamManager @Inject constructor(
         val memInfo = ActivityManager.MemoryInfo()
 
         actManager.getMemoryInfo(memInfo)
-        (memInfo.totalMem.toDouble() / (MEGABYTE))
+        memInfo.totalMem.convertToGb()
     }
 
     suspend fun getBackgroundApps(): List<BackgroundApp> = withContext(dispatcher) {
@@ -65,7 +65,4 @@ class RamManager @Inject constructor(
         res
     }
 
-    private companion object {
-        private const val MEGABYTE = 1024 * 1024 * 1024
-    }
 }
