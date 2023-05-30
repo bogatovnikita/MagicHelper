@@ -5,33 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_for_background"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.57" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_for_top_second_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_for_bottom_second_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
-
     <ImageView
         android:id="@+id/root_background_iv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/background"
-        app:layout_constraintBottom_toTopOf="@id/guideline_for_background"
+        android:layout_marginBottom="-57dp"
+        app:layout_constraintBottom_toBottomOf="@id/second_view_for_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -176,11 +156,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginBottom="-16dp"
+        android:layout_marginTop="@dimen/_38sdp"
         android:background="@drawable/card_corners_white_min_corners"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_for_bottom_second_description"
+        app:layout_constraintBottom_toBottomOf="@id/reduce_ram_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline_for_top_second_description" />
+        app:layout_constraintTop_toBottomOf="@id/first_view_for_background" />
 
     <ImageView
         android:id="@+id/rocket_boost_iv"
@@ -198,6 +180,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/boost_description_view_title"
         android:textColor="@color/black"
@@ -214,11 +197,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/heraclito_medium"
         android:text="@string/boost_description_view_body"
         android:textColor="@color/black"
         android:textSize="@dimen/Text.14"
-        app:layout_constraintBottom_toBottomOf="@id/second_view_for_background"
         app:layout_constraintEnd_toEndOf="@id/second_view_for_background"
         app:layout_constraintStart_toStartOf="@id/second_view_for_background"
         app:layout_constraintTop_toBottomOf="@id/overloading_ram_tv"
