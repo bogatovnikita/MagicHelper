@@ -3,7 +3,7 @@ package ar.cleaner.first.pf.ui.menu
 data class MenuState(
     val batteryCharge: Int = 0,
     val isBatteryOptimized: Boolean = false,
-    val isBatteryCharging: Boolean = false,
+    val isNeedShowTimeToFullCharge: Boolean = false,
     val timeToFullCharge: Pair<Int, Int> = 0 to 0,
     val usageRamPercents: Float = 63f,
     val totalRam: Double = 0.0,

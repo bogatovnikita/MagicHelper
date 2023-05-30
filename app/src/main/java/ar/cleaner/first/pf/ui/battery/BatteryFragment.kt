@@ -22,6 +22,7 @@ import ar.cleaner.first.pf.R
 import ar.cleaner.first.pf.databinding.FragmentBatteryBinding
 import ar.cleaner.first.pf.domain.models.BatteryMode
 import ar.cleaner.first.pf.domain.models.details.BatteryDetails
+import ar.cleaner.first.pf.domain.models.details.CAN_NOT_CALCULATE_TIME
 import ar.cleaner.first.pf.extensions.*
 import ar.cleaner.first.pf.ui.dialogs.DialogBluetoothPermission
 import ar.cleaner.first.pf.ui.dialogs.DialogWriteSettings
@@ -162,13 +163,14 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
 
     private fun renderTimeToFullCharge(batteryDetails: BatteryDetails) {
         binding.tvTimeToFull.isVisible = batteryDetails.isCharging
+                && batteryDetails.timeToFullCharge != CAN_NOT_CALCULATE_TIME
         if (batteryDetails.isCharging) {
             val hours = batteryDetails.timeToFullCharge.toHours()
             val minutes = batteryDetails.timeToFullCharge.toMinutes()
-            if (hours != 0 && minutes != 0) {
-                binding.tvTimeToFull.text = getString(R.string.battery_time_to_full_charge_D_D, hours, minutes)
-            } else {
+            if (hours == 0 && minutes == 0) {
                 binding.tvTimeToFull.text = paintEndOfTheString()
+            } else {
+                binding.tvTimeToFull.text = getString(R.string.battery_time_to_full_charge_D_D, hours, minutes)
             }
         }
     }

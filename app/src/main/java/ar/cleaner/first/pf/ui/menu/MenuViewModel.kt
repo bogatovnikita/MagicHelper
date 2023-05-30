@@ -2,6 +2,7 @@ package ar.cleaner.first.pf.ui.menu
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import ar.cleaner.first.pf.domain.models.details.CAN_NOT_CALCULATE_TIME
 import ar.cleaner.first.pf.domain.usecases.battery.BatteryDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.boosting.RamDetailsUseCase
 import ar.cleaner.first.pf.domain.usecases.storage.StorageUseCase
@@ -60,7 +61,7 @@ class MenuViewModel @Inject constructor(
                 _state.value = state.value.copy(
                     isBatteryOptimized = batInfo.isOptimized,
                     batteryCharge = batInfo.batteryCharge,
-                    isBatteryCharging = batInfo.isCharging,
+                    isNeedShowTimeToFullCharge = batInfo.isCharging && time != CAN_NOT_CALCULATE_TIME,
                     timeToFullCharge = hours to minutes
                 )
             }
