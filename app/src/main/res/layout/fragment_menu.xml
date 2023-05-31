@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@id/title_tv"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <ar.cleaner.first.pf.custom_view.CustomProgressBar
+    <ar.cleaner.second.pf.custom_view.CustomProgressBar
         android:id="@+id/storage_progress_bar"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@id/title_tv"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <ar.cleaner.first.pf.custom_view.CustomProgressBar
+    <ar.cleaner.second.pf.custom_view.CustomProgressBar
         android:id="@+id/ram_progress_bar"
         android:layout_width="0dp"
         android:layout_height="0dp"

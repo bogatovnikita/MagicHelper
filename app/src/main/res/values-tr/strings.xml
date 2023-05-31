@@ -55,7 +55,7 @@
     <string name="description_permission">Arka plan süreçlerini durdurabilmemiz ve RAM\'i serbest bırakabilmemiz için kullanım geçmişine erişmeye ihtiyacımız var</string>
     <string name="available_memory_F_gb_F_gb">Mevcut Bellek: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">Çöp dosyaları tespit edildi</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">Cihaz artık% %d optimize edildi</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">Cihaz artık %d%% optimize edildi</string>
     <string name="battery_normal_mode">Normal</string>
     <string name="battery_not_danger_description">Telefonun bu noktada optimize edilmesine gerek yok!</string>
     <string name="collect_data">Veri Toplama ...</string>

@@ -55,7 +55,7 @@
     <string name="description_permission">Agar kami dapat menghentikan proses latar belakang dan membebaskan RAM, kami memerlukan akses ke riwayat penggunaan</string>
     <string name="available_memory_F_gb_F_gb">Memori yang tersedia: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">File sampah terdeteksi</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">Perangkat sekarang dioptimalkan %d%</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">Perangkat sekarang dioptimalkan %d%%</string>
     <string name="battery_normal_mode">Normal</string>
     <string name="battery_not_danger_description">Telepon tidak perlu dioptimalkan pada saat ini!</string>
     <string name="collect_data">Mengumpulkan data...</string>

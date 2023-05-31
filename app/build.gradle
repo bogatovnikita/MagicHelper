@@ -12,11 +12,11 @@ android {
     compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        applicationId "ar.cleaner.first.pf"
+        applicationId "ar.cleaner.second.pf"
         minSdk rootProject.ext.minSdk
         targetSdk rootProject.ext.targetSdk
-        versionCode 3
-        versionName "3.0"
+        versionCode 1
+        versionName "1.0"
         archivesBaseName = "${rootProject.name}-${applicationId}-v${versionName}(${versionCode})"
         buildConfigField "String", "YANDEX_KEY", '"0ad084d3-711b-4bd7-bf90-07c8af8a411b"'
     }

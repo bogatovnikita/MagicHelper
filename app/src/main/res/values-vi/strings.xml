@@ -55,7 +55,7 @@
     <string name="description_permission">Để chúng tôi dừng các quy trình nền và giải phóng RAM, chúng tôi cần truy cập vào lịch sử sử dụng</string>
     <string name="available_memory_F_gb_F_gb">Bộ nhớ có sẵn: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">Các tập tin rác được phát hiện</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">Thiết bị hiện được tối ưu hóa %d%</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">Thiết bị hiện được tối ưu hóa %d%%</string>
     <string name="battery_normal_mode">Bình thường</string>
     <string name="battery_not_danger_description">Điện thoại không cần phải được tối ưu hóa vào thời điểm này!</string>
     <string name="collect_data">Thu thập dữ liệu ...</string>

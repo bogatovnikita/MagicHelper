@@ -55,7 +55,7 @@
     <string name="description_permission">हमारे लिए पृष्ठभूमि प्रक्रियाओं को रोकने और रैम को मुक्त करने के लिए, हमें उपयोग इतिहास तक पहुंच की आवश्यकता है</string>
     <string name="available_memory_F_gb_F_gb">उपलब्ध मेमोरी: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">कचरा फ़ाइलों का पता चला</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">डिवाइस अब %d% अनुकूलित है</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">डिवाइस अब %d%% अनुकूलित है</string>
     <string name="battery_normal_mode">सामान्य</string>
     <string name="battery_not_danger_description">फोन को इस बिंदु पर अनुकूलित करने की आवश्यकता नहीं है!</string>
     <string name="collect_data">डेटा एकत्र करना ...</string>

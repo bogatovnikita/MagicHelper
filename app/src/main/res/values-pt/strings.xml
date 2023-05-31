@@ -55,7 +55,7 @@
     <string name="description_permission">Para interrompermos os processos de fundo e liberarmos a RAM, precisamos acessar o histórico de uso</string>
     <string name="available_memory_F_gb_F_gb">Memória disponível: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">Arquivos de lixo detectados</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">O dispositivo agora está otimizado %d%</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">O dispositivo agora está otimizado %d%%</string>
     <string name="battery_normal_mode">Normal</string>
     <string name="battery_not_danger_description">O telefone não precisa ser otimizado neste momento!</string>
     <string name="collect_data">Coletando dados...</string>

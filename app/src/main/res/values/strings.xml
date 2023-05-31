@@ -56,7 +56,7 @@
     <string name="description_permission">In order for us to stop background processes and free up RAM, we need access to usage history</string>
     <string name="available_memory_F_gb_F_gb">Available memory: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">Trash files detected</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">Device is now optimized %d%</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">Device is now optimized %d%%</string>
     <string name="battery_normal_mode">Normal</string>
     <string name="battery_not_danger_description">Phone doesn\'t need to be optimized at this point!</string>
     <string name="collect_data">Collecting data...</string>

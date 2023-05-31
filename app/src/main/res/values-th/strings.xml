@@ -55,7 +55,7 @@
     <string name="description_permission">เพื่อให้เราหยุดกระบวนการพื้นหลังและ RAM ฟรีเราต้องเข้าถึงประวัติการใช้งาน</string>
     <string name="available_memory_F_gb_F_gb">หน่วยความจำที่มีอยู่: %.1fGB/%.1fGB</string>
     <string name="file_manager_cleaning_is_required">ตรวจพบไฟล์ขยะ</string>
-    <string name="boost_now_the_device_is_accelerated_by_D">ตอนนี้อุปกรณ์ได้รับการปรับให้เหมาะสม %d%</string>
+    <string name="boost_now_the_device_is_accelerated_by_D">ตอนนี้อุปกรณ์ได้รับการปรับให้เหมาะสม %d%%</string>
     <string name="battery_normal_mode">ปกติ</string>
     <string name="battery_not_danger_description">โทรศัพท์ไม่จำเป็นต้องปรับให้เหมาะสมในตอนนี้!</string>
     <string name="collect_data">รวบรวมข้อมูล ...</string>

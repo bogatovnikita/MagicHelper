@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="ar.cleaner.first.pf.ui.splash.SplashFragment"
+        android:name="ar.cleaner.second.pf.ui.splash.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/firstScanningFragment"
-        android:name="ar.cleaner.first.pf.ui.first_scanning.FirstScanningFragment"
+        android:name="ar.cleaner.second.pf.ui.first_scanning.FirstScanningFragment"
         android:label="FirstScanningFragment"
         tools:layout="@layout/fragment_first_scanning">
         <action
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="ar.cleaner.first.pf.ui.menu.MenuFragment"
+        android:name="ar.cleaner.second.pf.ui.menu.MenuFragment"
         android:label="MenuFragment"
         tools:layout="@layout/fragment_menu"/>
     <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/boostFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.general.BoostFragment"
+        android:name="ar.cleaner.second.pf.ui.boost.general.BoostFragment"
         android:label="BoostFragment"
         tools:layout="@layout/fragment_boost">
         <action
@@ -54,7 +54,7 @@
 
     <fragment
         android:id="@+id/boostProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.progress.BoostProgressFragment"
+        android:name="ar.cleaner.second.pf.ui.boost.progress.BoostProgressFragment"
         android:label="BoostProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
@@ -66,13 +66,13 @@
 
     <fragment
         android:id="@+id/boostResultFragment"
-        android:name="ar.cleaner.first.pf.ui.boost.result.BoostResultFragment"
+        android:name="ar.cleaner.second.pf.ui.boost.result.BoostResultFragment"
         android:label="BoostResultFragment"
         tools:layout="@layout/fragment_boost_result" />
 
     <fragment
         android:id="@+id/batteryFragment"
-        android:name="ar.cleaner.first.pf.ui.battery.BatteryFragment"
+        android:name="ar.cleaner.second.pf.ui.battery.BatteryFragment"
         android:label="BatteryFragment"
         tools:layout="@layout/fragment_battery">
         <action
@@ -84,7 +84,7 @@
 
     <fragment
         android:id="@+id/batteryProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.battery.BatteryProgressFragment"
+        android:name="ar.cleaner.second.pf.ui.battery.BatteryProgressFragment"
         android:label="BatteryProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
@@ -96,7 +96,7 @@
 
     <fragment
         android:id="@+id/temperatureFragment"
-        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureFragment"
+        android:name="ar.cleaner.second.pf.ui.temperature.TemperatureFragment"
         android:label="TemperatureFragment"
         tools:layout="@layout/fragment_temperature">
         <action
@@ -108,7 +108,7 @@
 
     <fragment
         android:id="@+id/temperatureProgressFragment"
-        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureProgressFragment"
+        android:name="ar.cleaner.second.pf.ui.temperature.TemperatureProgressFragment"
         android:label="CoolingProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
@@ -120,7 +120,7 @@
 
     <fragment
         android:id="@+id/temperatureResultFragment"
-        android:name="ar.cleaner.first.pf.ui.temperature.TemperatureResultFragment"
+        android:name="ar.cleaner.second.pf.ui.temperature.TemperatureResultFragment"
         android:label="TemperatureResultListFragment"
         tools:layout="@layout/fragment_temperature_result" />
 
@@ -129,7 +129,7 @@
         app:destination="@id/temperatureFragment" />
     <fragment
         android:id="@+id/batteryResultFragment"
-        android:name="ar.cleaner.first.pf.ui.battery.BatteryResultFragment"
+        android:name="ar.cleaner.second.pf.ui.battery.BatteryResultFragment"
         android:label="BatteryResultFragment" />
     <include app:graph="@navigation/files_and_apps_graph" />
 
