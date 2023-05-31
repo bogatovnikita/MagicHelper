@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">Những cái nhỏ đầu tiên</string>
+    <string name="file_apps_manager_done">Xong</string>
+    <string name="file_apps_manager_sort_old_first">Già đầu tiên</string>
+    <string name="file_apps_manager_sort_big_first">Lớn đầu tiên</string>
+    <string name="file_apps_manager_documents">Các tài liệu</string>
+    <string name="file_apps_manager_cancel">Bị hủy bỏ</string>
+    <string name="file_apps_manager_memory_used">Bộ nhớ đã sử dụng</string>
+    <string name="file_apps_manager_delete">Xóa bỏ</string>
+    <string name="file_apps_manager_start_need_free">Bạn có thể xóa các tệp không mong muốn để giải phóng bộ nhớ trên điện thoại của mình!</string>
+    <string name="file_apps_manager_apps">Các ứng dụng</string>
+    <string name="file_apps_manager_usage_stats_description">Để cho phép bạn xem và xóa các ứng dụng bằng trình quản lý tệp, chúng tôi cần truy cập vào lịch sử sử dụng</string>
+    <string name="files_apps_manager_pregress">Quét các tập tin ...</string>
+    <string name="file_apps_manager_delete_D">Xóa (%d)</string>
+    <string name="file_apps_manager_select_all">Chọn tất cả</string>
+    <string name="file_apps_manager_audio">Âm thanh</string>
+    <string name="file_apps_manager_video">Băng hình</string>
+    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_files_deleting">Xóa các tập tin</string>
+    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_we_need_permission">Chúng tôi cần sự cho phép</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Vui lòng không đóng cửa sổ trong khi xóa.</string>
+    <string name="file_apps_manager_files_deleting_progress">Các tệp đang bị xóa</string>
+    <string name="file_apps_manager_apps_list_updating">Cập nhật danh sách ứng dụng</string>
+    <string name="file_apps_manager_files_deleted">Các tập tin bị xóa.</string>
+    <string name="file_apps_manager_allow">Cho phép</string>
+    <string name="file_apps_manager_start_already_freed">Điện thoại của bạn được xóa các tập tin không cần thiết!</string>
+    <string name="file_apps_manager_sort_new_first">Các tập tin mới đầu tiên</string>
+    <string name="file_apps_manager_files_deleting_description">Bạn có chắc là bạn muốn xóa các tệp đã chọn? Những tệp này sẽ bị xóa vĩnh viễn</string>
+    <string name="file_apps_manager_photo">Ảnh</string>
+    <string name="file_apps_manager_scan">Quét</string>
+    <string name="file_apps_manager_permission_description">Để sử dụng trình quản lý tệp, bạn cần quyền xem và xóa tệp khỏi ứng dụng của chúng tôi</string>
+</resources>

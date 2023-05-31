@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="file_apps_manager_memory_used">Использовано памяти</string>
+    <string name="file_apps_manager_scan">Сканировать</string>
+
+
+    <string name="file_apps_manager_percents">%d%%</string>
+    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+
+    <string name="files_apps_manager_pregress">Сканирование файлов...</string>
+
+    <string name="file_apps_manager_we_need_permission">Нам нужно разрешение</string>
+    <string name="file_apps_manager_cancel">Отмена</string>
+    <string name="file_apps_manager_allow">Разрешить</string>
+    <string name="file_apps_manager_permission_description">Чтобы использовать файловый менеджер, вам необходимо предоставить разрешение на хранение, чтобы вы могли просматривать и удалять файлы из нашего приложения</string>
+
+    <string name="file_apps_manager_photo">Фотографии</string>
+    <string name="file_apps_manager_video">Видео</string>
+    <string name="file_apps_manager_audio">Аудио</string>
+    <string name="file_apps_manager_documents">Документы</string>
+    <string name="file_apps_manager_apps">Приложения</string>
+    <string name="file_apps_manager_select_all">Выбрать всё</string>
+
+
+    <string name="file_apps_manager_sort_new_first">Сначала новые</string>
+    <string name="file_apps_manager_sort_old_first">Сначала старые</string>
+    <string name="file_apps_manager_sort_big_first">Сначала большие</string>
+    <string name="file_apps_manager_sort_small_first">Сначала маленькие</string>
+
+    <string name="file_apps_manager_files_deleting">Удаление файлов</string>
+    <string name="file_apps_manager_files_deleting_description">Вы уверены что хотите удалить выбранные файлы? Эти файлы будут удалены безвозвратно</string>
+    <string name="file_apps_manager_files_deleting_progress">Идёт удаление файлов</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Пожалуйста, не закрывайте окно во время удаления</string>
+
+    <string name="file_apps_manager_delete">Удалить</string>
+    <string name="file_apps_manager_delete_D">Удалить (%d)</string>
+    <string name="file_apps_manager_done">Готово</string>
+
+    <string name="file_apps_manager_start_need_free">Вы можете удалить ненужные файлы, чтобы освободить память в вашем телефоне!</string>
+    <string name="file_apps_manager_start_already_freed">Телефон очищен от ненужных файлов!</string>
+
+    <string name="file_apps_manager_usage_stats_description">Чтобы вы могли просматривать и удалять приложения с помощью файлового менеджера, нам нужен доступ к истории использования</string>
+    <string name="file_apps_manager_apps_list_updating">Обновление списка приложений</string>
+    <string name="file_apps_manager_files_deleted">Файлы удалены</string>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">Pequenos primeiro</string>
+    <string name="file_apps_manager_done">Feito</string>
+    <string name="file_apps_manager_sort_old_first">Velho primeiro</string>
+    <string name="file_apps_manager_sort_big_first">Grande primeiro</string>
+    <string name="file_apps_manager_documents">Documentos</string>
+    <string name="file_apps_manager_cancel">Cancelado</string>
+    <string name="file_apps_manager_memory_used">Memoria usada</string>
+    <string name="file_apps_manager_delete">Excluir</string>
+    <string name="file_apps_manager_start_need_free">Você pode excluir arquivos indesejados para liberar memória no seu telefone!</string>
+    <string name="file_apps_manager_apps">Formulários</string>
+    <string name="file_apps_manager_usage_stats_description">Para permitir que você visualize e remova os aplicativos usando o gerenciador de arquivos, precisamos acessar o histórico de uso</string>
+    <string name="files_apps_manager_pregress">Digitalizar arquivos ...</string>
+    <string name="file_apps_manager_delete_D">Excluir (%d)</string>
+    <string name="file_apps_manager_select_all">Selecionar tudo</string>
+    <string name="file_apps_manager_audio">Áudio</string>
+    <string name="file_apps_manager_video">Vídeo</string>
+    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_files_deleting">Deletar arquivos</string>
+    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_we_need_permission">Precisamos de permissão</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Por favor, não feche a janela durante a exclusão.</string>
+    <string name="file_apps_manager_files_deleting_progress">Os arquivos estão sendo excluídos</string>
+    <string name="file_apps_manager_apps_list_updating">Atualizando a lista de aplicativos</string>
+    <string name="file_apps_manager_files_deleted">Os arquivos são excluídos.</string>
+    <string name="file_apps_manager_allow">Permitir</string>
+    <string name="file_apps_manager_start_already_freed">Seu telefone é liberado de arquivos desnecessários!</string>
+    <string name="file_apps_manager_sort_new_first">Novos arquivos primeiro</string>
+    <string name="file_apps_manager_files_deleting_description">Tem certeza de que deseja excluir arquivos selecionados? Esses arquivos serão excluídos permanentemente</string>
+    <string name="file_apps_manager_photo">Fotos</string>
+    <string name="file_apps_manager_scan">Varredura</string>
+    <string name="file_apps_manager_permission_description">Para usar o gerenciador de arquivos, você precisa de permissão para visualizar e excluir arquivos de nosso aplicativo</string>
+</resources>

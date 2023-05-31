@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">คนเล็กก่อน</string>
+    <string name="file_apps_manager_done">เสร็จแล้ว</string>
+    <string name="file_apps_manager_sort_old_first">เก่าก่อน</string>
+    <string name="file_apps_manager_sort_big_first">ใหญ่ครั้งแรก</string>
+    <string name="file_apps_manager_documents">เอกสาร</string>
+    <string name="file_apps_manager_cancel">ยกเลิก</string>
+    <string name="file_apps_manager_memory_used">หน่วยความจำที่ใช้</string>
+    <string name="file_apps_manager_delete">ลบ</string>
+    <string name="file_apps_manager_start_need_free">คุณสามารถลบไฟล์ที่ไม่ต้องการเพื่อเพิ่มหน่วยความจำบนโทรศัพท์ของคุณ!</string>
+    <string name="file_apps_manager_apps">แอปพลิเคชัน</string>
+    <string name="file_apps_manager_usage_stats_description">เพื่อให้คุณสามารถดูและลบแอปพลิเคชันโดยใช้ตัวจัดการไฟล์เราจำเป็นต้องเข้าถึงประวัติการใช้งาน</string>
+    <string name="files_apps_manager_pregress">สแกนไฟล์ ...</string>
+    <string name="file_apps_manager_delete_D">ลบ (%d)</string>
+    <string name="file_apps_manager_select_all">เลือกทั้งหมด</string>
+    <string name="file_apps_manager_audio">เสียง</string>
+    <string name="file_apps_manager_video">วิดีโอ</string>
+    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_files_deleting">ลบไฟล์</string>
+    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_we_need_permission">เราต้องการการอนุญาต</string>
+    <string name="file_apps_manager_files_deleting_progress_description">โปรดอย่าปิดหน้าต่างระหว่างการลบ</string>
+    <string name="file_apps_manager_files_deleting_progress">ไฟล์กำลังถูกลบ</string>
+    <string name="file_apps_manager_apps_list_updating">อัปเดตรายการแอปพลิเคชัน</string>
+    <string name="file_apps_manager_files_deleted">ไฟล์จะถูกลบ</string>
+    <string name="file_apps_manager_allow">อนุญาต</string>
+    <string name="file_apps_manager_start_already_freed">โทรศัพท์ของคุณถูกล้างออกจากไฟล์ที่ไม่จำเป็น!</string>
+    <string name="file_apps_manager_sort_new_first">ไฟล์ใหม่ก่อน</string>
+    <string name="file_apps_manager_files_deleting_description">แน่ใจหรือว่าต้องการลบไฟล์ที่เลือก? ไฟล์เหล่านี้จะถูกลบอย่างถาวร</string>
+    <string name="file_apps_manager_photo">รูปถ่าย</string>
+    <string name="file_apps_manager_scan">สแกน</string>
+    <string name="file_apps_manager_permission_description">ในการใช้ตัวจัดการไฟล์คุณต้องได้รับอนุญาตให้ดูและลบไฟล์จากแอปพลิเคชันของเรา</string>
+</resources>

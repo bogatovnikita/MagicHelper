@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">पहले छोटे</string>
+    <string name="file_apps_manager_done">पूर्ण</string>
+    <string name="file_apps_manager_sort_old_first">पुराना</string>
+    <string name="file_apps_manager_sort_big_first">बड़ा पहला</string>
+    <string name="file_apps_manager_documents">दस्तावेज़</string>
+    <string name="file_apps_manager_cancel">रद्द</string>
+    <string name="file_apps_manager_memory_used">प्रयोग हुई मेमोरी</string>
+    <string name="file_apps_manager_delete">मिटाना</string>
+    <string name="file_apps_manager_start_need_free">आप अपने फोन पर मेमोरी को मुक्त करने के लिए अवांछित फ़ाइलों को हटा सकते हैं!</string>
+    <string name="file_apps_manager_apps">अनुप्रयोग</string>
+    <string name="file_apps_manager_usage_stats_description">आपको फ़ाइल प्रबंधक का उपयोग करके एप्लिकेशन देखने और हटाने की अनुमति देने के लिए, हमें उपयोग इतिहास तक पहुंच की आवश्यकता है</string>
+    <string name="files_apps_manager_pregress">स्कैन फाइलें ...</string>
+    <string name="file_apps_manager_delete_D">हटाएं (%d)</string>
+    <string name="file_apps_manager_select_all">सबका चयन करें</string>
+    <string name="file_apps_manager_audio">ऑडियो</string>
+    <string name="file_apps_manager_video">वीडियो</string>
+    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_files_deleting">फाइलों को नष्ट</string>
+    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_we_need_permission">हमें अनुमति की जरूरत है</string>
+    <string name="file_apps_manager_files_deleting_progress_description">कृपया विलोपन के दौरान खिड़की बंद न करें।</string>
+    <string name="file_apps_manager_files_deleting_progress">फ़ाइलों को हटा दिया जा रहा है</string>
+    <string name="file_apps_manager_apps_list_updating">अद्यतन अनुप्रयोग सूची</string>
+    <string name="file_apps_manager_files_deleted">फ़ाइलें हटा दी जाती हैं।</string>
+    <string name="file_apps_manager_allow">अनुमति देना</string>
+    <string name="file_apps_manager_start_already_freed">आपका फ़ोन अनावश्यक फ़ाइलों से साफ हो गया है!</string>
+    <string name="file_apps_manager_sort_new_first">नई फाइलें पहले</string>
+    <string name="file_apps_manager_files_deleting_description">क्या आप सुनिश्चित हैं कि आप चयनित फ़ाइलों को हटाना चाहते हैं? इन फ़ाइलों को स्थायी रूप से हटा दिया जाएगा</string>
+    <string name="file_apps_manager_photo">तस्वीरें</string>
+    <string name="file_apps_manager_scan">स्कैन</string>
+    <string name="file_apps_manager_permission_description">फ़ाइल प्रबंधक का उपयोग करने के लिए आपको हमारे एप्लिकेशन से फ़ाइलों को देखने और हटाने की अनुमति की आवश्यकता होती है</string>
+</resources>

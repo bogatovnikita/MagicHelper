@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">Les petits d\'abord</string>
+    <string name="file_apps_manager_done">Fait</string>
+    <string name="file_apps_manager_sort_old_first">Vieux premier</string>
+    <string name="file_apps_manager_sort_big_first">Grand premier</string>
+    <string name="file_apps_manager_documents">Documents</string>
+    <string name="file_apps_manager_cancel">Annulé</string>
+    <string name="file_apps_manager_memory_used">Mémoire utilisée</string>
+    <string name="file_apps_manager_delete">Supprimer</string>
+    <string name="file_apps_manager_start_need_free">Vous pouvez supprimer des fichiers indésirables pour libérer de la mémoire sur votre téléphone!</string>
+    <string name="file_apps_manager_apps">Applications</string>
+    <string name="file_apps_manager_usage_stats_description">Pour vous permettre d\'afficher et de supprimer les applications à l\'aide du gestionnaire de fichiers, nous avons besoin d\'accéder à l\'historique d\'utilisation</string>
+    <string name="files_apps_manager_pregress">Analyser les fichiers ...</string>
+    <string name="file_apps_manager_delete_D">Supprimer (%d)</string>
+    <string name="file_apps_manager_select_all">Tout sélectionner</string>
+    <string name="file_apps_manager_audio">l\'audio</string>
+    <string name="file_apps_manager_video">Vidéo</string>
+    <string name="file_apps_manager_occupied_and_total">%s/%s</string>
+    <string name="file_apps_manager_files_deleting">Supprimer les fichiers</string>
+    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_we_need_permission">Nous avons besoin de permission</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Veuillez ne pas fermer la fenêtre pendant la suppression.</string>
+    <string name="file_apps_manager_files_deleting_progress">Les fichiers sont supprimés</string>
+    <string name="file_apps_manager_apps_list_updating">Mise à jour de la liste des applications</string>
+    <string name="file_apps_manager_files_deleted">Les fichiers sont supprimés.</string>
+    <string name="file_apps_manager_allow">Permettre</string>
+    <string name="file_apps_manager_start_already_freed">Votre téléphone est effacé de fichiers inutiles!</string>
+    <string name="file_apps_manager_sort_new_first">De nouveaux fichiers d\'abord</string>
+    <string name="file_apps_manager_files_deleting_description">Êtes-vous sûr de vouloir supprimer des fichiers sélectionnés? Ces fichiers seront supprimés en permanence</string>
+    <string name="file_apps_manager_photo">Photos</string>
+    <string name="file_apps_manager_scan">Analyse</string>
+    <string name="file_apps_manager_permission_description">Afin d\'utiliser le gestionnaire de fichiers, vous avez besoin d\'une autorisation pour afficher et supprimer les fichiers de notre application</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_apps_manager_sort_small_first">Önce küçük olanlar</string>
+    <string name="file_apps_manager_done">Tamamlamak</string>
+    <string name="file_apps_manager_sort_old_first">Eski</string>
+    <string name="file_apps_manager_sort_big_first">Büyük ilk</string>
+    <string name="file_apps_manager_documents">Belgeler</string>
+    <string name="file_apps_manager_cancel">İptal edildi</string>
+    <string name="file_apps_manager_memory_used">Kullanılmış Bellek</string>
+    <string name="file_apps_manager_delete">Silmek</string>
+    <string name="file_apps_manager_start_need_free">Telefonunuzda belleği boşaltmak için istenmeyen dosyaları silebilirsiniz!</string>
+    <string name="file_apps_manager_apps">Başvuru</string>
+    <string name="file_apps_manager_usage_stats_description">Dosya yöneticisini kullanarak uygulamaları görüntülemenize ve kaldırmanıza izin vermek için kullanım geçmişine erişmeye ihtiyacımız var</string>
+    <string name="files_apps_manager_pregress">Dosyaları tarayın ...</string>
+    <string name="file_apps_manager_delete_D">Sil (%d)</string>
+    <string name="file_apps_manager_select_all">Hepsini seç</string>
+    <string name="file_apps_manager_audio">Ses</string>
+    <string name="file_apps_manager_video">Video</string>
+    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_files_deleting">Dosyaları sil</string>
+    <string name="file_apps_manager_percents">%%d</string>
+    <string name="file_apps_manager_we_need_permission">İzine ihtiyacımız var</string>
+    <string name="file_apps_manager_files_deleting_progress_description">Lütfen silme sırasında pencereyi kapatmayın.</string>
+    <string name="file_apps_manager_files_deleting_progress">Dosyalar siliniyor</string>
+    <string name="file_apps_manager_apps_list_updating">Uygulama Listesini Güncelleme</string>
+    <string name="file_apps_manager_files_deleted">Dosyalar silinir.</string>
+    <string name="file_apps_manager_allow">İzin vermek</string>
+    <string name="file_apps_manager_start_already_freed">Telefonunuz gereksiz dosyalardan temizlendi!</string>
+    <string name="file_apps_manager_sort_new_first">Önce yeni dosyalar</string>
+    <string name="file_apps_manager_files_deleting_description">Seçilen dosyaları silmek istediğinizden emin misiniz? Bu dosyalar kalıcı olarak silinecek</string>
+    <string name="file_apps_manager_photo">Fotoğraflar</string>
+    <string name="file_apps_manager_scan">Taramak</string>
+    <string name="file_apps_manager_permission_description">Dosya Yöneticisini kullanmak için uygulamamızdan dosyaları görüntülemek ve silmek için izin almanız gerekir.</string>
+</resources>
