@@ -45,7 +45,7 @@
     <string name="temperature_need_check">Verifique a temperatura</string>
     <string name="boost_sending_command">Enviando um comando ...</string>
     <string name="ready">Finalizado!</string>
-    <string name="occupied_total">Ocupado/total:</string>
+    <string name="occupied_total">Ocupado/Total:</string>
     <string name="battery_modes_of_increasing_the_working_time">Modos para aumentar o tempo de atividade</string>
     <string name="boost_description_view_body">Reduza o uso da memória e otimize o desempenho do seu telefone</string>
     <string name="temperature_processor">TEMP do processador:</string>
