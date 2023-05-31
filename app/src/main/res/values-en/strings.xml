@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="snackbar_access_bluetooth">To perform the function, we need access to Bluetooth</string>
     <string name="cancel">Cancel</string>
     <string name="storage_location">Storage location</string>
