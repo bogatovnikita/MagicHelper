@@ -40,7 +40,7 @@
     <string name="remove_the_trash">Önemsiz dosyalar tespit edildi</string>
     <string name="temperature_normal">Normal CPU sıcaklığı 50 ℃\'yi geçmemelidir</string>
     <string name="boost_description_view_title">Şu anda, arka plan işlemleri ve uygulamaları cihazınızın hızını etkileyebilir</string>
-    <string name="percent_D">%%d</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Optimize edilmiş</string>
     <string name="temperature_need_check">Sıcaklığı kontrol edin</string>
     <string name="boost_sending_command">Bir komut gönderme ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">Daha temiz - belleği, önbelleğini, telefonu temizle</string>
     <string name="battery_ultra_mode_activates_restrictions">Ultra mod kısıtlamaları etkinleştirir:</string>
     <string name="boost_checking_apps">Uygulamaları kontrol etmek ...</string>
-    <string name="battery_power_description_D">Kalan% %d ücret</string>
+    <string name="battery_power_description_D">Kalan %d%% ücret</string>
     <string name="boost_button_optimize">Optimize etmek</string>
     <string name="battery_optimization_is_done">Gerçekleştirilen optimize et</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Pil ömrünü artırmak için Bluetooth ayarlarına uygulamanın erişimine izin verin</string>

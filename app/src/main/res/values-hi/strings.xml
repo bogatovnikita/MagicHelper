@@ -40,7 +40,7 @@
     <string name="remove_the_trash">कबाड़ फाइलें का पता चला</string>
     <string name="temperature_normal">सामान्य सीपीयू तापमान 50 ℃ से अधिक नहीं होना चाहिए</string>
     <string name="boost_description_view_title">अभी, पृष्ठभूमि प्रक्रियाएं और एप्लिकेशन आपके डिवाइस की गति को प्रभावित कर सकते हैं</string>
-    <string name="percent_D">%d %%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">अनुकूलित</string>
     <string name="temperature_need_check">तापमान की जाँच करें</string>
     <string name="boost_sending_command">एक कमांड भेजना ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">क्लीनर - मेमोरी, कैश, फोन साफ़ करें</string>
     <string name="battery_ultra_mode_activates_restrictions">अल्ट्रा मोड प्रतिबंधों को सक्रिय करता है:</string>
     <string name="boost_checking_apps">अनुप्रयोगों की जाँच ...</string>
-    <string name="battery_power_description_D">%d% चार्ज शेष</string>
+    <string name="battery_power_description_D">%d%% चार्ज शेष</string>
     <string name="boost_button_optimize">अनुकूलन</string>
     <string name="battery_optimization_is_done">प्रदर्शन किया गया</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">बैटरी जीवन बढ़ाने के लिए ब्लूटूथ सेटिंग्स तक ऐप एक्सेस की अनुमति दें</string>

@@ -64,7 +64,7 @@
     <string name="app_name">Cleaner - clear the memory, cache, phone</string>
     <string name="battery_ultra_mode_activates_restrictions">Ultra mode activates restrictions:</string>
     <string name="boost_checking_apps">Checking applications...</string>
-    <string name="battery_power_description_D">%d% charge remaining</string>
+    <string name="battery_power_description_D">%d%% charge remaining</string>
     <string name="boost_button_optimize">Optimize</string>
     <string name="battery_optimization_is_done">Optimise performed</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Allow app access to bluetooth settings to increase battery life</string>

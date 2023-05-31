@@ -40,7 +40,7 @@
     <string name="remove_the_trash">Các tập tin rác được phát hiện</string>
     <string name="temperature_normal">Nhiệt độ CPU bình thường không được vượt quá 50 ℃</string>
     <string name="boost_description_view_title">Ngay bây giờ, các quy trình và ứng dụng nền có thể ảnh hưởng đến tốc độ của thiết bị của bạn</string>
-    <string name="percent_D">%d %%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Tối ưu hóa</string>
     <string name="temperature_need_check">Kiểm tra nhiệt độ</string>
     <string name="boost_sending_command">Gửi lệnh ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">Cleaner - xóa bộ nhớ, bộ nhớ cache, điện thoại</string>
     <string name="battery_ultra_mode_activates_restrictions">Chế độ Ultra kích hoạt các hạn chế:</string>
     <string name="boost_checking_apps">Kiểm tra các ứng dụng ...</string>
-    <string name="battery_power_description_D">Khoản phí còn lại %d%</string>
+    <string name="battery_power_description_D">Khoản phí còn lại %d%%</string>
     <string name="boost_button_optimize">Tối ưu hóa</string>
     <string name="battery_optimization_is_done">Tối ưu hóa thực hiện</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Cho phép truy cập ứng dụng vào cài đặt Bluetooth để tăng thời lượng pin</string>

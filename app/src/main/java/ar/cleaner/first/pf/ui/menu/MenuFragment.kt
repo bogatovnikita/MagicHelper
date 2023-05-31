@@ -90,7 +90,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun renderBatteryState(screenState: MenuState) = screenState.apply {
         with(binding) {
-            if (isNeedShowTimeToFullCharge) {
+            if (isNeedShowTimeToFullCharge && screenState.batteryCharge != 100) {
                 if (timeToFullCharge == 0 to 0) {
                     batteryDescriptionTv.text = paintEndOfTheString()
                 } else {

@@ -40,7 +40,7 @@
     <string name="remove_the_trash">Archivos de basura detectados</string>
     <string name="temperature_normal">La temperatura normal de la CPU no debe exceder los 50 ℃</string>
     <string name="boost_description_view_title">En este momento, los procesos y aplicaciones de fondo pueden afectar la velocidad de su dispositivo</string>
-    <string name="percent_D">%d %%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Optimizado</string>
     <string name="temperature_need_check">Verifique la temperatura</string>
     <string name="boost_sending_command">Enviando un comando ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">Limpiador: borre la memoria, el caché, el teléfono</string>
     <string name="battery_ultra_mode_activates_restrictions">Ultra Mode activa las restricciones:</string>
     <string name="boost_checking_apps">Comprobación de aplicaciones ...</string>
-    <string name="battery_power_description_D">Cargo por %d% restante</string>
+    <string name="battery_power_description_D">Cargo por %d%% restante</string>
     <string name="boost_button_optimize">Optimizar</string>
     <string name="battery_optimization_is_done">Optimizar realizado</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Permitir el acceso a la aplicación a la configuración de Bluetooth para aumentar la duración de la batería</string>

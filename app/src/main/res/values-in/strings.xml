@@ -40,7 +40,7 @@
     <string name="remove_the_trash">File sampah terdeteksi</string>
     <string name="temperature_normal">Suhu CPU normal tidak boleh melebihi 50 ℃</string>
     <string name="boost_description_view_title">Saat ini, proses dan aplikasi latar belakang dapat mempengaruhi kecepatan perangkat Anda</string>
-    <string name="percent_D">%d %%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Dioptimalkan</string>
     <string name="temperature_need_check">Periksa suhunya</string>
     <string name="boost_sending_command">Mengirim perintah ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">Cleaner - Bersihkan memori, cache, telepon</string>
     <string name="battery_ultra_mode_activates_restrictions">Mode Ultra mengaktifkan pembatasan:</string>
     <string name="boost_checking_apps">Memeriksa aplikasi ...</string>
-    <string name="battery_power_description_D">Sisa biaya %d%</string>
+    <string name="battery_power_description_D">Sisa biaya %d%%</string>
     <string name="boost_button_optimize">Mengoptimalkan</string>
     <string name="battery_optimization_is_done">Optimalkan dilakukan</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Izinkan akses aplikasi ke pengaturan Bluetooth untuk meningkatkan masa pakai baterai</string>

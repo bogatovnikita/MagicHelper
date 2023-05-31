@@ -40,7 +40,7 @@
     <string name="remove_the_trash">ตรวจพบไฟล์ขยะ</string>
     <string name="temperature_normal">อุณหภูมิ CPU ปกติไม่ควรเกิน 50 ℃</string>
     <string name="boost_description_view_title">ตอนนี้กระบวนการพื้นหลังและแอปพลิเคชันอาจส่งผลต่อความเร็วของอุปกรณ์ของคุณ</string>
-    <string name="percent_D">%d %%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">ที่ปรับให้เหมาะสม</string>
     <string name="temperature_need_check">ตรวจสอบอุณหภูมิ</string>
     <string name="boost_sending_command">การส่งคำสั่ง ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">ทำความสะอาด - ล้างหน่วยความจำแคชโทรศัพท์</string>
     <string name="battery_ultra_mode_activates_restrictions">โหมดพิเศษเปิดใช้งานข้อ จำกัด :</string>
     <string name="boost_checking_apps">ตรวจสอบแอปพลิเคชัน ...</string>
-    <string name="battery_power_description_D">เหลืออีก %d%</string>
+    <string name="battery_power_description_D">เหลืออีก %d%%</string>
     <string name="boost_button_optimize">ปรับให้เหมาะสม</string>
     <string name="battery_optimization_is_done">ปรับให้เหมาะสม</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">อนุญาตให้แอพเข้าถึงการตั้งค่าบลูทู ธ เพื่อเพิ่มอายุการใช้งานแบตเตอรี่</string>

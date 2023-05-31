@@ -163,7 +163,7 @@ class BatteryFragment : Fragment(R.layout.fragment_battery) {
 
     private fun renderTimeToFullCharge(batteryDetails: BatteryDetails) {
         binding.tvTimeToFull.isVisible = batteryDetails.isCharging
-                && batteryDetails.timeToFullCharge != CAN_NOT_CALCULATE_TIME
+                && batteryDetails.timeToFullCharge != CAN_NOT_CALCULATE_TIME && batteryDetails.batteryCharge != 100
         if (batteryDetails.isCharging) {
             val hours = batteryDetails.timeToFullCharge.toHours()
             val minutes = batteryDetails.timeToFullCharge.toMinutes()

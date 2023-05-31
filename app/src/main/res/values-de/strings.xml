@@ -40,7 +40,7 @@
     <string name="remove_the_trash">Junk -Dateien erkannt</string>
     <string name="temperature_normal">Die normale CPU -Temperatur sollte 50 ℃ nicht überschreiten</string>
     <string name="boost_description_view_title">Derzeit können Hintergrundprozesse und Anwendungen die Geschwindigkeit Ihres Geräts beeinflussen</string>
-    <string name="percent_D">%d %%%</string>
+    <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Optimiert</string>
     <string name="temperature_need_check">Überprüfen Sie die Temperatur</string>
     <string name="boost_sending_command">Senden eines Befehls ...</string>
@@ -63,7 +63,7 @@
     <string name="app_name">Reiniger - Speichern Sie den Speicher, den Cache, das Telefon</string>
     <string name="battery_ultra_mode_activates_restrictions">Der Ultra -Modus aktiviert Einschränkungen:</string>
     <string name="boost_checking_apps">Anwendungen überprüfen ...</string>
-    <string name="battery_power_description_D">%d% verbleibende Gebühr</string>
+    <string name="battery_power_description_D">%d%% verbleibende Gebühr</string>
     <string name="boost_button_optimize">Optimieren</string>
     <string name="battery_optimization_is_done">Optimierung durchgeführt</string>
     <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Ermöglichen Sie den App -Zugriff auf Bluetooth -Einstellungen, um die Akkulaufzeit zu steigern</string>
