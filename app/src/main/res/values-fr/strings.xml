@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="snackbar_access_bluetooth">Pour remplir la fonction, nous avons besoin d\'accéder à Bluetooth</string>
+    <string name="snackbar_access_bluetooth">Pour remplir la fonction, nous avons besoin d\'accéder à bluetooth</string>
     <string name="cancel">Annuler</string>
     <string name="storage_location">Emplacement de stockage</string>
     <string name="temperature_title">Température</string>
-    <string name="theres_not_much_left">Il ne reste pas beaucoup ...</string>
+    <string name="theres_not_much_left">Il ne reste pas beaucoup…</string>
     <string name="temperature_danger_desc">Action requise!</string>
     <string name="boost_title_name">Optimiser</string>
     <string name="battery_title">Pouvoir</string>
@@ -12,11 +12,11 @@
     <string name="boost_phone_dont_need_optimize">Le téléphone n\'a pas besoin d\'être optimisé pour le moment!</string>
     <string name="battery_ultra_mode">Ultra</string>
     <string name="optimize">Optimisation</string>
-    <string name="temperature_not_checked">n\'a pas été testé ...</string>
+    <string name="temperature_not_checked">n\'a pas été testé…</string>
     <string name="temperature_desc_not_optimized">Vérifiez la température de l\'appareil</string>
-    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Le mode supplémentaire nécessite l\'accès aux paramètres Bluetooth</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Le mode supplémentaire nécessite l\'accès aux paramètres bluetooth</string>
     <string name="general_app_name">Aide magique</string>
-    <string name="battery_extra_mode">Supplémentaire</string>
+    <string name="battery_extra_mode">Additionnel</string>
     <string name="ram">RAM</string>
     <string name="battery_time_to_full_charge_D_D">Jusqu\'à complètement chargé\n%d h. %d min.</string>
     <string name="battery_charge_percent">Charge de la batterie</string>
@@ -32,8 +32,8 @@
     <string name="temperature_checked">Action effectuée</string>
     <string name="boost_usage_ram">Ram usagé</string>
     <string name="clear_junk">Suppression de fichiers</string>
-    <string name="scanning_system">Système de numérisation ...</string>
-    <string name="battery_time_to_full_charge_calculating">Jusqu\'à ce qu\'il soit complètement chargé ...</string>
+    <string name="scanning_system">Système de numérisation…</string>
+    <string name="battery_time_to_full_charge_calculating">Jusqu\'à ce qu\'il soit complètement chargé…</string>
     <string name="general_action_required">Action requise!</string>
     <string name="allow">Permettre</string>
     <string name="speed_up_the_work_of_your_phone">Attention requise</string>
@@ -43,7 +43,7 @@
     <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Optimisé</string>
     <string name="temperature_need_check">Vérifiez la température</string>
-    <string name="boost_sending_command">Envoi d\'une commande ...</string>
+    <string name="boost_sending_command">Envoi d\'une commande…</string>
     <string name="ready">Fini!</string>
     <string name="occupied_total">Occupé/Total:</string>
     <string name="battery_modes_of_increasing_the_working_time">Modes pour augmenter la disponibilité</string>
@@ -58,14 +58,14 @@
     <string name="boost_now_the_device_is_accelerated_by_D">L\'appareil est désormais optimisé %d%%</string>
     <string name="battery_normal_mode">Normal</string>
     <string name="battery_not_danger_description">Le téléphone n\'a pas besoin d\'être optimisé à ce stade!</string>
-    <string name="collect_data">La collecte de données...</string>
+    <string name="collect_data">La collecte de données…</string>
     <string name="temperature_desc_optimized">Fait</string>
     <string name="battery_ultra_mode_activates_restrictions">Le mode ultra active les restrictions:</string>
-    <string name="boost_checking_apps">Vérification des demandes ...</string>
+    <string name="boost_checking_apps">Vérification des demandes…</string>
     <string name="battery_power_description_D">%d%% de charge restante</string>
     <string name="boost_button_optimize">Optimiser</string>
     <string name="battery_optimization_is_done">Optimiser effectué</string>
-    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Autoriser l\'accès à l\'application aux paramètres Bluetooth pour augmenter la durée de vie de la batterie</string>
+    <string name="allow_the_app_to_acces_bluetooth_settings_to_increase_battery_life">Autoriser l\'accès à l\'application aux paramètres bluetooth pour augmenter la durée de vie de la batterie</string>
     <string name="released_F_gb">%.1f Go gratuit</string>
     <string name="further">Suivant</string>
     <string name="temperature_normal_desc">Le téléphone n\'a pas besoin d\'action pour le moment!</string>

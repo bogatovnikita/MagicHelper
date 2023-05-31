@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             style="@style/Dialog.Title"
+            android:paddingEnd="8dp"
             android:text="@string/file_apps_manager_we_need_permission"/>
 
         <ImageView

@@ -48,7 +48,7 @@
     <string name="occupied_total">Ocupado/Total:</string>
     <string name="battery_modes_of_increasing_the_working_time">Modos para aumentar o tempo de atividade</string>
     <string name="boost_description_view_body">Reduza o uso da memória e otimize o desempenho do seu telefone</string>
-    <string name="temperature_processor">TEMP do processador:</string>
+    <string name="temperature_processor">Temp do processador:</string>
     <string name="battery_switch_on_mode_S">Modo ativado: %s</string>
     <string name="battery_danger_description">Você pode maximizar o desempenho do seu telefone!</string>
     <string name="_F_gb_F_gb">%.1fGB/%.1fGB</string>

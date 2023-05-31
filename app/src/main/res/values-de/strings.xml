@@ -12,7 +12,7 @@
     <string name="boost_phone_dont_need_optimize">Das telefon muss momentan nicht optimiert werden!</string>
     <string name="battery_ultra_mode">Ultra</string>
     <string name="optimize">Optimierung</string>
-    <string name="temperature_not_checked">Wurde nicht getestet…</string>
+    <string name="temperature_not_checked">wurde nicht getestet…</string>
     <string name="temperature_desc_not_optimized">Überprüfen sie die gerätetemperatur</string>
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Der zusätzliche modus erfordert zugriff auf bluetooth einstellungen</string>
     <string name="general_app_name">Zauberhelfer</string>

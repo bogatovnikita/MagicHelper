@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="snackbar_access_bluetooth">Để thực hiện chức năng, chúng tôi cần truy cập vào Bluetooth</string>
+    <string name="snackbar_access_bluetooth">Để thực hiện chức năng, chúng tôi cần truy cập vào bluetooth</string>
     <string name="cancel">Hủy bỏ</string>
     <string name="storage_location">Khu vực lưu trữ</string>
     <string name="temperature_title">Nhiệt độ</string>
-    <string name="theres_not_much_left">Không còn nhiều ...</string>
+    <string name="theres_not_much_left">Không còn nhiều…</string>
     <string name="temperature_danger_desc">Cần hành động!</string>
     <string name="boost_title_name">Tối ưu hóa</string>
     <string name="battery_title">Quyền lực</string>
@@ -12,9 +12,9 @@
     <string name="boost_phone_dont_need_optimize">Điện thoại không cần phải được tối ưu hóa tại thời điểm này!</string>
     <string name="battery_ultra_mode">Cực kỳ</string>
     <string name="optimize">Tối ưu hóa</string>
-    <string name="temperature_not_checked">chưa được kiểm tra ...</string>
+    <string name="temperature_not_checked">chưa được kiểm tra…</string>
     <string name="temperature_desc_not_optimized">Kiểm tra nhiệt độ thiết bị</string>
-    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Chế độ bổ sung yêu cầu truy cập vào cài đặt Bluetooth</string>
+    <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">Chế độ bổ sung yêu cầu truy cập vào cài đặt bluetooth</string>
     <string name="general_app_name">Người trợ giúp ma thuật</string>
     <string name="battery_extra_mode">Thêm</string>
     <string name="ram">ĐẬP</string>
@@ -32,8 +32,8 @@
     <string name="temperature_checked">Hành động được thực hiện</string>
     <string name="boost_usage_ram">Sử dụng ram</string>
     <string name="clear_junk">Xóa các tập tin</string>
-    <string name="scanning_system">Hệ thống quét ...</string>
-    <string name="battery_time_to_full_charge_calculating">Cho đến khi được sạc đầy ...</string>
+    <string name="scanning_system">Hệ thống quét…</string>
+    <string name="battery_time_to_full_charge_calculating">Cho đến khi được sạc đầy…</string>
     <string name="general_action_required">Cần hành động!</string>
     <string name="allow">Cho phép</string>
     <string name="speed_up_the_work_of_your_phone">Cần chú ý</string>
@@ -43,7 +43,7 @@
     <string name="percent_D">%d%%</string>
     <string name="battery_optimized">Tối ưu hóa</string>
     <string name="temperature_need_check">Kiểm tra nhiệt độ</string>
-    <string name="boost_sending_command">Gửi lệnh ...</string>
+    <string name="boost_sending_command">Gửi lệnh…</string>
     <string name="ready">Hoàn thành!</string>
     <string name="occupied_total">Bận/Tổngsố:</string>
     <string name="battery_modes_of_increasing_the_working_time">Các chế độ để tăng thời gian hoạt động</string>
@@ -58,10 +58,10 @@
     <string name="boost_now_the_device_is_accelerated_by_D">Thiết bị hiện được tối ưu hóa %d%%</string>
     <string name="battery_normal_mode">Bình thường</string>
     <string name="battery_not_danger_description">Điện thoại không cần phải được tối ưu hóa vào thời điểm này!</string>
-    <string name="collect_data">Thu thập dữ liệu ...</string>
+    <string name="collect_data">Thu thập dữ liệu…</string>
     <string name="temperature_desc_optimized">Xong</string>
     <string name="battery_ultra_mode_activates_restrictions">Chế độ Ultra kích hoạt các hạn chế:</string>
-    <string name="boost_checking_apps">Kiểm tra các ứng dụng ...</string>
+    <string name="boost_checking_apps">Kiểm tra các ứng dụng…</string>
     <string name="battery_power_description_D">Khoản phí còn lại %d%%</string>
     <string name="boost_button_optimize">Tối ưu hóa</string>
     <string name="battery_optimization_is_done">Tối ưu hóa thực hiện</string>
