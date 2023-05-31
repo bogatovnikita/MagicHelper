@@ -440,30 +440,30 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_battery"
+        app:layout_constraintEnd_toEndOf="@id/background_battery"
+        app:layout_constraintStart_toStartOf="@id/background_battery"
+        app:layout_constraintTop_toTopOf="@id/background_battery" />
 
     <View
         android:id="@+id/background_boost_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_boost"
+        app:layout_constraintEnd_toEndOf="@id/background_boost"
+        app:layout_constraintStart_toStartOf="@id/background_boost"
+        app:layout_constraintTop_toTopOf="@id/background_boost" />
 
     <View
         android:id="@+id/background_cooling_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_cooling"
+        app:layout_constraintEnd_toEndOf="@id/background_cooling"
+        app:layout_constraintStart_toStartOf="@id/background_cooling"
+        app:layout_constraintTop_toTopOf="@id/background_cooling" />
 
     <View
         android:id="@+id/background_clean_transparent"
@@ -474,6 +474,5 @@
         app:layout_constraintEnd_toEndOf="@id/background_clean"
         app:layout_constraintStart_toStartOf="@id/background_clean"
         app:layout_constraintTop_toTopOf="@id/background_clean" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

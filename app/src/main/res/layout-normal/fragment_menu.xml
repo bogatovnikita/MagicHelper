@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_tv" />
 
-    <ar.cleaner.first.pf.custom_view.CustomProgressBar
+    <ar.cleaner.second.pf.custom_view.CustomProgressBar
         android:id="@+id/storage_progress_bar"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/title_tv"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <ar.cleaner.first.pf.custom_view.CustomProgressBar
+    <ar.cleaner.second.pf.custom_view.CustomProgressBar
         android:id="@+id/ram_progress_bar"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -228,6 +228,7 @@
         android:layout_marginBottom="@dimen/_14sdp"
         android:elevation="6dp"
         android:src="@drawable/ic_battery"
+        android:layout_marginHorizontal="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="@id/background_battery"
         app:layout_constraintEnd_toEndOf="@id/background_battery"
         app:layout_constraintStart_toStartOf="@id/background_battery"
@@ -299,6 +300,7 @@
         android:layout_marginBottom="@dimen/_14sdp"
         android:elevation="6dp"
         android:src="@drawable/ic_boost"
+        android:layout_marginHorizontal="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="@id/background_boost"
         app:layout_constraintEnd_toEndOf="@id/background_boost"
         app:layout_constraintStart_toStartOf="@id/background_boost"
@@ -362,6 +364,7 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:elevation="6dp"
         android:src="@drawable/ic_cpu"
+        android:layout_marginHorizontal="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="@id/background_cooling"
         app:layout_constraintEnd_toEndOf="@id/background_cooling"
         app:layout_constraintStart_toStartOf="@id/background_cooling"
@@ -422,6 +425,7 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:elevation="6dp"
         android:src="@drawable/ic_junk"
+        android:layout_marginHorizontal="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="@id/background_clean"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/background_clean"
@@ -440,30 +444,30 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_battery"
+        app:layout_constraintEnd_toEndOf="@id/background_battery"
+        app:layout_constraintStart_toStartOf="@id/background_battery"
+        app:layout_constraintTop_toTopOf="@id/background_battery" />
 
     <View
         android:id="@+id/background_boost_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_boost"
+        app:layout_constraintEnd_toEndOf="@id/background_boost"
+        app:layout_constraintStart_toStartOf="@id/background_boost"
+        app:layout_constraintTop_toTopOf="@id/background_boost" />
 
     <View
         android:id="@+id/background_cooling_transparent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:elevation="7dp"
-        app:layout_constraintBottom_toBottomOf="@id/background_clean"
-        app:layout_constraintEnd_toEndOf="@id/background_clean"
-        app:layout_constraintStart_toStartOf="@id/background_clean"
-        app:layout_constraintTop_toTopOf="@id/background_clean" />
+        app:layout_constraintBottom_toBottomOf="@id/background_cooling"
+        app:layout_constraintEnd_toEndOf="@id/background_cooling"
+        app:layout_constraintStart_toStartOf="@id/background_cooling"
+        app:layout_constraintTop_toTopOf="@id/background_cooling" />
 
     <View
         android:id="@+id/background_clean_transparent"
@@ -474,6 +478,5 @@
         app:layout_constraintEnd_toEndOf="@id/background_clean"
         app:layout_constraintStart_toStartOf="@id/background_clean"
         app:layout_constraintTop_toTopOf="@id/background_clean" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="boost_and_cooling_items">
-        <item>Removing background processes...</item>
-        <item>Clearing system paths...</item>
-        <item>Customizing system keys...</item>
-        <item>Checking unused components...</item>
-        <item>Disable unnecessary GPS towers...</item>
-    </array>
 
     <array name="battery_items">
         <item>Уменьшить яркость</item>
@@ -16,15 +9,6 @@
         <item>Отключить Bluetooth</item>
         <item>Отключить вибрацию</item>
     </array>
-
-    <array name="junk_items">
-        <item>Cache</item>
-        <item>Temporary files</item>
-        <item>Residual files</item>
-        <item>System garbage</item>
-    </array>
-
-<!--    new array -->
 
     <array name="progress_temperature">
         <item>Проверка температуры процессора..</item>
