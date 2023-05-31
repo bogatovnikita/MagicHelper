@@ -16,9 +16,9 @@
     <string name="file_apps_manager_select_all">Wählen Sie Alle</string>
     <string name="file_apps_manager_audio">Audio</string>
     <string name="file_apps_manager_video">Video</string>
-    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
     <string name="file_apps_manager_files_deleting">Dateien löschen</string>
-    <string name="file_apps_manager_percents">%d %%%</string>
+    <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">Wir brauchen Erlaubnis</string>
     <string name="file_apps_manager_files_deleting_progress_description">Bitte schließen Sie das Fenster während des Löschens nicht.</string>
     <string name="file_apps_manager_files_deleting_progress">Dateien werden gelöscht</string>

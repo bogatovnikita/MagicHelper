@@ -16,9 +16,9 @@
     <string name="file_apps_manager_select_all">Hepsini seç</string>
     <string name="file_apps_manager_audio">Ses</string>
     <string name="file_apps_manager_video">Video</string>
-    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
     <string name="file_apps_manager_files_deleting">Dosyaları sil</string>
-    <string name="file_apps_manager_percents">%%d</string>
+    <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">İzine ihtiyacımız var</string>
     <string name="file_apps_manager_files_deleting_progress_description">Lütfen silme sırasında pencereyi kapatmayın.</string>
     <string name="file_apps_manager_files_deleting_progress">Dosyalar siliniyor</string>

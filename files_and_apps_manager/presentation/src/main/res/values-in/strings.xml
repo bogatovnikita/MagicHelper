@@ -16,9 +16,9 @@
     <string name="file_apps_manager_select_all">Pilih Semua</string>
     <string name="file_apps_manager_audio">Audio</string>
     <string name="file_apps_manager_video">Video</string>
-    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
     <string name="file_apps_manager_files_deleting">Hapus file</string>
-    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">Kami membutuhkan izin</string>
     <string name="file_apps_manager_files_deleting_progress_description">Tolong jangan tutup jendela selama penghapusan.</string>
     <string name="file_apps_manager_files_deleting_progress">File sedang dihapus</string>

@@ -16,9 +16,9 @@
     <string name="file_apps_manager_select_all">सबका चयन करें</string>
     <string name="file_apps_manager_audio">ऑडियो</string>
     <string name="file_apps_manager_video">वीडियो</string>
-    <string name="file_apps_manager_occupied_and_total">%s /%s</string>
+    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
     <string name="file_apps_manager_files_deleting">फाइलों को नष्ट</string>
-    <string name="file_apps_manager_percents">%d %%</string>
+    <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">हमें अनुमति की जरूरत है</string>
     <string name="file_apps_manager_files_deleting_progress_description">कृपया विलोपन के दौरान खिड़की बंद न करें।</string>
     <string name="file_apps_manager_files_deleting_progress">फ़ाइलों को हटा दिया जा रहा है</string>
