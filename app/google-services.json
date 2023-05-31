@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "492981154655",
-    "project_id": "ar-cleaner-first-pf-60a6b",
-    "storage_bucket": "ar-cleaner-first-pf-60a6b.appspot.com"
+    "project_number": "937901212871",
+    "project_id": "ar-cleaner-second-pf-18a1f",
+    "storage_bucket": "ar-cleaner-second-pf-18a1f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:492981154655:android:5192749269c11d4fa37cea",
+        "mobilesdk_app_id": "1:937901212871:android:22ad0f4a0f2097edc5eae2",
         "android_client_info": {
           "package_name": "ar.cleaner.second.pf"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "492981154655-vc813rk0hs8jm5gu2v3vnfqphj95c2bi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBBNPGAkuhI-0gCBa6zWyHxHG1CHI6me-o"
+          "current_key": "AIzaSyAJrPkTz_S0MNlCaZmh2NJfT5mBAOII-A8"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "492981154655-vc813rk0hs8jm5gu2v3vnfqphj95c2bi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
