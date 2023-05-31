@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">Telepon tidak perlu dioptimalkan pada saat ini!</string>
     <string name="collect_data">Mengumpulkan data...</string>
     <string name="temperature_desc_optimized">Selesai</string>
-    <string name="app_name">Cleaner - Bersihkan memori, cache, telepon</string>
     <string name="battery_ultra_mode_activates_restrictions">Mode Ultra mengaktifkan pembatasan:</string>
     <string name="boost_checking_apps">Memeriksa aplikasi ...</string>
     <string name="battery_power_description_D">Sisa biaya %d%%</string>

@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">โทรศัพท์ไม่จำเป็นต้องปรับให้เหมาะสมในตอนนี้!</string>
     <string name="collect_data">รวบรวมข้อมูล ...</string>
     <string name="temperature_desc_optimized">เสร็จแล้ว</string>
-    <string name="app_name">ทำความสะอาด - ล้างหน่วยความจำแคชโทรศัพท์</string>
     <string name="battery_ultra_mode_activates_restrictions">โหมดพิเศษเปิดใช้งานข้อ จำกัด :</string>
     <string name="boost_checking_apps">ตรวจสอบแอปพลิเคชัน ...</string>
     <string name="battery_power_description_D">เหลืออีก %d%%</string>

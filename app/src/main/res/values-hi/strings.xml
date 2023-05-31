@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">फोन को इस बिंदु पर अनुकूलित करने की आवश्यकता नहीं है!</string>
     <string name="collect_data">डेटा एकत्र करना ...</string>
     <string name="temperature_desc_optimized">पूर्ण</string>
-    <string name="app_name">क्लीनर - मेमोरी, कैश, फोन साफ़ करें</string>
     <string name="battery_ultra_mode_activates_restrictions">अल्ट्रा मोड प्रतिबंधों को सक्रिय करता है:</string>
     <string name="boost_checking_apps">अनुप्रयोगों की जाँच ...</string>
     <string name="battery_power_description_D">%d%% चार्ज शेष</string>

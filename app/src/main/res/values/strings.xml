@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name" translatable="false">Cleaner - clear the memory, cache, phone</string>
     <string name="facebook_key" translatable="false">629971811966975</string>
     <string name="snackbar_access_bluetooth">To perform the function, we need access to Bluetooth</string>
     <string name="cancel">Cancel</string>
@@ -61,7 +62,6 @@
     <string name="battery_not_danger_description">Phone doesn\'t need to be optimized at this point!</string>
     <string name="collect_data">Collecting data...</string>
     <string name="temperature_desc_optimized">Done</string>
-    <string name="app_name">Cleaner - clear the memory, cache, phone</string>
     <string name="battery_ultra_mode_activates_restrictions">Ultra mode activates restrictions:</string>
     <string name="boost_checking_apps">Checking applications...</string>
     <string name="battery_power_description_D">%d%% charge remaining</string>

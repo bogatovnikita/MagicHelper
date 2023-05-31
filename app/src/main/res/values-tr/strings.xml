@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">Telefonun bu noktada optimize edilmesine gerek yok!</string>
     <string name="collect_data">Veri Toplama ...</string>
     <string name="temperature_desc_optimized">Tamamlamak</string>
-    <string name="app_name">Daha temiz - belleği, önbelleğini, telefonu temizle</string>
     <string name="battery_ultra_mode_activates_restrictions">Ultra mod kısıtlamaları etkinleştirir:</string>
     <string name="boost_checking_apps">Uygulamaları kontrol etmek ...</string>
     <string name="battery_power_description_D">Kalan %d%% ücret</string>

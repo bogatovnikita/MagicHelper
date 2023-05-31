@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">Điện thoại không cần phải được tối ưu hóa vào thời điểm này!</string>
     <string name="collect_data">Thu thập dữ liệu ...</string>
     <string name="temperature_desc_optimized">Xong</string>
-    <string name="app_name">Cleaner - xóa bộ nhớ, bộ nhớ cache, điện thoại</string>
     <string name="battery_ultra_mode_activates_restrictions">Chế độ Ultra kích hoạt các hạn chế:</string>
     <string name="boost_checking_apps">Kiểm tra các ứng dụng ...</string>
     <string name="battery_power_description_D">Khoản phí còn lại %d%%</string>

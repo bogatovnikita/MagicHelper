@@ -60,7 +60,6 @@
     <string name="battery_not_danger_description">O telefone não precisa ser otimizado neste momento!</string>
     <string name="collect_data">Coletando dados...</string>
     <string name="temperature_desc_optimized">Feito</string>
-    <string name="app_name">Mais limpo - limpe a memória, cache, telefone</string>
     <string name="battery_ultra_mode_activates_restrictions">O Modo Ultra ativa restrições:</string>
     <string name="boost_checking_apps">Verificando aplicativos ...</string>
     <string name="battery_power_description_D">%d%% de cobrança restante</string>
