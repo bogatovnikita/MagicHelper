@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.41" />
 
     <ImageView
         android:id="@+id/root_background_iv"
@@ -20,8 +20,10 @@
         android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="@id/background_battery"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/title_tv"
@@ -57,7 +59,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_9sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
         app:layout_constraintBottom_toBottomOf="@+id/ram_progress_bar"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_progress_bar"
