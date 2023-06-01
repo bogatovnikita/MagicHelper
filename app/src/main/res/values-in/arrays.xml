@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>Pemeriksaan suhu prosesor...</item>
+        <item>Periksa suhu baterai...</item>
+    </array>
+    <array name="battery_items">
+        <item>Kurangi kecerahan</item>
+        <item>Nonaktifkan kecerahan otomatis</item>
+        <item>Nonaktifkan Wi-Fi</item>
+        <item>Aplikasi latar belakang bekukan</item>
+        <item>Nonaktifkan bluetooth</item>
+        <item>Nonaktifkan getaran</item>
+    </array>
+</resources>

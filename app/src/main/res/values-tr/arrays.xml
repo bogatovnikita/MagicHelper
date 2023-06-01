@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>İşlemci sıcaklık kontrolü...</item>
+        <item>Pil sıcaklığını kontrol edin...</item>
+    </array>
+    <array name="battery_items">
+        <item>Parlaklığı azaltın</item>
+        <item>Otomatik parlaklığı devre dışı bırakın</item>
+        <item>Wi-Fi\'yi devre dışı bırak</item>
+        <item>Donma arka plan uygulamaları</item>
+        <item>Bluetooth\'u devre dışı bırak</item>
+        <item>Titreşimi devre dışı bırak</item>
+    </array>
+</resources>

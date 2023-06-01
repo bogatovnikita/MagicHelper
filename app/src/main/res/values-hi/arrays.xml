@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>प्रोसेसर तापमान की जाँच...</item>
+        <item>बैटरी के तापमान की जाँच करें...</item>
+    </array>
+    <array name="battery_items">
+        <item>चमक को कम करें</item>
+        <item>ऑटो चमक को निष्क्रिय करें</item>
+        <item>वाई-फाई को अक्षम करें</item>
+        <item>फ्रीज बैकग्राउंड ऐप्स</item>
+        <item>ब्लूटूथ को अक्षम करें</item>
+        <item>समृद्ध कंपन</item>
+    </array>
+</resources>

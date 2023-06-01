@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="battery_items">
+        <item>Уменьшить яркость</item>
+        <item>Отключить автояркость</item>
+        <item>Отключить Wi-Fi</item>
+        <item>Заморозка фоновых приложений</item>
+        <item>Отключить Bluetooth</item>
+        <item>Отключить вибрацию</item>
+    </array>
+
+    <array name="progress_temperature">
+        <item>Проверка температуры процессора..</item>
+        <item>Проверка температуры батареи..</item>
+    </array>
+
+</resources>

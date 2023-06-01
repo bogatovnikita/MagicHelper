@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>ตรวจสอบอุณหภูมิของโปรเซสเซอร์...</item>
+        <item>ตรวจสอบอุณหภูมิแบตเตอรี่...</item>
+    </array>
+    <array name="battery_items">
+        <item>ลดความสว่าง</item>
+        <item>ปิดการใช้งานความสว่างอัตโนมัติ</item>
+        <item>ปิดการใช้งานอินเตอร์เน็ตไร้สาย</item>
+        <item>แอพพื้นหลังแช่แข็ง</item>
+        <item>ปิดการใช้งานบลูทู ธ</item>
+        <item>ปิดการสั่นสะเทือน</item>
+    </array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>Kiểm tra nhiệt độ bộ xử lý...</item>
+        <item>Kiểm tra nhiệt độ pin...</item>
+    </array>
+    <array name="battery_items">
+        <item>Giảm độ sáng</item>
+        <item>Vô hiệu hóa độ sáng tự động</item>
+        <item>Tắt Wi-Fi</item>
+        <item>Đóng băng ứng dụng nền</item>
+        <item>Tắt bluetooth</item>
+        <item>Vô hiệu hóa rung động</item>
+    </array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>Verificação de temperatura do processador...</item>
+        <item>Verifique a temperatura da bateria...</item>
+    </array>
+    <array name="battery_items">
+        <item>Reduzir o brilho</item>
+        <item>Desative o brilho automático</item>
+        <item>Desative Wi-Fi</item>
+        <item>Congelamento de aplicativos de fundo</item>
+        <item>Desative o bluetooth</item>
+        <item>Desativar vibração</item>
+    </array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progress_temperature">
+        <item>Prozessor temperatur prüfung...</item>
+        <item>Überprüfen sie die batterie temperatur...</item>
+    </array>
+    <array name="battery_items">
+        <item>Helligkeit verringern</item>
+        <item>Automatische helligkeit deaktivieren</item>
+        <item>Deaktiviere Wi-Fi</item>
+        <item>Hintergrund apps einfrieren</item>
+        <item>Deaktivieren sie bluetooth</item>
+        <item>Vibration deaktivieren</item>
+    </array>
+</resources>
