@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="ToolbarView">
         <attr name="title_text" format="string" />
-        <attr name="arrow_back" format="boolean" />
+        <attr name="is_arrow_back" format="boolean" />
     </declare-styleable>
 
 </resources>

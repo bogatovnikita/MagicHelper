@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import androidx.core.content.withStyledAttributes
+import androidx.core.view.isVisible
 import yin_kio.toolbar.databinding.ViewTolbarBinding
 
 class Toolbar @JvmOverloads constructor(
@@ -11,28 +13,35 @@ class Toolbar @JvmOverloads constructor(
 ) : LinearLayout(context, attrs) {
 
 
-    val binding: ViewTolbarBinding
+    private lateinit var  binding: ViewTolbarBinding
 
     init {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.view_tolbar, this, true)
-        binding = ViewTolbarBinding.bind(view)
+        inflateView()
         initializeAttributes(attrs)
+    }
 
+    private fun inflateView(){
+        val inflater = LayoutInflater.from(context)
+        binding = ViewTolbarBinding.inflate(inflater, this)
     }
 
     private fun initializeAttributes(attrs: AttributeSet?) {
         if (attrs == null) return
-        val typedArray = context.obtainStyledAttributes(
+        val typedArray = context.withStyledAttributes(
             attrs,
             R.styleable.ToolbarView
-        )
-        val titleTextToolbar = typedArray.getString(R.styleable.ToolbarView_title_text)
-        binding.titleTv.text = titleTextToolbar ?: ""
+        ){
+            val titleTextToolbar = getString(R.styleable.ToolbarView_title_text)
+            binding.titleTv.text = titleTextToolbar ?: DEFAULT_TITLE
 
-        val arrowBack = typedArray.getBoolean(R.styleable.ToolbarView_arrow_back, true)
-        binding.arrowBackIv.visibility = if (arrowBack) VISIBLE else GONE
+            val isArrowBack = getBoolean(R.styleable.ToolbarView_is_arrow_back, true)
+            binding.arrowBackIv.isVisible = isArrowBack
 
+        }
+
+    }
+    companion object{
+        private const val DEFAULT_TITLE = "Title"
     }
 
 
