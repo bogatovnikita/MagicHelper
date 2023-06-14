@@ -14,4 +14,5 @@ data class MenuState(
     val totalSize: Double = 0.0,
     val usageMemoryPercents: Int = 65,
     val isMemoryOptimized: Boolean = false,
+    val isChargingNow: Boolean = false
 )
