@@ -13,7 +13,7 @@ class Toolbar @JvmOverloads constructor(
 ) : LinearLayout(context, attrs) {
 
 
-    private lateinit var  binding: ViewTolbarBinding
+     lateinit var  binding: ViewTolbarBinding
 
     init {
         inflateView()
