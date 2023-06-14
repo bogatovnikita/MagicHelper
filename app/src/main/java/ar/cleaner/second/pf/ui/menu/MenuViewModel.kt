@@ -44,6 +44,7 @@ class MenuViewModel @Inject constructor(
                             usageRamPercents = result.response.usagePercents.toFloat(),
                         )
                     }
+
                     is CaseResult.Failure -> {
                         Log.e("pie", "${result.reason}")
                     }
@@ -62,7 +63,8 @@ class MenuViewModel @Inject constructor(
                     isBatteryOptimized = batInfo.isOptimized,
                     batteryCharge = batInfo.batteryCharge,
                     isNeedShowTimeToFullCharge = batInfo.isCharging && time != CAN_NOT_CALCULATE_TIME,
-                    timeToFullCharge = hours to minutes
+                    timeToFullCharge = hours to minutes,
+                    isChargingNow = batInfo.isCharging
                 )
             }
         }

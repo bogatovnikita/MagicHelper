@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
@@ -91,6 +93,18 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun renderBatteryState(screenState: MenuState) = screenState.apply {
         with(binding) {
+            batteryAnim.isVisible = screenState.isChargingNow
+            batteryIconIv.isVisible = !screenState.isChargingNow
+            if (!screenState.isChargingNow) {
+                when (screenState.batteryCharge) {
+                    in 0..20 -> batteryIconIv.setImageResource(R.drawable.ic_battery_20_percent)
+                    in 21..40 -> batteryIconIv.setImageResource(R.drawable.ic_battery_40_percent)
+                    in 41..60 -> batteryIconIv.setImageResource(R.drawable.ic_battery_60_percent)
+                    in 61..80 -> batteryIconIv.setImageResource(R.drawable.ic_battery_80_percent)
+                    in 81..100 -> batteryIconIv.setImageResource(R.drawable.ic_battery_100_percent)
+                }
+            }
+
             if (isNeedShowTimeToFullCharge && screenState.batteryCharge != 100) {
                 if (timeToFullCharge == 0 to 0) {
                     batteryDescriptionTv.text = paintEndOfTheString()
