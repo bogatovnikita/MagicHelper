@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_to_firstScanningFragment"
             app:destination="@id/firstScanningFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             app:popUpTo="@id/nav_main" />
     </fragment>
 
@@ -22,6 +26,10 @@
         android:label="FirstScanningFragment"
         tools:layout="@layout/fragment_first_scanning">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_menuFragment"
             app:destination="@id/menuFragment"
             app:popUpTo="@id/nav_main" />
@@ -33,10 +41,18 @@
         android:label="MenuFragment"
         tools:layout="@layout/fragment_menu"/>
     <action
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"
         android:id="@+id/action_to_batteryFragment"
         app:destination="@id/batteryFragment" />
 
     <action
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"
         android:id="@+id/action_to_boostFragment"
         app:destination="@id/boostFragment" />
 
@@ -46,6 +62,10 @@
         android:label="BoostFragment"
         tools:layout="@layout/fragment_boost">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_boostProgressFragment"
             app:destination="@id/boostProgressFragment"
             app:popUpTo="@id/boostFragment"
@@ -58,6 +78,10 @@
         android:label="BoostProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_boostResultFragment"
             app:destination="@id/boostResultFragment"
             app:popUpTo="@id/boostProgressFragment"
@@ -76,6 +100,10 @@
         android:label="BatteryFragment"
         tools:layout="@layout/fragment_battery">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_batteryProgressFragment"
             app:destination="@id/batteryProgressFragment"
             app:popUpTo="@id/batteryFragment"
@@ -88,6 +116,10 @@
         android:label="BatteryProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_batteryResultFragment"
             app:destination="@id/batteryResultFragment"
             app:popUpTo="@id/menuFragment"
@@ -100,6 +132,10 @@
         android:label="TemperatureFragment"
         tools:layout="@layout/fragment_temperature">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_temperatureProgressFragment"
             app:destination="@id/temperatureProgressFragment"
             app:popUpTo="@id/temperatureFragment"
@@ -112,6 +148,10 @@
         android:label="CoolingProgressFragment"
         tools:layout="@layout/fragment_progress">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_to_temperatureResultListFragment"
             app:destination="@id/temperatureResultFragment"
             app:popUpTo="@id/menuFragment"
@@ -125,6 +165,10 @@
         tools:layout="@layout/fragment_temperature_result" />
 
     <action
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"
         android:id="@+id/action_to_temperatureFragment"
         app:destination="@id/temperatureFragment" />
     <fragment

@@ -10,9 +10,17 @@
         android:name="yin_kio.files_and_apps_manager.presentation.start.StartFragment"
         android:label="StartFragment" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toScanFragment"
             app:destination="@id/scanFragment" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toOverview"
             app:destination="@id/overviewFragment" />
     </fragment>
@@ -21,9 +29,17 @@
         android:name="yin_kio.files_and_apps_manager.presentation.scan.ScanFragment"
         android:label="ScanFragment" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toPermissionDialog"
             app:destination="@id/fileManagerPermissionDialog" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toUsageStatsPermission"
             app:destination="@id/usageStatsPermissionDialog" />
     </fragment>
@@ -40,15 +56,31 @@
         android:name="yin_kio.files_and_apps_manager.presentation.overview.OverviewFragment"
         android:label="OverviewFragment" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toAskDelete"
             app:destination="@id/askDeleteDialog" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toDeleteProgress"
             app:destination="@id/deleteProgressDialog" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toDoneDialog"
             app:destination="@id/doneDialog" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/toUpdateAppsListProgress"
             app:destination="@id/updateAppsListDialog" />
     </fragment>

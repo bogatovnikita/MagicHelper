@@ -13,14 +13,14 @@ class Toolbar @JvmOverloads constructor(
 ) : LinearLayout(context, attrs) {
 
 
-     lateinit var  binding: ViewTolbarBinding
+     lateinit var binding: ViewTolbarBinding
 
     init {
         inflateView()
         initializeAttributes(attrs)
     }
 
-    private fun inflateView(){
+    private fun inflateView() {
         val inflater = LayoutInflater.from(context)
         binding = ViewTolbarBinding.inflate(inflater, this)
     }
@@ -30,7 +30,7 @@ class Toolbar @JvmOverloads constructor(
         val typedArray = context.withStyledAttributes(
             attrs,
             R.styleable.ToolbarView
-        ){
+        ) {
             val titleTextToolbar = getString(R.styleable.ToolbarView_title_text)
             binding.titleTv.text = titleTextToolbar ?: DEFAULT_TITLE
 
@@ -40,7 +40,8 @@ class Toolbar @JvmOverloads constructor(
         }
 
     }
-    companion object{
+
+    companion object {
         private const val DEFAULT_TITLE = "Title"
     }
 
