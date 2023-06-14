@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">You can delete unwanted files to free up memory on your phone!</string>
     <string name="file_apps_manager_apps">Applications</string>
     <string name="file_apps_manager_usage_stats_description">To allow you to view and remove applications using the file manager, we need access to the usage history</string>
-    <string name="files_apps_manager_pregress">Phone scanning ...</string>
+    <string name="files_apps_manager_pregress">Phone scanning…</string>
     <string name="file_apps_manager_delete_D">Delete (%d)</string>
     <string name="file_apps_manager_select_all">Select All</string>
     <string name="file_apps_manager_audio">Audio</string>

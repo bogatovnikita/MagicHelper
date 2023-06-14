@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Telefonunuzda belleği boşaltmak için istenmeyen dosyaları silebilirsiniz!</string>
     <string name="file_apps_manager_apps">Başvuru</string>
     <string name="file_apps_manager_usage_stats_description">Dosya yöneticisini kullanarak uygulamaları görüntülemenize ve kaldırmanıza izin vermek için kullanım geçmişine erişmeye ihtiyacımız var</string>
-    <string name="files_apps_manager_pregress">Dosyaları tarayın ...</string>
+    <string name="files_apps_manager_pregress">Telefon taraması…</string>
     <string name="file_apps_manager_delete_D">Sil (%d)</string>
     <string name="file_apps_manager_select_all">Hepsini seç</string>
     <string name="file_apps_manager_audio">Ses</string>

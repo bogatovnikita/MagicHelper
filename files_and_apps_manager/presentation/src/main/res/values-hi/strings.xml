@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">आप अपने फोन पर मेमोरी को मुक्त करने के लिए अवांछित फ़ाइलों को हटा सकते हैं!</string>
     <string name="file_apps_manager_apps">अनुप्रयोग</string>
     <string name="file_apps_manager_usage_stats_description">आपको फ़ाइल प्रबंधक का उपयोग करके एप्लिकेशन देखने और हटाने की अनुमति देने के लिए, हमें उपयोग इतिहास तक पहुंच की आवश्यकता है</string>
-    <string name="files_apps_manager_pregress">स्कैन फाइलें ...</string>
+    <string name="files_apps_manager_pregress">फ़ोन स्कैन कर रहा है…</string>
     <string name="file_apps_manager_delete_D">हटाएं (%d)</string>
     <string name="file_apps_manager_select_all">सबका चयन करें</string>
     <string name="file_apps_manager_audio">ऑडियो</string>

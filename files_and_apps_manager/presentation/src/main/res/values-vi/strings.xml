@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Bạn có thể xóa các tệp không mong muốn để giải phóng bộ nhớ trên điện thoại của mình!</string>
     <string name="file_apps_manager_apps">Các ứng dụng</string>
     <string name="file_apps_manager_usage_stats_description">Để cho phép bạn xem và xóa các ứng dụng bằng trình quản lý tệp, chúng tôi cần truy cập vào lịch sử sử dụng</string>
-    <string name="files_apps_manager_pregress">Quét các tập tin ...</string>
+    <string name="files_apps_manager_pregress">Đang quét điện thoại…</string>
     <string name="file_apps_manager_delete_D">Xóa (%d)</string>
     <string name="file_apps_manager_select_all">Chọn tất cả</string>
     <string name="file_apps_manager_audio">Âm thanh</string>

@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">¡Puede eliminar archivos no deseados para liberar la memoria en su teléfono!</string>
     <string name="file_apps_manager_apps">Aplicaciones</string>
     <string name="file_apps_manager_usage_stats_description">Para permitirle ver y eliminar aplicaciones utilizando el Administrador de archivos, necesitamos acceso al historial de uso</string>
-    <string name="files_apps_manager_pregress">Escanear archivos ...</string>
+    <string name="files_apps_manager_pregress">Escaneo de teléfono…</string>
     <string name="file_apps_manager_delete_D">Eliminar (%d)</string>
     <string name="file_apps_manager_select_all">Seleccionar todo</string>
     <string name="file_apps_manager_audio">Audio</string>
