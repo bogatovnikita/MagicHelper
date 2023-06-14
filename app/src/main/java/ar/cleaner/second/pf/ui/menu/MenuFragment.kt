@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import ar.cleaner.second.pf.R
 import ar.cleaner.second.pf.databinding.FragmentMenuBinding
@@ -119,10 +120,21 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                 findNavController().navigate(R.id.action_to_temperatureFragment)
             }
             backgroundCleanTransparent.setOnClickListener {
-                findNavController().navigate(R.id.files_and_apps_graph)
+                val navOptions = navOptions()
+
+                findNavController().navigate(R.id.files_and_apps_graph, null, navOptions)
             }
 
         }
+    }
+
+    private fun navOptions(): NavOptions {
+        return NavOptions.Builder()
+            .setEnterAnim(R.anim.slide_in)
+            .setExitAnim(R.anim.slide_out)
+            .setPopEnterAnim(R.anim.slide_in)
+            .setPopExitAnim(R.anim.slide_out)
+            .build()
     }
 
     private fun TextView.setColor(isOptimized: Boolean) {
