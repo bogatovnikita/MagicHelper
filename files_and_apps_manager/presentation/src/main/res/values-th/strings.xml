@@ -16,7 +16,7 @@
     <string name="file_apps_manager_select_all">เลือกทั้งหมด</string>
     <string name="file_apps_manager_audio">เสียง</string>
     <string name="file_apps_manager_video">วิดีโอ</string>
-    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+    <string name="file_apps_manager_occupied_and_total">%s กิกะไบต์/%s กิกะไบต์</string>
     <string name="file_apps_manager_files_deleting">ลบไฟล์</string>
     <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">เราต้องการการอนุญาต</string>

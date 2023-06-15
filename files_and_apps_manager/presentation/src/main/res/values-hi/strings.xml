@@ -16,7 +16,7 @@
     <string name="file_apps_manager_select_all">सबका चयन करें</string>
     <string name="file_apps_manager_audio">ऑडियो</string>
     <string name="file_apps_manager_video">वीडियो</string>
-    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+    <string name="file_apps_manager_occupied_and_total">%s जीबी/%s जीबी</string>
     <string name="file_apps_manager_files_deleting">फाइलों को नष्ट</string>
     <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">हमें अनुमति की जरूरत है</string>

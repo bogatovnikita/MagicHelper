@@ -16,7 +16,7 @@
     <string name="file_apps_manager_select_all">Select All</string>
     <string name="file_apps_manager_audio">Audio</string>
     <string name="file_apps_manager_video">Video</string>
-    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+    <string name="file_apps_manager_occupied_and_total">%s Gb/%s Gb</string>
     <string name="file_apps_manager_files_deleting">Delete files</string>
     <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">We need permission</string>

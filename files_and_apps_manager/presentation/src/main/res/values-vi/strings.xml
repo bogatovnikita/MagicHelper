@@ -16,7 +16,7 @@
     <string name="file_apps_manager_select_all">Chọn tất cả</string>
     <string name="file_apps_manager_audio">Âm thanh</string>
     <string name="file_apps_manager_video">Băng hình</string>
-    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+    <string name="file_apps_manager_occupied_and_total">%s Tg/%s Tg</string>
     <string name="file_apps_manager_files_deleting">Xóa các tập tin</string>
     <string name="file_apps_manager_percents">%d%%</string>
     <string name="file_apps_manager_we_need_permission">Chúng tôi cần sự cho phép</string>

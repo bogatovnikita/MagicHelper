@@ -6,7 +6,7 @@
 
 
     <string name="file_apps_manager_percents">%d%%</string>
-    <string name="file_apps_manager_occupied_and_total">%s / %s</string>
+    <string name="file_apps_manager_occupied_and_total">%s Гб/%s Гб</string>
 
     <string name="files_apps_manager_pregress">Сканирование файлов...</string>
 
