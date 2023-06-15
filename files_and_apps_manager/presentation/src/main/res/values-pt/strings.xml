@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Você pode excluir arquivos indesejados para liberar memória no seu telefone!</string>
     <string name="file_apps_manager_apps">Formulários</string>
     <string name="file_apps_manager_usage_stats_description">Para permitir que você visualize e remova os aplicativos usando o gerenciador de arquivos, precisamos acessar o histórico de uso</string>
-    <string name="files_apps_manager_pregress">Digitalizar arquivos ...</string>
+    <string name="files_apps_manager_pregress">Escaneamento de telefone…</string>
     <string name="file_apps_manager_delete_D">Excluir (%d)</string>
     <string name="file_apps_manager_select_all">Selecionar tudo</string>
     <string name="file_apps_manager_audio">Áudio</string>

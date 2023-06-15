@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Anda dapat menghapus file yang tidak diinginkan untuk membebaskan memori di ponsel anda!</string>
     <string name="file_apps_manager_apps">Aplikasi</string>
     <string name="file_apps_manager_usage_stats_description">Untuk memungkinkan anda melihat dan menghapus aplikasi menggunakan file manager, kami memerlukan akses ke riwayat penggunaan</string>
-    <string name="files_apps_manager_pregress">Memindai file…</string>
+    <string name="files_apps_manager_pregress">Pemindaian telepon…</string>
     <string name="file_apps_manager_delete_D">Hapus (%d)</string>
     <string name="file_apps_manager_select_all">Pilih semua</string>
     <string name="file_apps_manager_audio">Audio</string>

@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Vous pouvez supprimer des fichiers indésirables pour libérer de la mémoire sur votre téléphone!</string>
     <string name="file_apps_manager_apps">Applications</string>
     <string name="file_apps_manager_usage_stats_description">Pour vous permettre d\'afficher et de supprimer les applications à l\'aide du gestionnaire de fichiers, nous avons besoin d\'accéder à l\'historique d\'utilisation</string>
-    <string name="files_apps_manager_pregress">Analyser les fichiers ...</string>
+    <string name="files_apps_manager_pregress">Numérisation du téléphone…</string>
     <string name="file_apps_manager_delete_D">Supprimer (%d)</string>
     <string name="file_apps_manager_select_all">Tout sélectionner</string>
     <string name="file_apps_manager_audio">l\'audio</string>

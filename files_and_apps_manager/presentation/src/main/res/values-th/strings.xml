@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">คุณสามารถลบไฟล์ที่ไม่ต้องการเพื่อเพิ่มหน่วยความจำบนโทรศัพท์ของคุณ!</string>
     <string name="file_apps_manager_apps">แอปพลิเคชัน</string>
     <string name="file_apps_manager_usage_stats_description">เพื่อให้คุณสามารถดูและลบแอปพลิเคชันโดยใช้ตัวจัดการไฟล์เราจำเป็นต้องเข้าถึงประวัติการใช้งาน</string>
-    <string name="files_apps_manager_pregress">สแกนไฟล์ ...</string>
+    <string name="files_apps_manager_pregress">การสแกนโทรศัพท์…</string>
     <string name="file_apps_manager_delete_D">ลบ (%d)</string>
     <string name="file_apps_manager_select_all">เลือกทั้งหมด</string>
     <string name="file_apps_manager_audio">เสียง</string>

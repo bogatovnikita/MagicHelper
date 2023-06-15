@@ -11,7 +11,7 @@
     <string name="file_apps_manager_start_need_free">Sie können unerwünschte dateien löschen, um den speicher auf ihrem telefon freizugeben!</string>
     <string name="file_apps_manager_apps">Anwendungen</string>
     <string name="file_apps_manager_usage_stats_description">Damit sie Anwendungen mit dem dateimanager anzeigen und entfernen können, benötigen wir zugriff auf den nutzungsverlauf</string>
-    <string name="files_apps_manager_pregress">Dateien scannen…</string>
+    <string name="files_apps_manager_pregress">Telefon scannen…</string>
     <string name="file_apps_manager_delete_D">Löschen (%d)</string>
     <string name="file_apps_manager_select_all">Wählen sie alle</string>
     <string name="file_apps_manager_audio">Audio</string>
