@@ -17,7 +17,7 @@
     <string name="for_extra_and_ultra_modes_you_need_access_to_bluetooth_settings">O modo extra requer acesso às configurações do Bluetooth</string>
     <string name="general_app_name">Ajudante mágico</string>
     <string name="battery_extra_mode">Extra</string>
-    <string name="ram">BATER</string>
+    <string name="ram">Bater</string>
     <string name="battery_time_to_full_charge_D_D">Até que totalmente carregado\n%d hrs. %d min.</string>
     <string name="battery_charge_percent">Carga da bateria</string>
     <string name="settings">Configurações</string>

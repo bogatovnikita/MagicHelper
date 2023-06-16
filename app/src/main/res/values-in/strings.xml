@@ -32,7 +32,7 @@
     <string name="temperature_checked">Tindakan dilakukan</string>
     <string name="boost_usage_ram">Bekas ram</string>
     <string name="clear_junk">Menghapus file</string>
-    <string name="scanning_system">Sistem Pemindaian…</string>
+    <string name="scanning_system">Sistem pemindaian…</string>
     <string name="battery_time_to_full_charge_calculating">Sampai terisi penuh…</string>
     <string name="general_action_required">Diperlukan tindakan!</string>
     <string name="allow">Mengizinkan</string>

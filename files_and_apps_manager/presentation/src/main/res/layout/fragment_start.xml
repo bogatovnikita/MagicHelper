@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -20,9 +20,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:title_text="@string/file_apps_manager_files_deleting" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,8 +39,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
-                android:textAppearance="@style/Text.Medium"
                 android:text="@string/file_apps_manager_memory_used"
+                android:textAppearance="@style/Text.Medium"
                 android:textColor="@color/white"
                 android:textSize="@dimen/Text.18"
                 app:layout_constraintBottom_toTopOf="@id/percentage_used_tv"
@@ -73,6 +73,8 @@
                 android:textSize="@dimen/Text.16"
                 app:layout_constraintBottom_toTopOf="@id/progress_bar"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/percentage_used_tv"
                 tools:text="60,0 Гб / 64,0 Гб" />
 
             <ProgressBar
@@ -91,10 +93,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 
     <TextView
@@ -103,26 +105,26 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/bg_button_danger"
-        android:textAppearance="@style/Text.Medium"
-        android:paddingHorizontal="16dp"
         android:gravity="start|center"
+        android:minHeight="53dp"
+        android:paddingHorizontal="16dp"
         android:text="@string/file_apps_manager_start_need_free"
+        android:textAppearance="@style/Text.Medium"
         android:textColor="@color/red"
-        android:textSize="@dimen/Text.16"
-        android:minHeight="53dp"/>
+        android:textSize="@dimen/Text.16" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/scan_button"
+        style="@style/MainButton"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="25dp"
-        style="@style/MainButton"
         android:background="@drawable/bg_button"
-        android:textAppearance="@style/Text.Medium"
         android:gravity="center"
         android:padding="15dp"
         android:text="@string/file_apps_manager_scan"
         android:textAllCaps="false"
+        android:textAppearance="@style/Text.Medium"
         android:textSize="@dimen/Text.18" />
 
 </LinearLayout>

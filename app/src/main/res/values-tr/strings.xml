@@ -18,7 +18,7 @@
     <string name="general_app_name">Sihirli yardımcı</string>
     <string name="battery_extra_mode">Ekstra</string>
     <string name="ram">Veri deposu</string>
-    <string name="battery_time_to_full_charge_D_D">Tamamen şarj olana kadar\n%d saat. %d dk.</string>
+    <string name="battery_time_to_full_charge_D_D">Sadece kalır\n%d saat. %d dk.</string>
     <string name="battery_charge_percent">Pil şarjı</string>
     <string name="settings">Ayarlar</string>
     <string name="temperature_check">Kontrol etmek</string>
